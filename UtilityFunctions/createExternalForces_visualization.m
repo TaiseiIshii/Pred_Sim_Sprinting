@@ -40,7 +40,8 @@ new_data_l(:,49:51) = data.l_sph_6_G';
 new_data_l(:,55:57) = data.l_sph_F_7_G';
 new_data_l(:,58:60) = data.l_sph_7_G';
 
-new_data = [new_data_r new_data_l];
+% Place summed total columns first (to match labels), then per-sphere blocks
+new_data = [zeros(length(timeNodes),9) new_data_r new_data_l];
 
 labels = {'ground_force_vx','ground_force_vy','ground_force_vz',... % Spheres on the right foot
     'ground_force_px','ground_force_py','ground_force_pz',...
@@ -114,28 +115,75 @@ fclose(fid);
 
 % The polarity of the force is switched here; the force applied by the
 % human to the ground - action force
-summed_new_data = - [new_data_r(:,1:3) + new_data_r(:,10:12) + new_data_r(:,19:21) + new_data_r(:,28:30) + new_data_r(:,37:39) + new_data_r(:,46:48) + new_data_r(:,55:57)];
-
-summed_moments_about_origin = zeros(length(timeNodes),3);
-COP_from_origin = zeros(length(timeNodes),3);
-for i = 1:length(timeNodes)
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,4:6),new_data_r(i,1:3));
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,13:15),new_data_r(i,10:12));
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,22:24),new_data_r(i,19:21));
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,31:33),new_data_r(i,28:30));
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,40:42),new_data_r(i,37:39));
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,49:51),new_data_r(i,46:48));
-    summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,58:60),new_data_r(i,55:57));
-
-    COP_from_origin(i,1) = -summed_moments_about_origin(i,3) / summed_new_data(i,2);
-    COP_from_origin(i,3) = summed_moments_about_origin(i,1) / summed_new_data(i,2);
+% Sum forces from all right spheres and all left spheres (force blocks located
+% at columns 1:3,10:12,19:21,28:30,37:39,46:48,55:57 within new_data_r/new_data_l)
+idx = [1:3,10:12,19:21,28:30,37:39,46:48,55:57];
+sumR = zeros(length(timeNodes),3);
+sumL = zeros(length(timeNodes),3);
+for k = 1:3:length(idx)
+    cols = idx(k:k+2);
+    sumR = sumR + new_data_r(:,cols);
+    sumL = sumL + new_data_l(:,cols);
 end
 
-summed_new_data = [-summed_new_data COP_from_origin summed_moments_about_origin]; % the summed_moments_about_origin is incorrect information
+total_force = -(sumR + sumL);
+
+% Recompute summed moments about origin including both feet
+summed_moments_about_origin = zeros(length(timeNodes),3);
+COP_from_origin = zeros(length(timeNodes),3);
+% indices for position blocks (columns 4:6,13:15,...)
+posIdx = [4:6,13:15,22:24,31:33,40:42,49:51,58:60];
+for i = 1:length(timeNodes)
+    for k = 1:3:length(posIdx)
+        pcols = posIdx(k:k+2);
+        fcols = idx(k:k+2);
+        summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_r(i,pcols), new_data_r(i,fcols));
+        summed_moments_about_origin(i,:) = summed_moments_about_origin(i,:) + cross(new_data_l(i,pcols), new_data_l(i,fcols));
+    end
+    if total_force(i,2) ~= 0
+        COP_from_origin(i,1) = -summed_moments_about_origin(i,3) / total_force(i,2);
+        COP_from_origin(i,3) = summed_moments_about_origin(i,1) / total_force(i,2);
+    else
+        COP_from_origin(i,1) = 0;
+        COP_from_origin(i,3) = 0;
+    end
+end
+
+summed_new_data = [total_force COP_from_origin summed_moments_about_origin];
 
 labels_new = {'ground_force_vx','ground_force_vy','ground_force_vz',... 
     'ground_force_px','ground_force_py','ground_force_pz',...
     'ground_torque_x','ground_torque_y','ground_torque_z'};
+
+% Overwrite the full .mot so that its first 9 columns contain the summed totals
+% (previously the file was written before totals were computed)
+new_data(:,1:9) = summed_new_data(:,1:9);
+fid_over = fopen([filename '.mot'],'w');
+% Write the header
+fprintf(fid_over, '%s\n', header);
+fprintf(fid_over, '%s\n', 'version=1');
+fprintf(fid_over, '%s\n', ['nRows=' num2str(length(timeNodes))]);
+fprintf(fid_over, '%s\n', ['nColumns=' num2str(length(labels)+1)]);
+fprintf(fid_over, '%s\n', 'inDegrees=yes');
+fprintf(fid_over, '%s\n', 'endheader');
+
+% Write column names
+fprintf(fid_over,'time');
+for i = 1:length(labels)
+    fprintf(fid_over,'\t%s', labels{i});
+end
+fprintf(fid_over,'\n');
+
+for i = 1:length(timeNodes)
+    fprintf(fid_over, '%f', timeNodes(i));
+    for j = 1:length(labels)
+        fprintf(fid_over, '\t%f', new_data(i,j));
+    end
+    fprintf(fid_over,'\n');
+end
+
+% Close the file
+fclose(fid_over);
 
 fid_2 = fopen([filename '_Single.mot'],'w');
 % Write the header

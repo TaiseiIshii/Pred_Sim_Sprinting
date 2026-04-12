@@ -1,4 +1,4 @@
-function [] = main_pred_sim_sprinting()
+function [] = main_pred_sim_sprinting_N500()
 
 clc
 
@@ -9,7 +9,7 @@ import casadi.*
 Options.solver        = 'mumps';
 Options.tol           = 1;        % 1=1e-5, else=1e-6
 Options.derivatives   = 'AD';     % Use AD
-Options.N             = 50;       % Number of mesh intervals
+Options.N             = 500;      % Number of mesh intervals (increased from 50 for finer temporal resolution)
 Options.prevSol       = 'N';      % Use prev solution as initial guess;
                                   % Interpolate if necessary; initial guess
                                   % may be adjusted if falls on or off
@@ -34,6 +34,8 @@ file_ext = checkSimulationType(simulation_type);
 scriptDir = fileparts(mfilename('fullpath'));
 pathmain = fileparts(scriptDir); % Project root
 
+%% Add UtilityFunctions to path (needed for control_extrapolation etc.)
+addpath(genpath([pathmain, '\UtilityFunctions\']));
 
 %% Define folder path to store results
 pathResults = [pathmain, '\Results\'];

@@ -1,4 +1,4 @@
-function [] = main_pred_sim_sprinting()
+function [] = main_pred_sim_sprinting_N100()
 
 clc
 
@@ -9,17 +9,21 @@ import casadi.*
 Options.solver        = 'mumps';
 Options.tol           = 1;        % 1=1e-5, else=1e-6
 Options.derivatives   = 'AD';     % Use AD
-Options.N             = 50;       % Number of mesh intervals
-Options.prevSol       = 'N';      % Use prev solution as initial guess;
+Options.N             = 100;      % Number of mesh intervals (increased from 50 for mesh convergence study)
+Options.prevSol       = 'Y';      % Use prev N=50 solution as initial guess;
                                   % Interpolate if necessary; initial guess
                                   % may be adjusted if falls on or off
                                   % passed bounds
-                                  % NOTE: Set to 'N' if no prior solution exists
 Options.MTP_stiff     = 65;       % MTP Spring Stiffness (Nm/rad)
 Options.timePercent   = 0.15;     % Reduce overall time by % set
 
 if Options.prevSol == 'Y'
-    prevSol = load('IC_pred_Sprinting_optimum_p02_maxVel_01_25-October-2023__23-00-52___Nominal_CONS_BS_PUSH_FRAC.mat');
+    % Load the N=50 Nominal solution as warm start
+    scriptDir_tmp = fileparts(mfilename('fullpath'));
+    pathmain_tmp  = fileparts(scriptDir_tmp);
+    prevSolFile = fullfile(pathmain_tmp, 'Results', ...
+        'pred_sprinting_data_04-February-2026__12-27-31___Nominal.mat');
+    prevSol = load(prevSolFile);
 else
     prevSol = [];
 end
@@ -34,6 +38,8 @@ file_ext = checkSimulationType(simulation_type);
 scriptDir = fileparts(mfilename('fullpath'));
 pathmain = fileparts(scriptDir); % Project root
 
+%% Add UtilityFunctions to path (needed for control_extrapolation etc.)
+addpath(genpath([pathmain, '\UtilityFunctions\']));
 
 %% Define folder path to store results
 pathResults = [pathmain, '\Results\'];
@@ -864,6 +870,40 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
     end
 
     function guess = createGuess(scaling,statesF,nq,NMuscle,Options,d,bounds_sc,prevOpti,timeGrid,timeNodes)
+        
+        % Interpolate prevOpti data if N differs (warm start from different mesh)
+        if ~isempty(prevOpti)
+            prev_N_states = size(prevOpti.optimumOutput.optVars_nsc.q, 2);
+            curr_N_states = (d+1)*Options.N;
+            
+            if prev_N_states ~= curr_N_states
+                fprintf('Interpolating initial guess: %d -> %d state points\n', prev_N_states, curr_N_states);
+                t_old_s = linspace(0, 1, prev_N_states);
+                t_new_s = linspace(0, 1, curr_N_states);
+                
+                prev_N_ctrl = size(prevOpti.optimumOutput.optVars_nsc.uAcc, 2) - 1;
+                curr_N_ctrl = d * Options.N;
+                t_old_c = linspace(0, 1, prev_N_ctrl);
+                t_new_c = linspace(0, 1, curr_N_ctrl);
+                
+                % State variables (nVar x nStatePoints)
+                prevOpti.optimumOutput.optVars_nsc.q       = interp1(t_old_s, prevOpti.optimumOutput.optVars_nsc.q',       t_new_s, 'spline')';
+                prevOpti.optimumOutput.optVars_nsc.qdot    = interp1(t_old_s, prevOpti.optimumOutput.optVars_nsc.qdot',    t_new_s, 'spline')';
+                prevOpti.optimumOutput.optVars_nsc.act     = interp1(t_old_s, prevOpti.optimumOutput.optVars_nsc.act',     t_new_s, 'spline')';
+                prevOpti.optimumOutput.optVars_nsc.FTtilde = interp1(t_old_s, prevOpti.optimumOutput.optVars_nsc.FTtilde', t_new_s, 'spline')';
+                prevOpti.optimumOutput.optVars_nsc.armActs = interp1(t_old_s, prevOpti.optimumOutput.optVars_nsc.armActs', t_new_s, 'spline')';
+                
+                % Control variables (nVar x (d*N+1), col 1 is extrapolated)
+                fields_ctrl = {'uAcc','uActdot','dFTtilde','armExcts','uReserves'};
+                for fi = 1:length(fields_ctrl)
+                    fn = fields_ctrl{fi};
+                    prev_ctrl = prevOpti.optimumOutput.optVars_nsc.(fn)(:, 2:end);
+                    new_ctrl  = interp1(t_old_c, prev_ctrl', t_new_c, 'spline')';
+                    prevOpti.optimumOutput.optVars_nsc.(fn) = [prevOpti.optimumOutput.optVars_nsc.(fn)(:,1), new_ctrl];
+                end
+                fprintf('Interpolation complete.\n');
+            end
+        end
         
         guess.q        = statesF.q_aux./(scaling.q');
 

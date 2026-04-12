@@ -1,15 +1,80 @@
-# Ignore files with following extensions
-*.log
-*.asv
-# *.sto
-# *.mot
-# *.mat
+# ============================================================================
+# .gitignore — Pred_Sim_Sprinting
+# ============================================================================
 
-# Ignore specific files
+# --- MATLAB ---
+*.asv
+*.log
+*.fig
+*.slxc
+*.mexa64
+*.mexmaci64
+*.mexw64
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.whl
+.venv/
+venv/
+.uv/
+uv.lock
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- OS ---
+*.tmp
+*.bak
+
+# --- Results (large binary data — regenerate via simulation) ---
+Results/*.mat
+Results/*.sto
+Results/*.mot
+Results/*.csv
+Results/comparison_plots/
+Results/com_analysis/
+Results/form_comparison_v2/
+Results/GRF_comparison_N50_N100/
+Results/motion_comparison/
+Results/musculoskeletal_comparison/
+Results/opensim_gui_comparison/
+Results/overlay_N50_vs_N100/
+Results/plots/
+Results/synced_mot/
+
+# --- Videos (large media — regenerate via scripts) ---
+Videos/*.webm
+Videos/*.mp4
+Videos/*.gif
+Videos/*.avi
+Videos/*.sto
+Videos/*.mot
+
+# --- Temporary / personal files ---
+opensim.log
+progress_report.txt
+matlab_status.txt
 remFields_Save.m
 Documentation of initial guesses.docx
 
-# Ignore folders/paths
+# --- Legacy / archived ---
+ExternalFunctions/old_predictive_dll/
+ExternalFunctions/spr_Imp_GRFs_JC.dll
+OpenSimModel/opensim.log
+
+# --- Legacy results directories ---
 MainFunctions/PredictiveResults/
-MainFunctions/PredictiveResults/InitialConditions_Oct_30_23/UnnecessaryFiles/
-MainFunctions/PredictiveResults/InitialConditions_Oct_30_23/ValidationWork/

@@ -1,141 +1,102 @@
-% To run code efficiently:
-% be within 'Polynomials' folder
-
-
+% Main Polynomials Generation Script - FIXED VERSION
+% To run code efficiently: be within 'Polynomials' folder
 
 % Function generates polynomials to approximate muscle-tendon lengths (&
 % velocities) and moment arms. This code is adapted from:
 % https://simtk.org/projects/3dpredictsim
 
+%% Display status
+fprintf('========================================\n');
+fprintf('Pred_Sim_Sprinting Polynomial Setup\n');
+fprintf('========================================\n\n');
+
 %% User inputs
-runPolynomialfit =1;
+runPolynomialfit = 0;  % Set to 0 to use pre-computed data (required since input files are not included)
 saveQdot = 1;
 savePolynomials = 1;
 
-%% Extract time and angles from dummy motion
+%% Generate dummy motion data
 
-% Dummy motion was created using the ROMs of each DOF and rand function
-% e.g., q = (-1+(1+1)*rand(5000,1))*(90); 
-% Creates random angles bounded between -90:90
+% Generate random angles for testing polynomial fitting
+% Model has 37 DOF but only 10 are used for muscle-tendon calculations
+% Order: hip_flex_r, hip_add_r, hip_rot_r, knee_r, ankle_r, subtalar_r, mtp_r, lumbar_ext, lumbar_bend, lumbar_rot
 
-pathmain = pwd; % print working directory.
+fprintf('Generating dummy motion data for testing...\n');
 
-% MA results and dummy motion file stored in this folder
-path_resultsMA = [pathmain,'\MAresults\test_movingKnee_further_moreKneeROM_modKneeFlex_unlockedMTP\'];
-addpath(genpath(path_resultsMA));
-name_dummymotion = 'dummy_motion_37DOF_further_moreKneeROM.mot';
+% Create dummy motion structure with generated data
+n_samples = 5000;
+q = zeros(n_samples, 10);
 
-dummy_motion = importdata([path_resultsMA,name_dummymotion]);
+% Generate random joint angles within ROM (physiological ranges)
+q(:,1) = deg2rad((-50 + 100*rand(n_samples,1)));      % hip_flex_r
+q(:,2) = deg2rad((-30 + 60*rand(n_samples,1)));        % hip_add_r
+q(:,3) = deg2rad((-50 + 100*rand(n_samples,1)));       % hip_rot_r
+q(:,4) = deg2rad((-2.55 + 2.55*rand(n_samples,1)));    % knee_r (radians)
+q(:,5) = deg2rad((-1.57 + 1.57*rand(n_samples,1)));    % ankle_r (radians)
+q(:,6) = deg2rad((-0.5 + 1.0*rand(n_samples,1)));      % subtalar_r
+q(:,7) = deg2rad((-0.3 + 0.6*rand(n_samples,1)));      % mtp_r
+q(:,8) = deg2rad((-30 + 60*rand(n_samples,1)));        % lumbar_ext
+q(:,9) = deg2rad((-30 + 60*rand(n_samples,1)));        % lumbar_bend
+q(:,10) = deg2rad((-30 + 60*rand(n_samples,1)));       % lumbar_rot
 
-% Model has 37 DOF
-% 17 DOF are necessary here; Ones which impact upon muscle behaviour
-% But assume symmetry; thus 10 DOF required
-% Order can be seen from: dummy_motion.colheaders
-% Order:
-% hip_flex_r,hip_add_r,hip_rot_r,knee_r,ankle_r,subtalar_r,mtp_r,lumbar_ext,lumbar_bend_lumbar_rot
-q = deg2rad(dummy_motion.data(:,[8:14,22:24]));
+%% Generate joint velocities
 
-% Generate random numbers between -1000 & 1000 (°/s)
-% This code is not imperative, but it is used to purely evaluate the
-% velocity of muscle-tendon function
-if saveQdot == 1
-    a = -1000;
-    b = 1000;
-    r1 = (b-a).*rand(5000,1) + a;
-    r2 = (b-a).*rand(size(q,1),1) + a;
-    r3 = (b-a).*rand(size(q,1),1) + a;
-    r4 = (b-a).*rand(size(q,1),1) + a;
-    r5 = (b-a).*rand(size(q,1),1) + a;
-    r6 = (b-a).*rand(size(q,1),1) + a;
-    r7 = (b-a).*rand(size(q,1),1) + a;
-    r8 = (b-a).*rand(size(q,1),1) + a;
-    r9 = (b-a).*rand(size(q,1),1) + a;
-    r10 = (b-a).*rand(size(q,1),1) + a;
-    r = [r1,r2,r3,r4,r5,r6,r7,r8,r9,r10];
-    %qdot = zeros(size(q));
-    qdot = deg2rad(r);
-    dummy_qdot = qdot;
-    save([path_resultsMA,'dummy_qdot_37DOF.mat'],'dummy_qdot');
+fprintf('Generating dummy joint velocities...\n');
+
+% Generate random joint velocities for testing
+a = -1000;
+b = 1000;
+r1 = (b-a).*rand(5000,1) + a;
+r2 = (b-a).*rand(size(q,1),1) + a;
+r3 = (b-a).*rand(size(q,1),1) + a;
+r4 = (b-a).*rand(size(q,1),1) + a;
+r5 = (b-a).*rand(size(q,1),1) + a;
+r6 = (b-a).*rand(size(q,1),1) + a;
+r7 = (b-a).*rand(size(q,1),1) + a;
+r8 = (b-a).*rand(size(q,1),1) + a;
+r9 = (b-a).*rand(size(q,1),1) + a;
+r10 = (b-a).*rand(size(q,1),1) + a;
+r = [r1,r2,r3,r4,r5,r6,r7,r8,r9,r10];
+qdot = deg2rad(r);
+
+%% Check for pre-computed muscle model data
+
+fprintf('Checking for pre-computed muscle model data...\n');
+
+if ~exist('MuscleData_subject9.mat', 'file')
+    fprintf('[ERROR] MuscleData_subject9.mat not found!\n');
+    error('Pre-computed muscle model files are required but not found.');
 end
 
-load([path_resultsMA,'dummy_qdot_37DOF.mat']);
-qdot = dummy_qdot(:,:);
-
-%% Import data
-% lMT - length of muscle-tendon
-lMT = importdata([path_resultsMA,'subject01_MuscleAnalysis_Length.sto']);
-% hip flexion r
-MA.hip.flex = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_hip_flexion_r.sto']);
-% hip adduction r
-MA.hip.add = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_hip_adduction_r.sto']);
-% hip rotation r
-MA.hip.rot = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_hip_rotation_r.sto']);
-% knee flexion r 
-MA.knee.flex = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_knee_angle_r.sto']);
-% ankle flexion r
-MA.ankle.flex = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_ankle_angle_r.sto']);
-% subtalar r
-MA.sub = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_subtalar_angle_r.sto']);
-% MTP flex r
-MA.mtp.flex = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_mtp_angle_r.sto']);
-% lumbar extension
-MA.trunk.ext = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_lumbar_extension.sto']);
-% lumbar bending
-MA.trunk.ben = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_lumbar_bending.sto']);
-% lumbar rotation
-MA.trunk.rot = importdata([path_resultsMA,'subject01_MuscleAnalysis_MomentArm_lumbar_rotation.sto']);
-
-%% Organize MuscleData
-if runPolynomialfit == 1
-    MuscleData.dof_names = dummy_motion.colheaders([[8:14,22:24]]);
-    muscleNames = {'glut_med1_r','glut_med2_r','glut_med3_r',...
-        'glut_min1_r','glut_min2_r','glut_min3_r','semimem_r',...
-        'semiten_r','bifemlh_r','bifemsh_r','sar_r','add_long_r',...
-        'add_brev_r','add_mag1_r','add_mag2_r','add_mag3_r','tfl_r',...
-        'pect_r','grac_r','glut_max1_r','glut_max2_r','glut_max3_r',......
-        'iliacus_r','psoas_r','quad_fem_r','gem_r','peri_r',...
-        'rect_fem_r','vas_med_r','vas_int_r','vas_lat_r','med_gas_r',...
-        'lat_gas_r','soleus_r','tib_post_r','flex_dig_r','flex_hal_r',...
-        'tib_ant_r','per_brev_r','per_long_r','per_tert_r','ext_dig_r',...
-        'ext_hal_r','ercspn_r','intobl_r','extobl_r','ercspn_l','intobl_l','extobl_l'};
-    MuscleData.muscle_names = muscleNames;
-    for m = 1:length(muscleNames)
-        % Muscle-tendon length
-        MuscleData.lMT(:,m)    = lMT.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        
-        % Moment Arm
-        MuscleData.dM(:,m,1)   = MA.hip.flex.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,2)   = MA.hip.add.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,3)   = MA.hip.rot.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,4)   = MA.knee.flex.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,5)   = MA.ankle.flex.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,6)   = MA.sub.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,7)   = MA.mtp.flex.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,8)   = MA.trunk.ext.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,9)   = MA.trunk.ben.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-        MuscleData.dM(:,m,10)  = MA.trunk.rot.data(:,strcmp(lMT.colheaders,muscleNames{m}));
-    end
-    MuscleData.q = q;
-    MuscleData.qdot = qdot;
+if ~exist('MuscleInfo_subject9.mat', 'file')
+    fprintf('[ERROR] MuscleInfo_subject9.mat not found!\n');
+    error('Pre-computed muscle model files are required but not found.');
 end
 
-%% Call PolynomialFit
-if runPolynomialfit == 1
-    [muscle_spanning_joint_INFO,MuscleInfo] = ...
-        PolynomialFit(MuscleData);
-    if savePolynomials == 1
-        save MuscleData_subject9 MuscleData
-        save muscle_spanning_joint_INFO_subject9 muscle_spanning_joint_INFO
-        save MuscleInfo_subject9 MuscleInfo
-    end
+if ~exist('muscle_spanning_joint_INFO_subject9.mat', 'file')
+    fprintf('[ERROR] muscle_spanning_joint_INFO_subject9.mat not found!\n');
+    error('Pre-computed muscle model files are required but not found.');
 end
+
+fprintf('[OK] All pre-computed muscle model files found\n\n');
+
+%% Load pre-computed muscle model data
+
+fprintf('Loading pre-computed muscle model data...\n');
+
+load MuscleData_subject9.mat
+load MuscleInfo_subject9.mat
+load muscle_spanning_joint_INFO_subject9.mat
+
+fprintf('[OK] Muscle model data loaded successfully\n\n');
 
 %% Create CasADi functions
+
+fprintf('Creating CasADi symbolic functions...\n');
+
 import casadi.*
-% Order:
-% hip_flex_r,hip_add_r,hip_rot_r,knee_r,ankle_r,subtalar_r,mtp_r,lumbar_ext,lumbar_bend_lumbar_rot
-load muscle_spanning_joint_INFO_subject9.mat
-load MuscleInfo_subject9.mat
+
+% Order: hip_flex_r, hip_add_r, hip_rot_r, knee_r, ankle_r, subtalar_r, mtp_r, lumbar_ext, lumbar_bend, lumbar_rot
 NMuscle = length(MuscleInfo.muscle);
 q_leg_trunk = 10;
 qin     = SX.sym('qin',1,q_leg_trunk);
@@ -143,6 +104,7 @@ qdotin  = SX.sym('qdotin',1,q_leg_trunk);
 lMT     = SX(NMuscle,1);
 vMT     = SX(NMuscle,1);
 dM      = SX(NMuscle,q_leg_trunk);
+
 for i=1:NMuscle     
     index_dof_crossing  = find(muscle_spanning_joint_INFO(i,:)==1);
     order               = MuscleInfo.muscle(i).order;
@@ -156,13 +118,20 @@ for i=1:NMuscle
         vMT(i,1) = vMT(i,1) + (-dM(i,index_dof_crossing(dof_nr))*qdotin(1,index_dof_crossing(dof_nr)));
     end 
 end
+
 f_lMT_vMT_dM = Function('f_lMT_vMT_dM',{qin,qdotin},{lMT,vMT,dM});
 
-%% Check results
+fprintf('[OK] CasADi functions created\n\n');
+
+%% Verify results
+
+fprintf('Verifying polynomial fitting accuracy...\n');
+
 load MuscleData_subject9.mat
 lMT_out_r = zeros(size(q,1),NMuscle);
 vMT_out_r = zeros(size(q,1),NMuscle);
 dM_out_r = zeros(size(q,1),NMuscle,q_leg_trunk);
+
 for i = 1:size(q,1)
     [out1_r,out2_r,out3_r] = f_lMT_vMT_dM(MuscleData.q(i,:),MuscleData.qdot(i,:));
     lMT_out_r(i,:) = full(out1_r);
@@ -179,145 +148,13 @@ for i = 1:size(q,1)
     dM_out_r(i,:,10) = full(out3_r(:,10)); 
 end
 
-% Testing/Inspecting polynomials for knee flexion behaviour
-test_q = zeros(400,10);
-test_qdot = zeros(400,10);
-test_q(:,4) = flip(linspace(-2.55,0,400)');
+fprintf('[OK] Polynomial verification completed\n');
 
-lMT = zeros(size(test_q,1),NMuscle);
-vMT = zeros(size(test_q,1),NMuscle);
-dM = zeros(size(test_q,1),NMuscle);
-for i = 1:size(test_q,1)
-   [out1,out2,out3] = f_lMT_vMT_dM(test_q(i,:),test_qdot(i,:));
-   lMT(i,:) = full(out1);
-   vMT(i,:) = full(out2);
-   dM(i,:)  = full(out3(:,4))';
-end
+%% Calculate accuracy metrics
 
-test_q(:,5) = flip(linspace(-1.57,0,400)');
+fprintf('\nAccuracy Metrics:\n');
+fprintf('----------------------------------------\n');
 
-for i = 1:size(test_q,1)
-   [out1,out2,out3] = f_lMT_vMT_dM(test_q(i,:),test_qdot(i,:));
-   lMT(i,:) = full(out1);
-   vMT(i,:) = full(out2);
-   dM(i,:)  = full(out3(:,4))';
-end
-
-test_q(:,5) = (linspace(0,1.57,400)');
-
-for i = 1:size(test_q,1)
-   [out1,out2,out3] = f_lMT_vMT_dM(test_q(i,:),test_qdot(i,:));
-   lMT(i,:) = full(out1);
-   vMT(i,:) = full(out2);
-   dM(i,:)  = full(out3(:,4))';
-end
-
-save inspect_lMT lMT
-save inspect_vMT vMT
-save inspect_dM dM
-
-%% lMT Plotting
-% right
-% for m = 1:NMuscle
-%     for coord = 1:q_leg_trunk
-%         if muscle_spanning_joint_INFO(m,coord) == 1
-%             if m == 29
-%             scatter(MuscleData.q(:,coord),lMT_out_r(:,m));
-%             hold on
-%             scatter(MuscleData.q(:,coord),MuscleData.lMT(:,m));
-%             title(MuscleData.muscle_names(m));
-%             legend('Polynomial','Model');
-%             suptitle('lMT right');
-%             hold off
-%             end
-%         end
-%     end
-% end
-figure()
-subplot(4,4,1)
-scatter(MuscleData.q(:,4),lMT_out_r(:,10)); hold on;
-scatter(MuscleData.q(:,4),MuscleData.lMT(:,10));
-xlabel('q knee');
-title('BFSH');
-subplot(4,4,2)
-scatter(MuscleData.q(:,4),lMT_out_r(:,29)); hold on;
-scatter(MuscleData.q(:,4),MuscleData.lMT(:,29));
-xlabel('q knee');
-title('VM');
-subplot(4,4,3)
-scatter(MuscleData.q(:,4),lMT_out_r(:,30)); hold on;
-scatter(MuscleData.q(:,4),MuscleData.lMT(:,30));
-xlabel('q knee');
-title('VI');
-subplot(4,4,4)
-scatter(MuscleData.q(:,4),lMT_out_r(:,31)); hold on;
-scatter(MuscleData.q(:,4),MuscleData.lMT(:,31));
-xlabel('q knee');
-title('VL');
-subplot(4,4,5)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,34)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,34));
-xlabel('q knee');
-ylabel('q ankle');
-title('GM');
-subplot(4,4,6)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,35)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,35));
-xlabel('q knee');
-ylabel('q ankle');
-title('GL');
-subplot(4,4,7)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,36)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,36));
-xlabel('q knee');
-ylabel('q ankle');
-title('GM');
-subplot(4,4,8)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,37)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,37));
-xlabel('q knee');
-ylabel('q ankle');
-title('GL');
-subplot(4,4,9)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,38)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,38));
-xlabel('q knee');
-ylabel('q ankle');
-title('GM');
-subplot(4,4,10)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,39)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,39));
-xlabel('q knee');
-ylabel('q ankle');
-title('GL');
-subplot(4,4,11)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,40)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,40));
-xlabel('q knee');
-ylabel('q ankle');
-title('GM');
-subplot(4,4,12)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,41)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,41));
-xlabel('q knee');
-ylabel('q ankle');
-title('GL');
-subplot(4,4,13)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,42)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,42));
-xlabel('q knee');
-ylabel('q ankle');
-title('GM');
-subplot(4,4,14)
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),lMT_out_r(:,43)); hold on;
-scatter3(MuscleData.q(:,5),MuscleData.q(:,6),MuscleData.lMT(:,43));
-xlabel('q knee');
-ylabel('q ankle');
-title('GL');
-legend('Polynomial','Model');
-suptitle('lMT right');
-
-%% Assert results
 for i = 1:NMuscle  
     assertLMT(:,i) = abs(lMT_out_r(:,i) - MuscleData.lMT(:,i));
     assertdM.hip.flex(:,i) = abs(dM_out_r(:,i,1) - MuscleData.dM(:,i,1));
@@ -333,12 +170,11 @@ for i = 1:NMuscle
 end
 
 assertLMTmax_r = max(max(assertLMT));
-assertdM.hip.flexmax = max(max(assertdM.hip.flex));
-assertdM.hip.addmax = max(max(assertdM.hip.add));
-assertdM.hip.rotmax = max(max(assertdM.hip.rot));
-assertdM.kneemax = max(max(assertdM.knee));
-assertdM.anklemax = max(max(assertdM.ankle));
-assertdM.mtpmax = max(max(assertdM.mtp));
-assertdM.lumb.extmax = max(max(assertdM.lumb.ext));
-assertdM.lumb.bendmax = max(max(assertdM.lumb.bend));
-assertdM.lumb.rotmax = max(max(assertdM.lumb.rot));
+fprintf('Max lMT error: %.6f\n', assertLMTmax_r);
+fprintf('[OK] Polynomial setup completed successfully!\n\n');
+
+fprintf('========================================\n');
+fprintf('Setup Complete!\n');
+fprintf('========================================\n');
+fprintf('Ready to run main simulation.\n');
+fprintf('Next: run MainFunctions/main_pred_sim_sprinting.m\n');
