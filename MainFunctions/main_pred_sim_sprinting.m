@@ -1,4 +1,4 @@
-function [] = main_pred_sim_sprinting()
+function [] = main_pred_sim_sprinting(simulation_type_in)
 
 clc
 
@@ -27,7 +27,74 @@ end
 % Key examples: _Nominal, _HTD_Plus_1, _IKTD_Minus_6
 simulation_type = '_Nominal';
 
+% Allow the condition to be injected by a batch runner (e.g. the pelvic-tilt
+% sweep). When called with no argument the baseline '_Nominal' is used.
+if nargin >= 1 && ~isempty(simulation_type_in)
+    simulation_type = simulation_type_in;
+end
+
 file_ext = checkSimulationType(simulation_type);
+
+% === Pelvic Tilt strain study (reversible) ===========================
+% Activated ONLY when simulation_type contains 'PelvisTilt'. For any other
+% condition (e.g. _Nominal, _HTD_*, _IKTD_*) baseline behaviour is unchanged.
+% Naming convention: _PelvisTilt_m13 -> center -13 deg, _PelvisTilt_p00 -> 0 deg
+% (m = minus/anterior in this model's coordinate, p = plus/posterior).
+% The imposed mean pelvis_tilt is realised by replacing the (otherwise
+% symmetrified) pelvis_tilt position bounds with a window
+% [center-halfWin, center+halfWin] inside createScaledBounds, and seeding the
+% initial guess at the window center inside createGuess.
+ptStudy.active     = ~isempty(strfind(simulation_type,'PelvisTilt'));
+ptStudy.halfWinDeg = 6;     % half-window width about the target centre (deg)
+if ptStudy.active
+    ptTok = simulation_type(strfind(simulation_type,'PelvisTilt_')+numel('PelvisTilt_'):end);
+    ptSgn = 1;
+    if ptTok(1) == 'm'
+        ptSgn = -1;
+    end
+    ptStudy.centerDeg = ptSgn*str2double(ptTok(2:end));
+    fprintf('[PelvicTilt] simulation_type=%s -> centre=%.1f deg, window=[%.1f, %.1f] deg\n', ...
+        simulation_type, ptStudy.centerDeg, ...
+        ptStudy.centerDeg-ptStudy.halfWinDeg, ptStudy.centerDeg+ptStudy.halfWinDeg);
+else
+    ptStudy.centerDeg = NaN;
+end
+% =====================================================================
+
+% === Pelvic tilt CAUSAL study v2 (Method B: rigid waveform shift) =====
+% Activated ONLY when simulation_type contains 'PelvisShift'. Unlike the old
+% ptStudy (which used a wide +/-6 deg soft position WINDOW and let the speed-
+% maximising optimiser drift to a similar comfortable angle), this study PINS
+% the pelvis_tilt POSITION at EVERY collocation node to the experimental
+% reference waveform PLUS a constant offset, within a tight band. This is the
+% same "impose a kinematic manipulation, re-optimise the same sprinting task,
+% compare the body's response" logic as the HTD/IKTD studies, but applied to
+% the whole pelvis_tilt trajectory so the realised mean differs between
+% conditions by exactly the offset (solving the prior near-identical-angle
+% problem). Because it only tightens BOUNDS (no new g constraints), the NLP
+% dimensions match Nominal and the dual warm-start works directly.
+% Naming: _PelvisShift_m06 -> offset -6 deg (more anterior in this model),
+%         _PelvisShift_p04 -> offset +4 deg, _PelvisShift_p00 -> 0 deg.
+shiftStudy.active    = ~isempty(strfind(simulation_type,'PelvisShift'));
+shiftStudy.bandDeg   = 0.5;     % half-band about reference+offset per node (deg)
+shiftStudy.refTiltRad = [];     % FIXED reference waveform = Nominal optimised
+                                % pelvis_tilt (rad), loaded below. The constant
+                                % offset is applied on top of THIS, so all
+                                % conditions share one reference and the realised
+                                % mean differs between conditions by the offset.
+if shiftStudy.active
+    shTok = simulation_type(strfind(simulation_type,'PelvisShift_')+numel('PelvisShift_'):end);
+    shSgn = 1;
+    if shTok(1) == 'm'
+        shSgn = -1;
+    end
+    shiftStudy.offsetDeg = shSgn*str2double(shTok(2:end));
+    fprintf('[PelvisShift] simulation_type=%s -> offset=%+.1f deg, band=+/-%.2f deg\n', ...
+        simulation_type, shiftStudy.offsetDeg, shiftStudy.bandDeg);
+else
+    shiftStudy.offsetDeg = NaN;
+end
+% =====================================================================
 
 % Path of main folder repository (parent of MainFunctions)
 % Prefer the script location to avoid issues when pwd is elsewhere
@@ -38,6 +105,147 @@ pathmain = fileparts(scriptDir); % Project root
 %% Define folder path to store results
 pathResults = [pathmain, '\Results\'];
 addpath(genpath(pathResults));
+
+% === Pelvic Tilt strain study: warm-start from the closest converged run ==
+% The raw experimental guess does not satisfy the contact/multibody dynamics
+% (large initial primal infeasibility) and, combined with the imposed tilt
+% window, converges very slowly. Warm-starting from the dynamically-consistent
+% closest available solution (Nominal or a completed PelvisTilt condition,
+% then shifting pelvis_tilt to the target centre in createGuess) makes the
+% constrained problem converge more robustly as the sweep moves outward.
+% Reversible: only triggers for _PelvisTilt_* conditions.
+if ptStudy.active
+    nomFiles = dir([pathResults 'pred_sprinting_data_*Nominal.mat']);
+    ptFiles  = dir([pathResults 'pred_sprinting_data_*PelvisTilt*.mat']);
+    candFiles = [nomFiles; ptFiles];
+    % Pick the matching-mesh, strictly converged solution whose realized/target
+    % pelvis_tilt is closest to the requested centre; newest wins ties. Do not
+    % use acceptable-level PelvisTilt results as warm-starts because their dual
+    % variables can send neighbouring conditions into restoration mode.
+    bestIx = 0; bestScore = inf; bestTime = -inf; bestCenter = NaN;
+    for iNom = 1:numel(candFiles)
+        try
+            tmp = load(fullfile(candFiles(iNom).folder,candFiles(iNom).name),'optimumOutput');
+            if isfield(tmp,'optimumOutput') && isfield(tmp.optimumOutput,'options') ...
+                    && tmp.optimumOutput.options.N == Options.N ...
+                    && isfield(tmp.optimumOutput,'lam_x_opt') ...
+                    && isfield(tmp.optimumOutput,'lam_g_opt') ...
+                    && isfield(tmp.optimumOutput,'stats') ...
+                    && isfield(tmp.optimumOutput.stats,'return_status') ...
+                    && strcmp(tmp.optimumOutput.stats.return_status,'Solve_Succeeded')
+                nm = candFiles(iNom).name;
+                tk = regexp(nm,'PelvisTilt_[mp]\d+','match','once');
+                if isempty(tk)
+                    candCenter = rad2deg(mean(tmp.optimumOutput.optVars_nsc.q(1,:)));
+                else
+                    candSgn = 1;
+                    if tk(12) == 'm'; candSgn = -1; end
+                    candCenter = candSgn*str2double(tk(13:end));
+                end
+                candScore = abs(candCenter - ptStudy.centerDeg);
+                if candScore < bestScore || (abs(candScore-bestScore) < 1e-9 && candFiles(iNom).datenum > bestTime)
+                    bestScore = candScore; bestTime = candFiles(iNom).datenum;
+                    bestIx = iNom; bestCenter = candCenter;
+                end
+            end
+        catch
+        end
+    end
+    if bestIx > 0
+        prevSol = load(fullfile(candFiles(bestIx).folder, candFiles(bestIx).name));
+        Options.prevSol = 'Y';
+        fprintf('[PelvicTilt] Warm-starting from N=%d closest solution (centre %.2f deg): %s\n', ...
+            Options.N, bestCenter, candFiles(bestIx).name);
+    else
+        prevSol = [];
+        Options.prevSol = 'N';
+        fprintf('[PelvicTilt] No matching N=%d warm-start; using cold (experimental) guess.\n', Options.N);
+    end
+end
+% =======================================================================
+
+% === Pelvic SHIFT study: warm-start from closest converged run ===========
+% Choose the strictly-converged (Solve_Succeeded), matching-mesh solution whose
+% offset is closest to the requested offset. Candidates: Nominal (offset 0) and
+% any previously converged _PelvisShift_* condition. Acceptable-only solutions
+% are excluded as warm-start sources (their duals can trigger restoration).
+if shiftStudy.active
+    nomFiles  = dir([pathResults 'pred_sprinting_data_*Nominal.mat']);
+    shFiles   = dir([pathResults 'pred_sprinting_data_*PelvisShift*.mat']);
+    candFiles = [nomFiles; shFiles];
+    bestIx = 0; bestScore = inf; bestTime = -inf; bestOff = NaN;
+    for iC = 1:numel(candFiles)
+        try
+            tmp = load(fullfile(candFiles(iC).folder,candFiles(iC).name),'optimumOutput');
+            okStatus = isfield(tmp,'optimumOutput') && isfield(tmp.optimumOutput,'stats') ...
+                && isfield(tmp.optimumOutput.stats,'return_status') ...
+                && ( strcmp(tmp.optimumOutput.stats.return_status,'Solve_Succeeded') ...
+                  || strcmp(tmp.optimumOutput.stats.return_status,'Solved_To_Acceptable_Level') );
+            if okStatus && isfield(tmp.optimumOutput,'options') ...
+                    && tmp.optimumOutput.options.N == Options.N ...
+                    && isfield(tmp.optimumOutput,'lam_x_opt') ...
+                    && isfield(tmp.optimumOutput,'lam_g_opt')
+                nm = candFiles(iC).name;
+                tk = regexp(nm,'PelvisShift_[mp]\d+','match','once');
+                if isempty(tk)
+                    candOff = 0;   % Nominal == offset 0 reference
+                else
+                    candSgn = 1;
+                    if tk(13) == 'm'; candSgn = -1; end
+                    candOff = candSgn*str2double(tk(14:end));
+                end
+                candScore = abs(candOff - shiftStudy.offsetDeg);
+                if candScore < bestScore || (abs(candScore-bestScore) < 1e-9 && candFiles(iC).datenum > bestTime)
+                    bestScore = candScore; bestTime = candFiles(iC).datenum;
+                    bestIx = iC; bestOff = candOff;
+                end
+            end
+        catch
+        end
+    end
+    if bestIx > 0
+        prevSol = load(fullfile(candFiles(bestIx).folder, candFiles(bestIx).name));
+        Options.prevSol = 'Y';
+        fprintf('[PelvisShift] Warm-starting from N=%d closest solution (offset %+.1f deg): %s\n', ...
+            Options.N, bestOff, candFiles(bestIx).name);
+    else
+        prevSol = [];
+        Options.prevSol = 'N';
+        fprintf('[PelvisShift] No matching N=%d warm-start; using cold (experimental) guess.\n', Options.N);
+    end
+
+    % --- FIXED reference waveform = Nominal optimised pelvis_tilt -----------
+    % Use the speed-optimal Nominal solution's pelvis_tilt as the reference that
+    % all conditions are offset from. This is the "optimise once, then shift the
+    % pelvis angle of that motion and re-optimise" design and, crucially, keeps
+    % the reference DYNAMICALLY CONSISTENT with the warm-started velocities (the
+    % experimental IK waveform is not, which sent offset 0 into restoration).
+    nomRefBest = 0; nomRefTime = -inf;
+    for iC = 1:numel(nomFiles)
+        try
+            tmp = load(fullfile(nomFiles(iC).folder,nomFiles(iC).name),'optimumOutput');
+            if isfield(tmp,'optimumOutput') && isfield(tmp.optimumOutput,'options') ...
+                    && tmp.optimumOutput.options.N == Options.N ...
+                    && isfield(tmp.optimumOutput,'stats') ...
+                    && isfield(tmp.optimumOutput.stats,'return_status') ...
+                    && strcmp(tmp.optimumOutput.stats.return_status,'Solve_Succeeded') ...
+                    && nomFiles(iC).datenum > nomRefTime
+                nomRefTime = nomFiles(iC).datenum; nomRefBest = iC;
+            end
+        catch
+        end
+    end
+    if nomRefBest > 0
+        tmp = load(fullfile(nomFiles(nomRefBest).folder,nomFiles(nomRefBest).name),'optimumOutput');
+        shiftStudy.refTiltRad = tmp.optimumOutput.optVars_nsc.q(1,:);   % [1 x nCol] rad
+        fprintf('[PelvisShift] Reference pelvis_tilt = Nominal %s (mean %.2f deg, %d cols)\n', ...
+            nomFiles(nomRefBest).name, rad2deg(mean(shiftStudy.refTiltRad)), numel(shiftStudy.refTiltRad));
+    else
+        shiftStudy.refTiltRad = [];   % fall back to experimental q_aux downstream
+        fprintf('[PelvisShift] WARNING: no strict N=%d Nominal for reference; using experimental q_aux.\n', Options.N);
+    end
+end
+% =======================================================================
 
 
 %% Load optimised contact model parameters & non-optimised frictional parameters
@@ -500,6 +708,60 @@ options.ipopt.max_iter = 50e3; % default = 3e3
 
 options.ipopt.print_level=5;
 
+% === Pelvic Tilt study: bounded runtime + acceptable-level termination ====
+% The imposed tilt window makes the NLP harder; cap iterations and allow
+% IPOPT to stop at an "acceptable" (good-enough, physically valid) point so
+% each sweep condition finishes in bounded time. Reversible; baseline runs
+% (50000 iters, strict tol) are unchanged.
+if ptStudy.active
+    options.ipopt.max_iter = 3000;
+    options.ipopt.acceptable_tol = 2e-1;
+    options.ipopt.acceptable_constr_viol_tol = 1e-1;
+    options.ipopt.acceptable_iter = 1;
+end
+% PelvisShift v2: STRICT-first convergence with a time bound (user choice A).
+% The rigid pelvis_tilt offset disturbs the foot-ground contact, so the dynamics
+% residual is hard to drive to 1e-5; we (a) keep strict tol so a condition that
+% CAN converge reaches Solve_Succeeded, (b) add an acceptable-level net so a
+% smoothly-settling condition stops early, and (c) cap iterations so every
+% condition finishes in ~30 min and IPOPT saves its best point even if it
+% plateaus. The pelvis_tilt is a box bound, so the manipulation holds exactly
+% regardless of the final dynamics residual, and the hamstring strain metrics
+% (functions of the pinned joint angles) remain valid.
+if shiftStudy.active
+    options.ipopt.max_iter = 700;
+    options.ipopt.acceptable_tol = 1e-2;
+    options.ipopt.acceptable_constr_viol_tol = 1e0;
+    options.ipopt.acceptable_iter = 5;
+end
+% =========================================================================
+
+% === Pelvic Tilt study: DUAL warm-start from the Nominal solution =========
+% A primal-only warm-start leaves IPOPT with default dual variables, which
+% causes the dual infeasibility to explode while the primal infeasibility
+% plateaus. Providing the Nominal's optimal multipliers (lam_x, lam_g) as the
+% initial duals, together with IPOPT's warm-start point options, lets the
+% constrained-tilt problem converge quickly. Reversible; baseline unchanged.
+ptWarmDuals = false;
+if (ptStudy.active || shiftStudy.active) && exist('prevSol','var') && ~isempty(prevSol) ...
+        && isfield(prevSol,'optimumOutput') ...
+        && isfield(prevSol.optimumOutput,'lam_x_opt') ...
+        && isfield(prevSol.optimumOutput,'lam_g_opt') ...
+        && numel(prevSol.optimumOutput.lam_x_opt) == numel(w0) ...
+        && numel(prevSol.optimumOutput.lam_g_opt) == numel(vertcat(g{:}))
+    % Keep the baseline adaptive mu strategy (drives mu -> 0 for clean final
+    % convergence); a fixed mu_init caused oscillation near the solution.
+    options.ipopt.warm_start_init_point = 'yes';
+    options.ipopt.warm_start_bound_push = 1e-6;
+    options.ipopt.warm_start_bound_frac = 1e-6;
+    options.ipopt.warm_start_slack_bound_push = 1e-6;
+    options.ipopt.warm_start_slack_bound_frac = 1e-6;
+    options.ipopt.warm_start_mult_bound_push = 1e-6;
+    ptWarmDuals = true;
+    fprintf('[Study] IPOPT dual warm-start enabled.\n');
+end
+% =========================================================================
+
 % Explain what these do
 % options.ipopt.bound_frac = 1e-16;%0.01;
 % options.ipopt.bound_push = 1e-16;%0.01;
@@ -509,7 +771,13 @@ options.ipopt.print_level=5;
 solver = nlpsol('solver', 'ipopt', prob, options);
 
 % Solve the NLP
-sol = solver('x0',w0,'lbx',lbw','ubx',ubw','lbg',lbg,'ubg',ubg);
+if (ptStudy.active || shiftStudy.active) && exist('ptWarmDuals','var') && ptWarmDuals
+    sol = solver('x0',w0,'lbx',lbw','ubx',ubw','lbg',lbg,'ubg',ubg, ...
+        'lam_x0', prevSol.optimumOutput.lam_x_opt, ...
+        'lam_g0', prevSol.optimumOutput.lam_g_opt);
+else
+    sol = solver('x0',w0,'lbx',lbw','ubx',ubw','lbg',lbg,'ubg',ubg);
+end
 
 w_opt = full(sol.x);
 stats = solver.stats;
@@ -747,6 +1015,15 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
         % Symmetrify pelvis and trunk coordinates
         bounds_nsc.q.lower(jointi.pelvis.tilt:jointi.pelvis.rot) = max([abs(bounds_nsc.q.lower(jointi.pelvis.tilt:jointi.pelvis.rot)) abs(bounds_nsc.q.upper(jointi.pelvis.tilt:jointi.pelvis.rot))]')' .* -1; 
         bounds_nsc.q.upper(jointi.pelvis.tilt:jointi.pelvis.rot) = -1 .* bounds_nsc.q.lower(jointi.pelvis.tilt:jointi.pelvis.rot);
+        % === Pelvic Tilt strain study: override pelvis_tilt POSITION bounds ===
+        % Reversible; only active for _PelvisTilt_* conditions. Replaces the
+        % symmetric pelvis_tilt window above with a shifted band centred on the
+        % imposed target so the optimiser must sprint at that mean pelvic tilt.
+        if ptStudy.active
+            bounds_nsc.q.lower(jointi.pelvis.tilt) = deg2rad(ptStudy.centerDeg - ptStudy.halfWinDeg);
+            bounds_nsc.q.upper(jointi.pelvis.tilt) = deg2rad(ptStudy.centerDeg + ptStudy.halfWinDeg);
+        end
+        % =====================================================================
         bounds_nsc.q.lower(jointi.trunk.ext:jointi.trunk.rot) = max([abs(bounds_nsc.q.lower(jointi.trunk.ext:jointi.trunk.rot)) abs(bounds_nsc.q.upper(jointi.trunk.ext:jointi.trunk.rot))]')' .* -1;
         bounds_nsc.q.upper(jointi.trunk.ext:jointi.trunk.rot) = -1 .* bounds_nsc.q.lower(jointi.trunk.ext:jointi.trunk.rot);
         
@@ -783,6 +1060,31 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
         bounds.q.upper    = repmat(bounds.q.upper,1,(d+1)*Options.N);
         bounds.qdot.upper = repmat(bounds.qdot.upper,1,(d+1)*Options.N);
         bounds.uAcc.upper = repmat(bounds.uAcc.upper,1,(d+1)*Options.N);
+
+        % === Pelvic SHIFT study v2 (Method B): per-node pelvis_tilt pin ======
+        % Pin the pelvis_tilt POSITION at every collocation node to the
+        % experimental reference waveform + a constant offset, within a tight
+        % band. This rigidly shifts the whole pelvis_tilt trajectory so the
+        % realised mean differs between conditions by (essentially) the offset,
+        % while the velocity/shape is preserved (a constant offset has zero
+        % derivative, so the experimental qdot guess stays consistent). Only the
+        % pelvis_tilt row of the (already repmat'd, scaled) bounds is touched, so
+        % the NLP dimensions are identical to Nominal and the dual warm-start
+        % applies. statesF.q_aux is per-node and in radians for column 1.
+        if shiftStudy.active
+            nCols   = (d+1)*Options.N;
+            scTilt  = scaling.q(jointi.pelvis.tilt);
+            if ~isempty(shiftStudy.refTiltRad) && numel(shiftStudy.refTiltRad) == nCols
+                refTilt = shiftStudy.refTiltRad(:)';            % Nominal optimised (rad)
+            else
+                refTilt = statesF.q_aux(1:nCols, jointi.pelvis.tilt)'; % fallback: experimental
+            end
+            offRad  = deg2rad(shiftStudy.offsetDeg);
+            bandRad = deg2rad(shiftStudy.bandDeg);
+            bounds.q.lower(jointi.pelvis.tilt,:) = (refTilt + offRad - bandRad)./scTilt;
+            bounds.q.upper(jointi.pelvis.tilt,:) = (refTilt + offRad + bandRad)./scTilt;
+        end
+        % ====================================================================
         
         % Arm Torques scaling factor
         scaling.uArms = 100; % was 200
@@ -872,6 +1174,72 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
             guess.q = prevOpti.optimumOutput.optVars_nsc.q'./(scaling.q');
         end
         
+        % === Pelvic Tilt strain study: seed pelvis_tilt guess at window centre ===
+        % Reversible; only active for _PelvisTilt_* conditions. SHIFT the
+        % experimental pelvis_tilt trajectory so its mean equals the imposed
+        % centre, preserving the oscillation shape (and hence consistency with
+        % the unchanged velocity guess) for robust convergence. Flattening the
+        % column instead would make position constant while velocity oscillates,
+        % producing large collocation defects.
+        if ptStudy.active
+            tiltCol    = guess.q(:,jointi.pelvis.tilt).*scaling.q(jointi.pelvis.tilt); % rad
+            shiftRad   = deg2rad(ptStudy.centerDeg) - mean(tiltCol);
+            guess.q(:,jointi.pelvis.tilt) = (tiltCol + shiftRad)./scaling.q(jointi.pelvis.tilt);
+            % Clamp guess inside the imposed (scaled) pelvis_tilt bounds
+            ptLo = bounds_sc.q.lower(jointi.pelvis.tilt,1);
+            ptHi = bounds_sc.q.upper(jointi.pelvis.tilt,1);
+            guess.q(:,jointi.pelvis.tilt) = min(max(guess.q(:,jointi.pelvis.tilt),ptLo),ptHi);
+        end
+        % ========================================================================
+
+        % === Pelvic SHIFT study v2: seed pelvis_tilt at reference+offset =========
+        % Place the pelvis_tilt guess exactly on the pinned band centre
+        % (experimental reference waveform + constant offset) so the initial
+        % point is feasible w.r.t. the tight per-node bounds, whether or not a
+        % warm-start solution is used for the other variables.
+        if shiftStudy.active
+            nRows   = size(guess.q,1);
+            scTilt  = scaling.q(jointi.pelvis.tilt);
+            if ~isempty(shiftStudy.refTiltRad) && numel(shiftStudy.refTiltRad) == nRows
+                refTilt = shiftStudy.refTiltRad(:);             % Nominal optimised (rad)
+            else
+                refTilt = statesF.q_aux(1:nRows, jointi.pelvis.tilt); % fallback: experimental
+            end
+            offRad  = deg2rad(shiftStudy.offsetDeg);
+
+            % Per-node CHANGE in pelvis_tilt we are about to impose on the guess,
+            % measured RELATIVE to the current (warm-started or experimental)
+            % pelvis_tilt. Using the delta - not the absolute offset - is
+            % essential when warm-starting from another shifted condition (e.g.
+            % m04 from m02): the warm-start guess.q already carries that
+            % condition's compensation, so compensating by the absolute offset
+            % would double-count and leave the femur/trunk rotated ~offset away
+            % from nominal, destroying the foot-ground contact configuration and
+            % stalling IPOPT in feasibility restoration (inf_pr plateau ~2e2).
+            % The delta keeps every segment fixed in the ground frame regardless
+            % of which condition the warm-start came from.
+            oldTilt   = guess.q(:,jointi.pelvis.tilt).*scTilt;   % rad (warm-start/exp)
+            newTilt   = refTilt + offRad;                        % rad (target band centre)
+            deltaTilt = newTilt - oldTilt;                       % rad, per node
+            guess.q(:,jointi.pelvis.tilt) = newTilt./scTilt;
+
+            % Kinematic COMPENSATION: pelvis_tilt, hip_flexion and lumbar/trunk
+            % extension all rotate their child segment about the same (Z) axis as
+            % pelvis_tilt. Counter-rotating the hips by -deltaTilt keeps the
+            % femurs (hence shanks/feet and the ground contact) fixed in the
+            % ground frame; counter-rotating the trunk (lumbar) by -deltaTilt
+            % keeps the large trunk mass upright, so the whole-body COM and
+            % angular momentum stay near nominal. Only the pelvis segment itself
+            % re-orients - which is exactly an anterior/posterior pelvic tilt with
+            % a compensating lumbar lordosis. This makes the shifted point
+            % near-feasible so every offset condition converges quickly and to a
+            % consistent precision; the optimiser then fine-tunes from there.
+            guess.q(:,jointi.hip_flex.l) = guess.q(:,jointi.hip_flex.l) - deltaTilt./scaling.q(jointi.hip_flex.l);
+            guess.q(:,jointi.hip_flex.r) = guess.q(:,jointi.hip_flex.r) - deltaTilt./scaling.q(jointi.hip_flex.r);
+            guess.q(:,jointi.trunk.ext)  = guess.q(:,jointi.trunk.ext)  - deltaTilt./scaling.q(jointi.trunk.ext);
+        end
+        % ========================================================================
+
         [ind_r,ind_c] = find(guess.q(:,jointi.sh_flex.r) < bounds_sc.q.lower(jointi.sh_flex.r,:)'); % Why am I using the same variables? That is because I iteratively looked at each ...
         [ind_r,ind_c] = find(guess.q(:,jointi.sh_flex.r) > bounds_sc.q.upper(jointi.sh_flex.r,:)'); % of them to check if empty, if not the guess is modified to conform to bound
         [ind_r,ind_c] = find(guess.q(:,jointi.sh_flex.l) < bounds_sc.q.lower(jointi.sh_flex.l,:)');

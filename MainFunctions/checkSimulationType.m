@@ -87,4 +87,14 @@ elseif strcmp(simulation_type,'_IKTD_Minus_9')
 elseif strcmp(simulation_type,'_IKTD_Minus_10')
     file_ext = simulation_type;    
 
+elseif ~isempty(strfind(simulation_type,'PelvisTilt'))
+    % Pelvic Tilt strain study conditions (e.g. _PelvisTilt_m13, _PelvisTilt_p00)
+    file_ext = simulation_type;
+
+elseif ~isempty(strfind(simulation_type,'PelvisShift'))
+    % Pelvic tilt CAUSAL study v2 (e.g. _PelvisShift_m06, _PelvisShift_p00).
+    % Rigid per-node offset of the pelvis_tilt waveform (Method B). m=minus
+    % (more anterior in this model), p=plus (more posterior); number = degrees.
+    file_ext = simulation_type;
+
 end

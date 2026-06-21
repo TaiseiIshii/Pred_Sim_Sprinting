@@ -151,7 +151,19 @@ Key scripts:
 | `visualize_form_comparison_v2.py` | Stick figure overlay visualization |
 | `overlay_N50_vs_N100.py` | Mesh convergence overlay comparison |
 
+### Pelvic-tilt strain study visualizations (new)
+
+| Script | Description |
+|--------|-------------|
+| `analyze_pelvic_shift.m` | Cross-condition hamstring strain metrics + dose-response slopes |
+| `visualize_pelvic_shift_musculoskeletal.py` | **Rich 3D**: real OpenSim bone meshes + lower-limb muscle paths, hamstrings colored by strain |
+| `visualize_pelvic_shift_smpl.py` | **3D human**: SMPL-style skinned body silhouette comparison |
+| `visualize_pelvic_shift_motion.py` | Lightweight stick-figure comparison (all 7 conditions) |
+| `probe_pelvic_shift.py` / `probe_ham_metrics.py` | Quick Python verification of the manipulation & strain |
+
 ---
+
+## Pelvic-tilt hamstring strain study
 
 ## Documentation
 
@@ -163,6 +175,23 @@ Additional guides are available in `docs/`:
 | [SETUP_GUIDE_JP.md](docs/SETUP_GUIDE_JP.md) | Detailed setup instructions (日本語) |
 | [DETAILED_EXECUTION_GUIDE.md](docs/DETAILED_EXECUTION_GUIDE.md) | Execution walkthrough with expected outputs |
 | [TROUBLESHOOTING_GUIDE.md](docs/TROUBLESHOOTING_GUIDE.md) | Common issues and solutions |
+
+---
+
+## Pelvic-tilt hamstring strain study
+
+A causal study applying this framework to ask **how anterior/posterior pelvic tilt
+(`pelvis_tilt`) affects sprinting speed and hamstring strain-injury risk**. The pelvis
+tilt waveform is rigidly shifted by a fixed offset (±6°, 2° steps; 7 conditions) and the
+task is re-optimized, then hamstring stretch metrics are compared across conditions.
+
+- **Plain-language summary (日本語):** [Results/PelvicShift_Study/SUMMARY_JP.md](Results/PelvicShift_Study/SUMMARY_JP.md)
+- **Full report:** [Results/PelvicShift_Study/REPORT.md](Results/PelvicShift_Study/REPORT.md)
+- **Rich videos & figures:** `Results/PelvicShift_Study/` (musculoskeletal / SMPL / stick-figure MP4s, dose-response figures)
+
+Key finding: increasing anterior pelvic tilt monotonically increases the peak normalized
+fiber length and passive force of the **biarticular** hamstrings (semimembranosus most),
+while the monoarticular biceps femoris short head is unchanged — with a small speed cost.
 
 ---
 

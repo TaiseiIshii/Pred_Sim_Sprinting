@@ -71,6 +71,11 @@ matlab_status.txt
 remFields_Save.m
 Documentation of initial guesses.docx
 
+# --- Study run logs (auto-generated scratch; reports/figures are kept) ---
+Results/**/sweep_log.txt
+Results/**/analysis_log.txt
+Results/**/*_render.log
+
 # --- Legacy / archived ---
 ExternalFunctions/old_predictive_dll/
 ExternalFunctions/spr_Imp_GRFs_JC.dll
