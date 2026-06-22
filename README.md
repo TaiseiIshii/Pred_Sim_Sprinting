@@ -156,10 +156,15 @@ Key scripts:
 | Script | Description |
 |--------|-------------|
 | `analyze_pelvic_shift.m` | Cross-condition hamstring strain metrics + dose-response slopes |
-| `visualize_pelvic_shift_musculoskeletal.py` | **Rich 3D**: real OpenSim bone meshes + lower-limb muscle paths, hamstrings colored by strain |
-| `visualize_pelvic_shift_smpl.py` | **3D human**: SMPL-style skinned body silhouette comparison |
+| `compute_osim_muscle_paths.py` | **Precompute** (OpenSim Python API): anatomically-correct **wrapped** muscle paths + body transforms + activation/force + GRF → `_muscle_cache.pkl` |
+| `visualize_pelvic_shift_musculoskeletal.py` | **Rich 3D**: real OpenSim bones + full-body wrapped muscles + GRF arrows. `--color strain` (hamstring stretch) or `--color activation` (EMG-like) |
+| `visualize_pelvic_shift_smpl.py` | **3D human**: SMPL-style skinned body (soft-body; real-SMPL hook via `--smpl_model`, license required) |
 | `visualize_pelvic_shift_motion.py` | Lightweight stick-figure comparison (all 7 conditions) |
 | `probe_pelvic_shift.py` / `probe_ham_metrics.py` | Quick Python verification of the manipulation & strain |
+
+> Muscle visualization is two-step: run `compute_osim_muscle_paths.py` once in an
+> **OpenSim-enabled** Python env (provides wrapped muscle geometry), then render with
+> `visualize_pelvic_shift_musculoskeletal.py` in a **pyvista** env.
 
 ---
 

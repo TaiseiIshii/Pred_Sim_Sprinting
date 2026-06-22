@@ -76,6 +76,9 @@ Results/**/sweep_log.txt
 Results/**/analysis_log.txt
 Results/**/*_render.log
 
+# --- Precomputed muscle-path cache (regenerate via compute_osim_muscle_paths.py) ---
+Results/**/_muscle_cache.pkl
+
 # --- Legacy / archived ---
 ExternalFunctions/old_predictive_dll/
 ExternalFunctions/spr_Imp_GRFs_JC.dll

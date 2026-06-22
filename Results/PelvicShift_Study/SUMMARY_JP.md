@@ -92,16 +92,29 @@
 「骨盤の傾きごとに走りがどう違うか」を3通りの見せ方で用意しました。
 すべて **代表3条件（−6° / 0° / +6°）** の比較です。
 
-### A. 筋骨格モデル（実際のOpenSim骨格＋もも裏を“ひずみ色”で表示）★おすすめ
-本物のOpenSim骨メッシュを動かし、もも裏4筋を**伸び具合で色分け**（緑=低リスク→
-赤=高リスク）。「どの傾きでもも裏が赤く＝危険になるか」が一目でわかります。
+### A. 筋骨格モデル（実OpenSim骨格＋全身筋＋もも裏“ひずみ色”＋地面反力）★おすすめ
+本物のOpenSim骨メッシュを動かし、**全身92筋を解剖学的に正しい経路（wrapping込み）**で
+描画します。筋は骨に沿って“ピンと張った”状態で表示され、従来の不自然な垂れ下がりは
+ありません。もも裏4筋は**伸び具合で色分け**（緑=低リスク→赤=高リスク）し、足裏には
+**地面反力（GRF）ベクトル**（青い矢印）を表示します。
 
 - 横並び: [pelvic_shift_musculoskeletal_sidebyside.mp4](pelvic_shift_musculoskeletal_sidebyside.mp4)
 - 重ね合わせ: [pelvic_shift_musculoskeletal_overlay.mp4](pelvic_shift_musculoskeletal_overlay.mp4)
 - 静止画（ピーク伸張）: [pelvic_shift_musculoskeletal_hero.png](pelvic_shift_musculoskeletal_hero.png)
 
+### A2. 筋活性化マップ（どの筋が・いつ働くか）＋地面反力
+同じ全身筋骨格を、各筋の**活性化レベル（act）で色分け**（青=休→赤=フル稼働）した
+“筋電図風”の可視化。接地ピーク位相で下腿三頭筋などが赤く光ります。
+
+- 横並び: [pelvic_shift_musculoskeletal_activation_sidebyside.mp4](pelvic_shift_musculoskeletal_activation_sidebyside.mp4)
+- 重ね合わせ: [pelvic_shift_musculoskeletal_activation_overlay.mp4](pelvic_shift_musculoskeletal_activation_overlay.mp4)
+- 静止画: [pelvic_shift_musculoskeletal_activation_hero.png](pelvic_shift_musculoskeletal_activation_hero.png)
+
 ### B. 3D人体（SMPL風の人体シルエット）
-人体の見た目に近い滑らかなボディで、フォーム全体の違いを直感的に表示。
+人体の見た目に近い滑らかなボディで、フォーム全体の違いを直感的に表示（簡易 soft-body
+近似）。**本物の SMPL ボディ**（写実的な皮膚人体）を使うには、研究ライセンス登録済みの
+SMPL モデルファイルが別途必要です（https://smpl.is.tue.mpg.de）。なお本研究の主役は
+骨・筋（＝肉離れリスクの本体）なので、皮膚で隠れない A/A2 を推奨します。
 
 - 横並び: [pelvic_shift_smpl_sidebyside.mp4](pelvic_shift_smpl_sidebyside.mp4)
 - 重ね合わせ: [pelvic_shift_smpl_overlay.mp4](pelvic_shift_smpl_overlay.mp4)
@@ -124,16 +137,24 @@
 ## 動画の作り直し方（チーム向け）
 
 `analysis/` の以下のスクリプトで再生成できます。**pyvista・vtk・imageio-ffmpeg** と
-**OpenSim 4.x の Geometry**（骨メッシュ `.vtp`）が必要です。
+**OpenSim 4.x の Geometry**（骨メッシュ `.vtp`）が必要です。筋骨格(A/A2)は、解剖学的に
+正しい筋経路を **OpenSim Python API** で事前計算する2ステップ構成です。
 
 ```bash
 # 環境（pyvista 等）を入れる
 pip install pyvista imageio imageio-ffmpeg scipy numpy matplotlib
 
-# 筋骨格モデル（骨＋もも裏ひずみ着色）
-python analysis/visualize_pelvic_shift_musculoskeletal.py --fps 25 --frames 60 --cycles 2
+# (1) 筋経路キャッシュを作る（OpenSim を import できる env で1回）
+#     wrapping 込みの筋経路＋body変換＋活性化＋力＋GRF を全フレーム計算
+python analysis/compute_osim_muscle_paths.py --frames 60
 
-# 3D人体（SMPL風）
+# (2a) 筋骨格モデル: もも裏ひずみ着色（＋全身筋＋GRF）
+python analysis/visualize_pelvic_shift_musculoskeletal.py --fps 25 --frames 60 --cycles 2 --color strain
+
+# (2b) 筋活性化マップ（どの筋が働くか）＋GRF
+python analysis/visualize_pelvic_shift_musculoskeletal.py --fps 25 --frames 60 --cycles 2 --color activation
+
+# 3D人体（SMPL風 soft-body）。本物SMPLは --smpl_model <path>（要ライセンス）
 python analysis/visualize_pelvic_shift_smpl.py --fps 25 --frames 60 --cycles 2
 
 # 軽量スティックフィギュア（全7条件）

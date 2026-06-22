@@ -1,22 +1,23 @@
 """
 visualize_pelvic_shift_musculoskeletal.py
-骨盤前後傾オフセット条件の「リッチ」筋骨格可視化 (棒人間ではなく実OpenSim骨メッシュ+筋)
+骨盤前後傾オフセット条件の「リッチ」筋骨格可視化 (実OpenSim骨メッシュ + 解剖学的に
+正しい wrapping 込みの筋経路)。
 
-実OpenSim 4.x の Geometry (.vtp 骨メッシュ) をフォワードキネマティクスで配置し、
-.osim から抽出した主要下肢筋の経路を 3D チューブで重ね描きする。ハムストリング
-4筋 (semimembranosus, semitendinosus, biceps femoris long/short head) は、各条件の
-最適化結果 (.mat) の正規化筋線維長 lMtilde で色付けし、「伸張 = 肉離れリスク」を
-直接 3D で表現する。代表3条件 (-6° / 0° / +6°) を比較する:
+従来は .osim の path point 間を直線/スプラインで結んでいたため、股関節などをまたぐ
+筋が屈曲時に骨から離れて「垂れ下がる」不自然さがあった。本版は OpenSim 4.x の
+Python API で **wrapping 込みの筋経路**と**各 body の ground 変換**を事前計算した
+キャッシュ (`_muscle_cache.pkl`, compute_osim_muscle_paths.py が生成) を読み込み、
+taut（張った）筋チューブを描く。これにより筋の不自然な緩みを解消する。
 
-  1) 横並びアニメーション (sidebyside MP4)   — 各条件を並置
-  2) 重ね合わせアニメーション (overlay MP4)   — 骨盤を揃え骨を半透明、ハムを強調
-  3) ピーク伸張スチル (hero PNG)              — 最大伸張位相 + ひずみカラーバー
+ハム4筋 (semimembranosus, semitendinosus, biceps femoris long/short head) は各条件の
+最適化結果 (.mat) の正規化筋線維長 lMtilde で着色し、「伸張 = 肉離れリスク」を3D表現。
+代表3条件 (-6° / 0° / +6°) を比較する:
 
-既存の FK / メッシュ読込ヘルパ (visualize_form_comparison_v2.py) を再利用する。
+  1) 横並びアニメーション (sidebyside MP4)
+  2) 重ね合わせアニメーション (overlay MP4)  — 骨盤を揃え骨を半透明、筋を強調
+  3) ピーク伸張スチル (hero PNG)             — 最大伸張位相 + ひずみカラーバー
 
-Usage:
-    python visualize_pelvic_shift_musculoskeletal.py
-    python visualize_pelvic_shift_musculoskeletal.py --fps 25 --frames 70 --cycles 2
+前提: 先に `compute_osim_muscle_paths.py` を opensim 対応 env で実行してキャッシュを作る。
 
 依存: pyvista, vtk, imageio (+imageio-ffmpeg), scipy, numpy, matplotlib
 推奨実行: conda base python (pyvista/vtk/imageio_ffmpeg が入っている環境)
@@ -25,8 +26,8 @@ Date: 2026-06-21
 """
 
 import argparse
+import pickle
 import sys
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import numpy as np
@@ -39,12 +40,8 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable
 
-# 既存スクリプトから FK エンジン・ジオメトリ読込を再利用
+# 骨メッシュ読込ヘルパを再利用
 from visualize_form_comparison_v2 import (
-    BODY_GEOMETRY,
-    compute_body_transforms,
-    read_mot,
-    simplify_column,
     find_geometry_dir,
     load_body_meshes,
     build_posed_model,
@@ -54,133 +51,39 @@ from visualize_form_comparison_v2 import (
 # 設定
 # ═══════════════════════════════════════════════════════════════════════════
 
-# 代表3条件 (offset deg, ファイル名識別子)
 CONDITION_SPECS = [
     (-6, "PelvisShift_m06"),
     (0,  "PelvisShift_p00"),
     (6,  "PelvisShift_p06"),
 ]
 
-# ハムストリング4筋の基底名 (強調 + ひずみ着色)
-HAM_BASES = ("semimem", "semiten", "bifemlh", "bifemsh")
-
-# .mat muscleValues.lMtilde の行番号 (1-based) → ハム基底名
-#   左 7,8,9,10 / 右 53,54,55,56  (semimem, semiten, bifemlh, bifemsh)
+# .mat muscleValues.lMtilde の行 (1-based) → ハム基底名
 HAM_ROW_1BASED = {
     "semimem_l": 7,  "semiten_l": 8,  "bifemlh_l": 9,  "bifemsh_l": 10,
     "semimem_r": 53, "semiten_r": 54, "bifemlh_r": 55, "bifemsh_r": 56,
 }
 
-# 描画する主要下肢筋 (基底名; _r/_l を付けて探索, 無いものは自動スキップ)
-CURATED_MUSCLE_BASES = (
-    # 殿筋
-    "glut_max1", "glut_max2", "glut_max3",
-    "glut_med1", "glut_med2", "glut_med3",
-    "glut_min1", "glut_min2", "glut_min3",
-    # ハムストリング (強調)
-    "semimem", "semiten", "bifemlh", "bifemsh",
-    # 大腿四頭筋
-    "rect_fem", "vas_med", "vas_int", "vas_lat",
-    # 下腿三頭筋 + 前脛骨
-    "med_gas", "lat_gas", "soleus", "tib_ant", "tib_post",
-    # 股関節屈筋・内転筋・その他
-    "psoas", "iliacus",
-    "add_long", "add_brev", "add_mag1", "add_mag2", "add_mag3",
-    "sar", "tfl", "grac",
-    "per_long", "per_brev",
-)
-
 # ひずみ着色レンジ (固定 = 条件横断で比較可能)。低=緑, 高=赤。
 LM_VMIN, LM_VMAX = 0.85, 1.18
 STRAIN_CMAP = plt.get_cmap("RdYlGn_r")
 
-# 外観
+# 筋活性化 (0..1) のカラーマップ。低=青灰, 高=赤 (筋電図風)。
+ACT_CMAP = plt.get_cmap("turbo")
+
 BONE_COLOR = (0.92, 0.89, 0.82)
-NONHAM_COLOR = (0.55, 0.20, 0.20)
-HAM_TUBE_RADIUS = 0.0085
-NONHAM_TUBE_RADIUS = 0.0040
+NONHAM_COLOR = (0.50, 0.11, 0.11)
+GRF_COLOR = (0.10, 0.45, 0.95)
+GRF_SCALE = 0.00018          # N -> m (体重~750N で ~0.7m の矢)
 
-XVIEW = "side"  # サジタル
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-# 1) 筋経路パーサ (.osim)
-# ═══════════════════════════════════════════════════════════════════════════
-
-def _local_tag(elem):
-    """名前空間を除いたタグ名。"""
-    return elem.tag.split("}")[-1]
+CACHE_NAME = "_muscle_cache.pkl"
 
 
-def parse_muscle_paths(osim_path):
-    """.osim から各筋の経路点 [(body_name, location_vec3), ...] を抽出する。
-
-    PathPoint / ConditionalPathPoint (location を持つ) を採用。
-    MovingPathPoint (location を関数で持つ) は近似のためスキップする。
-    戻り値: {muscle_name: [(body, np.array([x,y,z])), ...]} (>=2 点のもののみ)
-    """
-    # OpenSim の .osim はタグ名に '::' を含む (例 HuntCrossleyForce::ContactParametersSet)
-    # ため、厳密 XML としては不正トークンになる。'::' を '_' に置換して well-formed 化する
-    # (筋関連タグ Thelen2003Muscle / PathPoint / socket_parent_frame / location には影響なし)。
-    text = Path(osim_path).read_text(encoding="utf-8", errors="replace")
-    text = text.replace("::", "_")
-    root = ET.fromstring(text)
-
-    muscle_tags = {"Thelen2003Muscle", "Millard2012EquilibriumMuscle",
-                   "RigidTendonMuscle", "DeGrooteFregly2016Muscle"}
-    point_tags = {"PathPoint", "ConditionalPathPoint"}
-
-    muscle_paths = {}
-    for elem in root.iter():
-        if _local_tag(elem) not in muscle_tags:
-            continue
-        name = elem.get("name", "")
-        if not name:
-            continue
-        # GeometryPath/PathPointSet/objects 配下の点を文書順に取得
-        pts = []
-        for pp in elem.iter():
-            if _local_tag(pp) not in point_tags:
-                continue
-            frame_el = pp.find("socket_parent_frame")
-            loc_el = pp.find("location")
-            if frame_el is None or loc_el is None or not loc_el.text:
-                continue  # MovingPathPoint など location 無しは近似スキップ
-            body = frame_el.text.strip().split("/")[-1]
-            try:
-                loc = np.array([float(v) for v in loc_el.text.split()],
-                               dtype=float)
-            except ValueError:
-                continue
-            if loc.size == 3:
-                pts.append((body, loc))
-        if len(pts) >= 2:
-            muscle_paths[name] = pts
-    return muscle_paths
-
-
-def base_name(muscle_name):
-    """'bifemlh_r' -> 'bifemlh' (末尾 _r/_l を除去)。"""
-    if muscle_name.endswith("_r") or muscle_name.endswith("_l"):
-        return muscle_name[:-2]
-    return muscle_name
-
-
-def select_curated(muscle_paths):
-    """描画対象を curated 集合に絞る。{name: pts, is_ham}。"""
-    wanted = set()
-    for base in CURATED_MUSCLE_BASES:
-        wanted.add(base + "_r")
-        wanted.add(base + "_l")
-    out = {}
-    for name, pts in muscle_paths.items():
-        if name in wanted:
-            out[name] = pts
-    return out
+def base_name(name):
+    return name[:-2] if name.endswith(("_r", "_l")) else name
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 2) ハムストリングひずみ loader (.mat)
+# ひずみ loader (.mat)
 # ═══════════════════════════════════════════════════════════════════════════
 
 def _get(o, *names):
@@ -193,23 +96,16 @@ def _get(o, *names):
 
 
 def load_hamstring_strain(mat_path):
-    """.mat の muscleValues.lMtilde からハム4筋(L/R)の位相→lMtilde を作る。
-
-    戻り値: {muscle_name: (phases_array, lMtilde_array)}  位相は [0,1]。
-    """
+    """.mat の muscleValues.lMtilde からハム4筋(L/R)の位相→lMtilde を作る。"""
     m = loadmat(str(mat_path), struct_as_record=False, squeeze_me=True)
     o = m["optimumOutput"]
-    lM = np.asarray(_get(o, "muscleValues", "lMtilde"), dtype=float)  # (92, ncol)
+    lM = np.asarray(_get(o, "muscleValues", "lMtilde"), dtype=float)
     ncol = lM.shape[1]
     phases = np.linspace(0.0, 1.0, ncol)
-    strain = {}
-    for mname, row1 in HAM_ROW_1BASED.items():
-        strain[mname] = (phases, lM[row1 - 1, :].copy())
-    return strain
+    return {nm: (phases, lM[r - 1, :].copy()) for nm, r in HAM_ROW_1BASED.items()}
 
 
 def strain_at(strain, muscle_name, p):
-    """位相 p における lMtilde を補間。無ければ NaN。"""
     if muscle_name not in strain:
         return np.nan
     ph, vals = strain[muscle_name]
@@ -217,80 +113,41 @@ def strain_at(strain, muscle_name, p):
 
 
 def strain_color(lm_val):
-    """lMtilde 値 → RGB (0..1)。"""
     if not np.isfinite(lm_val):
         return (0.6, 0.6, 0.6)
-    t = (lm_val - LM_VMIN) / (LM_VMAX - LM_VMIN)
-    t = float(np.clip(t, 0.0, 1.0))
+    t = float(np.clip((lm_val - LM_VMIN) / (LM_VMAX - LM_VMIN), 0.0, 1.0))
     r, g, b, _ = STRAIN_CMAP(t)
     return (r, g, b)
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-# 3) 位相補間 (.mot)
-# ═══════════════════════════════════════════════════════════════════════════
-
-def build_phase_data(df):
-    """`.mot` DataFrame からストライド位相 [0,1] 補間データを作る。"""
-    times = df["time"].values.astype(float)
-    order = np.argsort(times, kind="stable")
-    times = times[order]
-    keep = np.concatenate(([True], np.diff(times) > 1e-12))
-    times = times[keep]
-    span = times[-1] - times[0]
-    if span <= 0:
-        raise ValueError("時刻範囲がゼロです")
-    phases = (times - times[0]) / span
-    col_map = {}
-    for c in df.columns:
-        if c == "time":
-            continue
-        vals = df[c].values.astype(float)[order][keep]
-        col_map[simplify_column(c)] = vals
-    mean_tilt = float(np.mean(col_map.get("pelvis_tilt", np.array([np.nan]))))
-    return phases, col_map, mean_tilt
+def _series_at(dyn_entry, p, kind):
+    """dyn[name] = (ph_a, act, ph_f, forceRatio) から位相 p の値を補間。"""
+    ph_a, act, ph_f, fr = dyn_entry
+    if kind == "act":
+        return float(np.interp(np.clip(p, 0, 1), ph_a, act))
+    return float(np.interp(np.clip(p, 0, 1), ph_f, fr))
 
 
-def q_at_phase(phases, col_map, p, treadmill=True):
-    p = float(np.clip(p, 0.0, 1.0))
-    q = {name: float(np.interp(p, phases, vals)) for name, vals in col_map.items()}
-    if treadmill:
-        q["pelvis_tx"] = 0.0
-        q["pelvis_tz"] = 0.0
-    return q
+def act_color(a):
+    t = float(np.clip(a, 0.0, 1.0))
+    r, g, b, _ = ACT_CMAP(t)
+    return (r, g, b)
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 4) 描画ヘルパ
+# 描画ヘルパ
 # ═══════════════════════════════════════════════════════════════════════════
 
-def world_polyline(path_pts, transforms):
-    """筋経路点を world 座標 Nx3 に変換。body が無ければ None。"""
-    out = []
-    for body, loc in path_pts:
-        if body not in transforms:
-            return None
-        T = transforms[body]
-        w = T @ np.array([loc[0], loc[1], loc[2], 1.0])
-        out.append(w[:3])
-    pts = np.asarray(out, dtype=float)
-    if len(pts) < 2:
+def muscle_tube(points, radius):
+    """wrapping 済みポリラインを taut なチューブに。直線区間を保持し緩みを防ぐ。"""
+    pts = np.asarray(points, dtype=float)
+    if pts.shape[0] < 2:
         return None
-    return pts
-
-
-def polyline_tube(points, radius, n_interp=50):
-    """world 折れ線 → チューブ mesh。"""
     try:
-        n = max(n_interp, len(points))
-        spline = pv.Spline(points, n)
-        return spline.tube(radius=radius, n_sides=10)
+        poly = pv.lines_from_points(pts)
+        return poly.tube(radius=radius, n_sides=12, capping=True)
     except Exception:
-        try:
-            poly = pv.lines_from_points(np.asarray(points, dtype=float))
-            return poly.tube(radius=radius, n_sides=10)
-        except Exception:
-            return None
+        return None
 
 
 def add_ground(pl, cx):
@@ -301,10 +158,6 @@ def add_ground(pl, cx):
 
 
 def frame_sagittal(pl, zoom=1.0):
-    """現在の actor(骨+筋)の bounds に合わせてサジタル視点で自動フレーミング。
-
-    地面を追加する *前* に呼ぶこと(地面で bounds が広がるのを避ける)。
-    """
     pl.view_vector((0.0, 0.0, 1.0), viewup=(0.0, 1.0, 0.0))
     pl.reset_camera()
     if zoom != 1.0:
@@ -316,15 +169,52 @@ def add_lights(pl, cx):
     pl.add_light(pv.Light(position=(cx - 2, 3, -3), intensity=0.35))
 
 
-def _draw_one(pl, cond, p, body_meshes, muscles, *, bone_opacity=1.0,
-              muscle_opacity_nonham=0.45, muscle_opacity_ham=0.97,
-              align_dx=0.0):
-    """1体ぶんの骨+筋を現在の (sub)plot に描く。pelvis world x を返す。"""
-    q = q_at_phase(cond["phases"], cond["col_map"], p, treadmill=True)
-    transforms = compute_body_transforms(q)
+def _bodies_at(entry, fi):
+    return {b: entry["bodies"][b][fi] for b in entry["bodies"]}
+
+
+def _grf_arrow(force, foot_pos, align_dx):
+    """GRF ベクトル(N)を接地足(calcn)位置から描く矢印 mesh。小さければ None。
+
+    COP は元の ground 系、骨は treadmill シフト済みで座標系が異なるため、
+    作用点には足(calcn)の現在位置を用いて整合させる。
+    """
+    if force is None or foot_pos is None:
+        return None
+    mag = float(np.linalg.norm(force))
+    if mag < 150.0:                     # 接地していない相は描かない
+        return None
+    p0 = np.asarray(foot_pos, dtype=float).copy()
+    p0[0] += align_dx
+    p0[1] = 0.0                          # 地面から立ち上げる
+    # .mot の ground_force_v は「地面に働く力」符号。体に働く反力は上向きにするため
+    # 鉛直成分が負なら全体を反転して GRF(反力)= 上向きで描く。
+    f = np.asarray(force, dtype=float).copy()
+    if f[1] < 0:
+        f = -f
+    vec = f * GRF_SCALE
+    length = float(np.linalg.norm(vec))
+    try:
+        return pv.Arrow(start=p0, direction=vec / (length + 1e-9),
+                        scale=length, tip_length=0.2, tip_radius=0.045,
+                        shaft_radius=0.02)
+    except Exception:
+        return None
+
+
+def _draw_one(pl, cond, fi, body_meshes, *, bone_opacity=1.0,
+              muscle_opacity_nonham=0.5, muscle_opacity_ham=0.98, align_dx=0.0,
+              color_mode="strain", show_grf=True):
+    """1体ぶんの骨+筋(wrapping済)を描く。pelvis world x を返す。
+
+    color_mode: 'strain'(ハムをlMtilde着色, 他はミュート赤) /
+                'activation'(全筋を活性度で着色) / 'force'(全筋を力比で着色)。
+    """
+    entry = cond["cache"]
+    transforms = _bodies_at(entry, fi)
     if align_dx:
+        transforms = {b: T.copy() for b, T in transforms.items()}
         for b in transforms:
-            transforms[b] = transforms[b].copy()
             transforms[b][0, 3] += align_dx
 
     bones = build_posed_model(body_meshes, transforms)
@@ -332,40 +222,69 @@ def _draw_one(pl, cond, p, body_meshes, muscles, *, bone_opacity=1.0,
         pl.add_mesh(bones, color=BONE_COLOR, opacity=bone_opacity,
                     smooth_shading=True, specular=0.2)
 
+    p = float(entry["phases"][fi])
+    radius = entry["radius"]
+    is_ham = entry["is_ham"]
+    dyn = entry.get("dyn", {})
     strain = cond["strain"]
-    for mname, pts in muscles.items():
-        poly = world_polyline(pts, transforms)
-        if poly is None:
-            continue
-        if base_name(mname) in HAM_BASES:
-            lm = strain_at(strain, mname, p)
-            tube = polyline_tube(poly, HAM_TUBE_RADIUS)
-            if tube is not None:
-                pl.add_mesh(tube, color=strain_color(lm),
-                            opacity=muscle_opacity_ham, smooth_shading=True,
-                            specular=0.3)
+    for nm, frames in entry["muscles"].items():
+        pts = np.asarray(frames[fi], dtype=float)
+        if align_dx:
+            pts = pts.copy()
+            pts[:, 0] += align_dx
+        ham = is_ham.get(nm, False)
+        r = radius.get(nm, 0.005)
+
+        if color_mode == "activation" and nm in dyn:
+            a = _series_at(dyn[nm], p, "act")
+            col, op = act_color(a), 0.45 + 0.5 * a
+            rr = r * (0.7 + 0.9 * a)            # 活性で太く
+        elif color_mode == "force" and nm in dyn:
+            fr = _series_at(dyn[nm], p, "force")
+            col, op = act_color(min(fr, 1.0)), 0.45 + 0.5 * min(fr, 1.0)
+            rr = r * (0.7 + 0.9 * min(fr, 1.0))
+        elif ham:
+            col, op, rr = strain_color(strain_at(strain, nm, p)), \
+                muscle_opacity_ham, r
         else:
-            tube = polyline_tube(poly, NONHAM_TUBE_RADIUS)
-            if tube is not None:
-                pl.add_mesh(tube, color=NONHAM_COLOR,
-                            opacity=muscle_opacity_nonham, smooth_shading=True)
+            col, op, rr = NONHAM_COLOR, muscle_opacity_nonham, r * 0.8
+
+        tube = muscle_tube(pts, rr)
+        if tube is not None:
+            pl.add_mesh(tube, color=col, opacity=op, smooth_shading=True,
+                        specular=0.25)
+
+    if show_grf:
+        gf = entry.get("grf_force", None)
+        # 接地足: GRF の鉛直成分が立っている側を calcn 高さで判定 (右優先)
+        foot = None
+        for fb in ("calcn_r", "calcn_l"):
+            if fb in transforms:
+                foot = transforms[fb][:3, 3]
+                if transforms[fb][1, 3] < 0.12:    # 低い=接地
+                    break
+        arrow = _grf_arrow(gf[fi] if gf is not None else None, foot, 0.0)
+        if arrow is not None:
+            pl.add_mesh(arrow, color=GRF_COLOR, opacity=0.9, smooth_shading=True)
     return transforms["pelvis"][0, 3]
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 5) フレーム描画
+# フレーム描画
 # ═══════════════════════════════════════════════════════════════════════════
 
-def render_sidebyside_frame(conds, p, body_meshes, muscles, window_size):
+def render_sidebyside_frame(conds, fi, body_meshes, window_size,
+                            color_mode="strain", show_grf=True):
     n = len(conds)
     pv.global_theme.background = "white"
     pl = pv.Plotter(off_screen=True, shape=(1, n), window_size=list(window_size),
                     border=False)
     for i, cond in enumerate(conds):
         pl.subplot(0, i)
-        cx = _draw_one(pl, cond, p, body_meshes, muscles)
-        frame_sagittal(pl, zoom=1.18)   # 骨+筋を基準にフレーミング
-        add_ground(pl, cx)              # 地面は後で(フレーミングに影響させない)
+        cx = _draw_one(pl, cond, fi, body_meshes, color_mode=color_mode,
+                       show_grf=show_grf)
+        frame_sagittal(pl, zoom=1.18)
+        add_ground(pl, cx)
         add_lights(pl, cx)
         pl.add_text(f"{cond['label']}\n(mean tilt {cond['mean_tilt']:.1f} deg)",
                     position="upper_left", font_size=11, color="black")
@@ -374,26 +293,22 @@ def render_sidebyside_frame(conds, p, body_meshes, muscles, window_size):
     return img
 
 
-def render_overlay_frame(conds, p, body_meshes, muscles, window_size):
+def render_overlay_frame(conds, fi, body_meshes, window_size,
+                         color_mode="strain", show_grf=True):
     pv.global_theme.background = "white"
     pl = pv.Plotter(off_screen=True, window_size=list(window_size), border=False)
-    # 骨盤 world x を条件0に揃える
     base_cx = None
     for cond in conds:
-        q0 = q_at_phase(cond["phases"], cond["col_map"], p, treadmill=True)
-        tf0 = compute_body_transforms(q0)
-        cx0 = tf0["pelvis"][0, 3]
+        cx0 = cond["cache"]["bodies"]["pelvis"][fi][0, 3]
         if base_cx is None:
             base_cx = cx0
-        dx = base_cx - cx0
-        _draw_one(pl, cond, p, body_meshes, muscles,
-                  bone_opacity=0.35, muscle_opacity_nonham=0.25,
-                  muscle_opacity_ham=0.95, align_dx=dx)
-    frame_sagittal(pl, zoom=1.18)
+        _draw_one(pl, cond, fi, body_meshes, bone_opacity=0.32,
+                  muscle_opacity_nonham=0.3, muscle_opacity_ham=0.96,
+                  align_dx=base_cx - cx0, color_mode=color_mode, show_grf=False)
     add_ground(pl, base_cx)
+    frame_sagittal(pl, zoom=1.18)
     add_lights(pl, base_cx)
     handles = "  |  ".join(f"{c['label']} ({c['mean_tilt']:.1f}deg)" for c in conds)
-    # VTK text は CJK フォントを持たないため ASCII で表記
     pl.add_text("Overlay (pelvis-aligned): " + handles, position="upper_left",
                 font_size=11, color="black")
     img = pl.screenshot(return_img=True)
@@ -402,61 +317,88 @@ def render_overlay_frame(conds, p, body_meshes, muscles, window_size):
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 6) 出力生成
+# 出力生成
 # ═══════════════════════════════════════════════════════════════════════════
 
-def _phase_seq(n_frames, cycles):
-    one = np.linspace(0.0, 1.0, n_frames, endpoint=False)
-    return np.tile(one, cycles)
+def _frame_seq(F, n_frames, cycles):
+    """[0,F) を n_frames 個に再標本化したインデックス列を cycles 回ループ。"""
+    base = (np.linspace(0.0, 1.0, n_frames, endpoint=False) * F).astype(int) % F
+    return np.tile(base, cycles)
 
 
-def write_mp4(frame_fn, conds, body_meshes, muscles, out_path,
-              n_frames, cycles, fps, window_size):
+def write_mp4(frame_fn, conds, body_meshes, out_path, n_frames, cycles, fps,
+              window_size, color_mode="strain", show_grf=True):
     import imageio
-    seq = _phase_seq(n_frames, cycles)
+    F = len(conds[0]["cache"]["phases"])
+    seq = _frame_seq(F, n_frames, cycles)
     print(f"  {out_path.name}: {len(seq)} フレーム生成中 ...")
     writer = imageio.get_writer(str(out_path), fps=fps, codec="libx264",
                                 quality=8, output_params=["-pix_fmt", "yuv420p"])
     try:
-        for fi, p in enumerate(seq):
-            img = frame_fn(conds, p, body_meshes, muscles, window_size)
-            writer.append_data(img)
-            if (fi + 1) % 15 == 0 or fi == len(seq) - 1:
-                print(f"    {fi + 1}/{len(seq)}")
+        for k, fi in enumerate(seq):
+            writer.append_data(frame_fn(conds, int(fi), body_meshes, window_size,
+                                        color_mode=color_mode, show_grf=show_grf))
+            if (k + 1) % 15 == 0 or k == len(seq) - 1:
+                print(f"    {k + 1}/{len(seq)}")
     finally:
         writer.close()
     mb = out_path.stat().st_size / (1024 * 1024)
     print(f"  [OK] {out_path.name}  ({mb:.1f} MB)")
 
 
-def peak_stretch_phase(conds):
-    """最も前傾した条件のハム最大 lMtilde 位相を返す。"""
-    cond = min(conds, key=lambda c: c["mean_tilt"])  # 最小 = 最前傾
-    best_p, best_v = 0.8, -np.inf
-    for mname in ("bifemlh_r", "semimem_r", "semiten_r"):
-        if mname not in cond["strain"]:
-            continue
-        ph, vals = cond["strain"][mname]
-        j = int(np.argmax(vals))
-        if vals[j] > best_v:
-            best_v = vals[j]
-            best_p = float(ph[j])
-    return best_p
+def peak_stretch_index(conds):
+    """最前傾条件のハム最大 lMtilde に対応するキャッシュ frame index。"""
+    cond = min(conds, key=lambda c: c["mean_tilt"])
+    phases = cond["cache"]["phases"]
+    best_idx, best_v = int(len(phases) * 0.8) % len(phases), -np.inf
+    for nm in ("bifemlh_r", "semimem_r", "semiten_r"):
+        v = [strain_at(cond["strain"], nm, p) for p in phases]
+        j = int(np.nanargmax(v))
+        if v[j] > best_v:
+            best_v, best_idx = v[j], j
+    return best_idx
 
 
-def write_hero_still(conds, body_meshes, muscles, out_path, window_size):
-    p = peak_stretch_phase(conds)
-    img = render_sidebyside_frame(conds, p, body_meshes, muscles, window_size)
+def peak_stance_index(conds):
+    """GRF 最大 (接地ピーク) のキャッシュ frame index。GRF 無ければ中央。"""
+    cond = conds[0]
+    F = cond["cache"].get("grf_force", None)
+    if F is None:
+        return len(cond["cache"]["phases"]) // 4
+    return int(np.argmax(np.linalg.norm(np.asarray(F), axis=1)))
+
+
+def hero_index(conds, color_mode):
+    """色モードに応じた hero フレーム: strain=最大伸張 / 他=接地ピーク(GRF可視)。"""
+    return (peak_stretch_index(conds) if color_mode == "strain"
+            else peak_stance_index(conds))
+
+
+def write_hero_still(conds, body_meshes, out_path, window_size,
+                    color_mode="strain", show_grf=True):
+    fi = hero_index(conds, color_mode)
+    img = render_sidebyside_frame(conds, fi, body_meshes, window_size,
+                                  color_mode=color_mode, show_grf=show_grf)
     fig, ax = plt.subplots(figsize=(window_size[0] / 130, window_size[1] / 130))
     ax.imshow(img)
     ax.axis("off")
-    ax.set_title(f"ピーク伸張位相 ({p * 100:.0f}%) のハムストリングひずみ比較",
-                 fontsize=14, fontweight="bold")
-    sm = ScalarMappable(norm=Normalize(LM_VMIN, LM_VMAX), cmap=STRAIN_CMAP)
-    sm.set_array([])
-    cbar = fig.colorbar(sm, ax=ax, fraction=0.025, pad=0.01)
-    cbar.set_label("ハム正規化筋線維長 lMtilde (高=伸張・肉離れリスク大)",
-                   fontsize=10)
+    p = float(conds[0]["cache"]["phases"][fi])
+    if color_mode == "strain":
+        ax.set_title(f"ピーク伸張位相 ({p * 100:.0f}%) のハムストリングひずみ比較 "
+                 f"(wrapping込み筋経路)", fontsize=14, fontweight="bold")
+        sm = ScalarMappable(norm=Normalize(LM_VMIN, LM_VMAX), cmap=STRAIN_CMAP)
+        sm.set_array([])
+        cbar = fig.colorbar(sm, ax=ax, fraction=0.025, pad=0.01)
+        cbar.set_label("ハム正規化筋線維長 lMtilde (高=伸張・肉離れリスク大)",
+                       fontsize=10)
+    else:
+        kindjp = "筋活性化 (act)" if color_mode == "activation" else "筋力比 (Fce/Fiso)"
+        ax.set_title(f"ピーク伸張位相 ({p * 100:.0f}%) の全身{kindjp} + GRF",
+                     fontsize=14, fontweight="bold")
+        sm = ScalarMappable(norm=Normalize(0, 1), cmap=ACT_CMAP)
+        sm.set_array([])
+        cbar = fig.colorbar(sm, ax=ax, fraction=0.025, pad=0.01)
+        cbar.set_label(f"{kindjp} (高=強く働いている)", fontsize=10)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -464,28 +406,28 @@ def write_hero_still(conds, body_meshes, muscles, out_path, window_size):
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 7) 条件発見 + main
+# 条件読込 + main
 # ═══════════════════════════════════════════════════════════════════════════
 
-def load_conditions(results_dir):
+def load_conditions(results_dir, cache):
     conds = []
     for off, ident in CONDITION_SPECS:
-        coords = sorted(results_dir.glob(f"pred_sprinting_coords_*{ident}*.mot"))
-        data = sorted(results_dir.glob(f"pred_sprinting_data_*{ident}*.mat"))
-        if not coords or not data:
-            print(f"  [WARN] 条件 {ident} の coords/data が見つかりません。スキップ。")
+        if ident not in cache:
+            print(f"  [WARN] cache に {ident} なし。スキップ")
             continue
-        df = read_mot(coords[-1])
-        phases, col_map, mean_tilt = build_phase_data(df)
+        data = sorted(results_dir.glob(f"pred_sprinting_data_*{ident}*.mat"))
+        if not data:
+            print(f"  [WARN] {ident} の .mat なし。スキップ")
+            continue
+        entry = cache[ident]
         strain = load_hamstring_strain(data[-1])
         label = f"{off:+d}deg" if off != 0 else "0deg(nominal)"
         conds.append({
-            "offset": off, "label": label, "mean_tilt": mean_tilt,
-            "phases": phases, "col_map": col_map, "strain": strain,
-            "coords": coords[-1], "data": data[-1],
+            "offset": off, "label": label, "mean_tilt": entry["mean_tilt"],
+            "cache": entry, "strain": strain,
         })
-        print(f"  [OK] {ident:18s} mean tilt {mean_tilt:6.2f} deg  "
-              f"({coords[-1].name})")
+        print(f"  [OK] {ident:18s} mean tilt {entry['mean_tilt']:6.2f} deg, "
+              f"{len(entry['phases'])} frames")
     return conds
 
 
@@ -504,17 +446,19 @@ def setup_japanese_font():
 
 def main():
     ap = argparse.ArgumentParser(
-        description="骨盤前後傾オフセットのリッチ筋骨格可視化")
+        description="骨盤前後傾オフセットのリッチ筋骨格可視化 (wrapping込み筋経路)")
     ap.add_argument("--fps", type=int, default=25)
-    ap.add_argument("--frames", type=int, default=70)
+    ap.add_argument("--frames", type=int, default=60)
     ap.add_argument("--cycles", type=int, default=2)
     ap.add_argument("--width", type=int, default=1680)
     ap.add_argument("--height", type=int, default=950)
     ap.add_argument("--output_dir", type=str, default=None)
-    ap.add_argument("--skip_video", action="store_true",
-                    help="hero スチルのみ生成 (動画スキップ)")
-    ap.add_argument("--only", choices=["both", "side", "overlay"], default="both",
-                    help="生成する動画を選択 (再レンダラ用)")
+    ap.add_argument("--skip_video", action="store_true")
+    ap.add_argument("--only", choices=["both", "side", "overlay"], default="both")
+    ap.add_argument("--color", choices=["strain", "activation", "force"],
+                    default="strain",
+                    help="筋の着色: strain=ハムひずみ / activation=全身活性 / force=全身力")
+    ap.add_argument("--no_grf", action="store_true", help="GRF ベクトルを描かない")
     args = ap.parse_args()
 
     setup_japanese_font()
@@ -525,51 +469,53 @@ def main():
     out_dir = (Path(args.output_dir) if args.output_dir
                else results_dir / "PelvicShift_Study")
     out_dir.mkdir(parents=True, exist_ok=True)
-    osim_path = (project_root / "OpenSimModel" /
-                 "Scaled_FullBody_HamnerModel_Muscle_withContact.osim")
+    cache_path = out_dir / CACHE_NAME
 
     print("=" * 70)
-    print("  骨盤前後傾オフセット × リッチ筋骨格可視化 (骨メッシュ + 筋ひずみ)")
+    print("  骨盤前後傾オフセット × リッチ筋骨格可視化 (wrapping込み筋経路)")
     print("=" * 70)
 
-    # Geometry
+    if not cache_path.exists():
+        print(f"ERROR: 筋経路キャッシュが見つかりません: {cache_path}")
+        print("  先に opensim 対応 env で compute_osim_muscle_paths.py を実行してください:")
+        print("  & '<opencap env>\\python.exe' analysis/compute_osim_muscle_paths.py --frames 60")
+        return 1
+    with open(cache_path, "rb") as f:
+        cache = pickle.load(f)
+    print(f"  cache: {cache_path.name}  ({len(cache)} 条件)")
+
     geom_dir = find_geometry_dir()
     print(f"  Geometry: {geom_dir}")
     body_meshes = load_body_meshes(geom_dir)
-    print(f"  読み込んだ body メッシュ数: {len(body_meshes)}")
+    print(f"  body メッシュ数: {len(body_meshes)}")
 
-    # 筋経路
-    print(f"  .osim: {osim_path.name}")
-    all_muscles = parse_muscle_paths(osim_path)
-    muscles = select_curated(all_muscles)
-    n_ham = sum(1 for m in muscles if base_name(m) in HAM_BASES)
-    print(f"  筋経路: 全 {len(all_muscles)} / 描画 {len(muscles)} "
-          f"(うちハム {n_ham})")
-
-    # 条件
     print("\n--- 条件読み込み ---")
-    conds = load_conditions(results_dir)
+    conds = load_conditions(results_dir, cache)
     if len(conds) < 2:
         print("ERROR: 比較できる条件が不足しています。")
         return 1
 
     win = (args.width, args.height)
-    print("\n--- 出力生成 ---")
-    # hero still (最優先; 動画前に確認できる)
+    cm = args.color
+    grf = not args.no_grf
+    # strain モードは従来ファイル名、activation/force はサフィックス付き
+    suf = "" if cm == "strain" else f"_{cm}"
+    print(f"\n--- 出力生成 (color={cm}, GRF={'on' if grf else 'off'}) ---")
     if args.only == "both":
-        write_hero_still(conds, body_meshes, muscles,
-                         out_dir / "pelvic_shift_musculoskeletal_hero.png", win)
-
+        write_hero_still(conds, body_meshes,
+                         out_dir / f"pelvic_shift_musculoskeletal{suf}_hero.png",
+                         win, color_mode=cm, show_grf=grf)
     if not args.skip_video:
         if args.only in ("both", "side"):
-            write_mp4(render_sidebyside_frame, conds, body_meshes, muscles,
-                      out_dir / "pelvic_shift_musculoskeletal_sidebyside.mp4",
-                      args.frames, args.cycles, args.fps, win)
+            write_mp4(render_sidebyside_frame, conds, body_meshes,
+                      out_dir / f"pelvic_shift_musculoskeletal{suf}_sidebyside.mp4",
+                      args.frames, args.cycles, args.fps, win,
+                      color_mode=cm, show_grf=grf)
         if args.only in ("both", "overlay"):
-            write_mp4(render_overlay_frame, conds, body_meshes, muscles,
-                      out_dir / "pelvic_shift_musculoskeletal_overlay.mp4",
+            write_mp4(render_overlay_frame, conds, body_meshes,
+                      out_dir / f"pelvic_shift_musculoskeletal{suf}_overlay.mp4",
                       args.frames, args.cycles, args.fps,
-                      (int(win[0] * 0.65), win[1]))
+                      (int(win[0] * 0.65), win[1]), color_mode=cm, show_grf=grf)
 
     print(f"\n{'=' * 70}\n  完了! 出力先: {out_dir}\n{'=' * 70}")
     return 0

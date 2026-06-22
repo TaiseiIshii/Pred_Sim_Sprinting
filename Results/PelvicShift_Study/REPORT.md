@@ -241,24 +241,31 @@ offset に対し R²=0.988 で線形に変化し、機序 (前傾→股関節屈
 3通りの可視化を用意した。代表3条件 (-6° / 0° / +6°) のリッチ表示と、全7条件の
 軽量スティックフィギュアである。**やさしい要約は [SUMMARY_JP.md](SUMMARY_JP.md) を参照。**
 
-### 10.1 筋骨格モデル (実OpenSim骨メッシュ + 筋ひずみ着色) ★メイン
-実OpenSim 4.x の骨メッシュ (`.vtp`) をフォワードキネマティクスで配置し、`.osim` から
-抽出した主要下肢筋 (68本) を 3D チューブで描画。ハム4筋は各位相の正規化筋線維長
-`lMtilde` で着色 (緑=低伸張 → 赤=高伸張) し、**肉離れの伸張リスクを直接3Dで表現**する。
-最大前傾 (-6°) でハムが最も赤く（伸張大）なることが視覚的に確認できる。
+### 10.1 筋骨格モデル (実OpenSim骨メッシュ + 全身筋[wrapping込み] + GRF) ★メイン
+実OpenSim 4.x の骨メッシュ (`.vtp`) をフォワードキネマティクスで配置し、**OpenSim
+Python API で計算した解剖学的に正しい（wrapping 込みの）全身92筋の経路**を 3D チューブ
+で描画する。従来の path point 間直線近似で生じていた筋の不自然な垂れ下がりを解消し、
+筋は常に骨に沿って taut（張った）状態で表示される。さらに接地足から**地面反力(GRF)
+ベクトル**（青矢印）を描く。2つの着色モードを用意:
 
-生成: `../../analysis/visualize_pelvic_shift_musculoskeletal.py`
-(筋経路 parser + ひずみ loader を新規実装; `visualize_form_comparison_v2.py` の
-FK・メッシュ読込を再利用)
+- **strain モード**: ハム4筋を正規化筋線維長 `lMtilde` で着色 (緑=低伸張→赤=高伸張)。
+  **肉離れの伸張リスクを直接3D表現**。最大前傾 (-6°) でハムが最も赤くなる。
+- **activation モード**: 全筋を活性化 `act` で着色 (青=休→赤=フル稼働) した筋電図風表示。
+  接地ピークで下腿三頭筋等が赤く光る。
+
+実装: `../../analysis/compute_osim_muscle_paths.py` (OpenSim 4.x API で wrapping 込み
+筋経路 + body変換 + 活性化/力 + GRF を全フレーム事前計算しキャッシュ) →
+`../../analysis/visualize_pelvic_shift_musculoskeletal.py` (pyvista で描画)。
 出力:
-- 横並び動画: `pelvic_shift_musculoskeletal_sidebyside.mp4`
-- 重ね合わせ動画: `pelvic_shift_musculoskeletal_overlay.mp4` (骨盤整列, 骨半透明)
-- 静止画 (ピーク伸張位相 + ひずみカラーバー): `pelvic_shift_musculoskeletal_hero.png`
+- strain: `pelvic_shift_musculoskeletal_{sidebyside,overlay}.mp4` + `_hero.png`
+- activation: `pelvic_shift_musculoskeletal_activation_{sidebyside,overlay}.mp4` + `_hero.png`
 
 ### 10.2 3D人体 (SMPL風 skinned body)
 同じ FK 骨格の上に滑らかな皮膚付き人体メッシュ (テーパ付きカプセル + 頭) を被せ、
-人体に近い見た目でフォーム全体の違いを直感的に表示。本物の SMPL を使う拡張点
-(`--smpl_model`, `load_real_smpl()`) も用意 (要 smplx + 研究ライセンス)。
+人体に近い見た目でフォーム全体の違いを直感的に表示 (簡易 soft-body 近似)。
+**本物の SMPL** ボディ (写実的皮膚人体) を使うには研究ライセンス登録済みの SMPL
+モデルファイルが必要 (`--smpl_model`, `load_real_smpl()` フックを用意; 要 smplx)。
+本研究の主役は骨・筋 (肉離れリスクの本体) ゆえ、皮膚で隠れない 10.1 を推奨する。
 
 生成: `../../analysis/visualize_pelvic_shift_smpl.py`
 出力:
