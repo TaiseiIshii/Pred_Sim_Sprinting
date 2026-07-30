@@ -1,4 +1,4 @@
-function [] = main_pred_sim_sprinting(simulation_type_in)
+function [] = main_pred_sim_sprinting(simulation_type_in, N_in)
 
 clc
 
@@ -17,6 +17,15 @@ Options.prevSol       = 'N';      % Use prev solution as initial guess;
                                   % NOTE: Set to 'N' if no prior solution exists
 Options.MTP_stiff     = 65;       % MTP Spring Stiffness (Nm/rad)
 Options.timePercent   = 0.15;     % Reduce overall time by % set
+
+% Allow a batch runner to override the mesh size (e.g. the N=100 mesh-
+% convergence sweep). Default stays N=50. Must be set BEFORE any N-dependent
+% setup below (warm-start Nominal selection filters on Options.N). The matching
+% N-mesh Nominal must already exist for the TDPT/Shift warm-start.
+if nargin >= 2 && ~isempty(N_in)
+    Options.N = N_in;
+    fprintf('[mesh] Options.N overridden by caller -> N = %d\n', Options.N);
+end
 
 if Options.prevSol == 'Y'
     prevSol = load('IC_pred_Sprinting_optimum_p02_maxVel_01_25-October-2023__23-00-52___Nominal_CONS_BS_PUSH_FRAC.mat');
@@ -95,6 +104,131 @@ else
     shiftStudy.offsetDeg = NaN;
 end
 % =====================================================================
+
+% === Pelvic tilt CAUSAL study v3 (Method TDPT: Touchdown Pelvic Tilt) =====
+% Activated ONLY when simulation_type contains 'PelvisTD'. This mirrors the
+% ORIGINAL HTD/IKTD method EXACTLY but for pelvis_tilt: a SINGLE scalar
+% EQUALITY constraint at the touchdown (initial, k==0) node, and NOTHING else
+% is touched. Unlike v1 (ptStudy: soft +/-6 deg position WINDOW at every node,
+% which let the optimiser drift) and v2 (shiftStudy: per-node pin of the whole
+% pelvis_tilt waveform + initial-guess compensation of hip flexion & lumbar),
+% v3 leaves pelvis_tilt FREE at every node EXCEPT the touchdown node, applies
+% NO initial-guess compensation, and uses the SAME strict IPOPT settings as
+% Nominal/HTD/IKTD. The whole motion (pelvis_tilt away from touchdown, hip
+% flexion, lumbar, ...) re-optimises NATURALLY to maximise sprint speed subject
+% only to the imposed touchdown pelvis_tilt. This is the cleanest single-
+% intervention causal design ("manipulate ONLY the pelvis at touchdown and let
+% the motion be established naturally").
+% Naming: _PelvisTD_m6 -> offset -6 deg (more anterior in this model's
+%   coordinate, where negative pelvis_tilt = anterior), _PelvisTD_p6 -> +6 deg
+%   (more posterior), _PelvisTD_p0 -> 0 deg (reproduces the Nominal touchdown).
+tdStudy.active         = ~isempty(strfind(simulation_type,'PelvisTD'));
+% v3.1: "_PelvisTDwide_*" variants relax BOTH (a) the pelvis_tilt initial-pose
+% matching window (+/-15deg -> +/-25deg, in the k==0 matching constraint) AND
+% (b) the pelvis_tilt POSITION/coordinate bound (default ~+/-9.9deg from the
+% experimental range -> +/-25deg, in createScaledBounds). This was needed to
+% determine whether the apparent anterior touchdown-tilt limit (~-9.9deg) was a
+% MODELLING artefact (window/coordinate bound) or a REAL dynamic limit. Result:
+% it was the coordinate bound -- once (a)+(b) are relaxed, conditions down to
+% -15.5deg touchdown tilt all solve at full sprint speed (no dynamic limit in
+% the tested range). All OTHER coordinates and all other conditions are
+% byte-for-byte unchanged.
+tdStudy.wideWindow     = ~isempty(strfind(simulation_type,'PelvisTDwide'));
+tdStudy.nominalTiltRad = [];   % Nominal optimised pelvis_tilt at the touchdown
+                               % node (rad). Extracted PROGRAMMATICALLY below
+                               % from the matching-N Nominal solution; NOT a
+                               % hardcoded literal.
+if tdStudy.active
+    % Robust offset token = chars after the LAST underscore (e.g. m4, p6), so
+    % both "_PelvisTD_m4" and "_PelvisTDwide_m4" parse correctly.
+    us = strfind(simulation_type,'_');
+    tdTok = simulation_type(us(end)+1:end);
+    tdSgn = 1;
+    if tdTok(1) == 'm'
+        tdSgn = -1;
+    end
+    tdStudy.offsetDeg = tdSgn*str2double(tdTok(2:end));
+    tdStudy.offsetRad = deg2rad(tdStudy.offsetDeg);
+    if tdStudy.wideWindow; winStr = 'WIDE(+/-25deg)'; else; winStr = 'std(+/-15deg)'; end
+    fprintf('[PelvisTD] simulation_type=%s -> touchdown offset=%+.1f deg, init-pose window=%s\n', ...
+        simulation_type, tdStudy.offsetDeg, winStr);
+else
+    tdStudy.offsetDeg = NaN;
+    tdStudy.offsetRad = NaN;
+end
+% =====================================================================
+
+% === Hamstring muscle-architecture study (RQ2, reversible) ===============
+% Creates "virtual athletes" by scaling ONLY the hamstring muscle-tendon
+% parameters, spanning the principal MODIFIABLE epidemiological HSI risk
+% factors: short biceps-femoris fascicle length (Timmins 2016) and hamstring
+% weakness. Two one-factor-at-a-time families (matching the HTD/IKTD/PelvisShift
+% one-variable-per-condition design):
+%   _HamFascicle_[mp]NN  -> hamstring optimal FIBRE length x (1 -/+ NN/100)
+%   _HamStrength_[mp]NN  -> hamstring maximal isometric FORCE x (1 -/+ NN/100)
+% m = minus (shorter fascicles / weaker = HIGHER modelled risk), p = plus. The
+% scaling is applied at the muscle-parameter setup below; here we only parse the
+% requested mode & factor. All non-hamstring muscles and all other conditions
+% are byte-for-byte unchanged.
+archStudy.active = ~isempty(strfind(simulation_type,'HamFascicle')) || ...
+                   ~isempty(strfind(simulation_type,'HamStrength'));
+archStudy.mode   = '';
+archStudy.factor = NaN;
+if archStudy.active
+    if ~isempty(strfind(simulation_type,'HamFascicle'))
+        archStudy.mode = 'fascicle';
+        aTok = simulation_type(strfind(simulation_type,'HamFascicle_')+numel('HamFascicle_'):end);
+    else
+        archStudy.mode = 'strength';
+        aTok = simulation_type(strfind(simulation_type,'HamStrength_')+numel('HamStrength_'):end);
+    end
+    aSgn = 1;
+    if aTok(1) == 'm'
+        aSgn = -1;
+    end
+    archStudy.factor = 1 + aSgn*str2double(aTok(2:end))/100;
+    fprintf('[HamArch] simulation_type=%s -> mode=%s, hamstring parameter scale=%.3f\n', ...
+        simulation_type, archStudy.mode, archStudy.factor);
+end
+% =========================================================================
+
+% === Injury-minimising optimal-technique study (RQ3+RQ4, reversible) =====
+% Adds a smooth biarticular-hamstring fascicle-OVERSTRETCH penalty to the
+% objective (new wJ(13)) and sweeps its weight to trace the speed <-> peak-
+% fascicle-strain PARETO frontier (RQ3). Optionally combines with an at-risk
+% "virtual athlete" (short fascicle / weak) to compare the technique-change
+% path against the training-adaptation path (RQ4 / individualised prescription).
+% Condition naming:  _HamPareto_[Nom|Sh|Wk]_wXXXX
+%   wXXXX  -> wJ(13) = XXXX/1000  (e.g. w0200 -> 0.20; w0000 -> 0 = penalty off)
+%   Nom    -> nominal athlete (no architecture change)
+%   Sh     -> short-fascicle athlete (hamstring optimal fibre length x0.80)
+%   Wk     -> weak athlete (hamstring maximal isometric force x0.80)
+% Sh/Wk reuse the archStudy scaling hook below, so the ONLY thing that differs
+% from Nominal is (a) the manipulated hamstring architecture and (b) the added
+% penalty. The penalty is fully gated on wJ(13)~=0 inside buildNLP, so wXXXX=0
+% and every non-Pareto condition are byte-for-byte identical to baseline.
+paretoStudy.active  = ~isempty(strfind(simulation_type,'HamPareto'));
+paretoStudy.weight  = 0;
+paretoStudy.athlete = 'Nom';
+if paretoStudy.active
+    % Weight token wXXXX -> wJ(13) = XXXX/1000.
+    wPos = strfind(simulation_type,'_w');
+    paretoStudy.weight = str2double(simulation_type(wPos(end)+2:end))/1000;
+    if isnan(paretoStudy.weight); paretoStudy.weight = 0; end
+    % At-risk virtual athlete selection via the archStudy scaling hook.
+    if ~isempty(strfind(simulation_type,'_Sh_'))
+        archStudy.active = true; archStudy.mode = 'fascicle'; archStudy.factor = 0.80;
+        paretoStudy.athlete = 'Sh';
+    elseif ~isempty(strfind(simulation_type,'_Wk_'))
+        archStudy.active = true; archStudy.mode = 'strength'; archStudy.factor = 0.80;
+        paretoStudy.athlete = 'Wk';
+    else
+        paretoStudy.athlete = 'Nom';
+    end
+    fprintf('[HamPareto] simulation_type=%s -> athlete=%s, wJ(13)=%.4f\n', ...
+        simulation_type, paretoStudy.athlete, paretoStudy.weight);
+end
+% =========================================================================
 
 % Path of main folder repository (parent of MainFunctions)
 % Prefer the script location to avoid issues when pwd is elsewhere
@@ -246,6 +380,122 @@ if shiftStudy.active
     end
 end
 % =======================================================================
+
+% === Pelvic TD study v3: warm-start from Nominal + extract nominalTD ======
+% Faithful to HTD/IKTD: warm-start (primal) from the strictly-converged,
+% matching-mesh Nominal solution, then add ONE touchdown equality. The
+% Nominal's touchdown pelvis_tilt is the reference the offset is applied to;
+% extract it PROGRAMMATICALLY from the Nominal solution (q at the first node)
+% and log it (do NOT hardcode). The single extra constraint changes the NLP
+% dimension by +1, so the dual warm-start (which requires numel(lam_g)==numel(g))
+% is intentionally skipped and v3 uses the SAME plain primal warm-start as
+% HTD/IKTD via the standard solve branch. Strict IPOPT settings (tol 1e-5,
+% 50000 iters, adaptive mu) are retained because neither ptStudy nor shiftStudy
+% is active. The initial guess is the Nominal solution, UNMODIFIED.
+if tdStudy.active
+    nomFiles = dir([pathResults 'pred_sprinting_data_*Nominal.mat']);
+    bestIx = 0; bestTime = -inf;
+    for iC = 1:numel(nomFiles)
+        try
+            tmp = load(fullfile(nomFiles(iC).folder,nomFiles(iC).name),'optimumOutput');
+            if isfield(tmp,'optimumOutput') && isfield(tmp.optimumOutput,'options') ...
+                    && tmp.optimumOutput.options.N == Options.N ...
+                    && isfield(tmp.optimumOutput,'stats') ...
+                    && isfield(tmp.optimumOutput.stats,'return_status') ...
+                    && strcmp(tmp.optimumOutput.stats.return_status,'Solve_Succeeded') ...
+                    && nomFiles(iC).datenum > bestTime
+                bestTime = nomFiles(iC).datenum; bestIx = iC;
+            end
+        catch
+        end
+    end
+    if bestIx > 0
+        prevSol = load(fullfile(nomFiles(bestIx).folder, nomFiles(bestIx).name));
+        Options.prevSol = 'Y';
+        tdStudy.nominalTiltRad = prevSol.optimumOutput.optVars_nsc.q(1,1); % touchdown node, rad
+        fprintf(['[PelvisTD] Warm-start (primal) from N=%d Nominal: %s\n' ...
+                 '[PelvisTD] nominalTD pelvis_tilt = %.6f rad (%.3f deg); '...
+                 'target touchdown tilt = %.6f rad (%.3f deg)\n'], ...
+            Options.N, nomFiles(bestIx).name, ...
+            tdStudy.nominalTiltRad, rad2deg(tdStudy.nominalTiltRad), ...
+            tdStudy.nominalTiltRad + tdStudy.offsetRad, ...
+            rad2deg(tdStudy.nominalTiltRad) + tdStudy.offsetDeg);
+    else
+        prevSol = [];
+        Options.prevSol = 'N';
+        error(['[PelvisTD] No strict N=%d Nominal solution found for warm-start/reference. ' ...
+               'Run a _Nominal condition at N=%d first.'], Options.N, Options.N);
+    end
+end
+% =======================================================================
+
+% === Hamstring-architecture study: warm-start from strict Nominal =========
+% Architecture scaling changes muscle PARAMETERS only, leaving the NLP
+% dimensions (variables, bounds, constraints) byte-for-byte identical to
+% Nominal. The strict, matching-mesh Nominal solution is therefore a valid
+% BOTH-primal-and-dual warm start (the size checks after the NLP build pass),
+% which -- per this repo's convergence experience -- is what makes IPOPT
+% converge robustly rather than stalling from a cold start.
+if archStudy.active || paretoStudy.active
+    % Priority-ordered warm-start base patterns. The first pattern that yields
+    % a STRICT, matching-mesh solution with saved duals wins. For the Pareto
+    % sweep this gives natural CONTINUATION: running weights in increasing order,
+    % the newest same-athlete Pareto solution is the previous (smaller-weight)
+    % point; if none exists yet we fall back to the athlete's architecture base
+    % (the RQ2 solution), then to Nominal. Architecture/penalty changes leave the
+    % NLP dimensions byte-for-byte identical, so any such base is a valid
+    % BOTH-primal-and-dual warm start (the size checks after the NLP build pass).
+    if paretoStudy.active && strcmp(paretoStudy.athlete,'Sh')
+        wsPatterns = {'pred_sprinting_data_*HamPareto_Sh_*.mat', ...
+                      'pred_sprinting_data_*HamFascicle_m20.mat', ...
+                      'pred_sprinting_data_*Nominal.mat'};
+    elseif paretoStudy.active && strcmp(paretoStudy.athlete,'Wk')
+        wsPatterns = {'pred_sprinting_data_*HamPareto_Wk_*.mat', ...
+                      'pred_sprinting_data_*HamStrength_m20.mat', ...
+                      'pred_sprinting_data_*Nominal.mat'};
+    elseif paretoStudy.active
+        wsPatterns = {'pred_sprinting_data_*HamPareto_Nom_*.mat', ...
+                      'pred_sprinting_data_*Nominal.mat'};
+    else
+        wsPatterns = {'pred_sprinting_data_*Nominal.mat'};
+    end
+    prevSol = []; chosenName = '';
+    for iP = 1:numel(wsPatterns)
+        wsFiles = dir([pathResults wsPatterns{iP}]);
+        bestIx = 0; bestTime = -inf;
+        for iC = 1:numel(wsFiles)
+            try
+                tmp = load(fullfile(wsFiles(iC).folder,wsFiles(iC).name),'optimumOutput');
+                if isfield(tmp,'optimumOutput') && isfield(tmp.optimumOutput,'options') ...
+                        && tmp.optimumOutput.options.N == Options.N ...
+                        && isfield(tmp.optimumOutput,'stats') ...
+                        && isfield(tmp.optimumOutput.stats,'return_status') ...
+                        && strcmp(tmp.optimumOutput.stats.return_status,'Solve_Succeeded') ...
+                        && isfield(tmp.optimumOutput,'lam_x_opt') ...
+                        && isfield(tmp.optimumOutput,'lam_g_opt') ...
+                        && wsFiles(iC).datenum > bestTime
+                    bestTime = wsFiles(iC).datenum; bestIx = iC;
+                end
+            catch
+            end
+        end
+        if bestIx > 0
+            prevSol = load(fullfile(wsFiles(bestIx).folder, wsFiles(bestIx).name));
+            chosenName = wsFiles(bestIx).name;
+            break;
+        end
+    end
+    if ~isempty(prevSol)
+        Options.prevSol = 'Y';
+        fprintf('[Warm-start] primal+dual from N=%d base: %s\n', Options.N, chosenName);
+    else
+        prevSol = [];
+        Options.prevSol = 'N';
+        error(['[Warm-start] No strict N=%d base solution found for warm-start. ' ...
+               'Run a _Nominal condition at N=%d first.'], Options.N, Options.N);
+    end
+end
+% =========================================================================
 
 
 %% Load optimised contact model parameters & non-optimised frictional parameters
@@ -550,6 +800,26 @@ MTparameters_m = [muscProperties(:,musInd),muscProperties(:,musInd)];
 
 totalFmax = sum(MTparameters_m(1,:));
 indFmax   = MTparameters_m(1,:);
+
+% === Hamstring muscle-architecture scaling (RQ2, reversible) =============
+% Applied AFTER totalFmax/indFmax so the objective-function normalisation is
+% IDENTICAL across all conditions: any speed/strain difference is then
+% attributable purely to the hamstring muscle mechanics (Hill dynamics via
+% MTparameters_m and oMFL_2_nsc below), not to a shifted cost surface.
+% Columns 7-10 (left) & 53-56 (right) of MTparameters_m are the hamstrings
+% (semimem, semiten, bifemlh, bifemsh); row 1 = Fmax, row 2 = optimal fibre
+% length. Only hamstring columns are touched; all other muscles are unchanged.
+if archStudy.active
+    hamIdx = [7 8 9 10 53 54 55 56];
+    if strcmp(archStudy.mode,'fascicle')
+        MTparameters_m(2,hamIdx) = MTparameters_m(2,hamIdx) * archStudy.factor;
+    elseif strcmp(archStudy.mode,'strength')
+        MTparameters_m(1,hamIdx) = MTparameters_m(1,hamIdx) * archStudy.factor;
+    end
+    fprintf('[HamArch] Applied %s scaling x%.3f to hamstring columns %s\n', ...
+        archStudy.mode, archStudy.factor, mat2str(hamIdx));
+end
+% =========================================================================
  
 % Optimal muscle fibre length - oMFL
 m_oMFL = SX.sym('m_oMFL',NMuscle);
@@ -661,6 +931,7 @@ wJ(9)  = 0.01; % Derivative of normalized tendon forces
 wJ(10) = 0.01; % Reserve actuators
 wJ(11) = 0.1; % Arm controls
 wJ(12) = 10.0; % Average speed
+wJ(13) = paretoStudy.weight; % Injury-min penalty: biarticular-hamstring fascicle overstretch (RQ3/RQ4). 0 = off (byte-identical to baseline).
 
 
 %% Formulate NLPs
@@ -734,6 +1005,40 @@ if shiftStudy.active
     options.ipopt.acceptable_constr_viol_tol = 1e0;
     options.ipopt.acceptable_iter = 5;
 end
+% v3 PelvisTD: keep the SAME STRICT tolerance as Nominal/HTD/IKTD (publication-
+% grade; NO acceptable-level relaxation, so a feasible condition must reach
+% tol 1e-5 to be reported as solved). We ONLY bound CPU time as a SAFETY NET.
+% (Note: one OVERNIGHT run (m6) once took ~17 h, but that was an ENVIRONMENT
+% artifact - the machine was in a power-saving/sleep state, throttling the CPU
+% ~300x: 197 s per function eval vs the normal ~0.6 s/eval seen in every daytime
+% run, including the equally-infeasible m4 which self-terminated in 7 min.
+% Normally even infeasible conditions finish in ~7-15 min.) Feasible conditions
+% converge well within this budget. A condition that hits the budget is reported
+% HONESTLY via optimumOutput.stats.return_status and is NOT used as a result.
+if tdStudy.active
+    if Options.N >= 100
+        % N>=100 is a MUCH heavier NLP (~2x variables; super-linear MUMPS
+        % factorisation). The 90-min budget was tight for N=50 and far too tight
+        % for N=100 (the N=100 m8 hit it mid-endgame at the CORRECT touchdown
+        % tilt and full speed). Give strict convergence ample CPU room. Run with
+        % the machine on HIGH-PERFORMANCE / sleep disabled so the CPU clock is
+        % not throttled (throttling burns the CPU budget for half the work).
+        options.ipopt.max_cpu_time = 21600;  % 6 h CPU per condition (N>=100)
+    else
+        options.ipopt.max_cpu_time = 5400;   % 90 min CPU per condition (N=50)
+    end
+end
+% Hamstring-architecture study: KEEP the strict Nominal tolerance
+% (publication-grade; muscle-parameter change only, NLP dims identical to
+% Nominal so it warm-starts cleanly). Add a CPU-time safety net for batch
+% sweeps, mirroring PelvisTD.
+if archStudy.active
+    if Options.N >= 100
+        options.ipopt.max_cpu_time = 21600;  % 6 h CPU per condition (N>=100)
+    else
+        options.ipopt.max_cpu_time = 5400;   % 90 min CPU per condition (N=50)
+    end
+end
 % =========================================================================
 
 % === Pelvic Tilt study: DUAL warm-start from the Nominal solution =========
@@ -743,7 +1048,7 @@ end
 % initial duals, together with IPOPT's warm-start point options, lets the
 % constrained-tilt problem converge quickly. Reversible; baseline unchanged.
 ptWarmDuals = false;
-if (ptStudy.active || shiftStudy.active) && exist('prevSol','var') && ~isempty(prevSol) ...
+if (ptStudy.active || shiftStudy.active || archStudy.active || paretoStudy.active) && exist('prevSol','var') && ~isempty(prevSol) ...
         && isfield(prevSol,'optimumOutput') ...
         && isfield(prevSol.optimumOutput,'lam_x_opt') ...
         && isfield(prevSol.optimumOutput,'lam_g_opt') ...
@@ -771,7 +1076,7 @@ end
 solver = nlpsol('solver', 'ipopt', prob, options);
 
 % Solve the NLP
-if (ptStudy.active || shiftStudy.active) && exist('ptWarmDuals','var') && ptWarmDuals
+if (ptStudy.active || shiftStudy.active || archStudy.active || paretoStudy.active) && exist('ptWarmDuals','var') && ptWarmDuals
     sol = solver('x0',w0,'lbx',lbw','ubx',ubw','lbg',lbg,'ubg',ubg, ...
         'lam_x0', prevSol.optimumOutput.lam_x_opt, ...
         'lam_g0', prevSol.optimumOutput.lam_g_opt);
@@ -1022,6 +1327,16 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
         if ptStudy.active
             bounds_nsc.q.lower(jointi.pelvis.tilt) = deg2rad(ptStudy.centerDeg - ptStudy.halfWinDeg);
             bounds_nsc.q.upper(jointi.pelvis.tilt) = deg2rad(ptStudy.centerDeg + ptStudy.halfWinDeg);
+        end
+        % === v3.1 wide: widen the pelvis_tilt COORDINATE bound (default ~±9.9deg,
+        % from the experimental range) to +/-25deg for the _PelvisTDwide_* variants
+        % ONLY. Combined with the relaxed initial-pose matching window, this lets
+        % the touchdown equality probe deeper anterior tilt, to test whether the
+        % anterior limit is a coordinate-bound/window artefact or a REAL dynamic
+        % limit. Gated; all other conditions keep the default symmetric bound.
+        if tdStudy.active && isfield(tdStudy,'wideWindow') && tdStudy.wideWindow
+            bounds_nsc.q.lower(jointi.pelvis.tilt) = -deg2rad(25);
+            bounds_nsc.q.upper(jointi.pelvis.tilt) =  deg2rad(25);
         end
         % =====================================================================
         bounds_nsc.q.lower(jointi.trunk.ext:jointi.trunk.rot) = max([abs(bounds_nsc.q.lower(jointi.trunk.ext:jointi.trunk.rot)) abs(bounds_nsc.q.upper(jointi.trunk.ext:jointi.trunk.rot))]')' .* -1;
@@ -2204,14 +2519,55 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
                 J = J + wJ(10).*B(j+1)*(costFunctions.f_J_reserves(uReserveskj_nsc{j}))*h;
                 J = J + wJ(11).*B(j+1)*(costFunctions.f_J_arms(armActskj_nsc{j}))*h;
 
+                % === Injury-minimising penalty (RQ3/RQ4) ==================
+                % Smooth biarticular-hamstring fascicle-OVERSTRETCH cost,
+                % gated on wJ(13)~=0 so every non-Pareto condition is
+                % byte-for-byte unchanged. lMtildekj = normalised fibre length
+                % at this collocation point (computed above); rows [7 8 9 53 54
+                % 55] are the biarticular hamstrings (semimem, semiten, bifemlh)
+                % L/R -- the stretch-injury-relevant group (bifemsh excluded as
+                % a mechanistic control). smoothpos(x)=0.5(x+sqrt(x^2+eps^2)) is
+                % a differentiable one-sided hinge: only overstretch above the
+                % force-length plateau parThr is penalised, integrated (B*h)
+                % over the step exactly like the other running-cost terms. The
+                % optimiser minimises this smooth surrogate; the reported Pareto
+                % axis is the TRUE peak lMtilde recomputed post-hoc.
+                % parScale is a fixed calibration constant: the raw integrated
+                % squared overstretch at the Nominal optimum is ~1.5e-3 while the
+                % average-speed objective term (wJ12*speed) is ~118, so parScale
+                % =1e4 makes the swept weights wJ(13) in {0.05..3.2} span roughly
+                % 0.6%..40% of the speed term (mild -> strong) for a well-resolved
+                % Pareto frontier. It does NOT change which point is Nominal
+                % (penalty still gated off at wJ(13)=0).
+                if wJ(13) ~= 0
+                    parThr = 1.0; parEps = 1e-3; parScale = 1e4;
+                    parHamBi = [7 8 9 53 54 55];
+                    parOvr = lMtildekj(parHamBi) - parThr;
+                    parOvrPos = 0.5*(parOvr + sqrt(parOvr.^2 + parEps^2));
+                    J = J + parScale.*wJ(13).*B(j+1)*(sum(parOvrPos.^2))*h;
+                end
+                % =========================================================
+
             end
 
             % Initial multibody dynamics matching constraint
             if k == 0
 
+                % Initial-pose matching window (+/-15deg per coordinate). v3.1:
+                % for the _PelvisTDwide_* variants ONLY, relax the pelvis_tilt
+                % entry (index 1 of [1:3,7:37]) to +/-25deg, to separate the
+                % modelling-window limit from the dynamic limit on anterior
+                % touchdown tilt. Gated on tdStudy.wideWindow; all other entries
+                % and all other conditions are unchanged.
+                matchLo = -deg2rad(15).*ones(34,1);
+                matchHi =  deg2rad(15).*ones(34,1);
+                if exist('tdStudy','var') && isfield(tdStudy,'wideWindow') && tdStudy.wideWindow
+                    matchLo(1) = -deg2rad(25);
+                    matchHi(1) =  deg2rad(25);
+                end
                 g   = {g{:}, Xk_nsc_ini([1:3,7:37]) - [statesF.q_aux(1,[1:3,7:37])]'};
-                lbg = [lbg; [-deg2rad(15).*ones(34,1); ]];
-                ubg = [ubg; [deg2rad(15).*ones(34,1); ]];
+                lbg = [lbg; matchLo];
+                ubg = [ubg; matchHi];
 
                 g   = {g{:}, Xk_nsc_ini(4)};
                 lbg = [lbg; 0];
@@ -2253,6 +2609,22 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
                         ubg = [ubg; 0];
                     end
                 end
+
+                % === v3 TDPT: single touchdown pelvis_tilt equality ===========
+                % Mirrors the HTD/IKTD touchdown equalities EXACTLY, but on
+                % pelvis_tilt. Index 1 = pelvis_tilt (jointi.pelvis.tilt) of the
+                % initial-node state Xk_nsc_ini (radians, non-scaled). Pin the
+                % touchdown pelvis_tilt to the Nominal touchdown tilt plus the
+                % imposed offset. Everything else - pelvis_tilt at all other
+                % nodes, hip flexion, lumbar, the whole sprint - re-optimises
+                % freely to maximise speed. nominalTiltRad is extracted from the
+                % matching-N Nominal solution above; offsetRad = deg2rad(offset).
+                if contains(file_ext, 'PelvisTD')
+                    g   = {g{:}, Xk_nsc_ini(1) - (tdStudy.nominalTiltRad + tdStudy.offsetRad)};
+                    lbg = [lbg; 0];
+                    ubg = [ubg; 0];
+                end
+                % =============================================================
 
 
 

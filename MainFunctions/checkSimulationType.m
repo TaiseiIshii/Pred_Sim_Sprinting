@@ -97,4 +97,37 @@ elseif ~isempty(strfind(simulation_type,'PelvisShift'))
     % (more anterior in this model), p=plus (more posterior); number = degrees.
     file_ext = simulation_type;
 
+elseif ~isempty(strfind(simulation_type,'PelvisTD'))
+    % Pelvic tilt CAUSAL study v3 = Touchdown Pelvic Tilt (TDPT)
+    % (e.g. _PelvisTD_m6, _PelvisTD_p6, _PelvisTD_p0). A SINGLE equality at the
+    % touchdown node pins pelvis_tilt to (Nominal touchdown tilt + offset);
+    % pelvis_tilt is free at every other node and the rest of the motion
+    % re-optimises naturally. m=minus (more anterior in this model), p=plus
+    % (more posterior); number = degrees.
+    file_ext = simulation_type;
+
+elseif ~isempty(strfind(simulation_type,'HamFascicle'))
+    % Hamstring muscle-architecture study (RQ2): scales hamstring optimal
+    % FIBRE length to model short-fascicle (higher-risk) vs long-fascicle
+    % virtual athletes (Timmins 2016: short BFlh fascicles = strongest
+    % modifiable HSI risk factor). e.g. _HamFascicle_m20 -> lMo x0.80,
+    % _HamFascicle_p20 -> lMo x1.20. Muscle parameters change; the kinematic
+    % sprinting task is unchanged.
+    file_ext = simulation_type;
+
+elseif ~isempty(strfind(simulation_type,'HamStrength'))
+    % Hamstring muscle-architecture study (RQ2): scales hamstring maximal
+    % isometric FORCE to model weak (higher-risk) vs strong virtual athletes.
+    % e.g. _HamStrength_m30 -> Fmax x0.70, _HamStrength_p30 -> Fmax x1.30.
+    file_ext = simulation_type;
+
+elseif ~isempty(strfind(simulation_type,'HamPareto'))
+    % Injury-minimising optimal-technique study (RQ3+RQ4): adds a smooth
+    % biarticular-hamstring fascicle-overstretch penalty (wJ(13)) to the
+    % objective and sweeps its weight to trace the speed<->peak-fascicle-strain
+    % Pareto frontier, optionally on an at-risk virtual athlete.
+    % e.g. _HamPareto_Nom_w0200 -> nominal athlete, wJ(13)=0.20;
+    %      _HamPareto_Sh_w0800  -> short-fascicle athlete (lMo x0.80), wJ(13)=0.80.
+    file_ext = simulation_type;
+
 end

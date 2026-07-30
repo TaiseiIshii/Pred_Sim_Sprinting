@@ -52,10 +52,22 @@ from visualize_form_comparison_v2 import (
 # ═══════════════════════════════════════════════════════════════════════════
 
 CONDITION_SPECS = [
-    (-6, "PelvisShift_m06"),
-    (0,  "PelvisShift_p00"),
-    (6,  "PelvisShift_p06"),
+    (0,  "HamPareto_Nom_w0000"),
+    (8,  "HamPareto_Nom_w0800"),
+    (32, "HamPareto_Nom_w3200"),
 ]
+
+# ident -> ASCII panel label (VTK は日本語不可) と 最高速度(m/s)。w=傷害ペナルティ重み。
+COND_LABEL = {
+    "HamPareto_Nom_w0000": "w=0 (current)",
+    "HamPareto_Nom_w0800": "w=0.8",
+    "HamPareto_Nom_w3200": "w=3.2 (safest)",
+}
+COND_SPEED = {
+    "HamPareto_Nom_w0000": 11.78,
+    "HamPareto_Nom_w0800": 11.60,
+    "HamPareto_Nom_w3200": 11.51,
+}
 
 # .mat muscleValues.lMtilde の行 (1-based) → ハム基底名
 HAM_ROW_1BASED = {
@@ -260,7 +272,7 @@ def build_legend_strip(mode, height, width=LEGEND_W):
                  color="#a01010", va="top")
         fig.text(0.52, 0.34, "緑 = 余裕あり\n（低リスク）", fontsize=10,
                  color="#1a7a1a", va="top")
-        fig.text(0.06, 0.085, "オレンジ線 = 右足の軌跡\n灰の線 = 基準(0°)の足軌跡\n"
+        fig.text(0.06, 0.085, "オレンジ線 = 右足の軌跡\n灰の線 = 基準(現状 w=0)の足軌跡\n"
                  "横線 = 高さ定規", fontsize=8.5, va="top")
     else:
         kindjp = "筋活性化 act" if mode == "activation" else "筋力比 Fce/Fiso"
@@ -427,8 +439,7 @@ def render_sidebyside_frame(conds, fi, body_meshes, window_size,
         spd_s = f"speed {spd:.2f} m/s\n" if spd is not None else ""
         pk = cond.get("peak_strain")
         pk_s = f"peak ham lMtilde {pk:.2f}" if pk is not None else ""
-        pl.add_text(f"{cond['label']}\nmean tilt {cond['mean_tilt']:.1f} deg\n"
-                    f"{spd_s}{pk_s}", position="upper_left", font_size=11,
+        pl.add_text(f"{cond['label']}\n{spd_s}{pk_s}", position="upper_left", font_size=11,
                     color="black")
     img = np.asarray(pl.screenshot(return_img=True))[:, :, :3]
     pl.close()
@@ -455,7 +466,7 @@ def render_overlay_frame(conds, fi, body_meshes, window_size,
     add_ground(pl, base_cx)
     frame_sagittal(pl, zoom=1.18)
     add_lights(pl, base_cx)
-    handles = "  |  ".join(f"{c['label']} ({c['mean_tilt']:.1f}deg)" for c in conds)
+    handles = "  |  ".join(f"{c['label']}" for c in conds)
     pl.add_text("Overlay (pelvis-aligned): " + handles, position="upper_left",
                 font_size=11, color="black")
     img = pl.screenshot(return_img=True)
@@ -489,6 +500,31 @@ def write_mp4(frame_fn, conds, body_meshes, out_path, n_frames, cycles, fps,
                 print(f"    {k + 1}/{len(seq)}")
     finally:
         writer.close()
+    mb = out_path.stat().st_size / (1024 * 1024)
+    print(f"  [OK] {out_path.name}  ({mb:.1f} MB)")
+
+
+def write_gif(frame_fn, conds, body_meshes, out_path, n_frames, cycles, fps,
+              window_size, color_mode="strain", show_grf=True, max_w=1000):
+    """走行アニメーションを GIF で保存 (Markdown にインライン埋め込み可能)。
+    各フレームを max_w に縮小し適応 256 色パレット化して軽量化する。"""
+    from PIL import Image
+    F = len(conds[0]["cache"]["phases"])
+    seq = _frame_seq(F, n_frames, cycles)
+    print(f"  {out_path.name}: {len(seq)} フレーム生成中 ...")
+    pil = []
+    for k, fi in enumerate(seq):
+        img = np.asarray(frame_fn(conds, int(fi), body_meshes, window_size,
+                                  color_mode=color_mode, show_grf=show_grf))[:, :, :3]
+        im = Image.fromarray(img)
+        w, h = im.size
+        if w > max_w:
+            im = im.resize((max_w, int(round(h * max_w / w))), Image.LANCZOS)
+        pil.append(im.convert("P", palette=Image.ADAPTIVE, colors=256))
+        if (k + 1) % 15 == 0 or k == len(seq) - 1:
+            print(f"    {k + 1}/{len(seq)}")
+    pil[0].save(str(out_path), save_all=True, append_images=pil[1:],
+                duration=int(round(1000.0 / fps)), loop=0, optimize=True, disposal=2)
     mb = out_path.stat().st_size / (1024 * 1024)
     print(f"  [OK] {out_path.name}  ({mb:.1f} MB)")
 
@@ -590,7 +626,7 @@ def _peak_ham_strain(strain):
 def load_conditions(results_dir, cache, study_dir=None):
     conds = []
     speeds = load_speeds(study_dir if study_dir is not None
-                         else results_dir / "PelvicShift_Study")
+                         else results_dir / "HamPareto_Study")
     for off, ident in CONDITION_SPECS:
         if ident not in cache:
             print(f"  [WARN] cache に {ident} なし。スキップ")
@@ -601,13 +637,13 @@ def load_conditions(results_dir, cache, study_dir=None):
             continue
         entry = cache[ident]
         strain = load_hamstring_strain(data[-1])
-        label = f"{off:+d}deg" if off != 0 else "0deg(nominal)"
+        label = COND_LABEL.get(ident, f"w={off/10:.1f}")
         conds.append({
             "offset": off, "label": label, "mean_tilt": entry["mean_tilt"],
             "cache": entry, "strain": strain,
             "foot_trace": foot_trace_pts(entry),
             "peak_strain": _peak_ham_strain(strain),
-            "speed": speeds.get(off),
+            "speed": COND_SPEED.get(ident),
         })
         print(f"  [OK] {ident:18s} mean tilt {entry['mean_tilt']:6.2f} deg, "
               f"{len(entry['phases'])} frames")
@@ -615,13 +651,15 @@ def load_conditions(results_dir, cache, study_dir=None):
 
 
 def setup_japanese_font():
+    import os
     try:
         import matplotlib.font_manager as fm
-        jp = [f.name for f in fm.fontManager.ttflist
-              if any(k in f.name for k in ("Gothic", "Meiryo", "Yu Gothic",
-                                           "MS Gothic"))]
-        if jp:
-            plt.rcParams["font.family"] = jp[0]
+        for _f in [r"C:\Windows\Fonts\meiryo.ttc", r"C:\Windows\Fonts\YuGothM.ttc",
+                   r"C:\Windows\Fonts\msgothic.ttc"]:
+            if os.path.exists(_f):
+                fm.fontManager.addfont(_f)
+                plt.rcParams["font.family"] = fm.FontProperties(fname=_f).get_name()
+                break
     except Exception:
         pass
     plt.rcParams["axes.unicode_minus"] = False
@@ -642,6 +680,8 @@ def main():
                     default="strain",
                     help="筋の着色: strain=ハムひずみ / activation=全身活性 / force=全身力")
     ap.add_argument("--no_grf", action="store_true", help="GRF ベクトルを描かない")
+    ap.add_argument("--gif", action="store_true",
+                    help="側面比較を GIF でも出力 (Markdown 埋め込み用・軽量)")
     args = ap.parse_args()
 
     setup_japanese_font()
@@ -650,12 +690,12 @@ def main():
     project_root = script_dir.parent
     results_dir = project_root / "Results"
     out_dir = (Path(args.output_dir) if args.output_dir
-               else results_dir / "PelvicShift_Study")
+               else results_dir / "HamPareto_Study")
     out_dir.mkdir(parents=True, exist_ok=True)
     cache_path = out_dir / CACHE_NAME
 
     print("=" * 70)
-    print("  骨盤前後傾オフセット × リッチ筋骨格可視化 (wrapping込み筋経路)")
+    print("  傷害最小化テクニック(ペナルティ重み) × リッチ筋骨格可視化 (wrapping込み筋経路)")
     print("=" * 70)
 
     if not cache_path.exists():
@@ -686,19 +726,25 @@ def main():
     print(f"\n--- 出力生成 (color={cm}, GRF={'on' if grf else 'off'}) ---")
     if args.only == "both":
         write_hero_still(conds, body_meshes,
-                         out_dir / f"pelvic_shift_musculoskeletal{suf}_hero.png",
+                         out_dir / f"ham_pareto_musculoskeletal{suf}_hero.png",
                          win, color_mode=cm, show_grf=grf)
     if not args.skip_video:
         if args.only in ("both", "side"):
             write_mp4(render_sidebyside_frame, conds, body_meshes,
-                      out_dir / f"pelvic_shift_musculoskeletal{suf}_sidebyside.mp4",
+                      out_dir / f"ham_pareto_musculoskeletal{suf}_sidebyside.mp4",
                       args.frames, args.cycles, args.fps, win,
                       color_mode=cm, show_grf=grf)
         if args.only in ("both", "overlay"):
             write_mp4(render_overlay_frame, conds, body_meshes,
-                      out_dir / f"pelvic_shift_musculoskeletal{suf}_overlay.mp4",
+                      out_dir / f"ham_pareto_musculoskeletal{suf}_overlay.mp4",
                       args.frames, args.cycles, args.fps,
                       (int(win[0] * 0.65), win[1]), color_mode=cm, show_grf=grf)
+
+    if args.gif:
+        write_gif(render_sidebyside_frame, conds, body_meshes,
+                  out_dir / f"ham_pareto_musculoskeletal{suf}_sidebyside.gif",
+                  args.frames, args.cycles, args.fps, win,
+                  color_mode=cm, show_grf=grf)
 
     print(f"\n{'=' * 70}\n  完了! 出力先: {out_dir}\n{'=' * 70}")
     return 0

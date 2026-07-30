@@ -175,11 +175,12 @@ Key scripts:
 Additional guides are available in `docs/`:
 
 | Document | Content |
-|----------|---------|
+| --- | --- |
 | [QUICKSTART.md](docs/QUICKSTART.md) | Step-by-step beginner's guide (日本語) |
 | [SETUP_GUIDE_JP.md](docs/SETUP_GUIDE_JP.md) | Detailed setup instructions (日本語) |
 | [DETAILED_EXECUTION_GUIDE.md](docs/DETAILED_EXECUTION_GUIDE.md) | Execution walkthrough with expected outputs |
 | [TROUBLESHOOTING_GUIDE.md](docs/TROUBLESHOOTING_GUIDE.md) | Common issues and solutions |
+| [Conference_Poster_Plan.md](docs/Conference_Poster_Plan.md) | Conference/poster hypothesis, validation, figure, and Q&A plan |
 
 ---
 
@@ -197,6 +198,42 @@ task is re-optimized, then hamstring stretch metrics are compared across conditi
 Key finding: increasing anterior pelvic tilt monotonically increases the peak normalized
 fiber length and passive force of the **biarticular** hamstrings (semimembranosus most),
 while the monoarticular biceps femoris short head is unchanged — with a small speed cost.
+
+---
+
+## Injury-minimising optimal-technique study (speed–safety Pareto, RQ3+RQ4)
+
+A **prescriptive** extension that moves the framework from *why is it risky* to *how should
+you run*. A smooth biarticular-hamstring fascicle-overstretch penalty (new objective weight
+`wJ(13)`) is added to the maximal-sprint cost and its weight is swept to trace the
+**top-speed vs peak-fascicle-strain Pareto frontier**, on the nominal athlete (RQ3) and on
+at-risk virtual athletes (short fascicle / weak) to compare **technique change vs training
+adaptation** (RQ4).
+
+- **Full report:** [docs/Hamstring_Pareto_Study_Report.md](docs/Hamstring_Pareto_Study_Report.md)
+- **3D musculoskeletal render:** `Results/HamPareto_Study/ham_pareto_musculoskeletal_hero.png`
+  (real OpenSim bones + wrapped hamstrings colored by fascicle strain + GRF; running animation
+  `_sidebyside.mp4` and inline `_sidebyside.gif` via `--gif`). Two-step like the pelvic study:
+  `compute_osim_muscle_paths_pareto.py` (OpenSim env) → `visualize_ham_pareto_musculoskeletal.py`
+  (pyvista env). A stick-figure + joint-angle view (`visualize_ham_pareto_motion.py`) complements it.
+- **Figures & animation:** `Results/HamPareto_Study/` (`pareto_frontier.png`,
+  `technique_vs_training.png`, `permuscle_vs_weight.png`, `anim_pareto_sweep.gif`,
+  `pareto_frontier.csv`)
+
+Key findings: (1) a **"free-lunch" region** exists — the nominal athlete can cut peak
+fascicle strain ~3.9% for only ~0.24% speed loss (up to −12% for −2.2%); (2) the frontier
+is far **steeper for the short-fascicle athlete** (reaching safety costs ~6–15% speed),
+whereas **fascicle-lengthening training reduces strain *and* raises speed** — so for
+architectural risk, fix the architecture, not the technique; (3) for the weak athlete,
+strengthening and technique are **orthogonal levers** (speed vs strain).
+
+Run it (from repo root):
+```bat
+run_ham_pareto.bat pilot      REM nominal w0000/w0200/w0800 (de-risk)
+run_ham_pareto.bat nominal    REM full nominal frontier (8 weights)
+run_ham_pareto.bat athletes   REM short + weak athletes (RQ4)
+run_ham_pareto.bat analyze    REM Pareto frontier analysis (Python)
+```
 
 ---
 

@@ -3,6 +3,8 @@
 作成日: 2026-06-21
 対象: チーム共有用のやさしいまとめ（詳細版は [REPORT.md](REPORT.md)）
 
+> はじめての方は、専門知識ゼロでも読める **[かんたんガイド.md](かんたんガイド.md)** から読むのがおすすめです（この1ファイルで全体像がわかります）。
+
 ---
 
 ## ひとことで言うと
@@ -144,6 +146,10 @@ SMPL モデルファイルが別途必要です（https://smpl.is.tue.mpg.de）�
 # 環境（pyvista 等）を入れる
 pip install pyvista imageio imageio-ffmpeg scipy numpy matplotlib
 
+# (0) レポート/ガイド用の図（fig1-4, 日本語ラベル）を作り直す
+#     pelvic_shift_summary.csv から matplotlib(Yu Gothic) で再描画（MATLAB の文字化けを回避）
+python analysis/plot_pelvic_shift_figs.py
+
 # (1) 筋経路キャッシュを作る（OpenSim を import できる env で1回）
 #     wrapping 込みの筋経路＋body変換＋活性化＋力＋GRF を全フレーム計算
 python analysis/compute_osim_muscle_paths.py --frames 60
@@ -159,6 +165,10 @@ python analysis/visualize_pelvic_shift_smpl.py --fps 25 --frames 60 --cycles 2
 
 # 軽量スティックフィギュア（全7条件）
 python analysis/visualize_pelvic_shift_motion.py --fps 25 --frames 80 --cycles 2
+
+# （任意）動画から軽量GIFを作る（ガイドへの埋め込み用、パレット2パスで高画質）
+#   ffmpeg -i pelvic_shift_musculoskeletal_sidebyside.mp4 -vf "fps=12,scale=900:-1:flags=lanczos,palettegen=stats_mode=diff" pal.png
+#   ffmpeg -i pelvic_shift_musculoskeletal_sidebyside.mp4 -i pal.png -lavfi "fps=12,scale=900:-1:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer" pelvic_shift_musculoskeletal_sidebyside.gif
 ```
 
 - OpenSim Geometry は `OPENSIM_HOME` 環境変数か `C:\OpenSim 4.x\Geometry` から自動検出します。
