@@ -181,6 +181,7 @@ Additional guides are available in `docs/`:
 | [DETAILED_EXECUTION_GUIDE.md](docs/DETAILED_EXECUTION_GUIDE.md) | Execution walkthrough with expected outputs |
 | [TROUBLESHOOTING_GUIDE.md](docs/TROUBLESHOOTING_GUIDE.md) | Common issues and solutions |
 | [Conference_Poster_Plan.md](docs/Conference_Poster_Plan.md) | Conference/poster hypothesis, validation, figure, and Q&A plan |
+| [Presentation_Audience_Strategy_Report.md](docs/Presentation_Audience_Strategy_Report.md) | Visual presentation storyboards for expert and non-expert audiences |
 
 ---
 
@@ -234,6 +235,54 @@ run_ham_pareto.bat nominal    REM full nominal frontier (8 weights)
 run_ham_pareto.bat athletes   REM short + weak athletes (RQ4)
 run_ham_pareto.bat analyze    REM Pareto frontier analysis (Python)
 ```
+
+---
+
+## Mechanistic force / eccentric analysis, robustness & individual-difference cross study (latest)
+
+This layer answers four requests: (a) compute muscle **force** (not just fibre length),
+(b) separate the pelvic-tilt **angle effect** from the **re-optimization** effect,
+(c) control for **running speed**, and (d) test **individual differences**.
+
+### Reports — start here
+- **Beginner-friendly full explainer (日本語, with figures + GIFs):**
+  [docs/Hamstring_Study_Complete_Explainer_JP.md](docs/Hamstring_Study_Complete_Explainer_JP.md)
+  — also `.html` (GIFs animate) and `.pdf` (print-ready, images embedded).
+- **Researcher technical report (A–J deliverables):**
+  [docs/Hamstring_Force_Mechanistic_Report.md](docs/Hamstring_Force_Mechanistic_Report.md)
+
+### New analyses (Python, saved `.mat` only — no re-simulation)
+| Script | What it does | Output |
+|---|---|---|
+| `analysis/analyze_pelvic_force_eccentric.py` | Peak muscle force (Fce/FT/Fpass, **N**), activation, eccentric metrics, timing, tilt regression, mediation chain | `Results/PelvicShift_Study/pelvic_force_eccentric.csv` |
+| `analysis/analyze_opt_on_off_pelvis.py`, `_probe_osim_ham.py` | opt-ON vs opt-OFF via OpenSim (direct tilt effect on ham MTU length) | `fig4_opt_on_vs_off.png`, `opt_on_off_pelvis.csv` |
+| `analysis/analyze_individual_force.py` | Nom/Sh/Wk on the speed–safety frontier; Fmax recovered as `Fpass/Fpetilde` | `Results/HamPareto_Study/fig7_individual_optima.png`, `individual_force.csv` |
+| `analysis/analyze_imposition_robustness.py` | PelvisShift vs PelvisTD agreement (rules out constraint artifact) | `imposition_robustness.png` |
+| `analysis/analyze_athlete_tilt_interaction.py`, `analyze_pelvic_athlete_cross.py` | Individual × pelvic-tilt 2×2 interaction (cross experiment) | `Results/PelvicAthlete_Study/athlete_tilt_interaction.png` |
+| `analysis/visualize_framework.py`, `visualize_exp1_doseresponse.py`, `visualize_pelvic_force_timeseries.py`, `visualize_tradeoff.py` | Figures 1, 2, 3, 5, 6 | `Results/PelvicShift_Study/`, `Results/HamPareto_Study/` |
+
+### New simulation condition — virtual athlete × pelvic tilt (cross experiment)
+Combine a virtual at-risk athlete with the pelvic-tilt manipulation. The hook is additive and
+reversible — every non-combined condition stays byte-identical:
+- `_PelvisShift_mNN_athSh` — short fascicle (hamstring optimal fibre length ×0.80) + tilt offset
+- `_PelvisShift_mNN_athWk` — weak (hamstring max isometric force ×0.80) + tilt offset
+
+```matlab
+setup_paths
+run_pelvic_athlete_sweep({'_PelvisShift_m02_athSh'})   % pilot (~20–30 min, N=50)
+run_pelvic_athlete_sweep                                % Sh/Wk × several tilts
+```
+Then analyse: `python analysis/analyze_pelvic_athlete_cross.py`.
+
+### Key results
+- **Direct pelvic-tilt effect on hamstring length = 0** (OpenSim: 0.000 mm). The stretch is
+  entirely mediated by re-optimized **hip flexion** (tilt→hip r = −1.00).
+- Fibre length rises with anterior tilt for all biarticular hamstrings (R²>0.99), but **peak
+  contractile force rises clearly only for semimembranosus** (R²0.97) — length↑ ≠ force↑.
+- A speed–safety **"free-lunch"** exists for the nominal athlete; the **short-fascicle athlete
+  needs training, not technique**.
+- Everything is framed as a **mechanical-loading surrogate ≠ injury risk** (biceps femoris long
+  head is the most-injured muscle epidemiologically; see report §H).
 
 ---
 

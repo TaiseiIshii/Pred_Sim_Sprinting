@@ -92,7 +92,9 @@ shiftStudy.refTiltRad = [];     % FIXED reference waveform = Nominal optimised
                                 % conditions share one reference and the realised
                                 % mean differs between conditions by the offset.
 if shiftStudy.active
-    shTok = simulation_type(strfind(simulation_type,'PelvisShift_')+numel('PelvisShift_'):end);
+    shTokFull = simulation_type(strfind(simulation_type,'PelvisShift_')+numel('PelvisShift_'):end);
+    shTok = regexp(shTokFull,'^[mp]\d+','match','once');   % leading offset token only
+    if isempty(shTok); shTok = shTokFull; end              % backward compatible (plain _PelvisShift_mNN)
     shSgn = 1;
     if shTok(1) == 'm'
         shSgn = -1;
@@ -227,6 +229,23 @@ if paretoStudy.active
     end
     fprintf('[HamPareto] simulation_type=%s -> athlete=%s, wJ(13)=%.4f\n', ...
         simulation_type, paretoStudy.athlete, paretoStudy.weight);
+end
+% =========================================================================
+
+% === Combined pelvic-shift x virtual-athlete (reversible, additive) ======
+% Naming: _PelvisShift_mNN_athSh (short fascicle, hamstring oMFL x0.80) or
+% _athWk (weak, hamstring Fmax x0.80). Reuses the archStudy scaling hook so the
+% ONLY thing that differs from a plain PelvisShift condition is the hamstring
+% architecture; every non-combined condition is byte-for-byte unchanged. The
+% tokens _athSh/_athWk cannot collide with 'PelvisShift' or any existing name.
+if shiftStudy.active
+    if ~isempty(strfind(simulation_type,'_athSh'))
+        archStudy.active = true; archStudy.mode = 'fascicle'; archStudy.factor = 0.80;
+        fprintf('[PelvisShift+Athlete] short-fascicle (oMFL x0.80) + tilt offset %+.1f deg\n', shiftStudy.offsetDeg);
+    elseif ~isempty(strfind(simulation_type,'_athWk'))
+        archStudy.active = true; archStudy.mode = 'strength'; archStudy.factor = 0.80;
+        fprintf('[PelvisShift+Athlete] weak (Fmax x0.80) + tilt offset %+.1f deg\n', shiftStudy.offsetDeg);
+    end
 end
 % =========================================================================
 
@@ -1328,7 +1347,7 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
             bounds_nsc.q.lower(jointi.pelvis.tilt) = deg2rad(ptStudy.centerDeg - ptStudy.halfWinDeg);
             bounds_nsc.q.upper(jointi.pelvis.tilt) = deg2rad(ptStudy.centerDeg + ptStudy.halfWinDeg);
         end
-        % === v3.1 wide: widen the pelvis_tilt COORDINATE bound (default ~±9.9deg,
+        % === v3.1 wide: widen the pelvis_tilt COORDINATE bound (default ~+/-9.9deg,
         % from the experimental range) to +/-25deg for the _PelvisTDwide_* variants
         % ONLY. Combined with the relaxed initial-pose matching window, this lets
         % the touchdown equality probe deeper anterior tilt, to test whether the
