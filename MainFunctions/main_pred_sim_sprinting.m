@@ -1,4 +1,4 @@
-function [] = main_pred_sim_sprinting(simulation_type_in, N_in)
+function [] = main_pred_sim_sprinting(simulation_type_in, N_in, warmStartFile_in)
 
 clc
 
@@ -25,6 +25,17 @@ Options.timePercent   = 0.15;     % Reduce overall time by % set
 if nargin >= 2 && ~isempty(N_in)
     Options.N = N_in;
     fprintf('[mesh] Options.N overridden by caller -> N = %d\n', Options.N);
+end
+
+% Optional explicit warm-start file override (3rd arg). Used ONLY by the
+% multi-start Pareto driver to force a specific initial guess / continuation
+% path (provenance-tracked). Applied inside the arch/pareto warm-start block
+% below; empty => keep the automatic newest-strict selection. Additive and
+% backward compatible (callers passing <=2 args are unaffected).
+wsOverride = '';
+if nargin >= 3 && ~isempty(warmStartFile_in)
+    wsOverride = warmStartFile_in;
+    fprintf('[Warm-start] caller override requested -> %s\n', wsOverride);
 end
 
 if Options.prevSol == 'Y'
@@ -229,6 +240,42 @@ if paretoStudy.active
     end
     fprintf('[HamPareto] simulation_type=%s -> athlete=%s, wJ(13)=%.4f\n', ...
         simulation_type, paretoStudy.athlete, paretoStudy.weight);
+end
+% =========================================================================
+
+% === Phase D: hamstring tension/work objective variants (additive) =======
+% Activated by tokens HamEcc / HamPasv / HamTdn / HamComp{EQ|ECC|PAS|LEN}.
+% Adds gated penalties wJ(14..16) on biarticular passive force / tendon force /
+% active-eccentric loading (and a nondimensionalized composite via the length +
+% ecc + passive terms). wXXXX=0 => byte-identical to baseline. Naming e.g.
+% _HamEcc_w0100 -> active-eccentric weight 0.10; _HamCompEQ_w0100 -> equal-mix
+% composite. Nominal athlete only. objStudy is only read in main-body scope
+% (weights + warm-start); the cost loop uses wJ(14..16) directly.
+objStudy.active  = ~isempty(strfind(simulation_type,'HamEcc')) || ...
+                   ~isempty(strfind(simulation_type,'HamPasv')) || ...
+                   ~isempty(strfind(simulation_type,'HamTdn')) || ...
+                   ~isempty(strfind(simulation_type,'HamComp'));
+objStudy.mode = ''; objStudy.weight = 0; objStudy.compC = [0 0 0]; objStudy.wsTok = '';
+if objStudy.active
+    wPosO = strfind(simulation_type,'_w');
+    objStudy.weight = str2double(simulation_type(wPosO(end)+2:end))/1000;
+    if isnan(objStudy.weight); objStudy.weight = 0; end
+    if ~isempty(strfind(simulation_type,'HamEcc'))
+        objStudy.mode = 'ecc';  objStudy.wsTok = 'HamEcc';
+    elseif ~isempty(strfind(simulation_type,'HamPasv'))
+        objStudy.mode = 'pasv'; objStudy.wsTok = 'HamPasv';
+    elseif ~isempty(strfind(simulation_type,'HamTdn'))
+        objStudy.mode = 'tdn';  objStudy.wsTok = 'HamTdn';
+    else
+        objStudy.mode = 'comp'; objStudy.wsTok = 'HamComp';
+        if ~isempty(strfind(simulation_type,'HamCompECC'));     objStudy.compC = [0.5 2.0 0.5];
+        elseif ~isempty(strfind(simulation_type,'HamCompPAS')); objStudy.compC = [0.5 0.5 2.0];
+        elseif ~isempty(strfind(simulation_type,'HamCompLEN')); objStudy.compC = [2.0 0.5 0.5];
+        else                                                    objStudy.compC = [1.0 1.0 1.0];
+        end
+    end
+    fprintf('[HamObj] simulation_type=%s -> mode=%s, weight=%.4f, compC=[%.1f %.1f %.1f]\n', ...
+        simulation_type, objStudy.mode, objStudy.weight, objStudy.compC(1), objStudy.compC(2), objStudy.compC(3));
 end
 % =========================================================================
 
@@ -455,7 +502,7 @@ end
 % BOTH-primal-and-dual warm start (the size checks after the NLP build pass),
 % which -- per this repo's convergence experience -- is what makes IPOPT
 % converge robustly rather than stalling from a cold start.
-if archStudy.active || paretoStudy.active
+if archStudy.active || paretoStudy.active || objStudy.active
     % Priority-ordered warm-start base patterns. The first pattern that yields
     % a STRICT, matching-mesh solution with saved duals wins. For the Pareto
     % sweep this gives natural CONTINUATION: running weights in increasing order,
@@ -475,11 +522,24 @@ if archStudy.active || paretoStudy.active
     elseif paretoStudy.active
         wsPatterns = {'pred_sprinting_data_*HamPareto_Nom_*.mat', ...
                       'pred_sprinting_data_*Nominal.mat'};
+    elseif objStudy.active
+        wsPatterns = {['pred_sprinting_data_*' objStudy.wsTok '_*.mat'], ...
+                      'pred_sprinting_data_*Nominal.mat'};
     else
         wsPatterns = {'pred_sprinting_data_*Nominal.mat'};
     end
     prevSol = []; chosenName = '';
+    if ~isempty(wsOverride)
+        if exist(wsOverride,'file')
+            wsPath = wsOverride;
+        else
+            wsPath = fullfile(pathResults, wsOverride);
+        end
+        prevSol = load(wsPath); chosenName = wsOverride;
+        fprintf('[Warm-start] OVERRIDE base (multi-start): %s\n', chosenName);
+    end
     for iP = 1:numel(wsPatterns)
+        if ~isempty(prevSol); break; end   % override already chose the base
         wsFiles = dir([pathResults wsPatterns{iP}]);
         bestIx = 0; bestTime = -inf;
         for iC = 1:numel(wsFiles)
@@ -951,7 +1011,20 @@ wJ(10) = 0.01; % Reserve actuators
 wJ(11) = 0.1; % Arm controls
 wJ(12) = 10.0; % Average speed
 wJ(13) = paretoStudy.weight; % Injury-min penalty: biarticular-hamstring fascicle overstretch (RQ3/RQ4). 0 = off (byte-identical to baseline).
-
+% Phase D objective variants (off by default => byte-identical to baseline).
+% wJ(14)=passive force, wJ(15)=tendon force, wJ(16)=active-eccentric loading.
+wJ(14) = 0; wJ(15) = 0; wJ(16) = 0;
+if objStudy.active
+    switch objStudy.mode
+        case 'pasv'; wJ(14) = objStudy.weight;
+        case 'tdn';  wJ(15) = objStudy.weight;
+        case 'ecc';  wJ(16) = objStudy.weight;
+        case 'comp'   % nondimensionalized composite = length + ecc + passive mix
+            wJ(13) = objStudy.weight*objStudy.compC(1);
+            wJ(16) = objStudy.weight*objStudy.compC(2);
+            wJ(14) = objStudy.weight*objStudy.compC(3);
+    end
+end
 
 %% Formulate NLPs
 
@@ -2360,7 +2433,7 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
                 % Get the non-normalised unscaled tendon forces & 
                 % Hill equilibrium evaluation (normalised unscaled)
                 % Outputs are left leg & back muscles, then right leg & back muscles
-                [Hilldiffkj,FTkj,Fcekj,Fpasskj,Fisokj,vMaxkj,~,lMkj,lMtildekj] = ...
+                [Hilldiffkj,FTkj,Fcekj,Fpasskj,Fisokj,vMaxkj,~,lMkj,lMtildekj,~,vMtildekj] = ...
                     f_forceEquilibrium_FtildeState_all_tendon_M(actkj_nsc{j},FTtildekj_nsc{j},...
                     dFTtildekj_nsc{j},lMTk_lr,vMTk_lr,tensions,aTendon,shift,oMFL_2_nsc,TSL_2_nsc,oMFL_2_nsc.*vMaxMult);
 
@@ -2564,6 +2637,25 @@ optimumOutput1 = saveOptimumFiles(scaling1,Options,optVars_sc1,optVars_nsc1,pred
                     parOvr = lMtildekj(parHamBi) - parThr;
                     parOvrPos = 0.5*(parOvr + sqrt(parOvr.^2 + parEps^2));
                     J = J + parScale.*wJ(13).*B(j+1)*(sum(parOvrPos.^2))*h;
+                end
+                % --- Phase D tension/work objective variants (gated) -----
+                % Provisional calibration scales (exploration); refine after
+                % the N=50 sweep. Biarticular rows [7 8 9 53 54 55]; bifemsh
+                % excluded (mono-articular control). Off (wJ=0) => baseline.
+                if wJ(14) ~= 0    % passive-force objective (overshoot above ~50 N proxy)
+                    parHamBi = [7 8 9 53 54 55];
+                    pasOvr = Fpasskj(parHamBi) - 50.0;
+                    pasPos = 0.5*(pasOvr + sqrt(pasOvr.^2 + 1e-3^2));
+                    J = J + 5e-1.*wJ(14).*B(j+1)*(sum(pasPos.^2))*h;
+                end
+                if wJ(15) ~= 0    % tendon-force objective (report only; NOT strain risk per se)
+                    parHamBi = [7 8 9 53 54 55];
+                    J = J + 1e-6.*wJ(15).*B(j+1)*(sum(FTkj(parHamBi).^2))*h;
+                end
+                if wJ(16) ~= 0    % active-eccentric loading (Fce during fibre lengthening)
+                    parHamBi = [7 8 9 53 54 55];
+                    vMpos = 0.5*(vMtildekj(parHamBi) + sqrt(vMtildekj(parHamBi).^2 + 1e-3^2));
+                    J = J + 1e-1.*wJ(16).*B(j+1)*(sum(Fcekj(parHamBi).*vMpos))*h;
                 end
                 % =========================================================
 

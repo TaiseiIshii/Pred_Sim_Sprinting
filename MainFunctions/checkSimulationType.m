@@ -130,4 +130,10 @@ elseif ~isempty(strfind(simulation_type,'HamPareto'))
     %      _HamPareto_Sh_w0800  -> short-fascicle athlete (lMo x0.80), wJ(13)=0.80.
     file_ext = simulation_type;
 
+elseif ~isempty(strfind(simulation_type,'HamEcc')) || ~isempty(strfind(simulation_type,'HamPasv')) || ~isempty(strfind(simulation_type,'HamTdn')) || ~isempty(strfind(simulation_type,'HamComp'))
+    % Phase D tension/work objective variants (additive). e.g. _HamEcc_w0100
+    % (active-eccentric), _HamPasv_w0200, _HamTdn_w0100, _HamCompEQ_w0100.
+    % wJ(14..16) / composite mix set in main; wXXXX=0 -> byte-identical baseline.
+    file_ext = simulation_type;
+
 end

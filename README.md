@@ -25,6 +25,52 @@ The framework investigates how **horizontal touchdown distance (HTD)** and **int
 
 ---
 
+## Validation, reproducibility & claim policy
+
+Beyond the base framework, this repository includes a **reproducible validation suite** and the
+governance documents behind an MSc-thesis / conference study on **pelvic posture and hamstring
+mechanical-load surrogates**. All quantitative claims are calibrated: the evaluated quantity is an
+**injury-related mechanical-load surrogate** (normalized fiber length, active/passive/tendon force,
+fiber lengthening velocity, negative fiber work) — **not** injury probability or prevention. See
+[docs/CLAIM_CALIBRATION.md](docs/CLAIM_CALIBRATION.md).
+
+### Reproducible analysis engine (`analysis/validation/`)
+Single-source-of-truth metrics on the true non-uniform collocation grid, in physical units
+([`ham_load_metrics.py`](analysis/validation/ham_load_metrics.py) v1.0.0). Tests run from a fresh clone:
+
+```bash
+python analysis/validation/test_unit_metrics.py       # 22/22 unit (offline, no .mat needed)
+python analysis/validation/test_ham_load_metrics.py    # 18/18 integration (skips cleanly if no data)
+```
+
+### Key supported findings (strict `Solve_Succeeded`, mesh-checked)
+- **Touchdown pelvic tilt → biarticular hamstring fiber length** (8 conditions, N=50 & N=100): more
+  anterior tilt robustly raises terminal-swing peak normalized fiber length in semimem/semiten/bifemlh
+  (mesh |Δ|<1.6%); the mono-articular bifemsh is flat → hip-crossing-specific.
+- **Boundary-condition decomposition:** the apparent "direct effect = 0" is a tree-rigid artefact; a
+  femur-fixed counterfactual explains ~85–90% of the adaptive lengthening (hip flexion ≈−1.07 deg/deg).
+- **Speed–load Pareto (SUPPORTED, N=100 multi-start):** a near-matched-speed candidate at w=0.1
+  (−0.34% speed, −5.2% load surrogate) reproduces across 3/3 initializations under pre-declared gates.
+- **Load-objective study (Phase D):** four objectives (fiber-length / active-eccentric / passive /
+  composite) dissociate; an equal-mix composite lowers all surrogates at once near matched speed.
+
+Passive force and negative work are **direction-robust but mesh-conditional in magnitude** (reported as
+such). Outputs (CSVs + figures) are in `Results/Validation_Master/`; each is hashed in
+`output_hashes.csv` and mapped to a source-MAT SHA256 in `manifest_provenance.csv`.
+
+### Governance & thesis documents (`docs/`)
+| Document | Purpose |
+|---|---|
+| [PAPER_RESULTS_FREEZE.md](docs/PAPER_RESULTS_FREEZE.md) | frozen numbers, provenance, claim ledger, figure↔CSV map |
+| [CLAIM_CALIBRATION.md](docs/CLAIM_CALIBRATION.md) · [CLAIM_EVIDENCE_MATRIX.md](docs/CLAIM_EVIDENCE_MATRIX.md) | language policy · claim → evidence |
+| [PROVENANCE.md](docs/PROVENANCE.md) · [DATA_AVAILABILITY.md](docs/DATA_AVAILABILITY.md) | commit / data traceability |
+| [THESIS_OUTLINE_JP.md](docs/THESIS_OUTLINE_JP.md) · [ABSTRACTS.md](docs/ABSTRACTS.md) | 11-chapter outline · JP/EN abstracts |
+| [PHASE_A_MUSCLE_TENSION_REPORT.md](docs/PHASE_A_MUSCLE_TENSION_REPORT.md) · [PER_MUSCLE_CONCLUSIONS.md](docs/PER_MUSCLE_CONCLUSIONS.md) | per-muscle 8-condition results |
+| [OPT_ON_OFF_INTERPRETATION.md](docs/OPT_ON_OFF_INTERPRETATION.md) · [LITERATURE_QUANTITATIVE_COMPARISON.md](docs/LITERATURE_QUANTITATIVE_COMPARISON.md) | counterfactual scope · literature |
+| [PHASE_D_E_FINDINGS.md](docs/PHASE_D_E_FINDINGS.md) · [FINAL_STUDY_PLAN.md](docs/FINAL_STUDY_PLAN.md) | load-objective study · master plan |
+
+---
+
 ## Repository Structure
 
 ```
@@ -44,7 +90,8 @@ Pred_Sim_Sprinting/
 ├── Results/                 # Simulation outputs (not tracked in git)
 ├── Videos/                  # Visualization outputs (not tracked in git)
 ├── analysis/                # Python post-processing & visualization scripts
-├── docs/                    # Setup guides and troubleshooting
+│   └── validation/          # Reproducible metrics engine + unit/integration tests
+├── docs/                    # Setup/troubleshooting + validation & thesis governance docs
 ├── environment.yml          # Conda environment specification
 ├── setup_paths.m            # MATLAB path initialization
 └── README.md
@@ -107,6 +154,11 @@ To change the simulation condition, edit `simulation_type` in the script:
 | `'_IKTD_Minus_6'` | IKTD decreased by 6 cm |
 
 Supported ranges: `±1, ±2, ±4, ±6, ±8, ±10` cm for both HTD and IKTD.
+
+**Study conditions** (batch runners in `MainFunctions/`): `_PelvisTD_m6…p6` touchdown pelvic tilt
+(`run_pelvic_td_sweep`); `_HamPareto_Nom_wXXXX` speed–load Pareto (`run_ham_pareto_sweep`,
+`run_ham_pareto_N100` for N=100 multi-start); `_HamEcc_/_HamPasv_/_HamCompEQ_wXXXX` Phase D load
+objectives (`run_ham_obj_sweep`). `wXXXX=0000` disables the penalty (byte-identical to baseline).
 
 ### 5. Mesh convergence (optional)
 
@@ -185,11 +237,12 @@ Additional guides are available in `docs/`:
 
 ---
 
-## Pelvic-tilt hamstring strain study
+## Pelvic-tilt hamstring load-surrogate study
 
-A causal study applying this framework to ask **how anterior/posterior pelvic tilt
-(`pelvis_tilt`) affects sprinting speed and hamstring strain-injury risk**. The pelvis
-tilt waveform is rigidly shifted by a fixed offset (±6°, 2° steps; 7 conditions) and the
+A manipulation study applying this framework to ask **how anterior/posterior pelvic tilt
+(`pelvis_tilt`) affects hamstring mechanical-load surrogates** at near-matched sprint performance
+(**surrogates, not injury probability**; see [docs/CLAIM_CALIBRATION.md](docs/CLAIM_CALIBRATION.md)).
+The pelvis tilt waveform is rigidly shifted by a fixed offset (±6°, 2° steps; 7 conditions) and the
 task is re-optimized, then hamstring stretch metrics are compared across conditions.
 
 - **Plain-language summary (日本語):** [Results/PelvicShift_Study/SUMMARY_JP.md](Results/PelvicShift_Study/SUMMARY_JP.md)
@@ -202,14 +255,15 @@ while the monoarticular biceps femoris short head is unchanged — with a small 
 
 ---
 
-## Injury-minimising optimal-technique study (speed–safety Pareto, RQ3+RQ4)
+## Hamstring load-surrogate speed–load Pareto study (RQ3+RQ4)
 
-A **prescriptive** extension that moves the framework from *why is it risky* to *how should
-you run*. A smooth biarticular-hamstring fascicle-overstretch penalty (new objective weight
-`wJ(13)`) is added to the maximal-sprint cost and its weight is swept to trace the
-**top-speed vs peak-fascicle-strain Pareto frontier**, on the nominal athlete (RQ3) and on
-at-risk virtual athletes (short fascicle / weak) to compare **technique change vs training
-adaptation** (RQ4).
+An extension that moves the framework from *why is load higher* to *what candidate motion lowers the
+load surrogate at maintained speed* (**not** a prescription of how to run; see
+[docs/CLAIM_CALIBRATION.md](docs/CLAIM_CALIBRATION.md)). A smooth biarticular-hamstring
+fascicle-overstretch penalty (new objective weight `wJ(13)`) is added to the maximal-sprint cost and
+its weight is swept to trace the **top-speed vs peak-fascicle-load-surrogate Pareto frontier**, on the
+nominal athlete (RQ3) and on virtual athletes (short fascicle / weak) to compare **technique change vs
+training adaptation** as an **exploratory** analysis (RQ4; morphology×pelvis is confounded).
 
 - **Full report:** [docs/Hamstring_Pareto_Study_Report.md](docs/Hamstring_Pareto_Study_Report.md)
 - **3D musculoskeletal render:** `Results/HamPareto_Study/ham_pareto_musculoskeletal_hero.png`
@@ -221,12 +275,12 @@ adaptation** (RQ4).
   `technique_vs_training.png`, `permuscle_vs_weight.png`, `anim_pareto_sweep.gif`,
   `pareto_frontier.csv`)
 
-Key findings: (1) a **"free-lunch" region** exists — the nominal athlete can cut peak
-fascicle strain ~3.9% for only ~0.24% speed loss (up to −12% for −2.2%); (2) the frontier
-is far **steeper for the short-fascicle athlete** (reaching safety costs ~6–15% speed),
-whereas **fascicle-lengthening training reduces strain *and* raises speed** — so for
-architectural risk, fix the architecture, not the technique; (3) for the weak athlete,
-strengthening and technique are **orthogonal levers** (speed vs strain).
+Key findings: (1) a **low-cost ("free-lunch") region** exists — the nominal athlete can cut the peak
+fascicle-load surrogate ~3.9% for only ~0.24% speed loss (up to −12% for −2.2%; **N=50, N=100
+multi-start verification in progress**); (2) **[exploratory, morphology×pelvis confounded]** the
+frontier is far **steeper for the short-fascicle athlete** (reaching load costs ~6–15% speed),
+whereas **fascicle-lengthening training lowers the surrogate *and* raises speed**; (3) for the weak
+athlete, strengthening and technique are **orthogonal levers** (speed vs load surrogate).
 
 Run it (from repo root):
 ```bat

@@ -1,0 +1,8 @@
+tag,condition,init_method,ws_file,out_file,solver_status,speed_mps,td_tilt_deg,iters,runtime_min,timestamp
+w0000_F,_HamPareto_Nom_w0000,forward_from_NominalN100,,pred_sprinting_data_15-August-2026__19-53-23___HamPareto_Nom_w0000.mat,Solve_Succeeded,11.83460,-7.9871,153,29.18,2026-08-15T19:53:27
+w0050_F,_HamPareto_Nom_w0050,forward_cont_from_w0000,,pred_sprinting_data_15-August-2026__21-57-37___HamPareto_Nom_w0050.mat,Solve_Succeeded,11.81750,-5.9995,682,124.20,2026-08-15T21:57:40
+w0100_F,_HamPareto_Nom_w0100,forward_cont_from_w0050,,pred_sprinting_data_15-August-2026__23-30-42___HamPareto_Nom_w0100.mat,Solve_Succeeded,11.79510,-4.3232,446,93.06,2026-08-15T23:30:43
+w0200_F,_HamPareto_Nom_w0200,forward_cont_from_w0100,,pred_sprinting_data_16-August-2026__02-26-49___HamPareto_Nom_w0200.mat,Solve_Succeeded,11.74548,-1.7083,915,176.13,2026-08-16T02:26:51
+w0100_B,_HamPareto_Nom_w0100,from_NominalN100,pred_sprinting_data_10-April-2026__16-29-40___Nominal.mat,pred_sprinting_data_16-August-2026__03-57-45___HamPareto_Nom_w0100.mat,Solve_Succeeded,11.79509,-4.2995,553,90.92,2026-08-16T03:57:47
+w0200_B,_HamPareto_Nom_w0200,from_NominalN100,pred_sprinting_data_10-April-2026__16-29-40___Nominal.mat,pred_sprinting_data_16-August-2026__05-49-46___HamPareto_Nom_w0200.mat,Solve_Succeeded,11.74307,-1.6467,702,112.01,2026-08-16T05:49:47
+w0100_C,_HamPareto_Nom_w0100,backward_cont_from_w0200,pred_sprinting_data_16-August-2026__05-49-46___HamPareto_Nom_w0200.mat,pred_sprinting_data_16-August-2026__07-39-58___HamPareto_Nom_w0100.mat,Solve_Succeeded,11.79286,-4.4642,532,110.21,2026-08-16T07:40:00

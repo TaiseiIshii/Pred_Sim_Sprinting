@@ -9,7 +9,9 @@ Exits non-zero on failure.  Pure asserts, no pytest dependency.
 """
 from __future__ import annotations
 
+import datetime as _dt
 import os
+import platform
 import sys
 
 import numpy as np
@@ -30,7 +32,12 @@ def check(name, cond, detail=""):
 
 def main():
     p = H.find_latest("Nominal")
-    assert p, "no Nominal .mat found"
+    if not p:
+        # Graceful INTEGRATION skip: the private source .mat is not in a fresh clone.
+        print("SKIP: integration test requires a Nominal result .mat (not shipped with the repo).")
+        print("      Needed: Results/pred_sprinting_data_*Nominal.mat  (see docs/DATA_AVAILABILITY.md).")
+        print("      Unit-level logic is covered offline by test_unit_metrics.py.")
+        sys.exit(0)  # 0 = skipped, NOT a failure (fresh-clone friendly)
     d = H.load_optimum(p)
     t = d["t"]
     print(f"Nominal: {d['name']} N={d['N']} status={d['return_status']}")
@@ -112,7 +119,11 @@ def main():
     check("contact time plausible 40-120 ms", 0.040 <= ev["contact_s"] <= 0.120,
           f"{ev['contact_s']*1e3:.1f} ms")
 
-    print(f"\n{'ALL PASSED' if not FAILS else 'FAILURES: ' + ', '.join(FAILS)}")
+    print(f"\nRUN RECORD: python {platform.python_version()} on {platform.platform()} | "
+          f"numpy {np.__version__} | engine v{H.__version__}")
+    print(f"  data: {d['name']}  N={d['N']}  status={d['return_status']}  "
+          f"sha256={H.sha256(p)[:16]}...  at {_dt.datetime.now().isoformat(timespec='seconds')}")
+    print(f"{'ALL PASSED' if not FAILS else 'FAILURES: ' + ', '.join(FAILS)}")
     sys.exit(1 if FAILS else 0)
 
 

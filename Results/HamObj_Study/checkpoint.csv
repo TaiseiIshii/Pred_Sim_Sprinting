@@ -1,0 +1,11 @@
+tag,condition,mesh_N,out_file,solver_status,speed_mps,td_tilt_deg,iters,runtime_min,timestamp
+_HamEcc_w0000,_HamEcc_w0000,50,pred_sprinting_data_15-August-2026__20-35-47___HamEcc_w0000.mat,Solve_Succeeded,11.77337,-7.6859,743,37.65,2026-08-15T20:35:48
+_HamEcc_w0100,_HamEcc_w0100,50,pred_sprinting_data_15-August-2026__21-05-50___HamEcc_w0100.mat,Solve_Succeeded,11.77009,-7.2858,646,30.05,2026-08-15T21:05:51
+_HamEcc_w0500,_HamEcc_w0500,50,pred_sprinting_data_15-August-2026__21-52-25___HamEcc_w0500.mat,Solve_Succeeded,11.70407,-6.9320,829,46.59,2026-08-15T21:52:27
+_HamEcc_w2000,_HamEcc_w2000,50,pred_sprinting_data_15-August-2026__23-50-54___HamEcc_w2000.mat,Solve_Succeeded,11.64528,-6.1821,1562,118.49,2026-08-15T23:50:56
+_HamEcc_w8000,_HamEcc_w8000,50,pred_sprinting_data_16-August-2026__02-16-25___HamEcc_w8000.mat,Solve_Succeeded,11.55258,-7.4777,1692,145.51,2026-08-16T02:16:27
+_HamCompEQ_w0100,_HamCompEQ_w0100,50,pred_sprinting_data_16-August-2026__08-45-23___HamCompEQ_w0100.mat,Solve_Succeeded,11.73792,-3.5610,700,56.93,2026-08-16T08:45:24
+_HamCompEQ_w0500,_HamCompEQ_w0500,50,pred_sprinting_data_16-August-2026__10-00-48___HamCompEQ_w0500.mat,Solve_Succeeded,11.55807,3.3271,1655,75.41,2026-08-16T10:00:49
+_HamCompEQ_w2000,_HamCompEQ_w2000,50,pred_sprinting_data_16-August-2026__10-50-11___HamCompEQ_w2000.mat,Solve_Succeeded,11.44809,4.0956,1167,49.39,2026-08-16T10:50:12
+_HamPasv_w0200,_HamPasv_w0200,50,pred_sprinting_data_16-August-2026__14-01-10___HamPasv_w0200.mat,Solve_Succeeded,11.77340,-7.6848,4884,190.97,2026-08-16T14:01:11
+_HamPasv_w0800,_HamPasv_w0800,50,pred_sprinting_data_16-August-2026__14-27-20___HamPasv_w0800.mat,Solve_Succeeded,11.77334,-7.6898,606,26.16,2026-08-16T14:27:21

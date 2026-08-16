@@ -3,8 +3,14 @@
 **Reproducible analysis of pelvic posture, whole-body coordination, and muscle morphology as
 determinants of hamstring mechanical-load surrogates at matched sprint performance.**
 
-- Repo `TaiseiIshii/Pred_Sim_Sprinting` · commit `3da75fc` (clean tree) · date 2026-08-15
-- Engine: [analysis/validation/ham_load_metrics.py](../analysis/validation/ham_load_metrics.py) v1.0.0 (18/18 tests pass)
+- Repo `TaiseiIshii/Pred_Sim_Sprinting` · **analysis_commit `bb0433a`** (clean tree) · date 2026-08-15.
+  The historical `manifest.csv` `commit` column is `repo_head_at_runtime = 3da75fc` (HEAD at the
+  15:55 analysis run); per-condition simulation/analysis/documentation commits are in
+  [manifest_provenance.csv](../Results/Validation_Master/manifest_provenance.csv) — see [PROVENANCE.md](PROVENANCE.md).
+- Engine: [analysis/validation/ham_load_metrics.py](../analysis/validation/ham_load_metrics.py) v1.0.0.
+  Tests: **22/22 unit** (offline, [test_unit_metrics.py](../analysis/validation/test_unit_metrics.py)) +
+  **18/18 integration** ([test_ham_load_metrics.py](../analysis/validation/test_ham_load_metrics.py); Nominal
+  N=100, sha256 `c75590b5…`, run 2026-08-15, python 3.13.9 / numpy 2.3.5)
 - Companion docs: [VALIDATION_MASTER_PLAN.md](VALIDATION_MASTER_PLAN.md) · [METRIC_DEFINITIONS.md](METRIC_DEFINITIONS.md) · [LITERATURE_COMPARISON.md](LITERATURE_COMPARISON.md) · [CLAIM_EVIDENCE_MATRIX.md](CLAIM_EVIDENCE_MATRIX.md)
 - All results: `Results/Validation_Master/` (existing study outputs were **not** overwritten)
 
@@ -108,7 +114,7 @@ surrogates increase with anterior tilt (R² 0.70–0.96), **except fiber lengthe
 
 ### Step 9 — speed–load Pareto (PASS, corrected surrogate)
 [pareto_nominal.csv], [pareto_morphology.csv], [fig_p1]. 7 non-dominated points; knee at
-w=0.2; one **speed-neutral load-reduction** candidate at w=0.1 under pre-declared thresholds
+w=0.2; one **near-matched-speed load-reduction** candidate at w=0.1 under pre-declared thresholds
 (surrogate ≤−3%, |Δspeed|≤0.5%). No causal/"safe technique" language.
 
 ### Step 10 — morphology dependence (PASS main effects; factorial partially BLOCKED)
@@ -175,7 +181,7 @@ cd <repo>\Pred_Sim_Sprinting
 2. **Mechanistic:** the pelvic-tilt "direct effect" on hamstring load is boundary-condition
    dependent, and the optimal solution realizes anterior tilt through hip flexion, lengthening
    the biarticular hamstrings specifically (mono-articular control) at matched top speed.
-3. **Applied trade-off:** a reproducible speed–load Pareto with a pre-declared "speed-neutral
+3. **Applied trade-off:** a reproducible speed–load Pareto with a pre-declared "near-matched-speed
    load-reduction" candidate and explicit convergence/mesh-robustness accounting.
 
 ## 9. Next experimental intervention candidates (hypotheses to test)

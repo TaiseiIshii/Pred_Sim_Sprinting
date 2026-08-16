@@ -7,7 +7,9 @@ sprint performance.
 - **Repo**: `TaiseiIshii/Pred_Sim_Sprinting`
 - **Framework**: Haralabidis et al., single symmetric sprint step, direct collocation
   (CasADi/IPOPT), OpenSim musculoskeletal model. Published optimal top speed 11.85 m/s.
-- **Created**: 2026-08-15 · Branch `main` · HEAD `3da75fc` (clean tree)
+- **Created**: 2026-08-15 · Branch `main` · **analysis_commit `bb0433a`** (clean tree). The
+  `manifest.csv` `commit` column = `repo_head_at_runtime 3da75fc` (HEAD at the analysis run); the
+  analysis scripts were committed at `bb0433a`. See [PROVENANCE.md](PROVENANCE.md).
 - **Scope note**: We validate **injury-related mechanical-load surrogates**, NOT injury
   probability. Language rules in §Claims.
 
