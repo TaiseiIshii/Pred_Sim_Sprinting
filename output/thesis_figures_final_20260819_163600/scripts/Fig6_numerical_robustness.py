@@ -184,18 +184,18 @@ def main():
     axD.set_title("D  Discovery \u2192 adoption flow", loc="left", fontweight="bold", fontsize=9.5)
     ny = len(flow)
     maxc = max(n for _, n, _ in flow)
+    x0 = 0.16
     for i, (stage, n, reason) in enumerate(flow):
         y = ny - 1 - i
         w = 0.62 * n / maxc
-        x0 = 0.16
-        axD.add_patch(plt.Rectangle((x0, y + 0.12), w, 0.6, transform=axD.transAxes,
+        axD.add_patch(plt.Rectangle((x0, y + 0.28), w, 0.40, transform=axD.transData,
                                     facecolor="#4a7fb5", edgecolor="white", alpha=0.9, clip_on=False))
-        axD.text(x0 + 0.01, y + 0.42, f"{stage}", transform=axD.transAxes, fontsize=6.4,
-                 va="center", ha="left", color="white", fontweight="bold")
-        axD.text(x0 + w + 0.015, y + 0.42, f"n={n}", transform=axD.transAxes, fontsize=6.6,
+        axD.text(x0, y + 0.80, stage, transform=axD.transData, fontsize=6.2,
+                 va="center", ha="left", color="0.15", fontweight="bold")
+        axD.text(x0 + w + 0.02, y + 0.48, f"n={n}", transform=axD.transData, fontsize=6.4,
                  va="center", ha="left", color="0.15")
         if reason:
-            axD.text(x0, y + 0.02, reason, transform=axD.transAxes, fontsize=5.4,
+            axD.text(x0, y + 0.09, reason, transform=axD.transData, fontsize=5.2,
                      va="center", ha="left", color="0.5", style="italic")
     axD.text(0.16, -0.02, f"PelvisTD acceptable={n_accept}, failed={n_failed}; "
              f"non-strict N=100 wide={len(nonstrict_wide_n100)} (excluded)",

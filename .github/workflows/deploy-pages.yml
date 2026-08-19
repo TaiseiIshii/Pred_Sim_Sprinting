@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          lfs: true            # videos (*.mp4/*.gif) are Git LFS; fetch real bytes so Pages serves them, not pointers
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
