@@ -21,7 +21,7 @@ COLS = ["figure_id", "panel_id", "analytical_question", "takeaway", "input_path"
         "mesh", "condition_family", "solver_acceptance_rule", "muscle_names_and_indices",
         "phase_window", "metric_formula", "source_csv", "plotting_script",
         "pdf_path", "svg_path", "png_path", "generated_at", "qa_status"]
-FIG_ORDER = ["Fig1", "Fig2", "Fig3", "Fig4", "Fig5", "Fig6", "Fig7", "FigS1", "FigS2"]
+FIG_ORDER = ["Fig1", "Fig2", "Fig3", "Fig4", "Fig5", "Fig6", "Fig7", "FigS1", "FigS2", "FigS3", "FigS4"]
 
 
 def sha(p):
@@ -80,6 +80,16 @@ def main():
         p = os.path.join(C.RESULTS, r["out_file"])
         if r["out_file"] not in seen and os.path.isfile(p):
             inputs.append(("pareto_MAT", r["out_file"], p)); seen.add(r["out_file"])
+    # S4 (N=50 wide) + S3 (Ham architecture) source MAT
+    seen.update(name for _, name, _ in inputs)
+    for pat, role in ((f"pred_sprinting_data_*___PelvisTDwide_*.mat", "S4_N50wide_or_N100wide_MAT"),
+                      (f"pred_sprinting_data_*___HamFascicle_*.mat", "S3_oMFL_MAT"),
+                      (f"pred_sprinting_data_*___HamStrength_*.mat", "S3_Fmax_MAT"),
+                      (f"pred_sprinting_data_*___HamTendon_*.mat", "S3_TSL_MAT")):
+        for p in sorted(glob.glob(os.path.join(C.RESULTS, pat))):
+            nm = os.path.basename(p)
+            if nm not in seen:
+                inputs.append((role, nm, p)); seen.add(nm)
     hashed = []
     for role, name, p in inputs:
         if os.path.isfile(p):

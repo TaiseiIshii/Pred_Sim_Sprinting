@@ -1,0 +1,6 @@
+family,perturbation,delta_biartic_mean_peak_lMtilde
+HamFascicle,-10%,+0.09170
+HamFascicle,+10%,-0.08188
+HamStrength,-10%,-0.00688
+HamStrength,+10%,+0.00811
+HamTendon,-10%,+0.26630

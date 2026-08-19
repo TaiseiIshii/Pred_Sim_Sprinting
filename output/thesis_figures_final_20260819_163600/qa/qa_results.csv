@@ -18,4 +18,7 @@ Fig7 mean dSurro ~ -5.189%,PASS,-5.1889
 Fig7 all strict Solve_Succeeded,PASS,
 Fig5 adaptive peaks match audit & tree-rigid ~ 0,PASS,
 Fig4 marks GRF & EMG error not available,PASS,
-all 9 figures have PDF+SVG+PNG,PASS,missing=[]
+S4 N=50 wide has 8 conditions,PASS,"['m2', 'm4', 'm6', 'm8', 'p0', 'p2', 'p4', 'p6']"
+S4 biartic slopes positive at both meshes,PASS,
+S3 has >=2 parameter families,PASS,"['HamFascicle', 'HamStrength', 'HamTendon']"
+all 11 figures have PDF+SVG+PNG,PASS,missing=[]

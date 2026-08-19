@@ -109,6 +109,22 @@ Fce は減衰項を含む収縮要素力。前傾量 <code>A = -pelvis_tilt</cod
       <p class="caption"><b>Caption (EN):</b> Percent change min-&gt;max tilt per metric; passive force rises most, biarticular metrics rise, bifemsh near zero.<br>
          <b>図注 (JP):</b> 最小→最大前傾の変化率。受動力が最大上昇、二関節指標が上昇、BFsh は中立。</p>
     </section>
+    <section>
+      <h2>Figure S3 | 筋腱パラメータ感度 / Muscle-tendon parameter sensitivity</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 基準ハムストリング作用点は筋腱パラメータ ±10% にどれだけ感度をもつか。</p>
+      <img src="figures/png/FigS3_param_sensitivity.png" alt="Figure S3">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 至適筋線維長 oMFL が支配的（−10%で二関節平均 peak lMtilde +0.092、+10%で -0.082）。最大等尺性筋力 Fmax は小（±10%で -0.007/+0.008）。腱自然長 TSL ±10%は +0.266/+nan。これは基準作用点の感度で、用量反応傾き自体の感度ではない。受動FLはモデルのper-muscle化が必要で未実施。</p>
+      <p class="caption"><b>Caption (EN):</b> Sensitivity of the baseline biarticular hamstring peak lMtilde to +/-10% muscle-tendon parameters (oMFL dominant; Fmax small; TSL if solved). Baseline operating-point sensitivity, not dose-response-slope sensitivity; passive force-length not run (needs per-muscle Fpparam).<br>
+         <b>図注 (JP):</b> 基準二関節ハム peak lMtilde の ±10% 筋腱パラメータ感度。oMFL が支配的、Fmax は小。基準作用点の感度であり傾き感度ではない。受動FLは未実施。</p>
+    </section>
+    <section>
+      <h2>Figure S4 | 解像度頑健性 / Resolution robustness</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 接地前傾の用量反応はメッシュ解像度に頑健か（N=50 wide 対 N=100 wide、達成角で比較）。</p>
+      <img src="figures/png/FigS4_mesh_robustness.png" alt="Figure S4">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 二関節3筋の用量反応は N=50 wide と N=100 wide の両メッシュで方向一致（正）、BFsh は平坦。傾きは N=50 が約20%急（例 SM: N100 +0.0068 vs N50 +0.0081/deg）。達成角一致での差 |Δ|≈0.009 lMtilde。基準の0.524°差はメッシュ効果で、純粋なmesh convergenceではない。</p>
+      <p class="caption"><b>Caption (EN):</b> N=50 wide vs N=100 wide dose-response at achieved touchdown angle. Qualitative direction robust; N=50 slope ~20% steeper. Base differs 0.524 deg (mesh-dependent optimum shift) -&gt; resolution robustness, NOT pure mesh convergence. N=50 p2/p4/p6 were re-solved to complete the wide series.<br>
+         <b>図注 (JP):</b> N=50/N=100 wide の用量反応を達成角で比較。方向は頑健、N=50 傾きは約20%急。基準0.524°差はメッシュ効果。純粋なmesh convergenceではない。</p>
+    </section>
 
 <footer>
 出力フォルダ: <code>output/thesis_figures_final_20260819_163600/</code>。

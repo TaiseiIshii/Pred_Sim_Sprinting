@@ -16,13 +16,16 @@
 | Fig7 pareto | 良 | 無（strict注記を左上へ移動で解消） | dSpeed%, dSurro%, %stride, deg | 可（marker形状=経路） | 目標領域内にw=0.05/0.1, w=0.2は速度予算超過 | 軸範囲/凡例/注記修正 |
 | FigS1 force-length | 良 | 無 | lMtilde, Fce(N) | 可（濃淡+thick=TS） | 前傾大で終末遊脚の作用点が長lMtilde側へ | — |
 | FigS2 heatmap | 良 | 無 | % change（発散色, 0中心）+セル値 | セル値併記で可 | Fpass が最大上昇, BFsh 中立 | — |
+| FigS3 param sens. | 良 | 無 | scale factor, Δ peak lMtilde | 可（色+marker+リング/×） | oMFL 支配的、Fmax 小、TSL 脆弱（−10%ドリフト・+10%失敗）を赤リング/×で明示 | 腱ドリフト/失敗を追記 |
+| FigS4 mesh robust. | 良 | 無 | achieved tilt(deg), peak lMtilde | 可（filled=N100/open=N50） | 方向は両メッシュ一致、N=50傾き約20%急を注記 | — |
 
 ## 個別注記
 - **Fig2**: 帯（±1%）がデータ幅より広いため、速度スプレッド0.43%を数値注記で補足（「全て±1%以内」）。回帰95%CI帯は描いていない（設計点は決定論的）。
 - **Fig3**: 半膜様筋の谷 lMtilde≈0.30 は**実データ**（短筋束・長腱）で人工物ではない（別途 MAT 直読で確認）。共有y軸で谷も峰も表示。
 - **Fig4**: pelvis_tilt は r=−0.31（規約/姿勢差）。股 r=0.97/膝 r=0.90/足 r=0.93（形状一致・オフセット有）。peak vGRF 5.9BW は接触モデル由来で過大の既知傾向を注記。GRF/EMG 誤差は `not available`。
 - **FigS1**: 3筋で力の絶対値スケールが大きく異なる（SM~3300N, ST~800N）ため y 軸は筋ごと（異筋＝異量）。x（lMtilde）は各筋のROMに合わせた。これは「同一量の small multiples 統一」の合理的例外。
-- **色覚/白黒**: 4筋は色＋marker形状＋open/filled で冗長符号化。Fig3 の濃淡は連続colorbar＋peak marker（白点縁）で判別可。
+- **FigS3**: oMFL/Fmax は清潔な一因子スイープ。TSL は **−10% が速度ドリフト（赤リング）・+10% が未収束（×、Maximum_CpuTime_Exceeded）**であることを図・キャプション・source CSV（各solveの速度/傾斜）に明示。受動FLは未実施と注記。全体再最適化による作用点移動を隠さない。
+- **FigS4**: N=50（open, 破線）と N=100（filled, 実線）の用量反応を達成接地角で重ね、傾き・R²・達成角一致での |Δ| をパネル内に記載。基準 0.524°差はメッシュ効果とキャプションに明記。
 
 ## 判定
-本文 Fig 1–7 と補足 S1–S2 は、数値照合・単位・符号・評価窓・筋index・solver status の自動QAを通過し、目視でも文字切れ・過剰解釈が無いことを確認した。**Fig 2/3/4/5/6/7 は「明示的限界付きで提出可」**。Fig S3/S4 は未作成（`03_missing_data_and_blockers.md`）。
+本文 Fig 1–7 と補足 S1–S4 は、数値照合・単位・符号・評価窓・筋index・solver status の自動QA（23項目）を通過し、目視でも文字切れ・過剰解釈が無いことを確認した。**Fig 2/3/4/5/6/7 は「明示的限界付きで提出可」**。補足 S1–S4 も作成済み（S3 は受動FLのみ未実施と明示、S4 は解像度頑健性として枠づけ）。

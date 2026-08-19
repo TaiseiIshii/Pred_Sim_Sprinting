@@ -35,6 +35,32 @@ def main():
     mds = np.mean([float(r["dSpeed_pct"]) for r in w1])
     mdu = np.mean([float(r["dSurro_pct"]) for r in w1])
 
+    # S3 / S4 dynamic summaries (present only if their source CSVs exist)
+    def maybe(rel):
+        p = os.path.join(C.OUTDIR, rel)
+        return rd(rel) if os.path.isfile(p) else None
+    s4 = maybe("source_data/FigS4_slopes_source.csv")
+    s3 = maybe("source_data/FigS3_tornado_source.csv")
+    s4_txt = ""
+    if s4:
+        sm = next((r for r in s4 if r["muscle"] == "semimem"), None)
+        if sm:
+            s4_txt = (f"二関節3筋の用量反応は N=50 wide と N=100 wide の両メッシュで方向一致（正）、BFsh は平坦。"
+                      f"傾きは N=50 が約20%急（例 SM: N100 {float(sm['slope_N100']):+.4f} vs N50 {float(sm['slope_N50']):+.4f}/deg）。"
+                      f"達成角一致での差 |Δ|≈{float(sm['mean_abs_diff_matched_angle']):.3f} lMtilde。基準の0.524°差はメッシュ効果で、純粋なmesh convergenceではない。")
+    s3_txt = ""
+    if s3:
+        fams = sorted({r["family"] for r in s3})
+        def dz(fam, side):
+            m = next((r for r in s3 if r["family"] == fam and r["perturbation"] == side), None)
+            return float(m["delta_biartic_mean_peak_lMtilde"]) if m else float("nan")
+        s3_txt = ("至適筋線維長 oMFL が支配的（−10%で二関節平均 peak lMtilde "
+                  f"{dz('HamFascicle','-10%'):+.3f}、+10%で {dz('HamFascicle','+10%'):+.3f}）。"
+                  f"最大等尺性筋力 Fmax は小（±10%で {dz('HamStrength','-10%'):+.3f}/{dz('HamStrength','+10%'):+.3f}）。")
+        if "HamTendon" in fams:
+            s3_txt += f"腱自然長 TSL ±10%は {dz('HamTendon','-10%'):+.3f}/{dz('HamTendon','+10%'):+.3f}。"
+        s3_txt += "これは基準作用点の感度で、用量反応傾き自体の感度ではない。受動FLはモデルのper-muscle化が必要で未実施。"
+
     def png(stem):
         return f"figures/png/{stem}.png"
 
@@ -118,6 +144,24 @@ def main():
          "Percent change min->max tilt per metric; passive force rises most, biarticular metrics rise, bifemsh near zero.",
          "最小→最大前傾の変化率。受動力が最大上昇、二関節指標が上昇、BFsh は中立。"),
     ]
+    if s3_txt:
+        SUPPL.append(
+            ("FigS3_param_sensitivity", "Figure S3", "筋腱パラメータ感度 / Muscle-tendon parameter sensitivity",
+             "基準ハムストリング作用点は筋腱パラメータ ±10% にどれだけ感度をもつか。",
+             s3_txt,
+             "Sensitivity of the baseline biarticular hamstring peak lMtilde to +/-10% muscle-tendon parameters "
+             "(oMFL dominant; Fmax small; TSL if solved). Baseline operating-point sensitivity, not dose-response-slope "
+             "sensitivity; passive force-length not run (needs per-muscle Fpparam).",
+             "基準二関節ハム peak lMtilde の ±10% 筋腱パラメータ感度。oMFL が支配的、Fmax は小。基準作用点の感度であり傾き感度ではない。受動FLは未実施。"))
+    if s4_txt:
+        SUPPL.append(
+            ("FigS4_mesh_robustness", "Figure S4", "解像度頑健性 / Resolution robustness",
+             "接地前傾の用量反応はメッシュ解像度に頑健か（N=50 wide 対 N=100 wide、達成角で比較）。",
+             s4_txt,
+             "N=50 wide vs N=100 wide dose-response at achieved touchdown angle. Qualitative direction robust; N=50 slope "
+             "~20% steeper. Base differs 0.524 deg (mesh-dependent optimum shift) -> resolution robustness, NOT pure mesh "
+             "convergence. N=50 p2/p4/p6 were re-solved to complete the wide series.",
+             "N=50/N=100 wide の用量反応を達成角で比較。方向は頑健、N=50 傾きは約20%急。基準0.524°差はメッシュ効果。純粋なmesh convergenceではない。"))
 
     def section(stem, tag, title, purpose, res_jp, cap_en, cap_jp):
         return f"""

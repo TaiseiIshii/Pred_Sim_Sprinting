@@ -103,16 +103,38 @@ def main():
     check("Fig4 marks GRF & EMG error not available", len(na) == 2 and
           all("not available" in r["RMSE_after_offset_removed_deg"] for r in na))
 
-    # 8. output files exist for the 7 main + 2 suppl figures
+    # 8b. S4 mesh robustness: N=50 wide has all 8 offsets (strict), qualitative direction matches N=100
+    s4 = os.path.join(C.OUTDIR, "source_data", "FigS4_slopes_source.csv")
+    if os.path.isfile(s4):
+        rows_s4 = rd("source_data/FigS4_slopes_source.csv")
+        src_s4 = rd("source_data/FigS4_mesh_robustness_source.csv")
+        n50 = {r["offset"] for r in src_s4 if r["mesh"] == "N50"}
+        check("S4 N=50 wide has 8 conditions", len(n50) == 8, f"{sorted(n50)}")
+        biartic_ok = all(float(r["slope_N100"]) > 0 and float(r["slope_N50"]) > 0
+                         for r in rows_s4 if r["muscle"] in C.BIARTIC)
+        check("S4 biartic slopes positive at both meshes", biartic_ok)
+
+    # 8c. S3 present with >=2 parameter families
+    s3 = os.path.join(C.OUTDIR, "source_data", "FigS3_param_sensitivity_source.csv")
+    if os.path.isfile(s3):
+        rows_s3 = rd("source_data/FigS3_param_sensitivity_source.csv")
+        fams = {r["family"] for r in rows_s3}
+        check("S3 has >=2 parameter families", len(fams) >= 2, f"{sorted(fams)}")
+
+    # 8. output files exist for the main + suppl figures
     missing = []
-    for fig in ["Fig1_study_logic", "Fig2_primary_N100", "Fig3_lMtilde_waveforms_N100",
-                "Fig4_baseline_validation", "Fig5_pelvis_femur_mechanism", "Fig6_numerical_robustness",
-                "Fig7_pareto_N100", "FigS1_force_length", "FigS2_muscle_metric_heatmap"]:
+    figs = ["Fig1_study_logic", "Fig2_primary_N100", "Fig3_lMtilde_waveforms_N100",
+            "Fig4_baseline_validation", "Fig5_pelvis_femur_mechanism", "Fig6_numerical_robustness",
+            "Fig7_pareto_N100", "FigS1_force_length", "FigS2_muscle_metric_heatmap"]
+    for extra in ("FigS3_param_sensitivity", "FigS4_mesh_robustness"):
+        if os.path.isfile(os.path.join(C.OUTDIR, "figures", "png", extra + ".png")):
+            figs.append(extra)
+    for fig in figs:
         for sub, ext in (("pdf", "pdf"), ("svg", "svg"), ("png", "png")):
             p = os.path.join(C.OUTDIR, "figures", sub, fig + "." + ext)
             if not os.path.isfile(p):
                 missing.append(f"{fig}.{ext}")
-    check("all 9 figures have PDF+SVG+PNG", not missing, f"missing={missing}")
+    check(f"all {len(figs)} figures have PDF+SVG+PNG", not missing, f"missing={missing}")
 
     # write results
     out = os.path.join(C.QA, "qa_results.csv")
