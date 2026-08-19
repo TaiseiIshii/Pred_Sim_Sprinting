@@ -1,0 +1,5 @@
+muscle,is_biarticular,slope_per_deg_anterior,intercept,R2,LOO_slope_min,LOO_slope_max,speed_adj_coef_per_deg,pct_change_min_to_max_tilt,expected_slope,expected_speed_adj,peak_lMtilde_at_min_tilt(p6),peak_lMtilde_at_max_tilt(m8)
+semimem,True,0.006785,0.951729,0.96137,0.006260,0.007342,0.006402,9.715,0.00678,0.0064,0.97302,1.06755
+semiten,True,0.003741,1.117137,0.95727,0.003439,0.004031,0.003509,4.654,0.00374,0.00351,1.12863,1.18116
+bifemlh,True,0.005379,1.020212,0.94975,0.004935,0.005871,0.005037,7.193,0.00538,0.00504,1.03778,1.11243
+bifemsh,False,-0.000254,0.945316,0.92746,-0.000290,-0.000233,-0.000272,-0.319,,,0.94478,0.94176

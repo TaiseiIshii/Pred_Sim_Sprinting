@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>修士論文 追加図 統合プレビュー</title>
+<style>
+ body { font-family: "Yu Gothic","Meiryo",sans-serif; max-width: 1000px; margin: 24px auto;
+        color:#161616; background:#fff; line-height:1.6; padding:0 16px; }
+ h1 { font-size:1.5em; border-bottom:3px solid #2166ac; padding-bottom:6px; }
+ h2 { font-size:1.15em; color:#1a1a1a; margin-top:2em; border-left:5px solid #2166ac; padding-left:10px; }
+ .prov { background:#f4f7fb; border:1px solid #d6e2f0; padding:12px 16px; font-size:0.85em; border-radius:6px; }
+ section { margin-bottom:1.5em; }
+ img { max-width:100%; height:auto; border:1px solid #e2e2e2; padding:6px; background:#fff; display:block; margin:10px 0; }
+ .purpose { color:#0b3d66; }
+ .result { background:#fbfbfb; border-left:3px solid #1b7837; padding:8px 12px; }
+ .caption { font-size:0.85em; color:#444; }
+ .warn { background:#fff6e8; border:1px solid #e0b877; padding:10px 14px; border-radius:6px; font-size:0.88em; }
+ code { background:#f0f0f0; padding:1px 4px; border-radius:3px; }
+ footer { margin-top:3em; font-size:0.82em; color:#555; border-top:1px solid #ddd; padding-top:12px; }
+</style></head>
+<body>
+<h1>修士論文 追加図 統合プレビュー<br><span style="font-size:0.6em;font-weight:normal;color:#555;">
+Thesis additional figures — integrated preview</span></h1>
+
+<div class="prov">
+<b>Provenance:</b> 全図は元 MAT / .mot / .sto / .osim から再計算（エンジン <code>scripts/_common.py</code>、
+<code>Results/Independent_Audit_20260819/audit_recalc_N100.py</code> と数値一致）。commit <code>e7b8de9</code>。
+主評価項目 = <b>1ストライド全体の最大 lMtilde（=lM/lMo）</b>。N=100 を主解析、N=50 は主結果に混在させない。
+数値照合は <code>01_numeric_reconciliation.csv</code>（27行・不一致0）、自動QAは <code>qa/qa_results.csv</code>（20項目 PASS）。
+Fce は減衰項を含む収縮要素力。前傾量 <code>A = -pelvis_tilt</code>。
+</div>
+
+<div class="warn"><b>解釈の限界:</b> 本図集は単一予測モデル内の<b>相関・機序</b>を示すもので、肉離れの<b>因果</b>・受傷リスク低減・
+安全姿勢・個人一般化・絶対GRF妥当性は主張しない。8条件は同一モデルの決定論的設計点であり、母集団の標準誤差・p値・95%CIは付さない。
+筋25（quad_fem_r）の設計意図は未確認（全条件共通のため用量反応の差には無影響）。考察的解釈は本文考察章に置く。</div>
+
+<h1 style="font-size:1.2em;border:none;color:#2166ac;">本文図 / Body figures</h1>
+
+    <section>
+      <h2>Figure 1 | 研究ギャップと検証連鎖 / Research gap and validation chain</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 観察研究に加えて、同一予測モデル内で接地時骨盤傾斜を操作する必要性と、解析の連鎖を示す。 Why a single-model predictive manipulation of touchdown pelvic tilt is needed, and how the analyses chain.</p>
+      <img src="figures/png/Fig1_study_logic.png" alt="Figure 1">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 概念図。観察研究の交絡（個体差・共変動学）を、単一モデルで接地時骨盤傾斜のみ拘束し全身再最適化することで切り分ける枠組み。</p>
+      <p class="caption"><b>Caption (EN):</b> Schematic. Observational confounds (anatomy, co-varying kinematics) are isolated by constraining only touchdown pelvis tilt in one model and re-optimizing the whole body.<br>
+         <b>図注 (JP):</b> 概念図。観察研究の交絡を、単一モデルで接地時骨盤傾斜のみ拘束・全身再最適化して切り分け、主解析／機序／発展解析へ連鎖させる。</p>
+    </section>
+    <section>
+      <h2>Figure 2 | N=100 主結果 / Primary result</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 速度をほぼ維持した条件間で、接地前傾量の増加が二関節ハムの1ストライド最大 lMtilde 増加と関連するか。</p>
+      <img src="figures/png/Fig2_primary_N100.png" alt="Figure 2">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 速度は Nominal ±1% 内（スプレッド 0.43%）。1ストライド最大 lMtilde の前傾1°当たり傾きは SM +0.0068（R²0.96）, ST +0.0037（R²0.96）, BFlh +0.0054（R²0.95）, BFsh -0.0003（ほぼ平坦）。最小→最大前傾で二関節3筋 +4.7…+9.7%, BFsh -0.3%。</p>
+      <p class="caption"><b>Caption (EN):</b> A: operability (speed within Nominal +/-1%). B: 1-stride peak lMtilde rises graded with anterior tilt for the three biarticular muscles; biceps femoris short head (single-joint) is flat. C: slope with leave-one-condition-out range (NOT a CI) and speed-adjusted coefficient. 8 deterministic design points; no population CI.<br>
+         <b>図注 (JP):</b> A: 操作成立性（速度は Nominal ±1% 内）。B: 1ストライド最大 lMtilde は二関節3筋で前傾量とともに段階的に増加、単関節 BFsh は平坦。C: 傾き＋単一条件除外感度範囲（CIではない）＋速度調整係数。8決定論的設計点、母集団CIなし。</p>
+    </section>
+    <section>
+      <h2>Figure 3 | lMtilde 波形とピーク時相 / Waveforms and peak phase</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 1ストライド最大 lMtilde はどの局面でどのように前傾量へ応答するか。</p>
+      <img src="figures/png/Fig3_lMtilde_waveforms_N100.png" alt="Figure 3">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 二関節3筋の1ストライド最大は結果として終末遊脚期（85.5–90.8% stride）に位置し、前傾量とともに段階的に上昇。BFsh は早期立脚（~2–3%）にピークをもち平坦。主評価は1ストライド全体の最大値であり、Pareto の terminal-swing-window peak とは別定義。</p>
+      <p class="caption"><b>Caption (EN):</b> lMtilde vs % stride for the 8 conditions, coloured by anterior tilt (darker = larger). Markers = 1-stride max (full stride), which lands in terminal swing for the biarticular muscles. Distinct from the Pareto TS-window peak.<br>
+         <b>図注 (JP):</b> 8条件の lMtilde 波形（濃色=前傾大）。marker=1ストライド最大（全ストライド）で、二関節筋では終末遊脚期に位置。Pareto の TS窓ピークとは別量。</p>
+    </section>
+    <section>
+      <h2>Figure 4 | 基準シミュレーションの妥当性 / Baseline validity</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 内部筋力学を論じる前提として、Nominal N=100 は被験者本人の最高速度スプリントの外部特徴をどの程度再現するか。</p>
+      <img src="figures/png/Fig4_baseline_validation.png" alt="Figure 4">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 股・膝・足の関節角は形状一致良好（相関 r=0.90–0.97, 系統オフセット有）。pelvis_tilt は raw IK とモデルで規約/姿勢が異なり （接地 +5.0° vs −8.0°）、オフセット除去後の形状相関 r=−0.31・RMSE 5.9°。被験者の実験 GRF・EMG は本データに無く、GRF/活動は**シミュレーションのみ**（鉛直ピーク 5.9BW は接触モデル由来で過大）。GRF/EMG 誤差は not available。</p>
+      <p class="caption"><b>Caption (EN):</b> Kinematic shape agreement (hip/knee/ankle r=0.90-0.97) with systematic offsets; pelvis_tilt differs by a convention/posture offset (flagged, not silently aligned). GRF and activations are SIMULATION-ONLY (no subject force plate or EMG in the dataset). External agreement does NOT guarantee internal fibre-length/force validity.<br>
+         <b>図注 (JP):</b> 運動学の形状一致（股膝足 r=0.90–0.97, オフセット有）。pelvis_tilt は規約/姿勢差を注記。GRF・活動はシミュレーションのみ。外部一致は内部筋線維長・力の妥当性を保証しない。</p>
+    </section>
+    <section>
+      <h2>Figure 5 | 骨盤–大腿協調による機序分解 / Pelvis-femur mechanism</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 観察されたハム伸長は骨盤絶対角ではなく骨盤–大腿の相対配置で説明されるか。</p>
+      <img src="figures/png/Fig5_pelvis_femur_mechanism.png" alt="Figure 5">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 正規化位相・OpenSim厳密MTUで、adaptive の終末遊脚期 ΔMTU は SM 7.666 / ST 9.727 / BFlh 8.435 mm。大腿世界姿勢を固定した femur-fixed が adaptive の 95.84–92.09% を再現（骨盤と共回転する tree-rigid は ΔMTU≈0）。この比は媒介割合ではない。</p>
+      <p class="caption"><b>Caption (EN):</b> tree-rigid (pelvis &amp; femur co-rotate) gives dMTU~0; femur-fixed (femur world pose held) reproduces 89.6-95.8% of the adaptive terminal-swing MTU rise. A/B are geometric counterfactuals; only adaptive is feasible. The ratio is NOT a mediation fraction.<br>
+         <b>図注 (JP):</b> tree-rigid（骨盤・大腿共回転）で ΔMTU≈0、femur-fixed（大腿世界姿勢固定）が adaptive の 89.6–95.8% を再現。A/B は幾何学的反実仮想、adaptive のみ実行可能解。比率は媒介割合ではない。</p>
+    </section>
+    <section>
+      <h2>Figure 6 | 数値的成立性・解選択・感度 / Numerical robustness</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 主結果は角度未達・制約違反・単一条件・速度差・成功解選択だけで説明されないか。</p>
+      <img src="figures/png/Fig6_numerical_robustness.png" alt="Figure 6">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 全95 MAT を発見→読込→PelvisTD→N=100→wide→strict の順に絞り、要求offsetごとに inf_pr 最小の8条件を採用。採用8条件は inf_pr ~1e-9…1e-7（≪1e-4）、失敗解は >1e-2 で低速へ崩壊。</p>
+      <p class="caption"><b>Caption (EN):</b> Discovery-to-adoption funnel (95 MAT -&gt; 8 adopted). Target-angle achievement on identity; adopted inf_pr &lt;&lt; 1e-4; failed solves collapse to low speed. Shows the result is not an artefact of unmet angle, constraint violation, or solution selection.<br>
+         <b>図注 (JP):</b> 発見→採用のフロー（95→8）。目標角は identity 上、採用解の残差 ≪1e-4、失敗解は低速へ崩壊。角度未達・制約違反・解選択の 人工物でないことを示す。</p>
+    </section>
+    <section>
+      <h2>Figure 7 | 速度–負荷代理指標の Pareto / Speed-load Pareto</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 速度損失を事前基準内に保ちつつ、筋線維長代理指標が低い候補解を計算上生成できるか。</p>
+      <img src="figures/png/Fig7_pareto_N100.png" alt="Figure 7">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> w=0.1 の3ウォームスタート経路で平均 dSpeed -0.340%・dSurrogate（二関節TS窓ピーク平均）-5.189%。事前基準（速度損失≤0.5% かつ代理指標≤−3%）を w=0.05/0.10 が満たし、w=0.2 は速度予算超過。3解は独立反復でなく3決定論的経路。最適化が直接罰する平滑積分項と報告ピークは別指標。候補解は実走可能性・受傷低減を証明しない。</p>
+      <p class="caption"><b>Caption (EN):</b> w=0.1 (3 warm-start paths) reduces the biarticular terminal-swing-window peak surrogate by ~5.2% for ~0.34% speed loss; w=0.05/0.10 meet the pre-registered target, w=0.2 exceeds the speed budget. The 3 solves are deterministic warm-start paths, not independent restarts. Candidates do NOT prove runnability or injury reduction.<br>
+         <b>図注 (JP):</b> w=0.1（3経路）で速度 −0.34% と引き換えに二関節TS窓ピーク代理指標 −5.2%。w=0.05/0.10 が事前基準を満たす。3解は決定論的経路。候補解は実走可能性・受傷低減を証明しない。</p>
+    </section>
+
+<h1 style="font-size:1.2em;border:none;color:#762a83;">補足図 (Appendix)</h1>
+
+    <section>
+      <h2>Figure S1 | 力–長さ作用域 / Force-length operating region</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 二関節ハムが力–長さ関係上のどこで作動し、前傾でどう移動するか。</p>
+      <img src="figures/png/FigS1_force_length.png" alt="Figure S1">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 前傾大（m8）の終末遊脚期作用点は前傾小（p6）より長い lMtilde 側へ移動。Fce は減衰項を含む収縮要素力。</p>
+      <p class="caption"><b>Caption (EN):</b> Fce (incl. damping) vs lMtilde for min vs max tilt; the max-tilt terminal-swing operating point sits at longer lMtilde.<br>
+         <b>図注 (JP):</b> min/max 前傾の Fce–lMtilde 軌跡。前傾大で終末遊脚の作用点が長 lMtilde 側へ。</p>
+    </section>
+    <section>
+      <h2>Figure S2 | 筋×指標 変化率 / Muscle x metric change</h2>
+      <p class="purpose"><b>目的 / Purpose:</b> 各負荷代理指標が最小→最大前傾でどう変化するか。</p>
+      <img src="figures/png/FigS2_muscle_metric_heatmap.png" alt="Figure S2">
+      <p class="result"><b>結果（事実のみ） / Results (facts only):</b> 受動力 Fpass が最大の上昇（二関節 +42…+88%）、負の仕事 +16…+33%、最大 lMtilde +4.7…+9.7%。BFsh はほぼ中立/負。</p>
+      <p class="caption"><b>Caption (EN):</b> Percent change min-&gt;max tilt per metric; passive force rises most, biarticular metrics rise, bifemsh near zero.<br>
+         <b>図注 (JP):</b> 最小→最大前傾の変化率。受動力が最大上昇、二関節指標が上昇、BFsh は中立。</p>
+    </section>
+
+<footer>
+出力フォルダ: <code>output/thesis_figures_final_20260819_163600/</code>。
+各図の PDF/SVG/600dpi PNG は <code>figures/</code>、元データCSVは <code>source_data/</code>、
+provenance は <code>02_figure_manifest.csv</code>、入出力 SHA256 は <code>qa/input_hashes.csv</code> /
+<code>qa/output_hashes.csv</code>。未作成図（S3 パラメータ感度・S4 同系列N50–N100）の理由は
+<code>03_missing_data_and_blockers.md</code>。既存原稿・既存結果は上書きしていない。
+</footer>
+</body></html>

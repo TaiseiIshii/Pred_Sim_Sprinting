@@ -1,0 +1,7 @@
+signal,label,RMSE_deg,NRMSE_pct,corr_r,mean_offset_deg,RMSE_after_offset_removed_deg
+pelvis_tilt,pelvis tilt,10.206,70.2,-0.305,-8.301,5.937
+hip_flexion_r,hip flexion (R),11.908,23.2,0.970,11.066,4.398
+knee_angle_r,knee angle (R),14.916,14.1,0.901,-1.535,14.837
+ankle_angle_r,ankle angle (R),10.449,17.0,0.929,4.521,9.420
+GRF_vertical,peak vertical GRF (sim),5.91BW,n/a,n/a,n/a,no subject force-plate data -> error not available
+EMG,muscle activation,n/a,n/a,n/a,n/a,no subject EMG data -> onset/offset error not available

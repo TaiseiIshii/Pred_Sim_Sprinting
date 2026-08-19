@@ -1,0 +1,21 @@
+check,status,detail
+Fig2 has 32 point rows (8 cond x 4 mus),PASS,32
+Fig2 has 8 unique conditions,PASS,"['m2', 'm4', 'm6', 'm8', 'p0', 'p2', 'p4', 'p6']"
+Fig2 all points strict Solve_Succeeded,PASS,
+"Fig2 anterior tilt in [1.987,15.987]",PASS,"[1.987,15.987]"
+Fig2 anterior tilt all positive (A=-pelvis_tilt),PASS,
+reconciliation has 0 CHECK verdicts,PASS,0 bad of 27
+Fig3 no NaN/Inf in lMtilde,PASS,
+"Fig3 pct_stride in [0,100]",PASS,
+"Fig3 lMtilde in plausible [0.2,1.35]",PASS,"[0.298,1.181]"
+full-stride peak >= terminal-swing peak (biartic),PASS,
+Fig6 discovered 95 MAT,PASS,95
+Fig6 exactly 8 adopted,PASS,8
+Fig6 adopted all N=100 strict,PASS,
+Fig7 w=0.1 has 3 warm-start paths,PASS,3
+Fig7 mean dSpeed ~ -0.340%,PASS,-0.3401
+Fig7 mean dSurro ~ -5.189%,PASS,-5.1889
+Fig7 all strict Solve_Succeeded,PASS,
+Fig5 adaptive peaks match audit & tree-rigid ~ 0,PASS,
+Fig4 marks GRF & EMG error not available,PASS,
+all 9 figures have PDF+SVG+PNG,PASS,missing=[]

@@ -1,0 +1,5 @@
+muscle,is_biarticular,delta_pelvis_deg,peakMTU_nominal_mm,peakMTU_m8_mm,dPeakMTU_phaseNorm_mm,dMTU_at_m8peak_phaseNorm_mm,dPeakMTU_absTime_mm,peak_phase_pct
+semimem_l,True,-8.0,493.133,498.69,5.557,5.611,8.123,75.6
+semiten_l,True,-8.0,537.57,544.951,7.38,7.38,10.184,75.0
+bifemlh_l,True,-8.0,497.266,502.978,5.711,5.711,9.005,75.0
+bifemsh_l,False,-8.0,257.47,257.47,-0.0,-0.0,1.24,100.0
