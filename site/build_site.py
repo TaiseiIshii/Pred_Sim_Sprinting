@@ -26,9 +26,12 @@ import content_ja as C  # noqa: E402
 FIG_SRC = os.path.join(REPO, "output", "thesis_figures_final_20260819_163600", "figures", "png")
 ASSET_FIG = os.path.join(HERE, "assets", "fig")
 ASSET_VID = os.path.join(HERE, "assets", "video")
+ASSET_DOC = os.path.join(HERE, "assets", "docs")
+ASSET_POSTER = os.path.join(HERE, "assets", "poster")
 
 # Quick-access figure/video navigation (anchor, label).
 FIGNAV = [
+    ("poster-img", "学会発表ポスター"),
     ("fig-1", "図1 研究ロジック"),
     ("fig-4", "図4 基準妥当性"),
     ("vid-td", "動画1 接地骨盤傾斜アニメ"),
@@ -59,6 +62,35 @@ def copy_assets():
             raise SystemExit("missing video: " + src)
         shutil.copy2(src, os.path.join(ASSET_VID, dst))
     print("copied", len(C.FIGURE_FILES), "figures and", len(C.VIDEO_FILES), "video files")
+
+
+def render_poster():
+    """Render the committed poster PDF (site/assets/docs/) to a web PNG.
+
+    Uses PyMuPDF when available; otherwise skips quietly and keeps any existing
+    PNG, so the site can still be rebuilt where the renderer is not installed.
+    """
+    os.makedirs(ASSET_POSTER, exist_ok=True)
+    pdf = os.path.join(ASSET_DOC, C.POSTER_PDF_NAME)
+    out = os.path.join(ASSET_POSTER, "poster_page1.png")
+    if not os.path.isfile(pdf):
+        print("poster PDF not found, skipping render:", pdf)
+        return
+    try:
+        import fitz  # PyMuPDF
+    except ImportError:
+        msg = "keeping cached" if os.path.isfile(out) else "poster image WILL BE MISSING"
+        print("PyMuPDF unavailable;", msg)
+        return
+    doc = fitz.open(pdf)
+    page = doc[0]
+    # Cap the long edge near 2600 px: crisp on screen, still a modest file size.
+    zoom = min(2600.0 / page.rect.height, 2600.0 / page.rect.width)
+    pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), alpha=False)
+    pix.save(out)
+    doc.close()
+    print("rendered poster ->", os.path.basename(out),
+          "(%dx%d px, %.1f KB)" % (pix.width, pix.height, os.path.getsize(out) / 1024.0))
 
 
 def build_toc():
@@ -107,7 +139,11 @@ header.hero{background:linear-gradient(135deg,#12385f,#1b4f8a 55%,#2166ac);
   color:#fff; padding:34px 20px 30px}
 header.hero .inner{max-width:var(--maxw); margin:0 auto}
 header.hero h1{margin:0 0 8px; font-size:1.5rem; line-height:1.5; font-weight:700}
-header.hero p.sub{margin:0 0 14px; font-size:.98rem; color:#dbe7f5}
+header.hero p.sub{margin:0 0 10px; font-size:.98rem; color:#dbe7f5}
+header.hero p.authors{margin:0 0 3px; font-size:1rem; font-weight:600; color:#f2f7fd}
+header.hero p.authors sup{font-weight:400; font-size:.7em; color:#c7d8ea; margin-left:1px}
+header.hero p.affil{margin:0 0 14px; font-size:.84rem; color:#c9daec}
+header.hero p.affil sup{font-size:.85em; margin-right:1px}
 .chips{display:flex; flex-wrap:wrap; gap:8px}
 .chip{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
   padding:3px 11px; border-radius:999px; font-size:.8rem; color:#eef5fc}
@@ -159,6 +195,25 @@ figcaption{margin-top:10px; font-size:.93rem}
 .note{background:#fff7ea; border-left:3px solid var(--amber); padding:6px 12px;
   margin:.4em 0; border-radius:0 6px 6px 0}
 .capen{font-size:.82rem; color:var(--muted); margin:.4em 0 .1em}
+
+/* poster / conference card + document buttons */
+.postercard{background:linear-gradient(135deg,#f0f6fc,#eaf1f9); border:1px solid #d5e2f0;
+  border-left:6px solid var(--brand2); border-radius:12px; padding:14px 18px; margin:6px 0 4px}
+.postercard .conf-badge{display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.05em;
+  color:#fff; background:var(--brand2); padding:2px 10px; border-radius:999px; margin:0 0 8px}
+.postercard .conf-title{font-size:1.12rem; color:#12385f; margin:0 0 8px; border:0; padding:0; line-height:1.5}
+.postercard .conf-authors{margin:.2em 0; font-weight:600; color:#1b3a5b}
+.postercard .conf-authors sup{font-weight:400; font-size:.72em; color:var(--muted); margin-left:1px}
+.postercard .conf-affil{margin:.1em 0 0; font-size:.86rem; color:var(--muted)}
+.postercard .conf-affil sup{font-size:.85em; margin-right:1px}
+figure.posterfig img{max-height:1050px; width:auto; max-width:100%; margin:0 auto; border:1px solid var(--line)}
+.docbtns{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 2px}
+.docbtn{display:inline-block; padding:9px 16px; border-radius:8px; font-size:.92rem;
+  font-weight:700; border:1px solid transparent}
+.docbtn.pdf{background:var(--brand); color:#fff}
+.docbtn.pdf:hover{background:#12385f; text-decoration:none}
+.docbtn.doc{background:#fff; color:var(--brand); border-color:var(--brand2)}
+.docbtn.doc:hover{background:var(--soft); text-decoration:none}
 
 /* inline labels */
 .lab{display:inline-block; font-size:.72rem; font-weight:700; color:#fff;
@@ -272,6 +327,8 @@ PAGE = r'''<!DOCTYPE html>
 <header class="hero"><div class="inner">
 <h1>@@TITLE@@</h1>
 <p class="sub">@@SUBTITLE@@</p>
+<p class="authors">@@AUTHORS@@</p>
+<p class="affil">@@AFFIL@@</p>
 <div class="chips">
 <span class="chip">予測筋骨格シミュレーション</span>
 <span class="chip">国際水準男子スプリンター1名 / 単一モデル計算実験</span>
@@ -303,12 +360,15 @@ PAGE = r'''<!DOCTYPE html>
 
 def main():
     copy_assets()
+    render_poster()
     doc = PAGE
     doc = doc.replace("@@CSS@@", CSS)
     doc = doc.replace("@@MATHJAX@@", MATHJAX)
     doc = doc.replace("@@ACTIVE_JS@@", ACTIVE_JS)
     doc = doc.replace("@@TITLE@@", C.TITLE)
     doc = doc.replace("@@SUBTITLE@@", C.SUBTITLE)
+    doc = doc.replace("@@AUTHORS@@", C.AUTHORS_HTML)
+    doc = doc.replace("@@AFFIL@@", C.AFFIL_HTML)
     doc = doc.replace("@@DATE@@", datetime.date.today().isoformat())
     doc = doc.replace("@@TOC@@", build_toc())
     doc = doc.replace("@@BODY@@", build_body())

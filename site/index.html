@@ -24,7 +24,11 @@ header.hero{background:linear-gradient(135deg,#12385f,#1b4f8a 55%,#2166ac);
   color:#fff; padding:34px 20px 30px}
 header.hero .inner{max-width:var(--maxw); margin:0 auto}
 header.hero h1{margin:0 0 8px; font-size:1.5rem; line-height:1.5; font-weight:700}
-header.hero p.sub{margin:0 0 14px; font-size:.98rem; color:#dbe7f5}
+header.hero p.sub{margin:0 0 10px; font-size:.98rem; color:#dbe7f5}
+header.hero p.authors{margin:0 0 3px; font-size:1rem; font-weight:600; color:#f2f7fd}
+header.hero p.authors sup{font-weight:400; font-size:.7em; color:#c7d8ea; margin-left:1px}
+header.hero p.affil{margin:0 0 14px; font-size:.84rem; color:#c9daec}
+header.hero p.affil sup{font-size:.85em; margin-right:1px}
 .chips{display:flex; flex-wrap:wrap; gap:8px}
 .chip{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
   padding:3px 11px; border-radius:999px; font-size:.8rem; color:#eef5fc}
@@ -76,6 +80,25 @@ figcaption{margin-top:10px; font-size:.93rem}
 .note{background:#fff7ea; border-left:3px solid var(--amber); padding:6px 12px;
   margin:.4em 0; border-radius:0 6px 6px 0}
 .capen{font-size:.82rem; color:var(--muted); margin:.4em 0 .1em}
+
+/* poster / conference card + document buttons */
+.postercard{background:linear-gradient(135deg,#f0f6fc,#eaf1f9); border:1px solid #d5e2f0;
+  border-left:6px solid var(--brand2); border-radius:12px; padding:14px 18px; margin:6px 0 4px}
+.postercard .conf-badge{display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.05em;
+  color:#fff; background:var(--brand2); padding:2px 10px; border-radius:999px; margin:0 0 8px}
+.postercard .conf-title{font-size:1.12rem; color:#12385f; margin:0 0 8px; border:0; padding:0; line-height:1.5}
+.postercard .conf-authors{margin:.2em 0; font-weight:600; color:#1b3a5b}
+.postercard .conf-authors sup{font-weight:400; font-size:.72em; color:var(--muted); margin-left:1px}
+.postercard .conf-affil{margin:.1em 0 0; font-size:.86rem; color:var(--muted)}
+.postercard .conf-affil sup{font-size:.85em; margin-right:1px}
+figure.posterfig img{max-height:1050px; width:auto; max-width:100%; margin:0 auto; border:1px solid var(--line)}
+.docbtns{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 2px}
+.docbtn{display:inline-block; padding:9px 16px; border-radius:8px; font-size:.92rem;
+  font-weight:700; border:1px solid transparent}
+.docbtn.pdf{background:var(--brand); color:#fff}
+.docbtn.pdf:hover{background:#12385f; text-decoration:none}
+.docbtn.doc{background:#fff; color:var(--brand); border-color:var(--brand2)}
+.docbtn.doc:hover{background:var(--soft); text-decoration:none}
 
 /* inline labels */
 .lab{display:inline-block; font-size:.72rem; font-weight:700; color:#fff;
@@ -154,6 +177,8 @@ window.MathJax = {
 <header class="hero"><div class="inner">
 <h1>最高速度スプリントにおける接地時骨盤前傾と二関節ハムストリング筋線維伸長の関係</h1>
 <p class="sub">予測筋骨格シミュレーションによる段階的関係、機序分解および速度–負荷最適化 ― 詳細解説版（Web補足）</p>
+<p class="authors">◯石井太晴<sup>1,2</sup>　山岸黎大<sup>2,3</sup>　姫野龍太郎<sup>1</sup>　村井昭彦<sup>2,3</sup></p>
+<p class="affil"><sup>1</sup> 順天堂大学　<sup>2</sup> 産業技術総合研究所（AIST）　<sup>3</sup> 東京大学</p>
 <div class="chips">
 <span class="chip">予測筋骨格シミュレーション</span>
 <span class="chip">国際水準男子スプリンター1名 / 単一モデル計算実験</span>
@@ -161,13 +186,13 @@ window.MathJax = {
 <span class="chip">図11点＋動画2点</span>
 <span class="chip">commit e7b8de9</span>
 <span class="chip">QA 23/23 PASS</span>
-<span class="chip">生成日 2026-08-19</span>
+<span class="chip">生成日 2026-09-01</span>
 </div>
 </div></header>
 <div class="wrap">
-<nav class="sidebar" aria-label="目次"><div class="tocbox"><p class="toctitle">目次</p><ol class="toc"><li><a href="#readme">この補足ドキュメントについて</a></li><li><a href="#abstract">要旨</a></li><li><a href="#nomen">用語・略語・記号の定義</a></li><li><a href="#intro">1. 緒言</a></li><li><a href="#methods">2. 方法</a></li><li><a href="#results">3. 結果</a></li><li><a href="#discussion">4. 考察</a></li><li><a href="#limitations">5. 研究の限界</a></li><li><a href="#conclusion">6. 結論</a></li><li><a href="#references">参考文献</a></li><li><a href="#appendix">付録</a></li></ol><details class="fignav"><summary>図・動画へジャンプ</summary><ul><li><a href="#fig-1">図1 研究ロジック</a></li><li><a href="#fig-4">図4 基準妥当性</a></li><li><a href="#vid-td">動画1 接地骨盤傾斜アニメ</a></li><li><a href="#fig-2">図2 主結果</a></li><li><a href="#fig-3">図3 波形・時相</a></li><li><a href="#figS1">補足S1 力–長さ作用域</a></li><li><a href="#figS2">補足S2 筋×指標変化率</a></li><li><a href="#fig-5">図5 機序分解</a></li><li><a href="#fig-7">図7 速度–負荷パレート</a></li><li><a href="#vid-pareto">動画2 候補動作</a></li><li><a href="#fig-6">図6 数値頑健性</a></li><li><a href="#figS4">補足S4 解像度頑健性</a></li><li><a href="#figS3">補足S3 パラメータ感度</a></li></ul></details></div></nav>
+<nav class="sidebar" aria-label="目次"><div class="tocbox"><p class="toctitle">目次</p><ol class="toc"><li><a href="#poster">学会発表ポスター</a></li><li><a href="#readme">この補足ドキュメントについて</a></li><li><a href="#abstract">要旨</a></li><li><a href="#nomen">用語・略語・記号の定義</a></li><li><a href="#intro">1. 緒言</a></li><li><a href="#methods">2. 方法</a></li><li><a href="#results">3. 結果</a></li><li><a href="#discussion">4. 考察</a></li><li><a href="#limitations">5. 研究の限界</a></li><li><a href="#conclusion">6. 結論</a></li><li><a href="#references">参考文献</a></li><li><a href="#appendix">付録</a></li></ol><details class="fignav"><summary>図・動画へジャンプ</summary><ul><li><a href="#poster-img">学会発表ポスター</a></li><li><a href="#fig-1">図1 研究ロジック</a></li><li><a href="#fig-4">図4 基準妥当性</a></li><li><a href="#vid-td">動画1 接地骨盤傾斜アニメ</a></li><li><a href="#fig-2">図2 主結果</a></li><li><a href="#fig-3">図3 波形・時相</a></li><li><a href="#figS1">補足S1 力–長さ作用域</a></li><li><a href="#figS2">補足S2 筋×指標変化率</a></li><li><a href="#fig-5">図5 機序分解</a></li><li><a href="#fig-7">図7 速度–負荷パレート</a></li><li><a href="#vid-pareto">動画2 候補動作</a></li><li><a href="#fig-6">図6 数値頑健性</a></li><li><a href="#figS4">補足S4 解像度頑健性</a></li><li><a href="#figS3">補足S3 パラメータ感度</a></li></ul></details></div></nav>
 <main class="main">
-<section id="readme" class="sec"><h2>この補足ドキュメントについて</h2>
+<section id="poster" class="sec"><h2>学会発表ポスター</h2><div class="postercard"><p class="conf-badge">学会発表ポスター</p><h3 class="conf-title">デジタルアスリートを用いたハムストリング力学的負荷を低減させる走動作の探索</h3><p class="conf-authors">◯石井太晴<sup>1,2</sup>　山岸黎大<sup>2,3</sup>　姫野龍太郎<sup>1</sup>　村井昭彦<sup>2,3</sup></p><p class="conf-affil"><sup>1</sup> 順天堂大学　<sup>2</sup> 産業技術総合研究所（AIST）　<sup>3</sup> 東京大学</p></div><figure class="figblock posterfig" id="poster-img"><a class="zia" href="assets/docs/20260826%E4%BF%AE%E5%A3%AB%E8%AB%96%E6%96%87%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target="_blank" rel="noopener"><img loading="lazy" src="assets/poster/poster_page1.png" alt="修士論文ポスター（A0判・1ページ）"></a><figcaption><p class="capen">画像をクリックすると PDF（原寸・A0判）が新しいタブで開きます。</p></figcaption></figure><div class="docbtns"><a class="docbtn pdf" href="assets/docs/20260826%E4%BF%AE%E5%A3%AB%E8%AB%96%E6%96%87%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target="_blank" rel="noopener">ポスター PDF を開く</a><a class="docbtn doc" href="assets/docs/20260828_%E6%97%A5%E6%9C%AC%E3%83%90%E3%82%A4%E3%82%AA%E3%83%A1%E3%82%AB%E3%83%8B%E3%82%AF%E3%82%B9%E5%AD%A6%E4%BC%9A%E6%8A%84%E9%8C%B2_600%E5%AD%97%E7%89%88.docx">学会抄録（600字版・Word）をダウンロード</a></div><p class="fine">本ポスター・抄録は上記学会発表用の要約です。数式の完全な定義・全図表・研究の限界は、以下の各節（要旨〜付録）に記載しています。</p></section><section id="readme" class="sec"><h2>この補足ドキュメントについて</h2>
 <div class="howto">
 <p><b>この補足ドキュメントについて。</b> 本ページは修士論文の内容を Web 上で詳しく解説するもので、
 学会ポスターに書ききれない <b>数式の完全な定義</b>、<b>略語・記号の説明</b>、<b>図・表・動画</b> を一箇所にまとめています。

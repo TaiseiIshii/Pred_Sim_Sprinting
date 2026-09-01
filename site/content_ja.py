@@ -18,6 +18,8 @@ and bodies contain literal "%", "{", "}" and LaTeX backslashes that would break
 those mechanisms.
 """
 
+import urllib.parse as _urlparse
+
 # --------------------------------------------------------------------------- #
 #  Asset manifests (consumed by build_site.py to copy files into site/assets)
 # --------------------------------------------------------------------------- #
@@ -45,6 +47,23 @@ VIDEO_FILES = [
 
 TITLE = "最高速度スプリントにおける接地時骨盤前傾と二関節ハムストリング筋線維伸長の関係"
 SUBTITLE = "予測筋骨格シミュレーションによる段階的関係、機序分解および速度–負荷最適化 ― 詳細解説版（Web補足）"
+
+# Conference presentation (poster / abstract) metadata.
+CONF_TITLE = "デジタルアスリートを用いたハムストリング力学的負荷を低減させる走動作の探索"
+# Author byline (◯ marks the presenting author). Superscripts key to affiliations.
+AUTHORS_HTML = ('◯石井太晴<sup>1,2</sup>　山岸黎大<sup>2,3</sup>　'
+                '姫野龍太郎<sup>1</sup>　村井昭彦<sup>2,3</sup>')
+AFFIL_HTML = ('<sup>1</sup> 順天堂大学　<sup>2</sup> 産業技術総合研究所（AIST）　'
+              '<sup>3</sup> 東京大学')
+
+# Downloadable source documents (committed under site/assets/docs/).
+POSTER_PDF_NAME = "20260826修士論文ポスター.pdf"
+ABSTRACT_DOCX_NAME = "20260828_日本バイオメカニクス学会抄録_600字版.docx"
+# Percent-encode the Japanese filenames so hrefs resolve reliably on GitHub Pages.
+POSTER_PDF_HREF = "assets/docs/" + _urlparse.quote(POSTER_PDF_NAME)
+ABSTRACT_DOCX_HREF = "assets/docs/" + _urlparse.quote(ABSTRACT_DOCX_NAME)
+# Rendered poster page (produced by build_site.render_poster()).
+POSTER_IMG = "assets/poster/poster_page1.png"
 
 
 # --------------------------------------------------------------------------- #
@@ -941,9 +960,37 @@ OpenSim 4.4 境界解析用 environment が未定義／筋25 の変更意図が�
 
 
 # --------------------------------------------------------------------------- #
+#  Conference poster + downloadable documents (top-of-page showcase)
+# --------------------------------------------------------------------------- #
+POSTER = (
+    '<div class="postercard">'
+    '<p class="conf-badge">学会発表ポスター</p>'
+    '<h3 class="conf-title">' + CONF_TITLE + '</h3>'
+    '<p class="conf-authors">' + AUTHORS_HTML + '</p>'
+    '<p class="conf-affil">' + AFFIL_HTML + '</p>'
+    '</div>'
+    '<figure class="figblock posterfig" id="poster-img">'
+    '<a class="zia" href="' + POSTER_PDF_HREF + '" target="_blank" rel="noopener">'
+    '<img loading="lazy" src="' + POSTER_IMG + '" alt="修士論文ポスター（A0判・1ページ）"></a>'
+    '<figcaption>'
+    '<p class="capen">画像をクリックすると PDF（原寸・A0判）が新しいタブで開きます。</p>'
+    '</figcaption></figure>'
+    '<div class="docbtns">'
+    '<a class="docbtn pdf" href="' + POSTER_PDF_HREF + '" target="_blank" rel="noopener">'
+    'ポスター PDF を開く</a>'
+    '<a class="docbtn doc" href="' + ABSTRACT_DOCX_HREF + '">'
+    '学会抄録（600字版・Word）をダウンロード</a>'
+    '</div>'
+    '<p class="fine">本ポスター・抄録は上記学会発表用の要約です。'
+    '数式の完全な定義・全図表・研究の限界は、以下の各節（要旨〜付録）に記載しています。</p>'
+)
+
+
+# --------------------------------------------------------------------------- #
 #  Section ordering (consumed by build_site.py to build TOC + body)
 # --------------------------------------------------------------------------- #
 SECTIONS = [
+    {"id": "poster",      "num": "",   "title": "学会発表ポスター",                       "body": POSTER},
     {"id": "readme",      "num": "",   "title": "この補足ドキュメントについて",           "body": READ_ME},
     {"id": "abstract",    "num": "",   "title": "要旨",                                     "body": ABSTRACT},
     {"id": "nomen",       "num": "",   "title": "用語・略語・記号の定義",                   "body": NOMEN},
