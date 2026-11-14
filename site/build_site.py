@@ -338,12 +338,10 @@ PAGE = r'''<!DOCTYPE html>
 <p class="affil">@@AFFIL@@</p>
 <div class="chips">
 <span class="chip">予測筋骨格シミュレーション</span>
-<span class="chip">国際水準男子スプリンター1名 / 単一モデル計算実験</span>
-<span class="chip">主解析 N=100・8条件</span>
-<span class="chip">図11点＋動画2点</span>
-<span class="chip">commit e7b8de9</span>
-<span class="chip">QA 23/23 PASS</span>
-<span class="chip">生成日 @@DATE@@</span>
+<span class="chip">男子スプリンター1名に基づく計算研究</span>
+<span class="chip">主解析：時間分割数100・骨盤傾斜8条件</span>
+<span class="chip">発表資料・図表・動画を掲載</span>
+<span class="chip">ページ更新日 @@DATE@@</span>
 </div>
 </div></header>
 <div class="wrap">
@@ -353,11 +351,11 @@ PAGE = r'''<!DOCTYPE html>
 </main>
 </div>
 <footer>
-本ページは修士論文（<code>docs/修士論文学位審査提出候補稿_日本語.md</code>）の Web 補足版であり、単一予測モデル内の
-<b>相関・機序</b>を示すものである。肉離れの<b>因果</b>・受傷リスク低減・安全姿勢・個人一般化・絶対 GRF 妥当性は主張しない。
-図は <code>output/thesis_figures_final_20260819_163600/</code>（自動 QA 23項目 PASS）から、動画は
-<code>Results/PelvicTD_Study/</code> および <code>Results/HamPareto_Study/</code> から生成した。数値は独立監査
-<code>Results/Independent_Audit_20260819/</code> と一致する。&copy; Taisei Ishii.
+本ページは修士論文（<code>docs/修士論文学位審査提出候補稿_日本語.md</code>）のWeb補足資料である。
+単一の筋骨格モデルにおける接地姿勢と筋の力学的状態との関係を扱う。実走者の受傷確率、予防効果および他者への一般化は検証していない。
+図の出典は <code>output/thesis_figures_final_20260819_163600/</code>、動画の出典は
+<code>Results/PelvicTD_Study/</code> および <code>Results/HamPareto_Study/</code> である。
+数値の検証に関する既存記録は <code>Results/Independent_Audit_20260819/</code> に対応する。再現手順と未解決事項は付録を参照されたい。&copy; Taisei Ishii.
 </footer>
 <a id="toplink" href="#top" aria-label="ページ先頭へ">&#8593;</a>
 @@ACTIVE_JS@@

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="予測筋骨格シミュレーションによる段階的関係、機序分解および速度–負荷最適化 ― 詳細解説版（Web補足）">
+<meta name="description" content="予測筋骨格シミュレーションによる接地姿勢・筋線維長・走速度の関係の検討 ― 修士論文Web補足資料">
 <title>最高速度スプリントにおける接地時骨盤前傾と二関節ハムストリング筋線維伸長の関係</title>
 <style>
 :root{
@@ -182,65 +182,66 @@ window.MathJax = {
 <body>
 <header class="hero"><div class="inner">
 <h1>最高速度スプリントにおける接地時骨盤前傾と二関節ハムストリング筋線維伸長の関係</h1>
-<p class="sub">予測筋骨格シミュレーションによる段階的関係、機序分解および速度–負荷最適化 ― 詳細解説版（Web補足）</p>
+<p class="sub">予測筋骨格シミュレーションによる接地姿勢・筋線維長・走速度の関係の検討 ― 修士論文Web補足資料</p>
 <p class="authors">◯石井太晴<sup>1,2</sup>　山岸黎大<sup>2,3</sup>　姫野龍太郎<sup>1</sup>　村井昭彦<sup>2,3</sup></p>
 <p class="affil"><sup>1</sup> 順天堂大学　<sup>2</sup> 産業技術総合研究所（AIST）　<sup>3</sup> 東京大学</p>
 <div class="chips">
 <span class="chip">予測筋骨格シミュレーション</span>
-<span class="chip">国際水準男子スプリンター1名 / 単一モデル計算実験</span>
-<span class="chip">主解析 N=100・8条件</span>
-<span class="chip">図11点＋動画2点</span>
-<span class="chip">commit e7b8de9</span>
-<span class="chip">QA 23/23 PASS</span>
-<span class="chip">生成日 2026-09-01</span>
+<span class="chip">男子スプリンター1名に基づく計算研究</span>
+<span class="chip">主解析：時間分割数100・骨盤傾斜8条件</span>
+<span class="chip">発表資料・図表・動画を掲載</span>
+<span class="chip">ページ更新日 2026-11-14</span>
 </div>
 </div></header>
 <div class="wrap">
-<nav class="sidebar" aria-label="目次"><div class="tocbox"><p class="toctitle">目次</p><ol class="toc"><li><a href="#slides">発表スライド</a></li><li><a href="#poster">学会発表ポスター</a></li><li><a href="#readme">この補足ドキュメントについて</a></li><li><a href="#abstract">要旨</a></li><li><a href="#nomen">用語・略語・記号の定義</a></li><li><a href="#intro">1. 緒言</a></li><li><a href="#methods">2. 方法</a></li><li><a href="#results">3. 結果</a></li><li><a href="#discussion">4. 考察</a></li><li><a href="#limitations">5. 研究の限界</a></li><li><a href="#conclusion">6. 結論</a></li><li><a href="#references">参考文献</a></li><li><a href="#appendix">付録</a></li></ol><details class="fignav"><summary>図・動画へジャンプ</summary><ul><li><a href="#slides">発表スライド</a></li><li><a href="#poster-img">学会発表ポスター</a></li><li><a href="#fig-1">図1 研究ロジック</a></li><li><a href="#fig-4">図4 基準妥当性</a></li><li><a href="#vid-td">動画1 接地骨盤傾斜アニメ</a></li><li><a href="#fig-2">図2 主結果</a></li><li><a href="#fig-3">図3 波形・時相</a></li><li><a href="#figS1">補足S1 力–長さ作用域</a></li><li><a href="#figS2">補足S2 筋×指標変化率</a></li><li><a href="#fig-5">図5 機序分解</a></li><li><a href="#fig-7">図7 速度–負荷パレート</a></li><li><a href="#vid-pareto">動画2 候補動作</a></li><li><a href="#fig-6">図6 数値頑健性</a></li><li><a href="#figS4">補足S4 解像度頑健性</a></li><li><a href="#figS3">補足S3 パラメータ感度</a></li></ul></details></div></nav>
+<nav class="sidebar" aria-label="目次"><div class="tocbox"><p class="toctitle">目次</p><ol class="toc"><li><a href="#readme">研究の概要と本ページの構成</a></li><li><a href="#slides">発表スライド</a></li><li><a href="#poster">学会発表ポスター</a></li><li><a href="#abstract">要旨</a></li><li><a href="#nomen">用語・略語・記号の定義</a></li><li><a href="#intro">1. 緒言</a></li><li><a href="#methods">2. 方法</a></li><li><a href="#results">3. 結果</a></li><li><a href="#discussion">4. 考察</a></li><li><a href="#limitations">5. 研究の限界</a></li><li><a href="#conclusion">6. 結論</a></li><li><a href="#references">参考文献</a></li><li><a href="#appendix">付録</a></li></ol><details class="fignav"><summary>図・動画へジャンプ</summary><ul><li><a href="#slides">発表スライド</a></li><li><a href="#poster-img">学会発表ポスター</a></li><li><a href="#fig-1">図1 研究ロジック</a></li><li><a href="#fig-4">図4 基準妥当性</a></li><li><a href="#vid-td">動画1 接地骨盤傾斜アニメ</a></li><li><a href="#fig-2">図2 主結果</a></li><li><a href="#fig-3">図3 波形・時相</a></li><li><a href="#figS1">補足S1 力–長さ作用域</a></li><li><a href="#figS2">補足S2 筋×指標変化率</a></li><li><a href="#fig-5">図5 機序分解</a></li><li><a href="#fig-7">図7 速度–負荷パレート</a></li><li><a href="#vid-pareto">動画2 候補動作</a></li><li><a href="#fig-6">図6 数値頑健性</a></li><li><a href="#figS4">補足S4 解像度頑健性</a></li><li><a href="#figS3">補足S3 パラメータ感度</a></li></ul></details></div></nav>
 <main class="main">
-<section id="slides" class="sec"><h2>発表スライド</h2><div class="postercard"><p class="conf-badge">発表スライド</p><h3 class="conf-title">デジタルヒューマン技術評議会 発表資料</h3><p class="fine">2026年10月20日 · 石井太晴 · PDF</p></div><div class="slides-viewer"><iframe src="https://drive.google.com/file/d/1zQQyA9idicjlTfczz9QRPLhptlC76efS/preview" title="2026年10月20日 デジタルヒューマン技術評議会 発表スライド" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div><div class="docbtns"><a class="docbtn pdf" href="https://drive.google.com/file/d/1zQQyA9idicjlTfczz9QRPLhptlC76efS/view" target="_blank" rel="noopener">発表スライドを Google Drive で開く</a></div><p class="fine">ページ内でスライドを閲覧できます。表示されない場合や、大きな画面で読みたい場合は、上のボタンから開いてください。</p></section><section id="poster" class="sec"><h2>学会発表ポスター</h2><div class="postercard"><p class="conf-badge">学会発表ポスター</p><h3 class="conf-title">デジタルアスリートを用いたハムストリング力学的負荷を低減させる走動作の探索</h3><p class="conf-authors">◯石井太晴<sup>1,2</sup>　山岸黎大<sup>2,3</sup>　姫野龍太郎<sup>1</sup>　村井昭彦<sup>2,3</sup></p><p class="conf-affil"><sup>1</sup> 順天堂大学　<sup>2</sup> 産業技術総合研究所（AIST）　<sup>3</sup> 東京大学</p></div><figure class="figblock posterfig" id="poster-img"><a class="zia" href="assets/docs/20260826%E4%BF%AE%E5%A3%AB%E8%AB%96%E6%96%87%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target="_blank" rel="noopener"><img loading="lazy" src="assets/poster/poster_page1.png" alt="修士論文ポスター（A0判・1ページ）"></a><figcaption><p class="capen">画像をクリックすると PDF（原寸・A0判）が新しいタブで開きます。</p></figcaption></figure><div class="docbtns"><a class="docbtn pdf" href="assets/docs/20260826%E4%BF%AE%E5%A3%AB%E8%AB%96%E6%96%87%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target="_blank" rel="noopener">ポスター PDF を開く</a><a class="docbtn doc" href="assets/docs/20260828_%E6%97%A5%E6%9C%AC%E3%83%90%E3%82%A4%E3%82%AA%E3%83%A1%E3%82%AB%E3%83%8B%E3%82%AF%E3%82%B9%E5%AD%A6%E4%BC%9A%E6%8A%84%E9%8C%B2_600%E5%AD%97%E7%89%88.docx">学会抄録（600字版・Word）をダウンロード</a></div><p class="fine">本ポスター・抄録は上記学会発表用の要約です。数式の完全な定義・全図表・研究の限界は、以下の各節（要旨〜付録）に記載しています。</p></section><section id="readme" class="sec"><h2>この補足ドキュメントについて</h2>
+<section id="readme" class="sec"><h2>研究の概要と本ページの構成</h2>
 <div class="howto">
-<p><b>この補足ドキュメントについて。</b> 本ページは修士論文の内容を Web 上で詳しく解説するもので、
-学会ポスターに書ききれない <b>数式の完全な定義</b>、<b>略語・記号の説明</b>、<b>図・表・動画</b> を一箇所にまとめています。
-数式は本文で用いる記号をすべて <a href="#nomen">用語・略語・記号の定義</a> で説明しており、
-このページだけを読めば主要な主張・方法・結果・限界を再構成できることを目標にしています。</p>
+<p>本研究は、<b>最高速度に近いスプリント走行において、接地時の骨盤の前傾と、大腿後面の筋群であるハムストリングの筋線維長がどのように関連するか</b>を検討した計算研究である。
+ハムストリングのうち股関節と膝関節の両方をまたぐ筋では、骨盤と大腿の位置関係が筋の長さに影響する。しかし、走行中には骨盤だけでなく全身の動作も変化するため、骨盤の角度と筋の長さの関係を単独で捉えることは難しい。</p>
+<p>そこで、男子スプリンター1名に基づく三次元筋骨格モデルを用い、接地時の骨盤傾斜に条件を設定したうえで、全身の走動作を条件ごとに再計算した。
+解析は、<b>骨盤前傾量と筋線維長の関係の定量化</b>、<b>骨盤と大腿の相対配置による筋長変化の検討</b>、<b>走速度の低下を抑えつつ負荷代理指標を低減する動作の探索</b>から構成される。
+ここでいう「負荷代理指標」とは、筋の力学的状態を評価するための筋線維長や力などの量であり、受傷確率を表す指標ではない。</p>
+<p>本ページは修士論文のWeb補足資料として、研究の背景、解析方法、結果、解釈上の限界をまとめたものである。発表スライドとポスターに加え、数式、用語の定義、図表および動画を掲載する。</p>
 <ul>
-<li><b>読み方の指針。</b> 各図には「目的（何を確かめる図か）」「結果（事実のみ）」「注意（言えないこと）」を併記しています。</li>
-<li><b>証拠の水準。</b> 本研究は単一の予測モデルによる<b>計算実験</b>です。因果・受傷リスク・個人一般化は主張しません
-（<a href="#limitations">限界</a>参照）。事実／解釈／仮説の区別は <a href="#appendix-b">付録B</a> にまとめています。</li>
-<li><b>数値の来歴。</b> 図中の数値はすべて元の最適化結果（MAT ファイル）から再計算しており、独立監査
-（<code>Results/Independent_Audit_20260819/</code>）および自動 QA（23項目 PASS）と一致します。</li>
+<li><b>研究全体を把握する場合：</b> <a href="#abstract">要旨</a>から<a href="#intro">緒言</a>へ進み、<a href="#results">結果</a>と<a href="#conclusion">結論</a>を参照されたい。専門用語は<a href="#nomen">用語・略語・記号の定義</a>にまとめる。</li>
+<li><b>解析の詳細を確認する場合：</b> 方法の<a href="#m-1">2.1–2.8節</a>に研究設計と評価方法を、<a href="#m-9">2.9–2.17節</a>に数式と実装上の定義を示す。各図には目的、結果および解釈上の注意を付す。</li>
+<li><b>結果の適用範囲：</b> 本研究は単一モデル内の計算実験である。実走者における受傷の因果関係、予防効果および他者への一般化は検証していない。<a href="#limitations">研究の限界</a>と<a href="#appendix-b">結果・解釈・仮説の区別</a>を併せて参照されたい。</li>
+<li><b>数値の来歴：</b> 掲載値は元の最適化結果から再計算された値であり、既存の独立監査記録（<code>Results/Independent_Audit_20260819/</code>）と自動品質確認（23項目）の記録に対応する。再現手順と未解決事項は<a href="#appendix-a">付録A</a>に示す。</li>
 </ul>
 </div>
-</section><section id="abstract" class="sec"><h2>要旨</h2>
-<p>最高速度スプリントでは、終末遊脚期（<span class="term">terminal swing</span>：接地直前の遊脚後期）に
-二関節ハムストリングが伸長位で力を発揮する。この力学的状態はスプリント型ハムストリング損傷を考えるうえで重要であるが、
-受傷は多因子性であり、単一の運動学変数から直接推定することはできない。骨盤前傾はハムストリングを伸長させ得る運動学的要因として
-注目されているものの、その根拠は固定肢位の標本研究または被験者間の観察的関連に大きく依存している。全身運動が動力学的に再協調する
-最高速度スプリントにおいて、速度差を抑えながら接地時骨盤前傾を操作した場合に、筋線維レベルの力学量がどのように応答するかは
-明らかでない。</p>
-
-<p><b>目的。</b> 国際水準男子スプリンター1名に基づく三次元予測筋骨格モデルを用い、接地時骨盤前傾量と二関節ハムストリングの
-1ストライド最大正規化筋線維長 \(\tilde l^{M}=l^{M}/l^{M}_{o}\) との<b>段階的関係</b>を定量化する。同一モデルの身体特性を保持したまま、
-接地時骨盤傾斜のみを等式拘束し、その他の状態・制御変数を再最適化した。</p>
-
-<p><b>方法。</b> 主解析には、内点法ソルバ <span class="term">IPOPT</span> が厳密に <code>Solve_Succeeded</code> を返した
-\(N=100\)（時間メッシュ区間数）の8条件を用いた。達成接地時骨盤前傾量 \(A=-q_{\text{pelvis\_tilt}}(0)\) を独立変数とし、
-半膜様筋（SM）、半腱様筋（ST）、大腿二頭筋長頭（BFlh）および短頭（BFsh）の1ストライド最大 \(\tilde l^{M}\) を評価した。</p>
-
-<p><b>結果。</b> \(N=100\) の達成前傾量は 1.987–15.987°、速度は 11.7467–11.7978&nbsp;m·s\(^{-1}\)（相対レンジ 0.435%）であった。
-二関節3筋の最大 \(\tilde l^{M}\) は前傾量とともに増加し、前傾1°当たりの傾きは SM 0.00678、ST 0.00374、BFlh 0.00538、
-8設計点に対する決定係数 \(R^{2}=0.950\text{–}0.961\)、最小→最大前傾で +4.65–9.72% であった。股関節をまたがない BFsh の端点変化は −0.32% であった。
-境界条件解析では、骨盤と大腿を共回転させた条件で筋腱単位長は変化せず、大腿の世界座標姿勢を固定した条件で二関節3筋が伸長した。
-さらに、筋線維長ペナルティを加えた再最適化により、速度低下 −0.340±0.011% に対して終末遊脚期の筋線維長代理指標を
-−5.189±0.077% 低減する候補解が得られた。</p>
-
-<p><b>結論。</b> 本モデルの検討範囲では、接地時骨盤前傾量は二関節ハムストリングの1ストライド最大 \(\tilde l^{M}\) と段階的に関連し、
-そのピークは終末遊脚期に生じた。この関係は骨盤角度単独の直接作用ではなく、股関節屈曲および大腿姿勢を含む<b>骨盤–大腿協調</b>の変化として
-解釈すべきである。筋損傷、局所組織応力、個人間一般化および介入効果は検証しておらず、結果を受傷因果または予防法として解釈することはできない。</p>
+</section><section id="slides" class="sec"><h2>発表スライド</h2><div class="postercard"><p class="conf-badge">発表スライド</p><h3 class="conf-title">デジタルヒューマン技術評議会 発表資料</h3><p class="fine">2026年10月20日 · 石井太晴 · PDF</p></div><div class="slides-viewer"><iframe src="https://drive.google.com/file/d/1zQQyA9idicjlTfczz9QRPLhptlC76efS/preview" title="2026年10月20日 デジタルヒューマン技術評議会 発表スライド" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div><div class="docbtns"><a class="docbtn pdf" href="https://drive.google.com/file/d/1zQQyA9idicjlTfczz9QRPLhptlC76efS/view" target="_blank" rel="noopener">発表スライドを Google Drive で開く</a></div><p class="fine">本資料はページ内で閲覧できる。表示されない場合、または拡大して閲覧する場合は、「発表スライドを Google Drive で開く」を選択されたい。</p></section><section id="poster" class="sec"><h2>学会発表ポスター</h2><div class="postercard"><p class="conf-badge">学会発表ポスター</p><h3 class="conf-title">デジタルアスリートを用いたハムストリング力学的負荷を低減させる走動作の探索</h3><p class="conf-authors">◯石井太晴<sup>1,2</sup>　山岸黎大<sup>2,3</sup>　姫野龍太郎<sup>1</sup>　村井昭彦<sup>2,3</sup></p><p class="conf-affil"><sup>1</sup> 順天堂大学　<sup>2</sup> 産業技術総合研究所（AIST）　<sup>3</sup> 東京大学</p></div><figure class="figblock posterfig" id="poster-img"><a class="zia" href="assets/docs/20260826%E4%BF%AE%E5%A3%AB%E8%AB%96%E6%96%87%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target="_blank" rel="noopener"><img loading="lazy" src="assets/poster/poster_page1.png" alt="修士論文ポスター（A0判・1ページ）"></a><figcaption><p class="capen">画像を選択すると、PDF（原寸・A0判）が新しいタブで開く。</p></figcaption></figure><div class="docbtns"><a class="docbtn pdf" href="assets/docs/20260826%E4%BF%AE%E5%A3%AB%E8%AB%96%E6%96%87%E3%83%9D%E3%82%B9%E3%82%BF%E3%83%BC.pdf" target="_blank" rel="noopener">ポスター PDF を開く</a><a class="docbtn doc" href="assets/docs/20260828_%E6%97%A5%E6%9C%AC%E3%83%90%E3%82%A4%E3%82%AA%E3%83%A1%E3%82%AB%E3%83%8B%E3%82%AF%E3%82%B9%E5%AD%A6%E4%BC%9A%E6%8A%84%E9%8C%B2_600%E5%AD%97%E7%89%88.docx">学会抄録（600字版・Word）をダウンロード</a></div><p class="fine">本ポスターおよび抄録は、学会発表用に研究内容を要約した資料である。数式の定義、図表および研究の限界は、本ページの各節（要旨から付録）に記載する。</p></section><section id="abstract" class="sec"><h2>要旨</h2>
+<p><b>背景。</b> スプリント走行では、接地直前の終末遊脚期に二関節ハムストリングが伸長した状態で力を発揮する。
+二関節ハムストリングとは、股関節と膝関節をまたぐ半膜様筋、半腱様筋および大腿二頭筋長頭を指す。骨盤前傾はこれらの筋を伸長させ得るが、
+全身の動作が変化する最高速度付近の走行において、走速度の差を抑えた場合にも同様の関係が認められるかは明らかでない。</p>
+<p><b>目的。</b> 国際水準の男子スプリンター1名に基づく三次元予測筋骨格モデルを用い、接地時骨盤前傾量と、各筋の1ストライド最大正規化筋線維長との関係を定量化した。
+正規化筋線維長は、筋線維長を至適筋線維長で除した無次元量 \(\tilde l^{M}=l^{M}/l^{M}_{o}\) である。1ストライドは同じ足の接地から次の接地までの走行周期を指す。</p>
+<p><b>方法。</b> モデルの身体特性を保持し、接地時骨盤傾斜に等式制約を設定したうえで、その他の全身運動と筋活動を再最適化した。
+主解析には、最適化ソルバIPOPTが成功終了（<code>Solve_Succeeded</code>）した \(N=100\) の8条件を用いた。\(N\) は計算上の時間分割数であり、被験者数ではない。
+半膜様筋（SM）、半腱様筋（ST）、大腿二頭筋長頭（BFlh）を評価し、股関節をまたがない大腿二頭筋短頭（BFsh）を比較対象とした。</p>
+<p><b>結果。</b> 実際に得られた接地時前傾量は1.987–15.987°、走速度は11.7467–11.7978&nbsp;m·s\(^{-1}\)であり、速度の相対レンジは0.435%であった。
+二関節3筋の最大 \(\tilde l^{M}\) は前傾量とともに増加した。前傾1°当たりの傾きはSMで0.00678、STで0.00374、BFlhで0.00538、
+8条件に対する直線近似の決定係数は \(R^{2}=0.950\text{–}0.961\) であった。最小前傾条件から最大前傾条件への変化は+4.65–9.72%であり、BFshでは−0.32%であった。
+骨盤と大腿の相対配置を比較する解析では、両者を共回転させると筋腱単位長は変化せず、大腿の姿勢を空間内で固定して骨盤を回転させると二関節3筋が伸長した。
+さらに、筋線維長の超過量を抑制する項を目的関数に加えることで、走速度の変化が−0.340±0.011%、終末遊脚期の筋線維長代理指標の変化が−5.189±0.077%となる候補解が得られた。
+これらの平均±標準偏差は、異なる3つの初期化経路から得た計算解を要約したものである。</p>
+<p><b>結論。</b> 本モデルの検討範囲では、接地時骨盤前傾量の増加は二関節ハムストリングの最大正規化筋線維長の増加と関連し、その最大値は終末遊脚期に生じた。
+この関係は、股関節屈曲および大腿姿勢を含む骨盤–大腿協調の変化として解釈される。得られた候補動作の実走者における遂行可能性、筋損傷および予防効果は未検証である。</p>
 </section><section id="nomen" class="sec"><h2>用語・略語・記号の定義</h2>
-<p>本ドキュメントで用いる略語・記号を以下にまとめる。数式で現れる量はすべてここで定義しており、
-本文中でも初出時に簡潔に補足する。正規化量には上付きチルダ（例 \(\tilde l^{M}\)）を用いる。</p>
+<p>本ページで用いる主な用語、略語および記号を以下に示す。正規化とは、基準となる量で除して尺度をそろえる操作である。
+正規化量にはチルダ（例 \(\tilde l^{M}\)）を付す。筋の略称と解析局面の定義は、本文および図表を通じて共通である。</p>
+
+<h3 id="nomen-basic">研究を読むための基本用語</h3>
+<div class="tablewrap"><table><thead><tr><th>用語</th><th>意味</th></tr></thead><tbody>
+<tr><td>骨盤前傾</td><td>骨盤が矢状面（身体を左右に分ける面）内で前方へ傾く回転。本稿ではモデル上の符号を反転し、前傾が大きいほど正の値が大きくなるように表す。</td></tr>
+<tr><td>立脚期・遊脚期</td><td>立脚期は対象の足が地面に接している期間、遊脚期は地面から離れている期間。終末遊脚期は次の接地直前の局面を指す。</td></tr>
+<tr><td>1歩・1ストライド</td><td>1歩は一方の足の接地から反対側の足の接地まで、1ストライドは同じ足の接地から次の接地まで。本モデルでは左右対称性を用いて1歩の計算結果から1ストライドを構成する。</td></tr>
+<tr><td>予測筋骨格シミュレーション</td><td>身体、筋および地面との接触を数理モデルで表し、運動方程式と設定条件を満たす動作を最適化計算で求める方法。</td></tr>
+<tr><td>再最適化</td><td>接地姿勢などの条件を変更した後に、同じモデルを用いて動作と筋活動を再計算すること。</td></tr>
+<tr><td>負荷代理指標</td><td>筋の力学的状態を評価するために用いる筋線維長、力、仕事などの量。本研究では受傷確率への換算は行わない。</td></tr>
+<tr><td>基準解（Nominal）</td><td>追加の骨盤傾斜制約や負荷ペナルティを設定する際の参照となる計算解。各解析の変化率は、その解析で定めた基準に対して算出する。</td></tr>
+</tbody></table></div>
 
 <h3 id="nomen-anat">解剖・筋（Muscles / anatomy）</h3>
 <div class="tablewrap"><table>
@@ -250,7 +251,7 @@ window.MathJax = {
 <tr><td>ST</td><td>semitendinosus</td><td>半腱様筋</td><td>二関節ハムストリング。</td></tr>
 <tr><td>BFlh</td><td>biceps femoris, long head</td><td>大腿二頭筋 長頭</td><td>二関節ハムストリング。</td></tr>
 <tr><td>BFsh</td><td>biceps femoris, short head</td><td>大腿二頭筋 短頭</td><td><b>単関節</b>（膝のみをまたぐ）。股関節をまたがない対照筋。</td></tr>
-<tr><td>MTU</td><td>muscle–tendon unit</td><td>筋腱単位</td><td>筋線維＋腱を合わせた長さ要素。長さ \(l^{MT}\)。</td></tr>
+<tr><td>MTU</td><td>muscle–tendon unit</td><td>筋腱単位</td><td>筋と腱を一体として扱うモデル要素。長さ \(l^{MT}\)。</td></tr>
 <tr><td>CE / PE</td><td>contractile / parallel-elastic element</td><td>収縮要素 / 並列弾性要素</td><td>Hill型筋モデルの能動要素と受動要素。</td></tr>
 </tbody></table></div>
 
@@ -259,8 +260,8 @@ window.MathJax = {
 <thead><tr><th>記号</th><th>読み</th><th>定義・単位</th></tr></thead>
 <tbody>
 <tr><td>\(l^{M}\)</td><td>muscle fibre length</td><td>筋線維長 [m]。</td></tr>
-<tr><td>\(l^{M}_{o}\)</td><td>optimal fibre length</td><td>至適筋線維長（\(f^{L}\) が最大となる長さ）[m]。</td></tr>
-<tr><td>\(\tilde l^{M}\)</td><td>normalized fibre length</td><td><b>主要評価項目</b>。\(\tilde l^{M}=l^{M}/l^{M}_{o}\)（無次元）。\(\tilde l^{M}=1\) が至適。<b>工学ひずみでも超音波筋束長でもない</b>。</td></tr>
+<tr><td>\(l^{M}_{o}\)</td><td>optimal fibre length</td><td>至適筋線維長（能動的な力–長さ関係の係数 \(f^{L}\) が最大となる長さ）[m]。</td></tr>
+<tr><td>\(\tilde l^{M}\)</td><td>normalized fibre length</td><td><b>主要評価項目</b>。\(\tilde l^{M}=l^{M}/l^{M}_{o}\)（無次元）。\(\tilde l^{M}=1\) は至適筋線維長に相当する。工学ひずみや超音波で計測する筋束長とは定義が異なる。</td></tr>
 <tr><td>\(l^{MT}\)</td><td>MTU length</td><td>筋腱単位長 [m]。一般化座標 \(q\) の多項式で評価。</td></tr>
 <tr><td>\(l^{Ts}\)</td><td>tendon slack length</td><td>腱スラック長（腱が力を出し始める自然長）[m]。</td></tr>
 <tr><td>\(\tilde l^{T}\)</td><td>normalized tendon length</td><td>正規化腱長（\(l^{Ts}\) 基準、無次元）。</td></tr>
@@ -315,8 +316,8 @@ window.MathJax = {
 <tr><td>EMG</td><td>electromyography（筋電図）。本データセットには被験者実測なし。</td></tr>
 <tr><td>IK</td><td>inverse kinematics（逆運動学）。実験由来の関節角。</td></tr>
 <tr><td>\(R^{2}\)</td><td>決定係数。8設計点に対する直線近似の適合度（母集団一般化可能性ではない）。</td></tr>
-<tr><td>SD / IQR</td><td>標準偏差／四分位範囲。8<b>設計条件</b>の記述統計であり標本統計ではない。</td></tr>
-<tr><td>tree-rigid / femur-fixed / adaptive</td><td>境界条件解析の3設定（本文 §2.17・§3.7 で定義）。</td></tr>
+<tr><td>SD / IQR</td><td>標準偏差／四分位範囲。本研究では設計条件間または初期化経路間の計算結果のばらつきを要約する。被験者集団の個人差を表すものではない。</td></tr>
+<tr><td>tree-rigid / femur-fixed / adaptive</td><td>境界条件解析の3設定（2.7節で概要、2.17節で再現方法、3.7節で結果を示す）。</td></tr>
 </tbody></table></div>
 
 <div class="callout warn"><span class="colabel">重要</span>
@@ -324,17 +325,17 @@ window.MathJax = {
 時間離散化誤差を調べる感度解析であって、標本数を増やすことではない。同様に8条件は同一モデルの<b>決定論的設計点</b>であり、
 独立な生物学的反復ではない。</div>
 </section><section id="intro" class="sec"><h2><span class="secnum">1</span> 緒言</h2>
-<h3 id="intro-1">1.1 高速走行時のハムストリング損傷は依然として競技医学上の課題である</h3>
+<h3 id="intro-1">1.1 研究背景：高速走行時のハムストリング損傷</h3>
 <p>ハムストリング損傷は、スプリントを含む競技で頻度と再発率の高い外傷であり、競技離脱およびパフォーマンス低下の主要因となる。
 UEFA Elite Club Injury Study では、欧州男子プロサッカー54チーム3909名を21シーズン追跡した結果、2636件のハムストリング損傷が記録され、
 全損傷に占める割合は 2001/02 シーズンの 12% から 2021/22 シーズンの 24% へ増加した<a class="cref" href="#ref1">[1]</a>。
-全離脱日数に占める割合も同期間に 10% から 20% へ増加しており、予防プログラムが普及した現在も競技現場における相対的負担は軽減していない。</p>
+全離脱日数に占める割合も同期間に 10% から 20% へ増加しており、この調査期間における競技現場の相対的負担の増大が示されている。</p>
 <p>受傷映像研究は、高速走行が重要な発生状況の一つであることを示す。ドイツ男子プロサッカーの52例を対象とした系統的映像解析では、
 25例（48%）がスプリント関連であり、これらはすべて直線加速または高速走行中に発生していた<a class="cref" href="#ref2">[2]</a>。
 ただしハムストリング損傷は、筋腱形態、既往歴、疲労、神経筋制御、走速度および外部環境が相互に関与する<b>多因子性</b>事象である。
 したがって、特定姿勢を直ちに受傷原因とみなすのではなく、その姿勢がどのような筋力学的状態と対応するかを段階的に検証する必要がある。</p>
 
-<h3 id="intro-2">1.2 終末遊脚期の二関節ハムストリングは伸長と力発揮が同時に生じる</h3>
+<h3 id="intro-2">1.2 終末遊脚期における筋の伸長と力発揮</h3>
 <p>Thelen らはトレッドミルスプリントを解析し、SM・ST・BFlh の筋腱単位長が終末遊脚期に最大となり、直立位に対してそれぞれ
 7.4%、8.1%、9.5% 長くなると報告した<a class="cref" href="#ref3">[3]</a>。Chumanov らは走速度の上昇に伴い、二関節ハムストリングの
 伸長・負荷・負の仕事が増加することを示した<a class="cref" href="#ref4">[4]</a>。</p>
@@ -343,36 +344,35 @@ UEFA Elite Club Injury Study では、欧州男子プロサッカー54チーム3
 これらは「ハムストリング負荷」を単一量として扱うことが適切でないことを示す。筋線維長、収縮要素力、受動筋線維力、腱力および
 負の筋線維仕事は異なる意味を持つため、<b>筋別かつ指標別</b>に評価する必要がある。</p>
 
-<h3 id="intro-3">1.3 同じ運動学でも筋腱形態によって力学的意味は異なり得る</h3>
+<h3 id="intro-3">1.3 筋腱の形態と特性を考慮する必要性</h3>
 <p>Timmins らはエリート男子サッカー選手152名を前向きに追跡し、BFlh の短い筋束長および低い遠心性膝屈曲力が、その後の
 ハムストリング損傷と関連したと報告した<a class="cref" href="#ref7">[7]</a>。同一の関節運動でも、至適筋線維長・腱コンプライアンス・
-筋力が異なれば、正規化筋線維長や力発揮状態が異なり得る。したがって集団共通の単一「危険角度」を想定する前に、同一の身体特性を持つ
-モデル内で運動学から筋力学へ至る経路を明確にする必要がある。</p>
+筋力が異なれば、正規化筋線維長や力発揮状態が異なり得る。したがって集団共通の単一「危険角度」を想定する前に、同一の身体特性を持つモデル内で関節や骨盤の運動と筋の力学的状態との関係を明確にする必要がある。</p>
 
-<h3 id="intro-4">1.4 骨盤前傾はハムストリング伸長の候補要因だが動的スプリントでの作用は未確定</h3>
+<h3 id="intro-4">1.4 骨盤前傾とハムストリング伸長に関する知見</h3>
 <p>SM・ST・BFlh は股関節と膝関節をまたぐため、骨盤と大腿の相対配置の影響を受ける。Mendiguchia らは新鮮凍結標本7体で、
 大腿骨・脛骨を固定して骨盤前傾を増加させると二関節ハムストリングの組織伸長が増加することを示した<a class="cref" href="#ref8">[8]</a>。
 しかし固定肢位の標本と最高速度スプリントでは境界条件が異なる。骨盤と大腿が同方向に共回転すれば股関節相対角は変化せず、
 骨盤の絶対角度が変化しても筋腱単位長はほとんど変化しない可能性がある。実際のスプリントでは骨盤・体幹・股・膝・接地が相互に
 再協調するため、骨盤前傾の力学的意味は<b>骨盤–大腿協調</b>として検討しなければならない。</p>
 
-<h3 id="intro-5">1.5 観察研究と介入研究の間には運動学から筋力学へ至る説明の空白がある</h3>
+<h3 id="intro-5">1.5 観察研究および介入研究から残された課題</h3>
 <p>Bramah らはエリート男子サッカー選手126名を6か月追跡し、Sprint Mechanics Assessment Score が1点高いごとに、新規スプリント関連
 ハムストリング損傷の調整発生率比が 1.33（95%CI 1.01–1.76）となることを報告した<a class="cref" href="#ref9">[9]</a>。一方 Mendiguchia らは
 6週間の複合介入後に最大速度走の骨盤・下肢運動学が変化し得ることを示した<a class="cref" href="#ref10">[10]</a>。走動作が将来受傷と関連し、
 介入で変化し得ることは示されたが、観察された骨盤運動が二関節ハムストリングの筋線維長や力にどう結び付くかは直接検証されていない。</p>
 
-<h3 id="intro-6">1.6 予測筋骨格シミュレーションは同一個体内の仮想的運動学操作を可能にする</h3>
+<h3 id="intro-6">1.6 予測筋骨格シミュレーションによる検討</h3>
 <p>実走者の被験者間比較では、骨盤傾斜が異なる者は走速度・筋力・体格・筋腱形態・他の走技術も異なる。予測筋骨格シミュレーションは、
-同一モデルの身体特性を保持しながら特定条件を拘束し、動力学・接触・筋平衡・周期性を満たす全身運動を再最適化できる。
+同一モデルの身体特性を保持しながら特定条件を設定し、運動方程式、地面との接触、筋と腱の力の釣り合い、および動作の周期性を満たす全身運動を求められる。
 Haralabidis らは三次元全身筋骨格モデルと直接コロケーション法によるスプリントシミュレーションを構築し<a class="cref" href="#ref11">[11]</a>、
 その後、コーチングで用いられる接地時水平距離（HTD）および接地時膝間距離（IKTD）を基準解から段階的に操作して、その他の座標・制御を
 再最適化した<a class="cref" href="#ref12">[12]</a>。HTD の変更は最高速度に意味のある変化をもたらした一方、検討範囲の IKTD 変更に対して
-速度は比較的鈍感であった。同じ系譜で Lin と Pandy は筋力・筋束長・最大短縮速度・腱コンプライアンスを段階的に操作し、最高走速度に対する
-筋腱特性の感度を検討した<a class="cref" href="#ref13">[13]</a>。本研究はこの設計思想を、パフォーマンスから<b>筋線維力学</b>へ発展させる。</p>
+速度は比較的鈍感であった。また、Lin と Pandy は筋力・筋束長・最大短縮速度・腱コンプライアンスを段階的に操作し、最高走速度に対する
+筋腱特性の感度を検討した<a class="cref" href="#ref13">[13]</a>。本研究では、このようなモデル内比較の枠組みを用いて、走速度に加えて<b>筋線維の力学的状態</b>を評価する。</p>
 
 <h3 id="intro-7">1.7 残された研究課題</h3>
-<p>先行研究から、①終末遊脚期に二関節ハムが伸長位で力を発揮する、②固定大腿に対する骨盤前傾がハム組織を伸長させる、
+<p>先行研究から、①終末遊脚期に二関節ハムストリングが伸長位で力を発揮する、②固定大腿に対する骨盤前傾がハムストリングの組織を伸長させる、
 ③予測シミュレーションで同一モデル内の接地変数を段階的に操作できる、ことは示されている。しかし、最高速度近傍の全身動作を再最適化し、
 速度差を限定したうえで、接地時骨盤前傾と<b>筋別</b>ハムストリング力学との段階的関係を検討した研究は不足している。</p>
 
@@ -383,7 +383,7 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 <p><b>主要仮説。</b> 達成速度を基準の ±1% 以内に保った条件で、接地時骨盤前傾量が大きいほど SM・ST・BFlh の1ストライド最大 \(\tilde l^{M}\)
 が増加し、股関節をまたがない BFsh の変化は相対的に小さい。<b>副次仮説。</b> 前傾増加に伴う筋長変化は骨盤回転単独ではなく大腿姿勢・股関節屈曲と
 対応し、筋線維長代理指標を目的関数へ加えることで、速度低下 0.5% 以内かつ代理指標低下 3% 以上の候補解が得られる。</p>
-<figure class="figblock" id="fig-1"><a class="zia" href="assets/fig/Fig1_study_logic.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig1_study_logic.png" alt="図1 / Figure 1"></a><figcaption><p class="figtag"><b>図1 / Figure 1</b> ｜ 研究ギャップと検証の連鎖 / Research gap and validation chain</p><p class="purpose"><span class="lab labP">目的</span> 観察研究の交絡（個体差・共変動学）を、単一モデルで接地時骨盤傾斜のみ拘束し全身再最適化することで切り分ける枠組みと、主解析（どのように関連するか）→ 機序分解（どの座標関係で生じるか）→ 最適化（代理指標を低減できるか）の解析連鎖を示す。</p><p class="result"><span class="lab labR">結果（事実）</span> 概念図。3つの解析が順に「関連の定量化」「機序の限定」「候補動作の生成」を担う。</p><p class="note"><span class="lab labN">注意</span> この図は研究の論理構造であり、実測データではない。</p><p class="capen"><b>Caption (EN):</b> Schematic of the research logic: observational confounds are isolated by constraining only touchdown pelvis tilt in one model and re-optimizing the whole body; the three analyses chain from association to mechanism to candidate-motion generation.</p></figcaption></figure></section><section id="methods" class="sec"><h2><span class="secnum">2</span> 方法</h2>
+<figure class="figblock" id="fig-1"><a class="zia" href="assets/fig/Fig1_study_logic.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig1_study_logic.png" alt="図1 / Figure 1"></a><figcaption><p class="figtag"><b>図1 / Figure 1</b> ｜ 研究ギャップと検証の連鎖 / Research gap and validation chain</p><p class="purpose"><span class="lab labP">目的</span> 個体差の影響を固定したモデル内で、接地時骨盤傾斜の条件を変更し、全身動作を再最適化する研究設計と、主解析（どのように関連するか）→ 機序分解（どの座標関係で生じるか）→ 最適化（代理指標を低減できるか）の解析連鎖を示す。</p><p class="result"><span class="lab labR">解析結果</span> 概念図。3つの解析が順に「関連の定量化」「機序の限定」「候補動作の生成」を担う。</p><p class="note"><span class="lab labN">注意</span> この図は研究の論理構造であり、実測データではない。</p><p class="capen"><b>Caption (EN):</b> Schematic of the research logic: body properties are held constant while touchdown pelvis tilt is constrained in one model and re-optimizing the whole body; the three analyses chain from association to mechanism to candidate-motion generation.</p></figcaption></figure></section><section id="methods" class="sec"><h2><span class="secnum">2</span> 方法</h2>
 <h3 id="m-1">2.1 研究デザイン</h3>
 <p>本研究は、国際水準男子スプリンター1名に基づく筋骨格モデルを対象とした<b>計算実験</b>である。Haralabidis ら
 <a class="cref" href="#ref12">[12]</a>の予測シミュレーション設計を基盤とし、接地時の一つの運動学変数を拘束したうえで、
@@ -394,10 +394,10 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 <tbody>
 <tr><td>対象</td><td>国際水準男子スプリンター1名に基づく全身筋骨格モデル（24歳・身長1.79&nbsp;m・体重72.2&nbsp;kg・100&nbsp;m自己記録10.33&nbsp;s）</td></tr>
 <tr><td>主条件</td><td>ソルバが厳密に <code>Solve_Succeeded</code> を返した接地時骨盤傾斜8条件、\(N=50\) および \(N=100\)</td></tr>
-<tr><td>独立変数</td><td>達成接地時骨盤前傾量 \(A=-q_{\text{pelvis\_tilt}}(0)\)（1.987–15.987°）</td></tr>
+<tr><td>独立変数</td><td>計算で得られた接地時骨盤前傾量 \(A\)（1.987–15.987°。符号と単位の定義は2.13節）</td></tr>
 <tr><td>主要従属変数</td><td>筋別1ストライド最大正規化筋線維長 \(\tilde l^{M}\)</td></tr>
 <tr><td>副次従属変数</td><td>収縮要素力 \(F^{CE}\)（減衰項含む）、受動筋線維力 \(F^{pass}\)、腱力 \(F^{T}\)、伸張速度、伸張性パワー \(P^{ecc}\)、負の筋線維仕事 \(W^{neg}\)</td></tr>
-<tr><td>設計確認</td><td>達成速度、solver status、制約残差 <code>inf_pr</code>、メッシュ \(N=50/100\)</td></tr>
+<tr><td>設計確認</td><td>計算で得られた走速度、ソルバの終了状態、制約残差 <code>inf_pr</code>、メッシュ \(N=50/100\)</td></tr>
 <tr><td>媒介候補</td><td>接地・最大股関節屈曲、大腿骨世界座標姿勢</td></tr>
 <tr><td>解剖学的対照筋</td><td>股関節をまたがない大腿二頭筋短頭（BFsh）</td></tr>
 </tbody></table></div>
@@ -405,16 +405,16 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 <h3 id="m-2">2.2 モデルと最適制御</h3>
 <p>モデルは20剛体・37自由度・左右合計92筋腱単位・上肢トルクアクチュエータ・足部接触要素・空気抵抗から構成され、上記スプリンターの
 身体寸法にスケーリングされた<a class="cref" href="#ref12">[12]</a>。筋腱単位は Hill 型モデルで表現した。1歩を左右対称性で表現し、平均速度を
-高めつつ、加速度・筋活動・筋活動変化・腱力変化・予備アクチュエータ・上肢制御などを正則化する目的関数を、直接コロケーション法で解いた。
-時間離散化は3次 Radau コロケーションであり、\(N=50\) および \(N=100\) はメッシュ区間数を表す。基準モデルの外部妥当性を図4に示す。</p>
-<figure class="figblock" id="fig-4"><a class="zia" href="assets/fig/Fig4_baseline_validation.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig4_baseline_validation.png" alt="図4 / Figure 4"></a><figcaption><p class="figtag"><b>図4 / Figure 4</b> ｜ 基準シミュレーション（Nominal \(N=100\)）の妥当性 / Baseline validity</p><p class="purpose"><span class="lab labP">目的</span> 内部筋力学を論じる前提として、基準解が被験者本人の最高速度スプリントの<b>外部特徴</b>をどの程度再現するかを確認する。</p><p class="result"><span class="lab labR">結果（事実）</span> 股・膝・足の関節角は形状一致良好（相関 \(r=0.90\text{–}0.97\)、系統オフセットあり）。pelvis_tilt は raw IK とモデルで規約・姿勢が異なり（接地 +5.0° 対 −8.0°）、オフセット除去後の形状相関 \(r=-0.31\)・RMSE 5.9°。被験者の実験 GRF・EMG は本データに含まれず、GRF・活動は<b>シミュレーションのみ</b>（鉛直ピーク 5.9 BW は接触モデル由来で過大）。</p><p class="note"><span class="lab labN">注意</span> 外部一致は内部の筋線維長・力の妥当性を保証しない。pelvis_tilt の規約差は隠さず明示している。</p><p class="capen"><b>Caption (EN):</b> Kinematic shape agreement (hip/knee/ankle r=0.90–0.97) with systematic offsets; pelvis_tilt differs by a convention/posture offset (flagged, not silently aligned). GRF and activations are simulation-only.</p></figcaption></figure>
+高める項と、加速度、筋活動および補助的な制御などの過大な値を抑制する項からなる目的関数を用いて、走動作を求めた。
+時間を有限個の区間に分割する直接コロケーション法のうち、3次 Radau 法を用いた。\(N=50\) および \(N=100\) はメッシュ区間数を表す。基準解と利用可能な実験データとの比較、および比較できない項目を図4に示す。</p>
+<figure class="figblock" id="fig-4"><a class="zia" href="assets/fig/Fig4_baseline_validation.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig4_baseline_validation.png" alt="図4 / Figure 4"></a><figcaption><p class="figtag"><b>図4 / Figure 4</b> ｜ 基準シミュレーション（Nominal \(N=100\)）の妥当性 / Baseline validity</p><p class="purpose"><span class="lab labP">目的</span> 内部筋力学を論じる前提として、基準解が対象スプリンターの関節運動などの<b>外部から観測できる特徴</b>をどの程度再現するかを確認する。</p><p class="result"><span class="lab labR">解析結果</span> 股関節・膝関節・足関節の角度波形には形状の一致が認められた（相関 \(r=0.90\text{–}0.97\)、一定方向の角度のずれを伴う）。骨盤傾斜角（pelvis_tilt）は実験データから求めた逆運動学結果とモデルで座標規約・姿勢が異なり（接地 +5.0° 対 −8.0°）、角度の定常的なずれを除いた後の波形相関 \(r=-0.31\)、二乗平均平方根誤差（RMSE）は5.9°であった。対象者の床反力（GRF）・筋電図（EMG）の実測値は本データに含まれず、床反力・筋活動は<b>計算結果のみ</b>（鉛直ピーク 5.9 BW は接触モデル由来であり、絶対値の妥当性に課題がある）。</p><p class="note"><span class="lab labN">注意</span> 関節運動の一致は、筋内部の線維長や力の妥当性を直接保証するものではない。骨盤傾斜角については、座標規約の差と波形一致の限界を考慮する必要がある。</p><p class="capen"><b>Caption (EN):</b> Kinematic shape agreement (hip/knee/ankle r=0.90–0.97) with systematic offsets; pelvis_tilt differs by a convention/posture offset (flagged, not silently aligned). GRF and activations are simulation-only.</p></figcaption></figure>
 <h3 id="m-3">2.3 接地時骨盤傾斜8条件</h3>
-<p><code>PelvisTD</code> および <code>PelvisTDwide</code> 系列から、solver status が厳密に <code>Solve_Succeeded</code> で、
-要求オフセットごとに制約残差が最小の条件を選択した。主解析は要求角度ではなく、<b>実際に達成した</b>接地時骨盤傾斜を横軸とした。
-\(N=100\) では8条件すべてが速度誤差 ±1% 以内であった。速度誤差は各条件の Nominal 参照値に対する値であり、条件選択後に速度で
+<p><code>PelvisTD</code> および <code>PelvisTDwide</code> 系列から、ソルバの終了状態が <code>Solve_Succeeded</code> で、
+基準解からの角度変更量（要求オフセット）ごとに、制約残差が最小の条件を選択した。主解析は<b>計算で実際に得られた</b>接地時骨盤前傾量を説明変数とした。
+\(N=100\) では8条件すべてが速度誤差 ±1% 以内であった。速度誤差は各条件の基準解（Nominal）の速度に対する値であり、条件選択後に速度で
 再選別したものではない。</p>
 <div class="tablewrap"><table class="small">
-<thead><tr><th>条件</th><th>要求offset</th><th>達成前傾量 \(A\)</th><th>速度 [m/s]</th><th>速度誤差</th><th>制約残差</th><th>solver</th></tr></thead>
+<thead><tr><th>条件</th><th>基準角度からの変更量</th><th>達成前傾量 \(A\)</th><th>速度 [m/s]</th><th>速度誤差</th><th>制約残差</th><th>終了状態</th></tr></thead>
 <tbody>
 <tr><td>PelvisTDwide_m8</td><td>−8°</td><td>15.987°</td><td>11.74666</td><td>−0.743%</td><td>7.87e−9</td><td>Solve_Succeeded</td></tr>
 <tr><td>PelvisTDwide_m6</td><td>−6°</td><td>13.987°</td><td>11.76596</td><td>−0.580%</td><td>1.36e−8</td><td>Solve_Succeeded</td></tr>
@@ -435,14 +435,14 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 <tr><td>速度範囲 / 相対レンジ</td><td>11.7467–11.7978 m/s / 0.435%</td></tr>
 </tbody></table></div>
 <p class="fine">表中の平均・SD・中央値・IQR は8つの<b>設計条件</b>を要約する記述統計であり、8名の被験者から推定した標本統計ではない。</p>
-<figure class="figblock vidblock" id="vid-td"><video controls loop muted playsinline preload="metadata"><source src="assets/video/pelvic_td_sidebyside.mp4" type="video/mp4">お使いの環境では動画を再生できません。<a href="assets/video/pelvic_td_sidebyside.gif">アニメーションGIFを開く</a>。</video><figcaption><p class="figtag"><b>動画1 / Video 1</b> ｜ 接地時骨盤傾斜条件の筋骨格アニメーション / Musculoskeletal animation of touchdown pelvis-tilt conditions</p><p class="purpose"><span class="lab labP">目的</span> 接地時骨盤前傾を変えた条件間で、全身動作とハムストリング経路がどう再協調するかを視覚的に示す。</p><p class="result"><span class="lab labR">内容</span> 前傾が異なる条件を並べて再生した3次元筋骨格アニメーション（OpenSim ジオメトリ）。骨盤・股関節・大腿の姿勢差と、それに伴う二関節ハムストリング経路長の変化を確認できる。</p><p class="note"><span class="lab labN">注意</span> 可視化は解釈補助であり定量指標ではない。定量値は図2–3・図5を参照。</p><p class="capen">再生できない場合は <a href="assets/video/pelvic_td_sidebyside.gif">GIF版</a> / <a href="assets/video/pelvic_td_sidebyside.mp4">MP4を直接開く</a>。</p></figcaption></figure>
+<figure class="figblock vidblock" id="vid-td"><video controls loop muted playsinline preload="metadata"><source src="assets/video/pelvic_td_sidebyside.mp4" type="video/mp4">お使いの環境では動画を再生できません。<a href="assets/video/pelvic_td_sidebyside.gif">アニメーションGIFを開く</a>。</video><figcaption><p class="figtag"><b>動画1 / Video 1</b> ｜ 接地時骨盤傾斜条件の筋骨格アニメーション / Musculoskeletal animation of touchdown pelvis-tilt conditions</p><p class="purpose"><span class="lab labP">目的</span> 接地時骨盤前傾を変えた条件間で、全身動作とハムストリング経路がどう再協調するかを視覚的に示す。</p><p class="result"><span class="lab labR">内容</span> 前傾が異なる条件を並べて再生した3次元筋骨格アニメーション（OpenSim ジオメトリ）。骨盤・股関節・大腿の姿勢差と、それに伴う二関節ハムストリングの経路長の変化を確認できる。</p><p class="note"><span class="lab labN">注意</span> 動画は動作の解釈を補助する資料である。定量的な比較は図2–3および図5に基づく。</p><p class="capen">再生できない場合は <a href="assets/video/pelvic_td_sidebyside.gif">GIF版</a> / <a href="assets/video/pelvic_td_sidebyside.mp4">MP4を直接開く</a>。</p></figcaption></figure>
 <h3 id="m-4">2.4 1ストライド再構成と局面</h3>
-<p>保存された1歩の右脚信号に、左右対称性で対応する左脚信号を連結し、基準右脚の1ストライドを再構成した。早期立脚期は接地時間の前半50%、
-終末遊脚期は次回接地前の遊脚時間最後25%とした。接地は右床反力3軸のうち peak-to-peak 範囲が最大の軸を鉛直候補とみなし、その値が
-体重の5%を超える区間とした。なお、境界条件動画解析の terminal swing は別定義で、1歩の最後15%である。両者を同じ窓として扱っていない。</p>
+<p>保存された1歩の右脚信号に、左右対称性で対応する左脚信号を連結し、右脚を基準とする1ストライドを再構成した。早期立脚期は接地時間の前半50%、
+終末遊脚期は次回接地前の遊脚時間最後25%とした。接地は右足の床反力3軸のうち、最大値と最小値の差が最も大きい軸を鉛直候補とみなし、その力が
+体重に相当する力の5%を超える区間とした。境界条件を比較する動画解析では、終末遊脚期の評価区間を1歩の最後15%とした。筋の指標を算出する評価区間と、動画解析の評価区間は区別した。</p>
 
 <h3 id="m-5">2.5 力学的負荷代理指標</h3>
-<p>正規化筋線維長は \(\tilde l^{M}=l^{M}/l^{M}_{o}\) である（工学ひずみではない）。物理筋線維速度は \(v^{M}=\tilde v^{M}\,v^{M}_{\max}\) とし、
+<p>正規化筋線維長は \(\tilde l^{M}=l^{M}/l^{M}_{o}\) である（工学ひずみではない）。物理単位で表した筋線維速度は \(v^{M}=\tilde v^{M}\,v^{M}_{\max}\) とし、
 \(v^{M}>0\) を伸張と定義した。能動伸張性パワーは \(\max(F^{CE}v^{M},0)\) [W]、負の能動筋線維仕事は実時間上の積分
 \(\int \max(F^{CE}v^{M},0)\,dt\) [J] とした。保存された時刻節点は非一様であるため、すべての積分を実節点に対する台形則で計算した。
 正規化筋線維長・収縮要素力・受動筋線維力・腱力・負の筋線維仕事は相互に関連するが、同一の力学量ではない。したがって各指標を個別に算出し、
@@ -450,7 +450,7 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 
 <h3 id="m-6">2.6 統計・数値解析</h3>
 <p>前傾量と各指標の関係は、最小二乗直線の傾き、決定係数 \(R^{2}\)、Spearman 順位相関、および端点変化で記述した。主要な効果量は
-「前傾1°当たりの傾き」と「最小前傾条件を分母とする端点変化率」である。\(N=8\) はシミュレーション条件数であり被験者標本ではない。
+「前傾1°当たりの傾き」と「最小前傾条件を分母とする端点変化率」である。比較対象は8つのシミュレーション条件であり、8名の被験者からなる標本ではない。
 そのため p 値および母集団推論としての 95% 信頼区間を主要結果として用いない。\(R^{2}\) も母集団一般化可能性ではなく、検討した8設計点における
 直線近似の適合度を示す。主解析は \(N=100\) の8条件とし、\(N=50\) は方向の一致を確認する補助解析と位置づけた。</p>
 <p>残存する速度差による交絡可能性を調べるため、\(N=100\) について探索的に \(y=\beta_{0}+\beta_{A}A+\beta_{V}v\)（\(A\)：達成前傾量、
@@ -459,21 +459,26 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 （\(N=50\) は −8/−6/−4° に wide 系列、−2〜+6° に standard 系列、\(N=100\) は全8条件に wide 系列）、両者の差には時間離散化だけでなく
 探索境界系列の差も含まれ得る。本稿ではこれを「解像度をまたぐ方向的一致の確認」として扱う。</p>
 
-<h3 id="m-7">2.7 境界条件分解</h3>
+<h3 id="m-7">2.7 骨盤と大腿の相対配置を区別する境界条件解析</h3>
+<p>骨盤前傾に伴う筋長変化を解釈するため、大腿が骨盤とともに回転する場合と、大腿の空間内姿勢を保持する場合を比較した。
+この解析における境界条件とは、骨盤を回転させる際に、どの関節角度または身体部位の姿勢を固定するかという設定を指す。</p>
 <p><b>tree-rigid</b> では骨盤角度のみを変更し股関節相対角を固定したため、大腿骨が骨盤と共回転する。<b>femur-fixed</b> では骨盤角度を
-変更しつつ股関節屈曲を補正し、大腿骨の世界座標姿勢を名目上固定した。<b>adaptive</b> は実際に再最適化された PelvisTDwide_m8 解である。
+変更しつつ股関節屈曲を補正し、大腿骨の世界座標系（身体の外部に固定した座標系）における姿勢を名目上固定した。<b>adaptive</b> は実際に再最適化された PelvisTDwide_m8 解である。
 静的解析は前傾 0–25°、動作解析は名目 −8° オフセットを対象とした。</p>
 
-<h3 id="m-8">2.8 速度–負荷パレート</h3>
-<p>二関節ハムストリング左右6筋の \(\tilde l^{M}-1\) の正部分を滑らかな hinge で二乗し、1歩で積分した項に重み \(w_J(13)\) を与えた。
-報告軸は目的関数値そのものではなく、事後計算した二関節3筋の終末遊脚期窓内ピーク \(\tilde l^{M}\) 平均である。\(N=100\) では
-\(w=0,\,0.05,\,0.10,\,0.20\) を解き、候補 \(w=0.10\) は forward・Nominal 初期値・\(w=0.20\) からの backward の3ウォームスタート経路で確認した。
-候補基準は計算前に文書化した「速度低下 0.5% 以内、代理指標低下 3% 以上」である。3解は独立標本ではなく、局所解の初期値感度をみる反復である。</p>
+<h3 id="m-8">2.8 走速度と負荷代理指標の両立を目指す最適化</h3>
+<p>走速度の維持と負荷代理指標の低減を同時に検討するため、筋線維長の超過量を抑制するペナルティ項を目的関数に追加した。
+ペナルティとは、抑制したい量が大きいほど目的関数値を増加させる項である。その重みを変更し、走速度と代理指標の交換関係（トレードオフ）を評価した。</p>
+<p>二関節ハムストリング左右6筋の \(\tilde l^{M}-1\) の正部分を滑らかな関数で近似して二乗し、1歩で積分した項に重み \(w_J(13)\) を与えた。
+結果の比較には、計算後に各二関節筋の終末遊脚期内で求めた最大正規化筋線維長を用い、その3筋平均を代理指標とした。これは目的関数値そのものとは異なる。\(N=100\) では
+\(w=0,\,0.05,\,0.10,\,0.20\) を解き、候補 \(w=0.10\) は、小さい重みから順に解く経路（forward）、基準解を初期値とする経路、および \(w=0.20\) から重みを下げる経路（backward）の3通りで確認した。
+このように既存の計算解を次の初期値として利用する方法をウォームスタートと呼ぶ。
+候補基準は計算前に文書化した「速度低下 0.5% 以内、代理指標低下 3% 以上」である。3解は初期値の違いに対する計算結果の感度を確認するためのものであり、独立した被験者や実験試行を表すものではない。</p>
 
 <h3 id="m-9">2.9 数理モデルおよび解析実装</h3>
-<p>本節では、論文中の記号を実装（公開コード）へ追跡できるように、式・変数・コード位置を対応づける。モデルは37自由度の三次元全身剛体系で、
+<p>2.9–2.17節では、前節までに示した解析の数理的定義と、公開コードにおける実装箇所を示す。モデルは37自由度の三次元全身剛体系で、
 左右合計92筋腱単位を含む。一般化座標 \(q\in\mathbb{R}^{37}\) の先頭6成分は骨盤の傾斜・側屈・回旋・3方向並進、7–20成分は左右下肢、
-21–23成分は体幹、24–37成分は左右上肢である。下肢筋腱長とモーメントアームは、OpenSim モデルから作成された多項式近似により評価される。</p>
+21–23成分は体幹、24–37成分は左右上肢である。下肢の筋腱単位長とモーメントアームは、OpenSim モデルから作成された多項式近似により評価される。</p>
 <p>多項式で得た筋腱単位長を \(l^{MT}(q)\) とすると、モーメントアーム \(r_i\) と筋腱単位速度 \(v^{MT}\) は次の関係にある。</p>
 \[ r_i(q) = -\frac{\partial l^{MT}(q)}{\partial q_i},\qquad
    v^{MT}(q,\dot q) = \sum_i \frac{\partial l^{MT}(q)}{\partial q_i}\,\dot q_i = -\sum_i r_i(q)\,\dot q_i. \]
@@ -517,11 +522,11 @@ Haralabidis らは三次元全身筋骨格モデルと直接コロケーショ�
 \(J_{\text{res}}\)：予備アクチュエータ、\(J_{\text{arm}}\)：上肢制御であり、\(\Delta x/T\) は平均速度（負符号で最大化）。骨盤・下肢・上肢の
 実験運動学追跡項は本予測条件では 0 であり、参照運動学に追従させるのではなく、初期姿勢範囲・動力学・接触・周期性などの制約下で速度を予測する。
 IPOPT 設定は limited-memory Hessian、adaptive barrier、線形ソルバ MUMPS、収束許容 \(\text{tol}=10^{-5}\)、最大50000反復である。</p>
-<p>速度–負荷パレートでは、左右の SM・ST・BFlh の6筋について、\(\tilde l^{M}\) が 1 を超える部分を滑らかな片側関数で罰する。</p>
+<p>速度–負荷パレートでは、左右の SM・ST・BFlh の6筋について、\(\tilde l^{M}\) が 1 を超える部分を滑らかな片側関数を用いて抑制する。</p>
 \[ \operatorname{smoothpos}(z;\varepsilon)=\tfrac12\!\left(z+\sqrt{z^2+\varepsilon^2}\right),\qquad
    J_{\text{len}} = 10^{4}\,w \sum_k\sum_j h\,B_j \!\!\sum_{m\in H_{bi}}\! \operatorname{smoothpos}\!\left(\tilde l^{M}_m-1;\,10^{-3}\right)^{2},\qquad
    J_{\text{total}} = J_{\text{base}} + J_{\text{len}}. \]
-<p>ここで \(\operatorname{smoothpos}\) は正部分の滑らか近似、\(\varepsilon=10^{-3}\)、\(H_{bi}\) は二関節ハム6筋の集合、\(w\) はペナルティ重み
+<p>ここで \(\operatorname{smoothpos}\) は正部分の滑らか近似、\(\varepsilon=10^{-3}\)、\(H_{bi}\) は左右の二関節ハムストリング6筋の集合、\(w\) はペナルティ重み
 （条件名 <code>wXXXX</code> は \(w=\text{XXXX}/1000\)）。最適化が直接最小化するのは<b>時間積分された滑らかな二乗超過量</b>である一方、結果図の縦軸は
 事後計算した「二関節3筋の終末遊脚期窓内ピーク \(\tilde l^{M}\) 平均」である。両者は関連するが同一ではない。</p>
 
@@ -553,13 +558,13 @@ IPOPT 設定は limited-memory Hessian、adaptive barrier、線形ソルバ MUMP
 より厳密には「<b>収縮要素力（減衰項を含む）</b>」であり、生体内で直接測定した筋張力ではない。</div>
 
 <h3 id="m-13">2.13 接地時骨盤傾斜の操作</h3>
-<p>モデル座標では \(q_{\text{pelvis\_tilt}}\) が負になるほど前傾が大きい。本稿では直感的な正値として前傾量 \(A\) を定義する。</p>
+<p>モデル座標では \(q_{\text{pelvis\_tilt}}\) が負になるほど前傾が大きい。本稿では前傾の増大を正の方向で表すため、前傾量 \(A\) を定義する。</p>
 \[ A\,[\deg] = -\frac{180}{\pi}\,q_{\text{pelvis\_tilt}}(0). \]
 <p>TDPT 条件は接地初期点だけに次の等式を加える（\(\text{offset}\) は要求オフセット [deg]）。</p>
 \[ q_{\text{pelvis\_tilt}}(0) = q_{\text{pelvis\_tilt,Nominal}}(0) + \text{offset}\times\frac{\pi}{180}. \]
 <p><code>PelvisTDwide</code> は操作式を変えず、骨盤傾斜の初期姿勢照合窓と座標範囲を ±25° まで緩和する。したがって standard と wide の違いは
 「異なる介入」ではなく、前傾側の解を座標境界で人工的に遮断しないための<b>実行可能領域の拡張</b>である。他の時点の骨盤傾斜・股・膝・体幹・接触・
-筋活動は再最適化される。主解析条件は、要求 offset ごとに制約残差 <code>inf_pr</code> が最小の1行を選び、横軸には達成接地角度を用いる。</p>
+筋活動は再最適化される。主解析条件は、要求オフセットごとに制約残差 <code>inf_pr</code> が最小の解を選び、横軸には達成接地角度を用いる。</p>
 
 <h3 id="m-14">2.14 1ストライド再構成と局面定義の式</h3>
 <p>保存解は左右対称な1歩である。基準を右脚とし、右脚信号 \(x_R(t)\) の後ろに同じ1歩の左脚信号 \(x_L(t)\) を時間 \(T\) だけ移して連結する。</p>
@@ -592,8 +597,7 @@ IPOPT 設定は limited-memory Hessian、adaptive barrier、線形ソルバ MUMP
 \[ \text{endpoint change}\,[\%]=100\,\frac{y_{A_{\max}}-y_{A_{\min}}}{|y_{A_{\min}}|},\qquad
    \text{relative span}\,[\%]=100\,\frac{\max y-\min y}{|\overline{y}|}. \]
 <p>速度交絡の探索には \(y=\beta_0+\beta_A A+\beta_V v\) を用いる。\(R^{2}\)・SD・IQR は8名からの推定ではなく<b>8設計条件の記述</b>であり、
-p 値や母集団 95%CI は主張しない。Spearman 係数の現実装は二重 argsort による順位で、主独立変数の達成角度には同値がないため主要傾向への
-影響はない。</p>
+母集団に対する推測統計としてのp値や95%信頼区間は用いない。Spearman 係数の現実装は二重 argsort による順位で、達成角度に同値はない。ただし、評価指標側の同順位の処理を含む確認は付録Cの検証課題に含める。</p>
 
 <h3 id="m-17">2.17 境界条件分解の再現方法</h3>
 <p>静的解析は骨盤前傾 0–25°、左股関節屈曲30°、左膝角度 −20° を基準とする。tree-rigid では股・膝角度を固定したまま骨盤だけを回転する。
@@ -605,11 +609,11 @@ tree-rigid と femur-fixed は<b>幾何学的反実仮想</b>であり、動力�
 </section><section id="results" class="sec"><h2><span class="secnum">3</span> 結果</h2>
 <h3 id="r-1">3.1 最適化の成立性と主結果の概要</h3>
 <p>速度範囲が 11.7467–11.7978&nbsp;m/s に収まる8条件において、達成接地時骨盤前傾量の増加に伴い、二関節ハムストリング3筋の最大
-正規化筋線維長は一貫して増加した。単関節の BFsh はほぼ不変であった。一方、収縮要素力・腱力・負の仕事は筋別・メッシュ別に異なり、
-「前傾増加によってハムストリング張力全体が一様に増える」という結果ではなかった。</p>
+正規化筋線維長は一貫して増加した。単関節筋であるBFshの変化は相対的に小さかった。一方、収縮要素力・腱力・負の仕事は筋別・メッシュ別に異なり、
+筋線維長、筋力および仕事の変化は、筋ごとに区別して評価する必要がある。</p>
 
 <h3 id="r-2">3.2 接地時骨盤前傾量と最大正規化筋線維長（主結果）</h3>
-<figure class="figblock" id="fig-2"><a class="zia" href="assets/fig/Fig2_primary_N100.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig2_primary_N100.png" alt="図2 / Figure 2"></a><figcaption><p class="figtag"><b>図2 / Figure 2</b> ｜ 接地前傾量に対する1ストライド最大 \(\tilde l^{M}\)（\(N=100\) 主結果） / Primary result</p><p class="purpose"><span class="lab labP">目的</span> 速度をほぼ維持した条件間で、接地前傾量の増加が二関節ハムの1ストライド最大 \(\tilde l^{M}\) 増加と関連するかを検証する。</p><p class="result"><span class="lab labR">結果（事実）</span> （A）速度は Nominal ±1% 内（スプレッド 0.43%）。（B）二関節3筋の最大 \(\tilde l^{M}\) は前傾量とともに段階的に増加し、傾きは SM +0.0068・ST +0.0037・BFlh +0.0054（\(R^{2}=0.95\text{–}0.96\)）。単関節 BFsh は平坦（−0.0003）。（C）傾き＋単一条件除外の感度範囲＋速度調整係数。すべて正。</p><p class="note"><span class="lab labN">注意</span> 8点は同一モデルの決定論的設計点であり、母集団の信頼区間ではない。C のバーは信頼区間ではなく除外感度範囲。</p><p class="capen"><b>Caption (EN):</b> A: operability (speed within Nominal ±1%). B: peak lMtilde rises graded with anterior tilt for the three biarticular muscles; single-joint BFsh is flat. C: slope with leave-one-out range (not a CI) and speed-adjusted coefficient.</p></figcaption></figure>
+<figure class="figblock" id="fig-2"><a class="zia" href="assets/fig/Fig2_primary_N100.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig2_primary_N100.png" alt="図2 / Figure 2"></a><figcaption><p class="figtag"><b>図2 / Figure 2</b> ｜ 接地前傾量に対する1ストライド最大 \(\tilde l^{M}\)（\(N=100\) 主結果） / Primary result</p><p class="purpose"><span class="lab labP">目的</span> 速度をほぼ維持した条件間で、接地前傾量の増加が二関節ハムストリングの1ストライド最大 \(\tilde l^{M}\) 増加と関連するかを検証する。</p><p class="result"><span class="lab labR">解析結果</span> （A）走速度は基準解の ±1% 以内であり、条件間の相対レンジは 0.43% であった。（B）二関節3筋の最大 \(\tilde l^{M}\) は前傾量とともに段階的に増加し、傾きは SM +0.0068・ST +0.0037・BFlh +0.0054（\(R^{2}=0.95\text{–}0.96\)）。単関節筋である BFsh の傾きは小さかった（−0.0003）。（C）二関節3筋について、回帰の傾き、1条件ずつ除外した場合の傾きの範囲、および速度調整後の係数を示す。いずれも正であった。</p><p class="note"><span class="lab labN">注意</span> 8点は同一モデルの設計条件に対応する。C のバーは、1条件ずつ除外して再計算した傾きの範囲を表し、母集団に対する信頼区間ではない。</p><p class="capen"><b>Caption (EN):</b> A: operability (speed within Nominal ±1%). B: peak lMtilde rises graded with anterior tilt for the three biarticular muscles; single-joint BFsh is flat. C: slope with leave-one-out range (not a CI) and speed-adjusted coefficient.</p></figcaption></figure>
 <div class="tablewrap"><table>
 <thead><tr><th>筋</th><th>関節</th><th>最小前傾→最大前傾</th><th>端点変化</th><th>前傾1°当たりの傾き</th><th>\(R^{2}\)</th><th>判定</th></tr></thead>
 <tbody>
@@ -619,8 +623,7 @@ tree-rigid と femur-fixed は<b>幾何学的反実仮想</b>であり、動力�
 <tr><td>大腿二頭筋短頭 BFsh</td><td>単関節（対照）</td><td>0.945 → 0.942</td><td>−0.32%</td><td>−0.00025</td><td>0.927</td><td>ほぼ不変</td></tr>
 </tbody></table></div>
 <p>二関節3筋では、最小前傾から最大前傾への最大 \(\tilde l^{M}\) 変化は +4.65–9.72% であった。\(R^{2}\) は 0.950–0.961 で、\(N=50\) と \(N=100\)
-の方向も一致した。対照の BFsh は傾き自体はわずかに負であったが、端点差 −0.32%、平均基準レンジ 0.36% であり、二関節3筋と比較して実質的に
-不変と判断した。これは「統計的にゼロを証明した」のではなく、事前に置いた解剖学的比較との効果量比較である。</p>
+の方向も一致した。対照の BFsh は傾き自体はわずかに負であったが、端点差 −0.32%、平均基準レンジ 0.36% であり、二関節3筋と比較して変化は相対的に小さいと判断した。この判断は、二関節筋との効果量の比較に基づくものであり、変化が厳密にゼロであることを示すものではない。</p>
 
 <h3 id="r-3">3.3 残存速度差および単一条件依存性に対する感度解析</h3>
 <p>\(N=100\) の8条件では、前傾量と速度の Pearson 相関は −0.359 であった。速度を共変量として同時投入した探索的回帰でも、前傾量係数は
@@ -628,7 +631,7 @@ SM 0.00640・ST 0.00351・BFlh 0.00504 で、単回帰係数からの減少は�
 （モデル \(R^{2}\) はそれぞれ 0.982・0.982・0.976）。BFsh の前傾量係数は −0.00027 であった。1条件ずつ除外した単回帰における前傾量係数の範囲は、
 SM 0.00626–0.00734・ST 0.00344–0.00403・BFlh 0.00493–0.00587 であり、全8通りで正であった。以上は、主結果が特定の1条件または残存速度差だけで
 生じたという説明と整合しにくい。ただし設計点は8点のみで、速度と前傾量を無作為化していないため、速度調整後係数を因果効果とは解釈しない。</p>
-<figure class="figblock" id="fig-6"><a class="zia" href="assets/fig/Fig6_numerical_robustness.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig6_numerical_robustness.png" alt="図6 / Figure 6"></a><figcaption><p class="figtag"><b>図6 / Figure 6</b> ｜ 数値的成立性・解選択・感度 / Numerical robustness</p><p class="purpose"><span class="lab labP">目的</span> 主結果が角度未達・制約違反・単一条件・速度差・成功解選択だけで説明されないかを確認する。</p><p class="result"><span class="lab labR">結果（事実）</span> 全95 MAT を「発見→読込→PelvisTD→\(N=100\)→wide→strict」の順に絞り、要求 offset ごとに <code>inf_pr</code> 最小の8条件を採用。採用8条件は <code>inf_pr</code> ≈ 1e−9…1e−7（≪ 1e−4）、失敗解は > 1e−2 で低速へ崩壊。</p><p class="note"><span class="lab labN">注意</span> この図は数値的頑健性を示すもので、生物学的一般化ではない。</p><p class="capen"><b>Caption (EN):</b> Discovery-to-adoption funnel (95 MAT to 8 adopted). Adopted inf_pr much less than 1e-4; failed solves collapse to low speed. The result is not an artefact of unmet angle, constraint violation, or solution selection.</p></figcaption></figure>
+<figure class="figblock" id="fig-6"><a class="zia" href="assets/fig/Fig6_numerical_robustness.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig6_numerical_robustness.png" alt="図6 / Figure 6"></a><figcaption><p class="figtag"><b>図6 / Figure 6</b> ｜ 数値的成立性・解選択・感度 / Numerical robustness</p><p class="purpose"><span class="lab labP">目的</span> 主結果が角度未達・制約違反・単一条件・速度差・成功解選択だけで説明されないかを確認する。</p><p class="result"><span class="lab labR">解析結果</span> 95件の最適化結果（MATファイル）から、読込可能性、解析系列、時間分割数 \(N=100\)、wide 条件、および成功終了の基準に沿って候補を絞った。要求オフセットごとに制約残差 <code>inf_pr</code> が最小の8条件を採用した。採用8条件は <code>inf_pr</code> ≈ 1e−9…1e−7（≪ 1e−4）、失敗解では > 1e−2 であり、走速度も低下した。</p><p class="note"><span class="lab labN">注意</span> 採用解の数値的な成立性を示す図である。解の選択による影響や、異なる実走者への一般化を完全に評価したものではない。</p><p class="capen"><b>Caption (EN):</b> Discovery-to-adoption funnel (95 MAT to 8 adopted). Adopted inf_pr much less than 1e-4; failed solves collapse to low speed. These checks document numerical feasibility; they do not establish biological generalizability or exclude all selection effects.</p></figcaption></figure>
 <h3 id="r-4">3.4 筋別の収縮要素力・受動筋線維力・腱力</h3>
 <div class="tablewrap"><table class="small">
 <thead><tr><th>筋</th><th>収縮要素力 \(F^{CE}\) [N]（端点変化）</th><th>受動力 \(F^{pass}\) [N]（端点変化）</th><th>腱力 \(F^{T}\) [N]（端点変化）</th><th>受動力の平均基準レンジ</th></tr></thead>
@@ -640,33 +643,32 @@ SM 0.00626–0.00734・ST 0.00344–0.00403・BFlh 0.00493–0.00587 であり�
 </tbody></table></div>
 <p>収縮要素力の応答は筋間で一様でなく、SM で増加、ST で減少、BFlh では変化が小さかった。受動力は二関節3筋で増加したが、増加幅は筋により
 異なった（端点変化 SM +88.31%、ST +42.02%、BFlh +64.73%）。</p>
-<div class="callout fact"><span class="colabel">Fact</span> 前傾増加とともに二関節3筋の受動力の方向は増加した。</div><div class="callout interp"><span class="colabel">Interpretation</span> 筋線維が至適長を越える領域へ近づく／入ることで、受動力–長さ曲線の寄与が増した可能性がある。</div><div class="callout limit"><span class="colabel">言えないこと</span> 生体内の局所組織応力・損傷閾値・受傷確率が同じ割合で増えたとは言えない。</div><figure class="figblock" id="figS1"><a class="zia" href="assets/fig/FigS1_force_length.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS1_force_length.png" alt="補足図S1 / Figure S1"></a><figcaption><p class="figtag"><b>補足図S1 / Figure S1</b> ｜ 力–長さ作用域 / Force-length operating region</p><p class="purpose"><span class="lab labP">目的</span> 二関節ハムが力–長さ関係上のどこで作動し、前傾でどう移動するかを示す。</p><p class="result"><span class="lab labR">結果（事実）</span> 前傾大（m8）の終末遊脚期作用点は、前傾小（p6）より長い \(\tilde l^{M}\) 側へ移動する。\(F^{CE}\) は減衰項を含む収縮要素力。</p><p class="capen"><b>Caption (EN):</b> Fce (incl. damping) vs lMtilde for min vs max tilt; the max-tilt terminal-swing operating point sits at longer lMtilde.</p></figcaption></figure><figure class="figblock" id="figS2"><a class="zia" href="assets/fig/FigS2_muscle_metric_heatmap.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS2_muscle_metric_heatmap.png" alt="補足図S2 / Figure S2"></a><figcaption><p class="figtag"><b>補足図S2 / Figure S2</b> ｜ 筋×指標 変化率 / Muscle × metric change</p><p class="purpose"><span class="lab labP">目的</span> 各負荷代理指標が最小→最大前傾でどう変化するかを一覧する。</p><p class="result"><span class="lab labR">結果（事実）</span> 受動力 \(F^{pass}\) が最大の上昇（二関節 +42…+88%）、負の仕事 +16…+33%、最大 \(\tilde l^{M}\) +4.7…+9.7%。BFsh はほぼ中立／負。</p><p class="capen"><b>Caption (EN):</b> Percent change min to max tilt per metric; passive force rises most, biarticular metrics rise, BFsh near zero.</p></figcaption></figure>
+<div class="callout fact"><span class="colabel">解析結果</span> 接地時骨盤前傾量の増加に伴い、二関節3筋の受動筋線維力は増加した。</div><div class="callout interp"><span class="colabel">解釈</span> 筋線維長が至適長付近または至適長を超える領域へ移行することで、受動力–長さ曲線の寄与が増した可能性がある。</div><div class="callout limit"><span class="colabel">解釈上の限界</span> この変化率を、生体内の局所組織応力、損傷閾値または受傷確率の変化率として解釈することはできない。</div><figure class="figblock" id="figS1"><a class="zia" href="assets/fig/FigS1_force_length.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS1_force_length.png" alt="補足図S1 / Figure S1"></a><figcaption><p class="figtag"><b>補足図S1 / Figure S1</b> ｜ 力–長さ作用域 / Force-length operating region</p><p class="purpose"><span class="lab labP">目的</span> 骨盤前傾量の違いに伴う、正規化筋線維長と収縮要素力の関係の変化を示す。</p><p class="result"><span class="lab labR">解析結果</span> 前傾量の大きい条件（m8）では、小さい条件（p6）と比較して、終末遊脚期の筋の状態が、より長い \(\tilde l^{M}\) 側へ移行した。\(F^{CE}\) は減衰項を含む収縮要素力。</p><p class="capen"><b>Caption (EN):</b> Fce (incl. damping) vs lMtilde for min vs max tilt; the max-tilt terminal-swing operating point sits at longer lMtilde.</p></figcaption></figure><figure class="figblock" id="figS2"><a class="zia" href="assets/fig/FigS2_muscle_metric_heatmap.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS2_muscle_metric_heatmap.png" alt="補足図S2 / Figure S2"></a><figcaption><p class="figtag"><b>補足図S2 / Figure S2</b> ｜ 筋×指標 変化率 / Muscle × metric change</p><p class="purpose"><span class="lab labP">目的</span> 最小前傾条件から最大前傾条件への各負荷代理指標の変化率を、筋別に示す。</p><p class="result"><span class="lab labR">解析結果</span> 二関節3筋では受動筋線維力と最大正規化筋線維長が増加した。収縮要素力、腱力および伸張速度の変化は、筋と指標の組合せによって異なった。</p><p class="note"><span class="lab labN">注意</span> 指標ごとの定義と評価区間に留意されたい。終末遊脚期に限定した負の筋線維仕事は3.5節に示す。</p><p class="capen"><b>Caption (EN):</b> Percent changes from minimum to maximum anterior tilt are shown by muscle and metric. Passive force and peak normalized fibre length increase in the biarticular muscles; other responses vary by metric. Terminal-swing negative work is reported separately in Section 3.5.</p></figcaption></figure>
 <h3 id="r-5">3.5 終末遊脚期の負の筋線維仕事</h3>
 <div class="tablewrap"><table class="small">
-<thead><tr><th>筋</th><th>最小前傾→最大前傾</th><th>端点変化</th><th>平均基準レンジ</th><th>N50–N100 平均絶対差</th><th>判定</th></tr></thead>
+<thead><tr><th>筋</th><th>最小前傾→最大前傾</th><th>端点変化</th><th>平均基準レンジ</th><th>N=50–N=100 平均絶対差</th><th>判定</th></tr></thead>
 <tbody>
 <tr><td>SM</td><td>13.70 → 28.50 J</td><td>+108.0%</td><td>73.7%</td><td>8.55%</td><td>増加</td></tr>
 <tr><td>ST</td><td>3.17 → 7.66 J</td><td>+141.6%</td><td>88.3%</td><td>28.42%</td><td>増加</td></tr>
 <tr><td>BFlh</td><td>5.95 → 15.82 J</td><td>+165.8%</td><td>100.4%</td><td>33.36%</td><td>増加</td></tr>
 <tr><td>BFsh</td><td>19.76 → 17.71 J</td><td>−10.4%</td><td>16.2%</td><td>17.98%</td><td>結論保留</td></tr>
 </tbody></table></div>
-<p>終末遊脚期の負の仕事は二関節3筋で増加方向が再現したが、ST と BFlh では N50–N100 差が 28.4% および 33.4% であった。したがって「方向」は
-条件付きで支持できるが、+142% や +166% という<b>大きさ</b>はメッシュに依存する。主結論は線維長に置き、仕事量は副次的・条件付き結果とするのが妥当である。</p>
+<p>終末遊脚期の負の仕事は二関節3筋で増加方向が再現したが、ST と BFlh では N=50–N=100 差が 28.4% および 33.4% であった。増加方向は両解像度で共通したが、+142% や +166% という変化の<b>大きさ</b>は時間分割数と条件系列に依存した。負の筋線維仕事は、主要評価項目である筋線維長を補足する結果として扱う。</p>
 
 <h3 id="r-6">3.6 最大値の出現時相</h3>
 <div class="tablewrap"><table class="small">
 <thead><tr><th>筋</th><th>最大 \(\tilde l^{M}\) の時相</th><th>最大収縮要素力時に伸張中か</th></tr></thead>
 <tbody>
-<tr><td>SM</td><td>88.0–90.8% stride</td><td>True</td></tr>
-<tr><td>ST</td><td>85.5–88.3% stride</td><td>True</td></tr>
-<tr><td>BFlh</td><td>86.0–89.1% stride</td><td>True</td></tr>
-<tr><td>BFsh</td><td>2.1–2.8% stride</td><td>True</td></tr>
+<tr><td>SM</td><td>88.0–90.8% stride</td><td>該当</td></tr>
+<tr><td>ST</td><td>85.5–88.3% stride</td><td>該当</td></tr>
+<tr><td>BFlh</td><td>86.0–89.1% stride</td><td>該当</td></tr>
+<tr><td>BFsh</td><td>2.1–2.8% stride</td><td>該当</td></tr>
 </tbody></table></div>
 <p>二関節3筋の最大 \(\tilde l^{M}\) はストライドの 85.5–90.8% に生じた。主要評価項目は1ストライド全体から抽出した最大値であり、終末遊脚期窓内に
-限定して探索したものではない。それにもかかわらずピーク時相が終末遊脚期へ集中した。BFsh のピークは 2.1–2.8% であり、二関節筋とは異なる局面であった。</p>
-<figure class="figblock" id="fig-3"><a class="zia" href="assets/fig/Fig3_lMtilde_waveforms_N100.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig3_lMtilde_waveforms_N100.png" alt="図3 / Figure 3"></a><figcaption><p class="figtag"><b>図3 / Figure 3</b> ｜ \(\tilde l^{M}\) 波形とピーク時相 / Waveforms and peak phase</p><p class="purpose"><span class="lab labP">目的</span> 1ストライド最大 \(\tilde l^{M}\) はどの局面でどのように前傾量へ応答するかを示す。</p><p class="result"><span class="lab labR">結果（事実）</span> 8条件の \(\tilde l^{M}\) 波形（濃色＝前傾大）。marker は1ストライド最大（全ストライド）で、二関節筋では終末遊脚期（85.5–90.8%）に位置。BFsh は早期立脚（〜2–3%）にピークをもち平坦。</p><p class="note"><span class="lab labN">注意</span> 主評価は1ストライド全体の最大値であり、Pareto の terminal-swing-window peak（図7）とは別定義。</p><p class="capen"><b>Caption (EN):</b> lMtilde vs % stride for the 8 conditions, coloured by anterior tilt. Markers = 1-stride max, which lands in terminal swing for the biarticular muscles. Distinct from the Pareto TS-window peak.</p></figcaption></figure>
+限定して探索したものではない。全周期を対象とした評価においても、最大値は終末遊脚期に認められた。BFsh のピークは 2.1–2.8% であり、二関節筋とは異なる局面であった。</p>
+<figure class="figblock" id="fig-3"><a class="zia" href="assets/fig/Fig3_lMtilde_waveforms_N100.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig3_lMtilde_waveforms_N100.png" alt="図3 / Figure 3"></a><figcaption><p class="figtag"><b>図3 / Figure 3</b> ｜ \(\tilde l^{M}\) 波形とピーク時相 / Waveforms and peak phase</p><p class="purpose"><span class="lab labP">目的</span> 1ストライド最大 \(\tilde l^{M}\) はどの局面でどのように前傾量へ応答するかを示す。</p><p class="result"><span class="lab labR">解析結果</span> 8条件の \(\tilde l^{M}\) 波形（濃色＝前傾大）。図中のマーカーは1ストライド全体の最大値を示し、二関節筋では終末遊脚期（85.5–90.8%）に位置する。BFsh は早期立脚期（約2–3%）に最大値を示し、条件間の差は小さかった。</p><p class="note"><span class="lab labN">注意</span> 主評価は1ストライド全体の最大値であり、速度–負荷解析における終末遊脚期内の最大値（図7）とは評価範囲が異なる。</p><p class="capen"><b>Caption (EN):</b> lMtilde vs % stride for the 8 conditions, coloured by anterior tilt. Markers = 1-stride max, which lands in terminal swing for the biarticular muscles. Distinct from the Pareto TS-window peak.</p></figcaption></figure>
 <h3 id="r-7">3.7 境界条件による筋腱単位長変化の分解</h3>
-<figure class="figblock" id="fig-5"><a class="zia" href="assets/fig/Fig5_pelvis_femur_mechanism.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig5_pelvis_femur_mechanism.png" alt="図5 / Figure 5"></a><figcaption><p class="figtag"><b>図5 / Figure 5</b> ｜ 骨盤–大腿協調による機序分解 / Pelvis-femur mechanism decomposition</p><p class="purpose"><span class="lab labP">目的</span> 観察されたハム伸長は骨盤絶対角ではなく骨盤–大腿の<b>相対配置</b>で説明されるかを検証する。</p><p class="result"><span class="lab labR">結果（事実）</span> 正規化位相・OpenSim 厳密 MTU で、adaptive の終末遊脚期 ΔMTU は SM +7.67 / ST +9.73 / BFlh +8.44 mm。大腿世界姿勢を固定した femur-fixed が adaptive の 89.6–95.8% を再現（骨盤と共回転する tree-rigid は ΔMTU≈0）。</p><p class="note"><span class="lab labN">注意</span> tree-rigid・femur-fixed は幾何学的反実仮想（実行不能）、adaptive のみ実行可能解。89.6–95.8% は<b>媒介割合ではない</b>。</p><p class="capen"><b>Caption (EN):</b> tree-rigid (pelvis & femur co-rotate) gives dMTU~0; femur-fixed (femur world pose held) reproduces 89.6-95.8% of the adaptive terminal-swing MTU rise. A/B are geometric counterfactuals; only adaptive is feasible. Not a mediation fraction.</p></figcaption></figure>
+<figure class="figblock" id="fig-5"><a class="zia" href="assets/fig/Fig5_pelvis_femur_mechanism.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig5_pelvis_femur_mechanism.png" alt="図5 / Figure 5"></a><figcaption><p class="figtag"><b>図5 / Figure 5</b> ｜ 骨盤–大腿協調による機序分解 / Pelvis-femur mechanism decomposition</p><p class="purpose"><span class="lab labP">目的</span> 観察されたハムストリングの伸長は骨盤絶対角ではなく骨盤–大腿の<b>相対配置</b>で説明されるかを検証する。</p><p class="result"><span class="lab labR">解析結果</span> 走行周期を正規化して時相を対応させ、OpenSim から筋腱単位長を取得した解析では、adaptive の終末遊脚期 ΔMTU は SM +7.67 / ST +9.73 / BFlh +8.44 mm。大腿の空間内姿勢を固定した femur-fixed 条件の変化量は、再最適化した adaptive 条件の89.6–95.8%に相当した。骨盤と大腿を共回転させる tree-rigid 条件では ΔMTU≈0 であった。</p><p class="note"><span class="lab labN">注意</span> tree-rigid・femur-fixed は幾何学的な比較条件（動力学的な実行可能性は未検証）、adaptive のみが運動方程式を含む制約を満たす再最適化解である。89.6–95.8% は<b>媒介割合ではない</b>。</p><p class="capen"><b>Caption (EN):</b> tree-rigid (pelvis & femur co-rotate) gives dMTU~0; femur-fixed (femur world pose held) reproduces 89.6-95.8% of the adaptive terminal-swing MTU rise. A/B are geometric counterfactuals without verified dynamic feasibility; adaptive is a re-optimized solution. Not a mediation fraction.</p></figcaption></figure>
 <p>静的 femur-fixed 条件の 25° 前傾による MTU 長変化は SM +21.6・ST +26.9・BFlh +24.6・BFsh +0.0 mm/25° であった。動作解析における
 終末遊脚期ピーク変化は次の通りである。</p>
 <div class="tablewrap"><table class="small">
@@ -682,7 +684,7 @@ SM 0.00626–0.00734・ST 0.00344–0.00403・BFlh 0.00493–0.00587 であり�
 adaptive で +1.23 mm と小さく、股関節をまたぐ二関節筋との比較所見となった。</p>
 
 <h3 id="r-8">3.8 \(N=100\) における速度–負荷代理指標の交換関係</h3>
-<figure class="figblock" id="fig-7"><a class="zia" href="assets/fig/Fig7_pareto_N100.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig7_pareto_N100.png" alt="図7 / Figure 7"></a><figcaption><p class="figtag"><b>図7 / Figure 7</b> ｜ 速度–負荷代理指標の Pareto（\(N=100\)、複数ウォームスタート） / Speed-load Pareto</p><p class="purpose"><span class="lab labP">目的</span> 速度損失を事前基準内に保ちつつ、筋線維長代理指標が低い候補解を計算上生成できるかを検証する。</p><p class="result"><span class="lab labR">結果（事実）</span> \(w=0.1\) の3ウォームスタート経路で平均 dSpeed −0.340%・dSurrogate（二関節TS窓ピーク平均）−5.189%。事前基準（速度損失 ≤0.5% かつ代理指標 ≤−3%）を \(w=0.05/0.10\) が満たし、\(w=0.2\) は速度予算超過。</p><p class="note"><span class="lab labN">注意</span> 3解は独立反復でなく3決定論的経路。最適化が直接罰する平滑積分項と報告ピークは別指標。候補解は実走可能性・受傷低減を証明しない。</p><p class="capen"><b>Caption (EN):</b> w=0.1 (3 warm-start paths) reduces the biarticular terminal-swing-window peak surrogate by ~5.2% for ~0.34% speed loss; w=0.05/0.10 meet the pre-registered target, w=0.2 exceeds the speed budget.</p></figcaption></figure>
+<figure class="figblock" id="fig-7"><a class="zia" href="assets/fig/Fig7_pareto_N100.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/Fig7_pareto_N100.png" alt="図7 / Figure 7"></a><figcaption><p class="figtag"><b>図7 / Figure 7</b> ｜ 速度–負荷代理指標の Pareto（\(N=100\)、複数ウォームスタート） / Speed-load Pareto</p><p class="purpose"><span class="lab labP">目的</span> 速度損失を事前基準内に保ちつつ、筋線維長代理指標が低い候補解を計算上生成できるかを検証する。</p><p class="result"><span class="lab labR">解析結果</span> \(w=0.1\) の3ウォームスタート経路で走速度の平均変化は −0.340%、代理指標（二関節3筋の終末遊脚期内最大正規化筋線維長の平均）の変化は −5.189% であった。事前基準（速度損失 ≤0.5% かつ代理指標 ≤−3%）を \(w=0.05/0.10\) が満たし、\(w=0.2\) は速度低下の許容範囲を超えた。</p><p class="note"><span class="lab labN">注意</span> 3解は、異なる初期化経路から得られた同一モデルの計算結果である。最適化で抑制する平滑化された時間積分項と、結果として報告する最大値は定義が異なる。実走者が同じ動作を遂行できるか、受傷の低減につながるかは未検証である。</p><p class="capen"><b>Caption (EN):</b> w=0.1 (3 ウォームスタート paths) reduces the biarticular terminal-swing-window peak surrogate by ~5.2% for ~0.34% speed loss; w=0.05/0.10 meet the pre-specified target, w=0.2 exceeds the speed budget.</p></figcaption></figure>
 <div class="tablewrap"><table class="small">
 <thead><tr><th>解</th><th>\(w\)</th><th>初期値</th><th>速度 [m/s]</th><th>Δ速度</th><th>代理指標</th><th>Δ代理指標</th><th>反復数</th></tr></thead>
 <tbody>
@@ -697,70 +699,68 @@ adaptive で +1.23 mm と小さく、股関節をまたぐ二関節筋との比�
 <p>\(w=0.1\) の3ウォームスタート経路における速度は 11.79435±0.00129 m/s、範囲 11.79286–11.79510 m/s であった。速度変化は −0.340±0.011%、
 代理指標変化は −5.189±0.077% であった。3解はすべて事前基準を満たした。ただし、これらの SD は個人差でも再現性係数でもなく、選択した3ウォーム
 スタート経路に対する局所解の散らばりである。</p>
-<figure class="figblock vidblock" id="vid-pareto"><video controls loop muted playsinline preload="metadata"><source src="assets/video/ham_pareto_sidebyside.mp4" type="video/mp4">お使いの環境では動画を再生できません。<a href="assets/video/ham_pareto_sidebyside.gif">アニメーションGIFを開く</a>。</video><figcaption><p class="figtag"><b>動画2 / Video 2</b> ｜ 基準解と候補動作の筋骨格比較 / Baseline vs candidate motion</p><p class="purpose"><span class="lab labP">目的</span> 筋線維長ペナルティで得た候補動作が、基準解に対してどのように骨盤・股関節運動と筋経路を変えるかを視覚化する。</p><p class="result"><span class="lab labR">内容</span> 基準（\(w=0\)）と負荷低減候補（\(w>0\)）の3次元筋骨格アニメーションを並置。骨盤傾斜・股関節屈曲の縮小と二関節ハム経路の短縮が確認できる。</p><p class="note"><span class="lab labN">注意</span> この動画だけで代理指標低下が速度差から独立した効果だと因果分離したわけではない。実走可能なコーチング指示も未検証。</p><p class="capen">再生できない場合は <a href="assets/video/ham_pareto_sidebyside.gif">GIF版</a> / <a href="assets/video/ham_pareto_sidebyside.mp4">MP4を直接開く</a>。</p></figcaption></figure>
+<figure class="figblock vidblock" id="vid-pareto"><video controls loop muted playsinline preload="metadata"><source src="assets/video/ham_pareto_sidebyside.mp4" type="video/mp4">お使いの環境では動画を再生できません。<a href="assets/video/ham_pareto_sidebyside.gif">アニメーションGIFを開く</a>。</video><figcaption><p class="figtag"><b>動画2 / Video 2</b> ｜ 基準解と候補動作の筋骨格比較 / Baseline vs candidate motion</p><p class="purpose"><span class="lab labP">目的</span> 筋線維長ペナルティで得た候補動作が、基準解に対してどのように骨盤・股関節運動と筋経路を変えるかを視覚化する。</p><p class="result"><span class="lab labR">内容</span> 基準（\(w=0\)）と負荷低減候補（\(w>0\)）の3次元筋骨格アニメーションを並置。骨盤傾斜・股関節屈曲の縮小と二関節ハムストリングの経路の短縮が確認できる。</p><p class="note"><span class="lab labN">注意</span> 動画のみから、代理指標の低下と速度差の影響を分離することはできない。実走者への指導方法と、その効果は検証していない。</p><p class="capen">再生できない場合は <a href="assets/video/ham_pareto_sidebyside.gif">GIF版</a> / <a href="assets/video/ham_pareto_sidebyside.mp4">MP4を直接開く</a>。</p></figcaption></figure>
 <h3 id="r-9">3.9 探索的解析：目的関数の違いによる候補解の変化</h3>
 <div class="tablewrap"><table class="small">
-<thead><tr><th>目的</th><th>\(w\)</th><th>Δ速度</th><th>Δ線維長</th><th>Δ能動伸張性power</th><th>Δ負の仕事</th><th>Δ受動力</th><th>候補判定</th></tr></thead>
+<thead><tr><th>目的</th><th>\(w\)</th><th>Δ速度</th><th>Δ線維長</th><th>Δ能動伸張性パワー</th><th>Δ負の仕事</th><th>Δ受動力</th><th>候補判定</th></tr></thead>
 <tbody>
-<tr><td>線維長</td><td>0.1</td><td>−0.241%</td><td>−4.14%</td><td>−9.47%</td><td>−5.63%</td><td>−25.53%</td><td>True</td></tr>
-<tr><td>能動伸張性</td><td>0.1</td><td>−0.062%</td><td>−0.20%</td><td>−16.52%</td><td>−20.38%</td><td>−1.39%</td><td>True</td></tr>
-<tr><td>能動伸張性・高重み</td><td>8</td><td>−1.909%</td><td>+1.70%</td><td>−97.59%</td><td>−94.23%</td><td>+13.79%</td><td>False</td></tr>
-<tr><td>受動力</td><td>0.2</td><td>−0.034%</td><td>+0.92%</td><td>+0.41%</td><td>+0.46%</td><td>+6.82%</td><td>False</td></tr>
-<tr><td>複合（等係数）</td><td>0.1</td><td>−0.335%</td><td>−4.54%</td><td>−28.54%</td><td>−27.41%</td><td>−27.60%</td><td>True</td></tr>
+<tr><td>線維長</td><td>0.1</td><td>−0.241%</td><td>−4.14%</td><td>−9.47%</td><td>−5.63%</td><td>−25.53%</td><td>該当</td></tr>
+<tr><td>能動伸張性</td><td>0.1</td><td>−0.062%</td><td>−0.20%</td><td>−16.52%</td><td>−20.38%</td><td>−1.39%</td><td>該当</td></tr>
+<tr><td>能動伸張性・高重み</td><td>8</td><td>−1.909%</td><td>+1.70%</td><td>−97.59%</td><td>−94.23%</td><td>+13.79%</td><td>非該当</td></tr>
+<tr><td>受動力</td><td>0.2</td><td>−0.034%</td><td>+0.92%</td><td>+0.41%</td><td>+0.46%</td><td>+6.82%</td><td>非該当</td></tr>
+<tr><td>複合（等係数）</td><td>0.1</td><td>−0.335%</td><td>−4.54%</td><td>−28.54%</td><td>−27.41%</td><td>−27.60%</td><td>該当</td></tr>
 </tbody></table></div>
-<p>能動伸張性目的 \(w=0.1\) は線維長をほぼ変えず、能動伸張性 power と負の仕事を約 16.5% および 20.4% 低下させた。複合 \(w=0.1\) は速度 −0.335% で、
-線維長 −4.54%、能動伸張性 power −28.54%、負の仕事 −27.41%、受動力 −27.60% を同時に示した。ただし、これらは \(N=50\) の探索結果であり、
+<p>能動伸張性目的 \(w=0.1\) は線維長をほぼ変えず、能動伸張性パワーと負の仕事を約 16.5% および 20.4% 低下させた。複合 \(w=0.1\) は速度 −0.335% で、
+線維長 −4.54%、能動伸張性パワー −28.54%、負の仕事 −27.41%、受動力 −27.60% を同時に示した。ただし、これらは \(N=50\) の探索結果であり、
 \(N=100\) 複数ウォームスタート確認を終えていない。能動伸張性目的は \(F^{CE}\times\max(\tilde v^{M},0)\) を積分しており、\(\tilde v^{M}\) が無次元である
-ため物理的な W／J ではない。この構成概念差のため、本節は探索結果として主解析から分離する。</p>
+ため物理的な W／J ではない。最適化に用いた量と物理単位で評価するパワー・仕事には定義上の違いがあるため、本節は探索的結果として位置づける。</p>
 
 <h3 id="r-10">3.10 解像度および条件系列をまたぐ効果方向の確認</h3>
-<figure class="figblock" id="figS4"><a class="zia" href="assets/fig/FigS4_mesh_robustness.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS4_mesh_robustness.png" alt="補足図S4 / Figure S4"></a><figcaption><p class="figtag"><b>補足図S4 / Figure S4</b> ｜ 解像度頑健性 / Resolution robustness</p><p class="purpose"><span class="lab labP">目的</span> 接地前傾の用量反応はメッシュ解像度に頑健か（\(N=50\) wide 対 \(N=100\) wide、達成角で比較）。</p><p class="result"><span class="lab labR">結果（事実）</span> 主結果である最大 \(\tilde l^{M}\) の N50–N100 平均絶対相対差は SM 1.54%・ST 0.81%・BFlh 1.28%・BFsh 0.12%。方向は頑健、\(N=50\) 傾きは約20%急。受動力は最大約20%、負の仕事は最大約34%の差をもつため、後二者の大きさは条件付き。</p><p class="note"><span class="lab labN">注意</span> 基準の 0.524° 差はメッシュ依存の最適点シフト。純粋な mesh convergence ではない（探索境界系列も一部異なる）。</p><p class="capen"><b>Caption (EN):</b> N=50 wide vs N=100 wide dose-response at achieved touchdown angle. Direction robust; N=50 slope ~20% steeper. Base differs 0.524 deg (mesh-dependent optimum shift): resolution robustness, not pure mesh convergence.</p></figcaption></figure></section><section id="discussion" class="sec"><h2><span class="secnum">4</span> 考察</h2>
-<h3 id="d-1">4.1 接地時骨盤前傾量は二関節ハムの最大 \(\tilde l^{M}\) と段階的に関連した</h3>
+<figure class="figblock" id="figS4"><a class="zia" href="assets/fig/FigS4_mesh_robustness.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS4_mesh_robustness.png" alt="補足図S4 / Figure S4"></a><figcaption><p class="figtag"><b>補足図S4 / Figure S4</b> ｜ 解像度頑健性 / Resolution robustness</p><p class="purpose"><span class="lab labP">目的</span> 接地時骨盤前傾量に対する筋線維長の変化が、時間分割数を変更しても認められるかを検討する（\(N=50\) wide 対 \(N=100\) wide、達成角で比較）。</p><p class="result"><span class="lab labR">解析結果</span> 主結果である最大 \(\tilde l^{M}\) の N=50–N=100 平均絶対相対差は SM 1.54%・ST 0.81%・BFlh 1.28%・BFsh 0.12%。増加方向は共通したが、\(N=50\) の傾きは約20%大きかった。受動力は最大約20%、負の仕事は最大約34%の差をもつため、後二者の大きさは条件付き。</p><p class="note"><span class="lab labN">注意</span> 基準の 0.524° 差はメッシュ依存の最適点シフト。時間分割数のみを変えた厳密なメッシュ収束試験には相当しない（探索境界系列も一部異なる）。</p><p class="capen"><b>Caption (EN):</b> N=50 wide vs N=100 wide dose-response at achieved touchdown angle. Direction robust; N=50 slope ~20% steeper. Base differs 0.524 deg (mesh-dependent optimum shift): resolution robustness, not pure mesh convergence.</p></figcaption></figure></section><section id="discussion" class="sec"><h2><span class="secnum">4</span> 考察</h2>
+<h3 id="d-1">4.1 接地時骨盤前傾量と最大正規化筋線維長の関係</h3>
 <p>本研究の主要所見は、速度が 11.7467–11.7978&nbsp;m·s\(^{-1}\) の狭い範囲に保たれた \(N=100\) の8設計条件において、接地時骨盤前傾量の増加に伴い、
 SM・ST・BFlh の1ストライド最大 \(\tilde l^{M}\) が増加したことである。最小前傾から最大前傾への増加は +4.65–9.72% であり、8設計点における直線近似の
 決定係数は 0.950–0.961 であった。これに対し BFsh の端点変化は −0.32% であった。したがって、本結果は全ハムストリングに共通する一様な変化ではなく、
-股関節をまたぐという解剖学的特徴を持つ筋に選択的な応答と整合する。二関節3筋の最大値は 85.5–90.8% stride に出現し、Thelen ら
+股関節をまたぐという解剖学的特徴を持つ筋に選択的な応答と整合する。二関節3筋の最大値は ストライドの85.5–90.8%に出現し、Thelen ら
 <a class="cref" href="#ref3">[3]</a>、Chumanov ら<a class="cref" href="#ref4">[4]</a>、Schache ら<a class="cref" href="#ref5">[5]</a><a class="cref" href="#ref6">[6]</a>が
-示した二関節ハムの伸長時相と一致する。本研究はこれらの知見を、接地時骨盤前傾という具体的な運動学変数へ接続した。</p>
+示した二関節ハムストリングの伸長時相と一致する。本研究では、これらの先行研究が示した伸長時相を踏まえ、接地時骨盤前傾量との関係をモデル内で定量化した。</p>
 
-<h3 id="d-2">4.2 「接地変数を独立に操作する」枠組みを筋線維力学へ拡張した</h3>
+<h3 id="d-2">4.2 接地時の運動学的条件と筋線維力学を結び付ける意義</h3>
 <p>Haralabidis ら<a class="cref" href="#ref12">[12]</a>は HTD または IKTD を基準解から段階的に拘束し、残りの全身運動を再最適化することで、接地変数と
 最高速度の関係を検討した。本研究でも接地時骨盤傾斜以外の座標・制御を固定せず再最適化した結果、前傾量が約14°異なる条件間でも速度範囲は 0.435% に
 とどまった一方、二関節3筋の最大 \(\tilde l^{M}\) は系統的に変化した。すなわち、速度が維持されたことは<b>筋線維力学が不変であることを意味しない</b>。
-元研究が「接地変数がパフォーマンスをどう変えるか」を扱ったのに対し、本研究は「パフォーマンスがほぼ維持された条件間でも、内部の筋力学がどう
-再配分されるか」を示した。</p>
+接地時の運動学的条件と走速度の関係を扱った先行研究に対し、本研究は、速度差の小さい条件間でも筋内部の力学的状態が変化し得ることを示した。</p>
 
-<h3 id="d-3">4.3 骨盤前傾の力学的意味は骨盤角度単独ではなく骨盤–大腿協調にある</h3>
-<p>Mendiguchia ら<a class="cref" href="#ref8">[8]</a>は固定標本で骨盤前傾が二関節ハム組織伸長を増加させることを示した。本研究の femur-fixed 条件でも
+<h3 id="d-3">4.3 骨盤–大腿の相対配置による解釈</h3>
+<p>Mendiguchia ら<a class="cref" href="#ref8">[8]</a>は固定標本で骨盤前傾が二関節ハムストリング組織伸長を増加させることを示した。本研究の femur-fixed 条件でも
 同方向の伸長が生じ、正規化位相で対応させた動作解析では femur-fixed のピーク変化は adaptive の 89.6–95.8% であった。一方、骨盤と大腿を共回転させて
-股関節相対角を保持した tree-rigid 条件では筋腱単位長は変化しなかった。したがって、骨盤前傾の絶対角度だけからハム伸長を決定することはできない。
-adaptive では接地時骨盤前傾量と最大股関節屈曲が共変しており、本モデルで支持される経路は「接地時骨盤傾斜制約 → 骨盤・股関節・大腿姿勢の再協調 →
-二関節ハム伸長」である。骨盤角度と股関節屈曲の独立寄与を識別するには、両者を独立に操作する要因計画または局所感度解析が必要である。</p>
+股関節相対角を保持した tree-rigid 条件では筋腱単位長は変化しなかった。したがって、骨盤前傾の絶対角度だけからハムストリングの伸長を決定することはできない。
+adaptive では接地時骨盤前傾量と最大股関節屈曲が共変しており、結果は、接地時骨盤傾斜の制約に伴う骨盤・股関節・大腿姿勢の変化が、二関節ハムストリングの伸長に関連するという解釈と整合する。骨盤角度と股関節屈曲の独立寄与を識別するには、両者を独立に操作する要因計画または局所感度解析が必要である。</p>
 
-<h3 id="d-4">4.4 筋線維長の増加は一貫したが、力・仕事の応答は筋特異的であった</h3>
-<p>最大 \(\tilde l^{M}\) は二関節3筋で一貫して増加したが、収縮要素力は SM で増加、ST で減少、BFlh で変化小、腱力も同一方向でなかった。受動力は
-二関節3筋で増加したが、その増加率は N=50/N=100 の条件系列差に対して最大 \(\tilde l^{M}\) より感度が高かった。この不均一性は、最大ひずみ・伸張速度・
+<h3 id="d-4">4.4 筋線維長・力・仕事を区別して評価する必要性</h3>
+<p>最大 \(\tilde l^{M}\) は二関節3筋で一貫して増加したが、収縮要素力は SM で増加、ST で減少、BFlh では変化が小さく、腱力の変化方向も筋間で異なった。受動力は
+二関節3筋で増加したが、その増加率は時間分割数と条件系列の違いに対して最大 \(\tilde l^{M}\) より感度が高かった。この不均一性は、最大ひずみ・伸張速度・
 力・仕事を最も大きく担う筋が一致しないという Schache らの結果<a class="cref" href="#ref5">[5]</a><a class="cref" href="#ref6">[6]</a>と整合する。
-\(\tilde l^{M}\) の増加を、そのまま「ハム張力の増加」と表現することはできない。とくに本研究の \(F^{CE}\) は活性化・力–長さ・力–速度・減衰項から
+\(\tilde l^{M}\) の増加を、そのまま「ハムストリングの張力の増加」と表現することはできない。とくに本研究の \(F^{CE}\) は活性化・力–長さ・力–速度・減衰項から
 構成される収縮要素力であり、純粋な活性化由来の力と完全には同義でない。したがって主結論は最大 \(\tilde l^{M}\) に置き、力・仕事は筋別の副次結果とする。</p>
 
-<h3 id="d-5">4.5 主要な段階的関係は残存速度差だけでは説明しにくいが因果効果とは断定できない</h3>
+<h3 id="d-5">4.5 残存する速度差と解析結果の頑健性</h3>
 <p>全8条件は基準速度の ±1% 以内であり、速度を共変量として加えた探索的回帰でも前傾量係数は符号がすべて正であった。1条件ずつ除外した解析でも
 二関節3筋の傾きは全パターンで正であった。これらは主要所見が特定の1条件または小さな速度差だけで生じたという説明と整合しにくい。ただし8点は独立な
 被験者ではなく同一モデルの決定論的設計点であり、速度と前傾量は無作為化されていない。したがって速度調整回帰は母集団因果効果を推定するものではない。
 本研究で支持されるのは、採用した \(N=100\) 成功解の範囲における<b>モデル内の段階的関係</b>である。</p>
 
-<h3 id="d-6">4.6 速度–負荷最適化は主結果を候補動作生成へ接続した</h3>
+<h3 id="d-6">4.6 負荷代理指標を低減する候補動作の位置づけ</h3>
 <p>筋線維長超過ペナルティを加えた \(N=100\) 解析では、\(w=0.1\) の3ウォームスタート経路から、速度変化 −0.340±0.011% に対し、二関節3筋の終末遊脚期
 窓内ピーク \(\tilde l^{M}\) 平均が −5.189±0.077% となる解が得られた。一方、最適化が直接最小化した量は \(\tilde l^{M}>1\) の平滑二乗時間積分であり、報告した
 終末遊脚期ピークとは同一でない。3解も独立反復ではなく3つのウォームスタート経路である。したがってこの結果は大域最適性・実走可能性・介入効果・受傷
 予防効果を保証しない。ここで得られた動作は、実験的に検証すべき<b>設計候補</b>として位置づける必要がある。</p>
 
 <h3 id="d-7">4.7 本研究の学術的貢献</h3>
-<p>第一に、固定標本で示された骨盤前傾–ハム伸長関係を、全身が再協調する最高速度近傍の予測スプリントへ拡張し、速度を狭い範囲に保った8条件の段階的応答
+<p>第一に、固定標本で示された骨盤前傾–ハムストリングの伸長関係を、全身が再協調する最高速度近傍の予測スプリントへ拡張し、速度を狭い範囲に保った8条件の段階的応答
 として示した。第二に、二関節3筋と単関節 BFsh を比較し、筋線維長・収縮要素力・受動力・腱力・負の仕事を分離した。第三に、tree-rigid・femur-fixed・
 adaptive という異なる境界条件を比較し、骨盤前傾の力学的意味が骨盤–大腿配置に依存することを示した。第四に、接地変数操作フレームワーク
-<a class="cref" href="#ref12">[12]</a>を筋力学的代理指標へ拡張し、運動学–筋力学の理解を候補動作生成へ接続した。これらは骨盤前傾を単独の危険因子や
+<a class="cref" href="#ref12">[12]</a>を筋力学的代理指標へ拡張し、接地姿勢と筋の力学的状態に関する検討を、候補動作の生成に発展させた。これらは骨盤前傾を単独の危険因子や
 矯正目標として提示するものではなく、観察可能な接地時運動学・内部の筋線維力学・パフォーマンス制約を同一の計算枠組みで関連づけた点に新規性がある。</p>
 
 <h3 id="d-8">4.8 今後検証すべき課題</h3>
@@ -769,34 +769,34 @@ adaptive という異なる境界条件を比較し、骨盤前傾の力学的�
 影響を分離する。第四に、実走者の骨盤・大腿運動学と生体内筋束挙動を同時計測し、本仮説を被験者内で検証する。最後に、候補動作の遂行可能性および受傷
 アウトカムとの関連は、独立した介入研究および前向き研究で評価しなければならない。</p>
 </section><section id="limitations" class="sec"><h2><span class="secnum">5</span> 研究の限界</h2>
-<p>本研究の結果は、以下の制約のもとで解釈する必要がある。</p>
+<p>本研究はモデル内の関係を検討したものであり、以下の制約を踏まえて解釈する必要がある。</p>
 <ol class="limlist">
 <li><b>単一モデルの計算実験。</b> 国際水準男子スプリンター1名に基づく単一モデルであり、8条件は独立した被験者・試行ではなく同一モデルの設計点である。
 母集団推論に基づく p 値・95%CI は提示せず、女性・異なる競技水準・既往歴・疲労状態・異なる筋腱形態へ一般化できない。</li>
 <li><b>局所最適化。</b> すべての主条件は厳密に <code>Solve_Succeeded</code> を満たしたが、大域最適性や、要求全角度範囲に連続的な実行可能解が存在することは
-保証されない。成功解の採用規則・warm-start・探索境界は結果へ影響し得る<a class="cref" href="#ref12">[12]</a>。</li>
+保証されない。成功解の採用規則・ウォームスタート・探索境界は結果へ影響し得る<a class="cref" href="#ref12">[12]</a>。</li>
 <li><b>メッシュと条件系列。</b> \(N=50\) と \(N=100\) では一部条件の standard/wide 系列が一致しない。両者の比較には時間離散化だけでなく探索境界系列・
 達成接地角の差が含まれる。受動力・負の仕事の効果量はメッシュ・系列に対する感度が高く、定量的確度は最大 \(\tilde l^{M}\) より低い。</li>
-<li><b>筋腱モデルの仮定。</b> 全筋の \(F^{M}_{o}\) 2倍化、\(v^{M}_{\max}=12\,l^{M}_{o}\)、共通の腱・受動力特性などの仮定を含む。体系的感度解析は未完了。
+<li><b>筋腱モデルの仮定。</b> 全筋の最大等尺性力 \(F^{M}_{o}\) を2倍とする設定、\(v^{M}_{\max}=12\,l^{M}_{o}\)、共通の腱・受動力特性などの仮定を含む。体系的感度解析は未完了。
 また実装では筋25（quad_fem_r）の <code>muscProperties</code> 第2行を10%増加しており、コード上は至適筋線維長の変更に相当する一方、コメントには腱自然長の
-変更と記載されている。この意図は未確定である（全条件共通のため用量反応の<b>差</b>には無影響）。</li>
-<li><b>外部検証の範囲。</b> モデル検証は主として関節運動・関節モーメント・床反力・筋活動の全体的特徴に基づく。内部の筋線維長・受動力・腱力・局所組織応力が
-生体内で正確であることを直接保証しない。\(\tilde l^{M}\) は筋損傷そのものではなく、局所組織ひずみ・筋腱接合部応力・受傷確率とも同一でない。</li>
-<li><b>境界条件解析の性質。</b> tree-rigid・femur-fixed は幾何学的反実仮想であり、動力学的に実行可能なスプリント動作ではない。89.6–95.8% は統計的媒介割合や
+変更と記載されている。この意図は未確定である。この設定は全条件に共通するが、条件間の差への影響が相殺されることを保証するものではなく、感度解析による確認が必要である。</li>
+<li><b>外部検証の範囲。</b> 本ページでは、基準解の関節角度波形と利用可能な実験データとの比較を示した。対象者の床反力・筋電図の実測値は本データに含まれず、これらの絶対値の妥当性は確認できていない。
+関節運動の一致のみから、内部の筋線維長・受動力・腱力・局所組織応力の生体内での正確さを保証することはできない。\(\tilde l^{M}\) は筋損傷そのものではなく、局所組織ひずみ・筋腱接合部応力・受傷確率とも定義が異なる。</li>
+<li><b>境界条件解析の性質。</b> tree-rigid・femur-fixed は幾何学的反実仮想であり、動力学的な実行可能性を確認したスプリント動作ではない。89.6–95.8% は統計的媒介割合や
 骨盤前傾の独立寄与ではない。OpenSim の assemble 処理・位相補間が結果に影響し得る。</li>
-<li><b>再現環境。</b> 公開 clone には元 MAT が含まれないため、シミュレーション出力から最終表までの完全な統合再現は元データ保存環境で最終確認する必要がある
-（合成データ単体テストは通過）。</li>
+<li><b>再現環境。</b> 公開リポジトリの複製 には元 MAT が含まれないため、シミュレーション出力から最終表までの完全な統合再現は元データ保存環境で最終確認する必要がある
+（既存の記録では合成データによる単体テストは通過）。</li>
 </ol>
-<figure class="figblock" id="figS3"><a class="zia" href="assets/fig/FigS3_param_sensitivity.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS3_param_sensitivity.png" alt="補足図S3 / Figure S3"></a><figcaption><p class="figtag"><b>補足図S3 / Figure S3</b> ｜ 筋腱パラメータ感度 / Muscle-tendon parameter sensitivity</p><p class="purpose"><span class="lab labP">目的</span> 基準ハムストリング作用点は筋腱パラメータ ±10% にどれだけ感度をもつか。</p><p class="result"><span class="lab labR">結果（事実）</span> 至適筋線維長 oMFL が支配的（−10% で二関節平均 peak \(\tilde l^{M}\) 約 +0.09、+10% で約 −0.08）。最大等尺性筋力 Fmax は小（±10% で ±0.008 程度）。腱自然長 TSL は脆弱（−10% で速度・傾斜ドリフト、+10% で失敗）。</p><p class="note"><span class="lab labN">注意</span> これは基準作用点の感度であり、用量反応<b>傾き</b>の感度ではない。受動力–長さはモデルの per-muscle 化が必要で未実施。</p><p class="capen"><b>Caption (EN):</b> Sensitivity of the baseline biarticular hamstring peak lMtilde to +/-10% muscle-tendon parameters (oMFL dominant; Fmax small; TSL fragile). Baseline operating-point sensitivity, not dose-response-slope sensitivity.</p></figcaption></figure></section><section id="conclusion" class="sec"><h2><span class="secnum">6</span> 結論</h2>
-<p>本研究は、単一の国際水準男子スプリンターモデルを用い、最高速度近傍の全身運動を再最適化しながら接地時骨盤前傾量を段階的に操作した。その結果、
-速度が 11.7467–11.7978&nbsp;m·s\(^{-1}\) の範囲に保たれた \(N=100\) の8設計条件において、接地時骨盤前傾量の増加は、SM・ST・BFlh の1ストライド最大
-\(\tilde l^{M}\) の増加と一貫して関連した。これらのピークは終末遊脚期に生じた一方、股関節をまたがない BFsh の変化は小さかった。</p>
-<p>境界条件解析は、観察された筋長変化が骨盤の絶対角度だけで決まるのではなく、股関節屈曲および大腿姿勢を含む骨盤–大腿協調に依存することを示した。
-また、筋線維長代理指標を目的関数へ加えた再最適化により、速度損失を 0.5% 以内に保ちながら代理指標を低減する候補解を生成できた。</p>
-<div class="callout fact"><span class="colabel">結論</span>
-<b>最高速度近傍の単一モデル内では、接地時骨盤前傾量は二関節ハムストリングの最大正規化筋線維長と関連する運動学的指標であり、その力学的意味は
-骨盤–大腿協調の中で解釈すべきである。</b> 本研究の貢献は、骨盤前傾を受傷原因または一律の矯正目標として提示することではなく、接地時運動学・筋線維力学・
-速度制約を同一の予測シミュレーション枠組みで接続し、実測研究で検証可能な仮説と候補動作を提示した点にある。</div>
+<figure class="figblock" id="figS3"><a class="zia" href="assets/fig/FigS3_param_sensitivity.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/fig/FigS3_param_sensitivity.png" alt="補足図S3 / Figure S3"></a><figcaption><p class="figtag"><b>補足図S3 / Figure S3</b> ｜ 筋腱パラメータ感度 / Muscle-tendon parameter sensitivity</p><p class="purpose"><span class="lab labP">目的</span> 筋腱パラメータを±10%変更した場合に、基準条件のハムストリングの力学的状態がどの程度変化するかを示す。</p><p class="result"><span class="lab labR">解析結果</span> 至適筋線維長（oMFL）の変更による影響が最も大きかった（−10% で二関節平均 peak \(\tilde l^{M}\) 約 +0.09、+10% で約 −0.08）。最大等尺性筋力（Fmax）の影響は比較的小さかった（±10% で ±0.008 程度）。腱自然長（TSL）の変更では計算結果が不安定であり、−10% で速度・骨盤傾斜が変化し、+10% で最適化が失敗した。</p><p class="note"><span class="lab labN">注意</span> これは基準作用点の感度であり、用量反応<b>傾き</b>の感度ではない。受動力–長さ特性の感度解析は、筋ごとのパラメータ設定が必要であり、未実施である。</p><p class="capen"><b>Caption (EN):</b> Sensitivity of the baseline biarticular hamstring peak lMtilde to +/-10% muscle-tendon parameters (oMFL dominant; Fmax small; TSL fragile). Baseline operating-point sensitivity, not dose-response-slope sensitivity.</p></figcaption></figure></section><section id="conclusion" class="sec"><h2><span class="secnum">6</span> 結論</h2>
+<p>本研究では、国際水準の男子スプリンター1名に基づく筋骨格モデルを用い、接地時骨盤傾斜の条件を変更した際の走動作と筋活動を再最適化した。
+走速度が11.7467–11.7978&nbsp;m·s\(^{-1}\)に収まる \(N=100\) の8条件において、接地時骨盤前傾量の増加は、半膜様筋、半腱様筋および大腿二頭筋長頭の1ストライド最大正規化筋線維長の増加と関連した。
+これらの筋の最大値は終末遊脚期に認められ、股関節をまたがない大腿二頭筋短頭の変化は相対的に小さかった。</p>
+<p>骨盤と大腿の姿勢を区別した解析から、筋長変化は骨盤の絶対角度に加え、股関節屈曲や大腿姿勢を含む相対配置に依存すると解釈された。
+また、筋線維長の超過量を抑制する目的関数を用いることで、速度低下を0.5%以内に保ちながら負荷代理指標を低減する候補解が得られた。</p>
+<div class="callout fact"><span class="colabel">本研究から得られる知見</span>
+<b>本モデルの検討範囲では、接地時骨盤前傾量は二関節ハムストリングの最大正規化筋線維長と関連し、その関係は骨盤と大腿の協調運動を含めて解釈する必要がある。</b>
+本研究は、接地時の姿勢、筋内部の力学的状態および走速度を一つの計算枠組みで評価し、実測研究で検証すべき仮説と候補動作を提示した。
+実走者における受傷の因果関係、候補動作の遂行可能性および予防効果については、別途検証が必要である。</div>
 </section><section id="references" class="sec"><h2>参考文献</h2>
 <ol class="reflist">
 <li id="ref1">Ekstrand J, Bengtsson H, Waldén M, Davison M, Khan KM, Hägglund M. Hamstring injury rates have increased during recent
@@ -843,43 +843,45 @@ Speed: Implications for Coaching. <i>Med Sci Sports Exerc.</i> 2025;57(12):2807�
 </ol>
 </section><section id="appendix" class="sec"><h2>付録</h2>
 <h3 id="appendix-a">付録A. 再現手順と実装上の未解決事項</h3>
-<p>再現性には二つの水準がある。<b>水準1（公開 clone だけで可能な派生結果の検証）：</b> リポジトリを clone し、commit
-<code>e7b8de9</code> を checkout、conda 環境を構築のうえ、単体テスト <code>python analysis/validation/test_unit_metrics.py</code> を
-実行する。コミット済み CSV・PNG、<code>manifest_provenance.csv</code>、<code>output_hashes.csv</code> を照合できる（source MAT が
-ないため MAT からの再計算はスキップ）。<b>水準2（source MAT からの完全再計算）：</b> Windows 上で MATLAB・CasADi・MUMPS を用意し、
+<p>再現性の確認は、公開済みの解析結果の照合と、元のシミュレーション出力からの再計算に区別する。</p>
+<p><b>水準1：公開リポジトリから実施できる検証。</b> リポジトリの複製を取得し、コミット（コードの版を特定する識別子）
+<code>e7b8de9</code> に切り替え、condaで実行環境を構築したうえで、単体テスト <code>python analysis/validation/test_unit_metrics.py</code> を
+実行する。コミット済み CSV・PNG、<code>manifest_provenance.csv</code>、<code>output_hashes.csv</code> を照合できる（元のMATファイル が
+ないため MAT からの再計算は省略される）。</p>
+<p><b>水準2：元のMATファイルからの再計算。</b> Windows 上で MATLAB・CasADi・MUMPS を用意し、
 <code>setup_paths</code> 実行後に <code>main_pred_sim_sprinting('_Nominal', 50)</code> / <code>('_Nominal', 100)</code> を実行、
 続いて8条件スイープと Python 解析（<code>build_manifest.py</code> → <code>analyze_eight_conditions.py</code> →
-<code>phaseA_muscle_tension.py</code> → …）を順に実行する。IPOPT/BLAS/MUMPS/CPU 環境による最終桁差があり得るため、byte 一致では
-なく、solver status・メッシュ \(N\)・達成角度・速度・制約残差・主要効果の方向と大きさを <code>manifest_provenance.csv</code> と照合する。</p>
+<code>phaseA_muscle_tension.py</code> → …）を順に実行する。IPOPT/BLAS/MUMPS/CPU 環境による最終桁差があり得るため、ファイルのバイト単位の一致ではなく、ソルバの終了状態・メッシュ \(N\)・達成角度・速度・制約残差・主要効果の方向と大きさを <code>manifest_provenance.csv</code> と照合する。</p>
 <div class="callout limit"><span class="colabel">未解決</span>
-約360&nbsp;MB の source MAT が公開 clone にない／README の一部例が現行 API と不一致／既定 runner は −8° と wide 条件を含まない／
-OpenSim 4.4 境界解析用 environment が未定義／筋25 の変更意図が未確定。これらは提出版確定前に解決すべき項目である（付録C）。</div>
+既存の再現性点検では、約360&nbsp;MBの元MATファイルが公開リポジトリに含まれないこと、READMEの一部の実行例が現行の呼出し仕様と一致しないこと、
+既定の実行スクリプトが −8° と wide 条件を含まないことが課題とされている。加えて、OpenSim 4.4による境界条件解析の実行環境と、筋25の設定変更の意図が未確定である。
+これらの確認項目を付録Cに示す。</div>
 
 <h3 id="appendix-b">付録B. 証拠水準に基づく主張の整理</h3>
 <div class="tablewrap"><table>
 <thead><tr><th>区分</th><th>内容</th></tr></thead>
 <tbody>
-<tr><td><span class="lab labR">Fact</span></td><td>\(N=100\) の8条件で速度は 11.7467–11.7978 m/s、二関節3筋の最大 \(\tilde l^{M}\) は前傾とともに増加した。</td></tr>
-<tr><td><span class="lab labR">Fact</span></td><td>BFsh の最大 \(\tilde l^{M}\) 端点変化は −0.32% であった。</td></tr>
-<tr><td><span class="lab labR">Fact</span></td><td>tree-rigid の MTU 長差は 0、femur-fixed は adaptive 二関節差の 89.6–95.8% であった。</td></tr>
-<tr><td><span class="lab labR">Fact</span></td><td>\(w=0.1\) の3ウォームスタート経路で速度変化平均 −0.340%、代理指標変化平均 −5.189% であった。</td></tr>
-<tr><td><span class="lab labP">Interpretation</span></td><td>前傾–線維長関係は骨盤–大腿協調、特に股関節屈曲を介する可能性が高い。</td></tr>
-<tr><td><span class="lab labP">Interpretation</span></td><td>BFsh の不変性は股関節をまたぐことの機序特異性を支持する。</td></tr>
-<tr><td><span class="lab labN">Hypothesis</span></td><td>実走者で接地時骨盤前傾を減らすと終末遊脚期の生体内筋束伸長を減らせる（未検証）。</td></tr>
-<tr><td><span class="lab labN">Hypothesis</span></td><td>代理指標低下候補が肉離れリスクを下げる（未検証）。</td></tr>
+<tr><td><span class="lab labR">解析結果</span></td><td>\(N=100\) の8条件で速度は 11.7467–11.7978 m/s、二関節3筋の最大 \(\tilde l^{M}\) は前傾とともに増加した。</td></tr>
+<tr><td><span class="lab labR">解析結果</span></td><td>BFsh の最大 \(\tilde l^{M}\) 端点変化は −0.32% であった。</td></tr>
+<tr><td><span class="lab labR">解析結果</span></td><td>tree-rigid の MTU 長差は 0、femur-fixed は adaptive 二関節差の 89.6–95.8% であった。</td></tr>
+<tr><td><span class="lab labR">解析結果</span></td><td>\(w=0.1\) の3ウォームスタート経路で速度変化平均 −0.340%、代理指標変化平均 −5.189% であった。</td></tr>
+<tr><td><span class="lab labP">解釈</span></td><td>前傾–線維長関係は骨盤–大腿協調、特に股関節屈曲を介する可能性が高い。</td></tr>
+<tr><td><span class="lab labP">解釈</span></td><td>BFsh の変化が小さいことは、股関節をまたぐ解剖学的特徴が関係するという解釈を支持する。</td></tr>
+<tr><td><span class="lab labN">未検証の仮説</span></td><td>実走者で接地時骨盤前傾を減らすと終末遊脚期の生体内筋束伸長を減らせる（未検証）。</td></tr>
+<tr><td><span class="lab labN">未検証の仮説</span></td><td>代理指標低下候補が肉離れリスクを下げる（未検証）。</td></tr>
 </tbody></table></div>
 
 <h3 id="appendix-c">付録C. 提出版確定前の検証課題</h3>
 <ol class="limlist">
-<li>source MAT を公開または審査者が取得可能な保管場所に置き、SHA256 を固定する。</li>
-<li>\(N=50\) と \(N=100\) で同一の探索境界系列を用いた再 solve を行い、純粋なメッシュ収束を確認する。</li>
+<li>元のMATファイルを公開、または審査者が取得できる保管場所に置き、ファイルの同一性を確認するSHA256ハッシュ値を記録する。</li>
+<li>\(N=50\) と \(N=100\) で同一の探索境界系列を用いた再計算を行い、純粋なメッシュ収束を確認する。</li>
 <li>至適筋線維長・腱コンプライアンス・受動力–長さ特性・最大等尺性筋力の感度解析を行う。</li>
 <li>不成功試行を含む全条件フローと除外理由を保存・報告する。</li>
 <li>\(N=100\) 複合目的関数を複数ウォームスタート経路で確認する。</li>
-<li>Spearman 順位計算を tie 補正済み標準実装へ統一する。</li>
+<li>Spearman 順位計算を同順位を適切に処理する標準実装へ統一する。</li>
 <li>筋25 の変更意図を確認し、コメント修正または全条件再計算を行う。</li>
-<li>境界条件解析を正規化位相対応で再生成し、source file を hash で固定する。</li>
-<li>README・publication runner・環境 lockfile・hash を論文の再現手順と一致させる。</li>
+<li>境界条件解析を正規化位相対応で再生成し、元ファイルのハッシュ値を記録する。</li>
+<li>README、公開用実行スクリプト、環境の依存関係を固定するファイル、およびハッシュ値を論文の再現手順と一致させる。</li>
 </ol>
 <p class="fine">来歴：監査対象の公開状態 <code>e7b8de9</code>、派生結果の simulation commit <code>59877aa</code>、analysis commit <code>bb0433a</code>。
 本 Web 版の図は <code>output/thesis_figures_final_20260819_163600/</code> の QA 済み図（23項目 PASS）を用いており、数値は独立監査
@@ -888,11 +890,11 @@ OpenSim 4.4 境界解析用 environment が未定義／筋25 の変更意図が�
 </main>
 </div>
 <footer>
-本ページは修士論文（<code>docs/修士論文学位審査提出候補稿_日本語.md</code>）の Web 補足版であり、単一予測モデル内の
-<b>相関・機序</b>を示すものである。肉離れの<b>因果</b>・受傷リスク低減・安全姿勢・個人一般化・絶対 GRF 妥当性は主張しない。
-図は <code>output/thesis_figures_final_20260819_163600/</code>（自動 QA 23項目 PASS）から、動画は
-<code>Results/PelvicTD_Study/</code> および <code>Results/HamPareto_Study/</code> から生成した。数値は独立監査
-<code>Results/Independent_Audit_20260819/</code> と一致する。&copy; Taisei Ishii.
+本ページは修士論文（<code>docs/修士論文学位審査提出候補稿_日本語.md</code>）のWeb補足資料である。
+単一の筋骨格モデルにおける接地姿勢と筋の力学的状態との関係を扱う。実走者の受傷確率、予防効果および他者への一般化は検証していない。
+図の出典は <code>output/thesis_figures_final_20260819_163600/</code>、動画の出典は
+<code>Results/PelvicTD_Study/</code> および <code>Results/HamPareto_Study/</code> である。
+数値の検証に関する既存記録は <code>Results/Independent_Audit_20260819/</code> に対応する。再現手順と未解決事項は付録を参照されたい。&copy; Taisei Ishii.
 </footer>
 <a id="toplink" href="#top" aria-label="ページ先頭へ">&#8593;</a>
 
