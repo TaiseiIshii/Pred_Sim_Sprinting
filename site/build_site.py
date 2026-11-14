@@ -31,6 +31,7 @@ ASSET_POSTER = os.path.join(HERE, "assets", "poster")
 
 # Quick-access figure/video navigation (anchor, label).
 FIGNAV = [
+    ("slides", "発表スライド"),
     ("poster-img", "学会発表ポスター"),
     ("fig-1", "図1 研究ロジック"),
     ("fig-4", "図4 基準妥当性"),
@@ -214,6 +215,12 @@ figure.posterfig img{max-height:1050px; width:auto; max-width:100%; margin:0 aut
 .docbtn.pdf:hover{background:#12385f; text-decoration:none}
 .docbtn.doc{background:#fff; color:var(--brand); border-color:var(--brand2)}
 .docbtn.doc:hover{background:var(--soft); text-decoration:none}
+
+/* Embedded presentation: readable on desktop and narrow screens. */
+.slides-viewer{margin:18px 0; border:1px solid var(--line); border-radius:12px;
+  overflow:hidden; background:var(--soft)}
+.slides-viewer iframe{display:block; width:100%; height:clamp(360px,65vh,720px); border:0}
+@media print{.slides-viewer{display:none}}
 
 /* inline labels */
 .lab{display:inline-block; font-size:.72rem; font-weight:700; color:#fff;

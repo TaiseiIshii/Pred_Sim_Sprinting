@@ -987,9 +987,36 @@ POSTER = (
 
 
 # --------------------------------------------------------------------------- #
+#  Presentation slides hosted on Google Drive
+# --------------------------------------------------------------------------- #
+SLIDES_FILE_ID = "1zQQyA9idicjlTfczz9QRPLhptlC76efS"
+SLIDES_VIEW_URL = "https://drive.google.com/file/d/" + SLIDES_FILE_ID + "/view"
+SLIDES_PREVIEW_URL = "https://drive.google.com/file/d/" + SLIDES_FILE_ID + "/preview"
+SLIDES = (
+    '<div class="postercard">'
+    '<p class="conf-badge">発表スライド</p>'
+    '<h3 class="conf-title">デジタルヒューマン技術評議会 発表資料</h3>'
+    '<p class="fine">2026年10月20日 · 石井太晴 · PDF</p>'
+    '</div>'
+    '<div class="slides-viewer">'
+    '<iframe src="' + SLIDES_PREVIEW_URL + '" '
+    'title="2026年10月20日 デジタルヒューマン技術評議会 発表スライド" '
+    'loading="lazy" allow="fullscreen" allowfullscreen></iframe>'
+    '</div>'
+    '<div class="docbtns">'
+    '<a class="docbtn pdf" href="' + SLIDES_VIEW_URL + '" target="_blank" rel="noopener">'
+    '発表スライドを Google Drive で開く</a>'
+    '</div>'
+    '<p class="fine">ページ内でスライドを閲覧できます。表示されない場合や、'
+    '大きな画面で読みたい場合は、上のボタンから開いてください。</p>'
+)
+
+
+# --------------------------------------------------------------------------- #
 #  Section ordering (consumed by build_site.py to build TOC + body)
 # --------------------------------------------------------------------------- #
 SECTIONS = [
+    {"id": "slides",      "num": "",   "title": "発表スライド",                           "body": SLIDES},
     {"id": "poster",      "num": "",   "title": "学会発表ポスター",                       "body": POSTER},
     {"id": "readme",      "num": "",   "title": "この補足ドキュメントについて",           "body": READ_ME},
     {"id": "abstract",    "num": "",   "title": "要旨",                                     "body": ABSTRACT},
