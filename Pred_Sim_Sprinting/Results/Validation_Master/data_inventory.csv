@@ -1,0 +1,9 @@
+experiment,n_mats,n_strict,meshes,sim_commits,total_MB_if_local
+HamPareto,14,14,50,59877aa,64.5
+Haralabidis_TD,12,12,50,59877aa,55.8
+Morphology_fascicle,6,6,50,59877aa,27.6
+Morphology_strength,5,5,50,59877aa,23.0
+Nominal,2,2,100|50,59877aa,13.8
+PelvicShift,8,1,50,59877aa|bb0433a,36.9
+PelvicTD,20,18,100|50,59877aa,128.7
+PelvicTilt,2,1,50,59877aa,9.2

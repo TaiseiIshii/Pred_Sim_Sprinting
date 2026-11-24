@@ -1,0 +1,35 @@
+INDEPENDENT REPRODUCIBILITY AUDIT -- ENVIRONMENT LOCK
+generated_at: 2026-08-19T16:14:16
+
+[repository]
+path: C:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting
+git_HEAD: e7b8de98016594ebc9d30ec4495c5958b3fe7020
+git_branch: main
+git_describe: e7b8de9
+git_dirty_files:
+?? Results/Independent_Audit_20260819/
+?? docs/validate_final_audit.py
+?? "docs/\344\277\256\345\243\253\350\253\226\346\226\207\346\234\254\347\225\252\345\216\237\347\250\277_\346\234\200\347\265\202\345\256\237\350\243\205\347\233\243\346\237\273\347\211\210.md"
+?? "docs/\346\234\200\347\265\202\345\256\237\350\243\205\343\203\273\350\253\226\346\226\207\347\233\243\346\237\273\345\240\261\345\221\212.md"
+
+[analysis environment -- this audit]
+OS: Windows-11-10.0.22631-SP0
+python: 3.13.9 (C:\Users\T11648sTb\AppData\Local\miniconda3\python.exe)
+numpy: 2.3.5
+scipy: 1.16.3
+opensim (opencap env): 4.4-2022-08-12-dcf8e2cb1  (C:\Users\T11648sTb\AppData\Local\miniconda3\envs\opencap\python.exe)
+
+[simulation environment -- as documented / inferred from artifacts]
+MATLAB: R2017b (Japanese locale CP932; .m sources must be ASCII)  [documented]
+NLP solver: IPOPT via CasADi nlpsol (stats.return_status/iterations.inf_pr saved).
+  exact CasADi/IPOPT versions NOT recorded inside the .mat artifacts (unresolved).
+muscle model: De Groote 2016 Hill-type; Fmax x2 (muscleFScale=2.0);
+  vMax=12*lMo (vMaxMult=12; contPrms Sph_Plane_simultOptContPrms_Fmax_2_Vmax_12.mat);
+  aTendon=35, passive FL e0=0.6/kpe=4, Fce damping d=0.01.
+  quad_fem (muscle 25) optimal fibre length +10% (row 2; comment mislabels as TSL).
+
+[subject / model]
+OpenSim model: Scaled_FullBody_HamnerModel_Muscle_withContact.osim
+total model mass: 72.1700 kg (verified by summing 20 body masses) == BODY_MASS 72.17
+BW: 72.17*9.80665 = 707.75 N
+mesh: N=50 -> q(37,200) muscle(92,151) 3N+1; N=100 -> q(37,400) muscle(92,301).

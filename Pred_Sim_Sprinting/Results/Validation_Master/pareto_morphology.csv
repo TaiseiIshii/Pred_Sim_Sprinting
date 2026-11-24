@@ -1,0 +1,7 @@
+condition,morphology,objective,speed_mps,biartic_TS_peak_lMtilde,biartic_neg_work_J,status
+HamPareto_Sh_w0200,fascicle_x0.80,load_penalty_w=0.2,10.997627727440912,1.0700867235959468,15.162561486429032,Solve_Succeeded
+HamPareto_Sh_w0800,fascicle_x0.80,load_penalty_w=0.8,9.976872829103115,0.9870320286042603,18.85055664120524,Solve_Succeeded
+HamPareto_Sh_w3200,fascicle_x0.80,load_penalty_w=3.2,8.368374665377162,0.9186865224534909,18.957203582173303,Solve_Succeeded
+HamPareto_Wk_w0200,strength_x0.80,load_penalty_w=0.2,11.542327392230785,0.9695662227006374,16.457645471029068,Solve_Succeeded
+HamPareto_Wk_w0800,strength_x0.80,load_penalty_w=0.8,11.444523111459882,0.9247987031745044,17.080878797222358,Solve_Succeeded
+HamPareto_Wk_w3200,strength_x0.80,load_penalty_w=3.2,11.365314239219854,0.9052670987937034,14.191147720348349,Solve_Succeeded

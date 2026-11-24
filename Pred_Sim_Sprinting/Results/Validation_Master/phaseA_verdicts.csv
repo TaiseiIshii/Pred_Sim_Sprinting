@@ -1,0 +1,74 @@
+muscle,biarticular,phase,metric,unit,verdict,direction_with_anterior_tilt,magnitude_mesh_conditional,rho_N100,rho_N50,R2_N100,rel_span_pct_N100,mesh_mean_abs_rel_pct,value_N100_min_tilt,value_N100_max_tilt
+semimem,True,full-stride,peak_lMtilde,-,robust increase,increase,False,-1.0,-0.9286,0.9614,9.334,1.538,1.06755,0.97302
+semiten,True,full-stride,peak_lMtilde,-,robust increase,increase,False,-0.9762,-0.9286,0.9573,4.565,0.808,1.18116,1.12863
+bifemlh,True,full-stride,peak_lMtilde,-,robust increase,increase,False,-0.9762,-0.9286,0.9498,6.986,1.284,1.11243,1.03778
+bifemsh,False,full-stride,peak_lMtilde,-,approximately invariant,decrease,False,0.9524,0.8571,0.9275,0.364,0.117,0.94176,0.94478
+semimem,True,full-stride,peak_active_force_N,N,robust increase,increase,False,-0.9048,-0.9762,0.9227,6.649,1.571,3311.75408,3099.51854
+semiten,True,full-stride,peak_active_force_N,N,robust decrease,decrease,False,0.9762,0.7143,0.9264,3.273,1.238,789.8145,816.19027
+bifemlh,True,full-stride,peak_active_force_N,N,approximately invariant,increase,False,-0.3333,-0.8095,0.0446,0.886,0.862,2320.25196,2302.06071
+bifemsh,False,full-stride,peak_active_force_N,N,approximately invariant,decrease,False,0.9048,0.7619,0.8631,2.736,1.527,1682.97107,1719.07377
+semimem,True,full-stride,peak_passive_force_N,N,robust increase,increase,True,-1.0,-0.9286,0.9303,66.148,10.541,75.16643,39.91678
+semiten,True,full-stride,peak_passive_force_N,N,robust increase,increase,False,-0.9762,-0.9286,0.9415,35.998,6.279,51.11519,35.99118
+bifemlh,True,full-stride,peak_passive_force_N,N,robust increase,increase,False,-0.9762,-0.9286,0.9264,51.926,9.308,70.58652,42.8489
+bifemsh,False,full-stride,peak_passive_force_N,N,approximately invariant,decrease,False,0.9524,0.8571,0.9269,2.304,0.737,20.20287,20.61611
+semimem,True,full-stride,peak_tendon_force_N,N,robust increase,increase,False,-0.9762,-0.9762,0.9372,7.712,1.707,3253.14643,3012.76097
+semiten,True,full-stride,peak_tendon_force_N,N,approximately invariant,decrease,False,0.881,0.6667,0.8857,1.913,0.988,830.5214,845.70373
+bifemlh,True,full-stride,peak_tendon_force_N,N,approximately invariant,increase,False,-0.619,-0.9048,0.4707,1.405,0.902,2366.00529,2332.97918
+bifemsh,False,full-stride,peak_tendon_force_N,N,approximately invariant,decrease,False,0.9048,0.7619,0.8578,2.572,1.488,1544.6037,1575.58305
+semimem,True,full-stride,peak_act_ecc_power_W,W,non-monotonic,increase,True,-0.6429,-0.9286,0.5219,31.291,13.743,1136.50056,853.84319
+semiten,True,full-stride,peak_act_ecc_power_W,W,inconclusive,increase,False,-0.881,-0.9048,0.8016,14.966,7.882,480.33578,414.14699
+bifemlh,True,full-stride,peak_act_ecc_power_W,W,inconclusive,increase,False,-0.8333,-0.9286,0.7096,12.597,8.785,1265.16676,1116.43503
+bifemsh,False,full-stride,peak_act_ecc_power_W,W,mesh-sensitive,increase,True,-0.0714,0.4762,0.0647,14.784,19.795,319.44132,319.55657
+semimem,True,full-stride,neg_fiber_work_J,J,inconclusive,increase,True,-0.7143,-0.9286,0.5667,29.139,21.726,37.97084,28.51272
+semiten,True,full-stride,neg_fiber_work_J,J,robust increase,increase,False,-0.9762,-0.881,0.9212,22.208,7.541,14.99256,12.03706
+bifemlh,True,full-stride,neg_fiber_work_J,J,inconclusive,increase,False,-0.7857,-0.8333,0.6719,15.338,7.536,38.03385,32.7077
+bifemsh,False,full-stride,neg_fiber_work_J,J,robust decrease,decrease,True,0.9286,0.9524,0.8479,16.267,10.583,28.29249,32.48932
+semimem,True,full-stride,neg_fiber_work_tot_J,J,inconclusive,increase,True,-0.7143,-0.9286,0.5919,29.946,21.304,38.94608,29.02108
+semiten,True,full-stride,neg_fiber_work_tot_J,J,robust increase,increase,False,-0.9762,-0.881,0.929,23.499,7.241,16.5813,13.1475
+bifemlh,True,full-stride,neg_fiber_work_tot_J,J,inconclusive,increase,False,-0.7857,-0.8333,0.7105,16.321,7.542,39.29593,33.47283
+bifemsh,False,full-stride,neg_fiber_work_tot_J,J,robust decrease,decrease,True,0.9286,0.9524,0.8485,16.033,10.438,28.7914,32.99821
+semimem,True,full-stride,peak_leng_vel_mps,m/s,inconclusive,increase,False,-0.8095,-0.9286,0.6099,7.864,4.333,1.20059,1.12849
+semiten,True,full-stride,peak_leng_vel_mps,m/s,non-monotonic,increase,True,-0.4524,-0.5952,0.0199,15.888,14.584,1.48093,1.42445
+bifemlh,True,full-stride,peak_leng_vel_mps,m/s,non-monotonic,decrease,True,-0.1429,-0.7143,0.0036,5.42,10.315,1.17921,1.15686
+bifemsh,False,full-stride,peak_leng_vel_mps,m/s,robust increase,increase,False,-1.0,-1.0,0.9833,8.202,1.305,0.86957,0.80073
+semimem,True,full-stride,tPeak_lMtilde_pct,%stride,robust increase,increase,False,-0.9524,-0.9286,0.943,3.152,0.613,90.82247,88.0
+semiten,True,full-stride,tPeak_lMtilde_pct,%stride,robust increase,increase,False,-0.9762,-0.8571,0.9414,3.244,0.978,88.32247,85.5
+bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,robust increase,increase,False,-0.9762,-0.9286,0.9623,3.512,0.937,89.07753,86.0
+bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,inconclusive,decrease,True,0.9286,0.1667,0.7638,30.422,13.416,2.32247,2.82247
+semimem,True,full-stride,tPeak_Fce_pct,%stride,approximately invariant,increase,False,-0.5714,-0.7143,0.3308,2.65,1.965,82.5,81.57753
+semiten,True,full-stride,tPeak_Fce_pct,%stride,approximately invariant,increase,False,-0.8095,-0.7143,0.7542,2.479,1.59,81.32247,79.57753
+bifemlh,True,full-stride,tPeak_Fce_pct,%stride,approximately invariant,increase,False,-0.9286,-0.7381,0.8778,2.966,2.204,79.32247,77.32247
+bifemsh,False,full-stride,tPeak_Fce_pct,%stride,approximately invariant,increase,False,-0.2381,-0.7381,0.0425,0.6,0.643,96.32247,96.07753
+semimem,True,terminal-swing,TS_peak_lMtilde,-,robust increase,increase,False,-1.0,-0.9286,0.9614,9.334,1.538,1.06755,0.97302
+semiten,True,terminal-swing,TS_peak_lMtilde,-,robust increase,increase,False,-0.9762,-0.9286,0.9573,4.565,0.808,1.18116,1.12863
+bifemlh,True,terminal-swing,TS_peak_lMtilde,-,robust increase,increase,False,-0.9762,-0.9286,0.9498,6.986,1.284,1.11243,1.03778
+bifemsh,False,terminal-swing,TS_peak_lMtilde,-,approximately invariant,decrease,False,0.9762,0.8333,0.9346,0.13,0.026,0.93882,0.93984
+semimem,True,terminal-swing,TS_peak_passive_force_N,N,robust increase,increase,True,-1.0,-0.9286,0.9303,66.148,10.541,75.16643,39.91678
+semiten,True,terminal-swing,TS_peak_passive_force_N,N,robust increase,increase,False,-0.9762,-0.9286,0.9415,35.998,6.279,51.11519,35.99118
+bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,robust increase,increase,False,-0.9762,-0.9286,0.9264,51.926,9.308,70.58652,42.8489
+bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,approximately invariant,decrease,False,0.9762,0.8333,0.9344,0.822,0.164,19.80801,19.94421
+semimem,True,terminal-swing,TS_peak_tendon_force_N,N,robust increase,increase,False,-0.9762,-0.9762,0.9372,7.712,1.707,3253.14643,3012.76097
+semiten,True,terminal-swing,TS_peak_tendon_force_N,N,approximately invariant,decrease,False,0.881,0.6667,0.8857,1.913,0.988,830.5214,845.70373
+bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,robust increase,increase,False,-0.9286,-0.9048,0.8394,5.291,1.52,2365.47163,2255.54591
+bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,approximately invariant,decrease,False,0.9048,0.7619,0.8578,2.572,1.488,1544.6037,1575.58305
+semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,robust increase,increase,False,-0.9524,-0.9286,0.9417,34.227,7.538,0.36354,0.25951
+semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,robust increase,increase,True,-0.9762,-0.9762,0.962,61.533,15.303,0.62143,0.34346
+bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,robust increase,increase,True,-0.9286,-0.9762,0.9451,68.252,20.97,0.45617,0.24099
+bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,robust increase,increase,False,-0.9286,-0.7619,0.8361,19.221,8.725,0.78269,0.66525
+semimem,True,terminal-swing,TS_neg_fiber_work_J,J,robust increase,increase,False,-1.0,-1.0,0.9717,73.75,8.55,28.49966,13.70191
+semiten,True,terminal-swing,TS_neg_fiber_work_J,J,robust increase,increase,True,-0.9524,-0.8571,0.9495,88.261,28.42,7.65734,3.16908
+bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,robust increase,increase,True,-0.9524,-0.9762,0.9494,100.397,33.358,15.82089,5.95277
+bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,inconclusive,decrease,True,0.7143,0.619,0.5467,16.249,17.983,17.7131,19.76229
+semimem,True,early-stance,ES_peak_lMtilde,-,robust increase,increase,False,-1.0,-1.0,0.9932,13.475,0.927,1.02532,0.89644
+semiten,True,early-stance,ES_peak_lMtilde,-,robust increase,increase,False,-1.0,-1.0,0.9956,7.008,0.363,1.13337,1.05677
+bifemlh,True,early-stance,ES_peak_lMtilde,-,robust increase,increase,False,-1.0,-1.0,0.995,11.811,0.566,1.05169,0.9348
+bifemsh,False,early-stance,ES_peak_lMtilde,-,approximately invariant,decrease,False,0.9524,0.8571,0.9275,0.364,0.117,0.94176,0.94478
+semimem,True,early-stance,ES_peak_active_force_N,N,robust increase,increase,False,-0.9762,-0.7619,0.9404,20.552,5.049,1519.22472,1232.1739
+semiten,True,early-stance,ES_peak_active_force_N,N,non-monotonic,decrease,False,0.619,0.7143,0.5352,5.35,5.106,498.12891,521.69151
+bifemlh,True,early-stance,ES_peak_active_force_N,N,robust increase,increase,False,-0.9762,-0.7619,0.9039,14.607,5.215,960.20823,828.00752
+bifemsh,False,early-stance,ES_peak_active_force_N,N,robust increase,increase,False,-0.9762,-0.8333,0.9367,12.249,2.418,1454.25772,1312.97354
+semimem,True,early-stance,ES_peak_tendon_force_N,N,robust increase,increase,False,-0.9762,-0.8571,0.9622,23.349,4.717,1524.85951,1202.54815
+semiten,True,early-stance,ES_peak_tendon_force_N,N,non-monotonic,decrease,False,0.381,0.6905,0.1009,3.172,4.757,533.69407,542.10122
+bifemlh,True,early-stance,ES_peak_tendon_force_N,N,robust increase,increase,False,-0.9762,-0.7619,0.9389,16.832,4.957,1007.23772,849.49367
+bifemsh,False,early-stance,ES_peak_tendon_force_N,N,robust increase,increase,False,-0.9762,-0.8333,0.9367,12.035,2.376,1340.33274,1212.26578
+bifemsh,False,early-stance,ES_neg_fiber_work_J,J,inconclusive,decrease,True,0.9524,0.1905,0.8509,56.05,25.327,0.73571,1.09617

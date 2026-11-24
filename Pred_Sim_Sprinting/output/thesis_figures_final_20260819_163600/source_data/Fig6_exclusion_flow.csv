@@ -1,0 +1,8 @@
+stage,count,excluded_reason
+all result MAT discovered,95,
+readable optimumOutput,95,0 unreadable
+experiment = PelvicTD,25,other experiments set aside
+mesh N=100,9,16 are N=50
+PelvisTDwide family,9,standard family excluded (different base)
+strict Solve_Succeeded,8,1 non-strict (e.g. Maximum_CpuTime twin)
+adopted primary (min inf_pr / offset),8,1 per requested offset

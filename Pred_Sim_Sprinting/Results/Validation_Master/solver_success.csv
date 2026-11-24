@@ -1,0 +1,9 @@
+experiment,n,strict,acceptable,other,strict_rate_pct
+HamPareto,14,14,0,0,100.0
+Haralabidis_TD,12,12,0,0,100.0
+Morphology_fascicle,6,6,0,0,100.0
+Morphology_strength,5,5,0,0,100.0
+Nominal,2,2,0,0,100.0
+PelvicShift,8,1,4,3,12.5
+PelvicTD,20,18,0,2,90.0
+PelvicTilt,2,1,1,0,50.0

@@ -1,0 +1,8 @@
+morphology,cell,status
+standard,touchdown-tilt sweep (8 pts),"COMPLETE (strict, N50+N100)"
+standard,fascicle sweep,"COMPLETE (6 strict, nominal pelvis)"
+standard,strength sweep,"COMPLETE (5 strict, nominal pelvis)"
+fascicle_x0.80 (short),penalty-weight sweep,PARTIAL (3 pts; posture co-shifts)
+fascicle_x0.80 (short),controlled touchdown-tilt sweep,MISSING -> new solves (BLOCKED)
+strength_x0.80 (weak),penalty-weight sweep,PARTIAL (3 pts; posture co-shifts)
+strength_x0.80 (weak),controlled touchdown-tilt sweep,MISSING -> new solves (BLOCKED)

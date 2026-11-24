@@ -1,0 +1,5 @@
+muscle,is_biarticular,delta_pelvis_deg,A_tree_rigid_peak_mm,B_femur_fixed_peak_mm,C_adaptive_peak_phaseNorm_mm,fixed_over_adaptive_pct
+semimem_l,True,-8.0,0.0,7.06,7.666,92.09
+semiten_l,True,-8.0,0.0,8.717,9.727,89.61
+bifemlh_l,True,-8.0,0.0,8.084,8.435,95.84
+bifemsh_l,False,-8.0,0.0,0.0,1.226,0.0

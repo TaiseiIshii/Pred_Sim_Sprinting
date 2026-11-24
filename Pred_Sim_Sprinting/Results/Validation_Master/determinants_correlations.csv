@@ -1,0 +1,12 @@
+predictor,biartic_peak_lMtilde,biartic_TS_peak_lMtilde,biartic_neg_work_J,biartic_peak_passive_N
+td_tilt_deg,-0.978,-0.978,-0.836,-0.965
+mean_tilt_deg,-0.977,-0.977,-0.833,-0.964
+hipR_td_deg,0.984,0.984,0.845,0.974
+hipR_peak_deg,0.984,0.984,0.845,0.974
+hipL_peak_deg,0.866,0.866,0.66,0.856
+kneeR_peak_flex_deg,0.366,0.366,0.489,0.399
+trunk_lean_mean_deg,0.886,0.886,0.722,0.855
+pelvic_tilt_angvel_peak_dps,-0.938,-0.938,-0.837,-0.956
+contact_s,0.493,0.493,0.234,0.511
+swing_duration_s,-0.025,-0.025,0.356,-0.007
+speed_mps,-0.494,-0.494,-0.763,-0.539

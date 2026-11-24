@@ -1,0 +1,38 @@
+[project]
+name = "pred-sim-sprinting"
+version = "0.1.0"
+description = "Python/CasADi sprinting simulation - MATLAB-free reimplementation"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "casadi>=3.6.0",
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "matplotlib>=3.4",
+    "pandas>=1.3",
+]
+
+[project.optional-dependencies]
+opensim = [
+    # Install via conda: conda install -c opensim-org opensim
+]
+dev = [
+    "pytest>=6.2",
+    "ipython",
+]
+
+[project.scripts]
+pred-sim = "pred_sim_sprinting.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pred_sim_sprinting"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=6.2",
+    "ipython",
+]

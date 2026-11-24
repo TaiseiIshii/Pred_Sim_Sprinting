@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="501.408pt" height="407.232pt" viewBox="0 0 501.408 407.232" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-19T17:08:52.415345</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 407.232 
+L 501.408 407.232 
+L 501.408 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 270.442644 99.27 
+Q 282.166644 99.27 292.10179 99.27 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 288.50179 97.47 
+L 292.10179 99.27 
+L 288.50179 101.07 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 282.168 127.767703 
+Q 282.168 137.079145 282.168 144.601732 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 283.968 141.001732 
+L 282.168 144.601732 
+L 280.368 141.001732 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 196.467033 208.013317 
+Q 169.786319 222.153015 144.686214 235.455054 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 148.710008 235.359756 
+L 144.686214 235.455054 
+L 147.024252 232.17884 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 282.168 208.54651 
+Q 282.168 222.152728 282.168 233.97009 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 283.968 230.37009 
+L 282.168 233.97009 
+L 280.368 230.37009 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 367.868967 208.013317 
+Q 394.549681 222.153015 419.649786 235.455054 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 417.311748 232.17884 
+L 419.649786 235.455054 
+L 415.625992 235.359756 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 143.133486 314.509352 
+Q 169.787723 326.474622 194.809999 337.707294 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 192.262902 334.590838 
+L 194.809999 337.707294 
+L 190.788576 337.875097 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 282.168 315.099967 
+Q 282.168 326.474117 282.168 336.059413 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 283.968 332.459413 
+L 282.168 336.059413 
+L 280.368 332.459413 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 421.202514 314.509352 
+Q 394.548277 326.474622 369.526001 337.707294 
+" style="fill: none; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 373.547424 337.875097 
+L 369.526001 337.707294 
+L 372.073098 334.590838 
+z
+" style="fill: #555555; stroke: #555555; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 80.30592 127.799424 
+L 267.74928 127.799424 
+Q 272.83824 127.799424 272.83824 123.674688 
+L 272.83824 74.865312 
+Q 272.83824 70.740576 267.74928 70.740576 
+L 80.30592 70.740576 
+Q 75.21696 70.740576 75.21696 74.865312 
+L 75.21696 123.674688 
+Q 75.21696 127.799424 80.30592 127.799424 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #eaf1f8; stroke: #4a7fb5; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 296.58672 127.799424 
+L 484.03008 127.799424 
+Q 489.11904 127.799424 489.11904 123.674688 
+L 489.11904 74.865312 
+Q 489.11904 70.740576 484.03008 70.740576 
+L 296.58672 70.740576 
+Q 291.49776 70.740576 291.49776 74.865312 
+L 291.49776 123.674688 
+Q 291.49776 127.799424 296.58672 127.799424 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #eaf1f8; stroke: #4a7fb5; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 114.23232 208.575504 
+L 450.10368 208.575504 
+Q 455.19264 208.575504 455.19264 204.450768 
+L 455.19264 150.485472 
+Q 455.19264 146.360736 450.10368 146.360736 
+L 114.23232 146.360736 
+Q 109.14336 146.360736 109.14336 150.485472 
+L 109.14336 204.450768 
+Q 109.14336 208.575504 114.23232 208.575504 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #fdf0e2; stroke: #e08214; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 80.30592 316.849824 
+L 204.13728 316.849824 
+Q 209.22624 316.849824 209.22624 312.725088 
+L 209.22624 243.292032 
+Q 209.22624 239.167296 204.13728 239.167296 
+L 80.30592 239.167296 
+Q 75.21696 239.167296 75.21696 243.292032 
+L 75.21696 312.725088 
+Q 75.21696 316.849824 80.30592 316.849824 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #e7f2e7; stroke: #1b7837; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 220.25232 316.849824 
+L 344.08368 316.849824 
+Q 349.17264 316.849824 349.17264 312.725088 
+L 349.17264 243.292032 
+Q 349.17264 239.167296 344.08368 239.167296 
+L 220.25232 239.167296 
+Q 215.16336 239.167296 215.16336 243.292032 
+L 215.16336 312.725088 
+Q 215.16336 316.849824 220.25232 316.849824 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #efe7f3; stroke: #762a83; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 360.19872 316.849824 
+L 484.03008 316.849824 
+Q 489.11904 316.849824 489.11904 312.725088 
+L 489.11904 243.292032 
+Q 489.11904 239.167296 484.03008 239.167296 
+L 360.19872 239.167296 
+Q 355.10976 239.167296 355.10976 243.292032 
+L 355.10976 312.725088 
+Q 355.10976 316.849824 360.19872 316.849824 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #e7eef7; stroke: #2166ac; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 139.67712 377.002224 
+L 424.65888 377.002224 
+Q 429.74784 377.002224 429.74784 372.877488 
+L 429.74784 341.254512 
+Q 429.74784 337.129776 424.65888 337.129776 
+L 139.67712 337.129776 
+Q 134.58816 337.129776 134.58816 341.254512 
+L 134.58816 372.877488 
+Q 134.58816 377.002224 139.67712 377.002224 
+z
+" clip-path="url(#pf69ddf83c5)" style="fill: #f4f4f4; stroke: #999999; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(116.291912 92.350481)">Observational sprint studies</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(105.553116 101.532687)">link pelvic motion with hamstring</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(112.895959 110.714894)">strain and running mechanics</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(316.195775 92.350481)">Unresolved: individual anatomy and</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(320.079884 101.532687)">co-varying whole-body kinematics</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(313.681322 110.714894)">confound the pelvis–load relationship</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(130.404875 170.17747)">THIS STUDY  —  one predictive musculoskeletal sprinter model</text>
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(100.786609 179.807589)">constrain ONLY the touchdown pelvis tilt, then re-optimize the whole-body</text>
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(113.394344 189.504895)">motion for maximum speed (speed held ~constant across conditions)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(105.981459 258.325138)">PRIMARY  (N=100)</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(85.540584 267.059432)">8 deterministic design points</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(86.029303 275.793726)">peak normalized fibre length</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(100.451991 284.528019)">lMtilde vs anterior tilt</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(142.2216 293.262313)"/>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(116.753991 301.996607)">→ Fig 2, Fig 3</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(258.105609 258.325138)">MECHANISM</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(235.525828 267.059432)">tree-rigid / femur-fixed /</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(235.223578 275.793726)">adaptive decomposition</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(231.606328 284.528019)">pelvis–femur coordination</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(282.168 293.262313)"/>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(268.419891 301.996607)">→ Fig 5</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(399.668681 258.325138)">EXTENSION</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(375.035306 267.059432)">speed vs load-surrogate</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(386.4294 275.793726)">Pareto exploration</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(381.809728 284.528019)">(3 warm-start paths)</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(422.1144 293.262313)"/>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(408.366291 301.996607)">→ Fig 7</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(111.988563 354.907956)">Baseline face validity: Nominal N=100 vs the subject's own experimental sprint  (→ Fig 4)</text>
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; fill: #111111" transform="translate(162.037531 363.418294)">Numerical operability, solution selection &amp; sensitivity  (→ Fig 6)</text>
+   </g>
+   <g id="text_8">
+    <text style="font-style: italic; font-size: 6.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="282.168" y="393.315175" transform="rotate(-0 282.168 393.315175)">Interpretation stays at correlation / mechanism WITHIN one model — not injury causation, not population inference.</text>
+   </g>
+  </g>
+  <g id="text_9">
+   <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="7.2" y="15.224297" transform="rotate(-0 7.2 15.224297)">Figure 1 | Research gap and validation chain</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf69ddf83c5">
+   <rect x="70.128" y="56.304" width="424.08" height="343.728"/>
+  </clipPath>
+ </defs>
+</svg>

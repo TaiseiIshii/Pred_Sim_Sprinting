@@ -1,0 +1,29 @@
+﻿group,metric,sim_value,unit,lit_low,lit_high,flag,references,note
+Performance,Top speed,11.8346,m/s,11.5,12.4,OK,Haralabidis2024; Weyand2010,Haralabidis optimal = 11.85 m/s (near-exact reproduction).
+Gait timing,Step frequency,4.7913,steps/s,4.4,5.0,OK,Weyand2000; MannHerman1985,
+Gait timing,Step length,2.47,m,2.0,2.6,OK,MannHerman1985; Nagahara2017,
+Gait timing,Ground-contact time,73.3724,ms,80,110,LOW,Weyand2000; ClarkWeyand2014,Slightly short -- consistent with the model's very high speed / short stance.
+Gait timing,Flight time,135.3384,ms,110,150,OK,Weyand2000,
+Gait timing,Duty factor,0.1758,-,0.16,0.24,OK,Weyand2010,contact / stride time.
+GRF,Peak vertical GRF,5.9121,BW,3.5,5.0,HIGH,Weyand2010; ClarkWeyand2014,At/above upper end: compliant sphere-contact + short stance inflate the PEAK; impulse (below) is the robust test.
+GRF,Vertical impulse / step,0.2086,BW.s,0.18,0.24,OK,Weyand2000,
+GRF,Vertical-impulse balance,0.9996,BW (mean),0.97,1.03,OK,physics,2 x step impulse / stride time must equal 1 BW. Hard physics check.
+GRF,Peak braking GRF,1.7254,BW,0.4,0.9,HIGH,ClarkWeyand2014; Nagahara2017,Peak horizontal runs high (touchdown contact transient); impulses are physiological.
+GRF,Peak propulsive GRF,0.8778,BW,0.3,0.9,OK,ClarkWeyand2014; Nagahara2017,
+GRF,Braking impulse,0.0195,BW.s,0.01,0.05,OK,Nagahara2017,
+GRF,Propulsive impulse,0.0309,BW.s,0.01,0.05,OK,Nagahara2017,prop >= brake at constant top speed because the model overcomes aerodynamic drag.
+Kinematics,Hip flex/ext ROM,88.3589,deg,70,95,OK,Schache2011,"peak flex 83, peak ext -5 deg."
+Kinematics,Knee flexion ROM,115.4531,deg,100,135,OK,Schache2011,"knee_angle<0 = flexion; swing peak flexion ~131 deg, never fully extends (min flex ~16 deg)."
+Kinematics,Ankle DF/PF ROM,47.0741,deg,40,60,OK,Schache2011,"DF 17, PF -30 deg."
+Kinematics,Pelvis tilt (mean),-7.4649,deg,-20,0,OK,Schache2011,more negative = more anterior tilt in this model; slight anterior tilt / forward lean.
+Kinematics,Lumbar angle (mean),-14.8073,deg,-25,0,OK,Schache2011,negative = forward trunk flexion (sprinters run with slight forward lean).
+Hamstring,semimem: peak norm. fascicle len,0.9782,L/Lo,0.9,1.2,OK,Thelen2005; Chumanov2007; Kalkhoven2023,"fascicles operate near optimal length (~1.0), only mildly on the descending limb."
+Hamstring,semiten: peak norm. fascicle len,1.1182,L/Lo,0.9,1.2,OK,Thelen2005; Chumanov2007; Kalkhoven2023,"fascicles operate near optimal length (~1.0), only mildly on the descending limb."
+Hamstring,bifemlh: peak norm. fascicle len,1.0255,L/Lo,0.9,1.2,OK,Thelen2005; Chumanov2007; Kalkhoven2023,"fascicles operate near optimal length (~1.0), only mildly on the descending limb."
+Hamstring,semimem: MTU excursion (p2p),18.0856,%,12,26,OK,Thelen2005; Schache2012,"peak-to-peak ~ +/-9-11% about mean, in line with ~8-12% hamstring MTU stretch."
+Hamstring,semiten: MTU excursion (p2p),21.3002,%,12,26,OK,Thelen2005; Schache2012,"peak-to-peak ~ +/-9-11% about mean, in line with ~8-12% hamstring MTU stretch."
+Hamstring,bifemlh: MTU excursion (p2p),17.4394,%,12,26,OK,Thelen2005; Schache2012,"peak-to-peak ~ +/-9-11% about mean, in line with ~8-12% hamstring MTU stretch."
+Hamstring,semimem: fascicle:MTU ratio,0.7052,-,0.5,1.0,OK,Kalkhoven2023,tendon/aponeurosis absorbs part of the MTU stretch (Kalkhoven decoupling).
+Hamstring,semiten: fascicle:MTU ratio,0.899,-,0.5,1.0,OK,Kalkhoven2023,tendon/aponeurosis absorbs part of the MTU stretch (Kalkhoven decoupling).
+Hamstring,bifemlh: fascicle:MTU ratio,0.8257,-,0.5,1.0,OK,Kalkhoven2023,tendon/aponeurosis absorbs part of the MTU stretch (Kalkhoven decoupling).
+Hamstring,Peak strain in SWING (all biartic),1.0,bool,1.0,1.0,OK,Thelen2005; Chumanov2007,classic late-swing hamstring lengthening paradigm.

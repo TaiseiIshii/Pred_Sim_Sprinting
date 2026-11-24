@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1166.4pt" height="662.4pt" viewBox="0 0 1166.4 662.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-09T03:29:08.060566</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 662.4 
+L 1166.4 662.4 
+L 1166.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 74.016 329.256 
+L 366.624 329.256 
+Q 395.424 329.256 395.424 313.056 
+L 395.424 93.384 
+Q 395.424 77.184 366.624 77.184 
+L 74.016 77.184 
+Q 45.216 77.184 45.216 93.384 
+L 45.216 313.056 
+Q 45.216 329.256 74.016 329.256 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #ffffff; stroke: #cccccc; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 87.84 151.056 
+L 386.208 151.056 
+Q 415.008 151.056 415.008 134.856 
+L 415.008 96.624 
+Q 415.008 80.424 386.208 80.424 
+L 87.84 80.424 
+Q 59.04 80.424 59.04 96.624 
+L 59.04 134.856 
+Q 59.04 151.056 87.84 151.056 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #f3f3f3; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 436.896 329.256 
+L 729.504 329.256 
+Q 758.304 329.256 758.304 313.056 
+L 758.304 93.384 
+Q 758.304 77.184 729.504 77.184 
+L 436.896 77.184 
+Q 408.096 77.184 408.096 93.384 
+L 408.096 313.056 
+Q 408.096 329.256 436.896 329.256 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #ffffff; stroke: #cccccc; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 450.72 151.056 
+L 749.088 151.056 
+Q 777.888 151.056 777.888 134.856 
+L 777.888 96.624 
+Q 777.888 80.424 749.088 80.424 
+L 450.72 80.424 
+Q 421.92 80.424 421.92 96.624 
+L 421.92 134.856 
+Q 421.92 151.056 450.72 151.056 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #e8f4ef; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 799.776 329.256 
+L 1092.384 329.256 
+Q 1121.184 329.256 1121.184 313.056 
+L 1121.184 93.384 
+Q 1121.184 77.184 1092.384 77.184 
+L 799.776 77.184 
+Q 770.976 77.184 770.976 93.384 
+L 770.976 313.056 
+Q 770.976 329.256 799.776 329.256 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #ffffff; stroke: #cccccc; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 813.6 151.056 
+L 1111.968 151.056 
+Q 1140.768 151.056 1140.768 134.856 
+L 1140.768 96.624 
+Q 1140.768 80.424 1111.968 80.424 
+L 813.6 80.424 
+Q 784.8 80.424 784.8 96.624 
+L 784.8 134.856 
+Q 784.8 151.056 813.6 151.056 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #e8f0fb; stroke: #333333; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 106.963791 152.231103 
+Q 161.115962 130.180587 184.047313 181.523987 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #c44e52; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 184.320219 175.268948 
+L 184.047313 181.523987 
+L 179.207025 177.552638 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #c44e52; stroke: #c44e52; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 469.843791 152.231103 
+Q 523.995962 130.180587 546.927313 181.523987 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #c44e52; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 547.200219 175.268948 
+L 546.927313 181.523987 
+L 542.087025 177.552638 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #c44e52; stroke: #c44e52; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 832.723791 152.231103 
+Q 886.875962 130.180587 909.807313 181.523987 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #c44e52; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 910.080219 175.268948 
+L 909.807313 181.523987 
+L 904.967025 177.552638 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #c44e52; stroke: #c44e52; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 114.336 316.296 
+L 326.304 316.296 
+Q 355.104 316.296 355.104 300.096 
+L 355.104 268.344 
+Q 355.104 252.144 326.304 252.144 
+L 114.336 252.144 
+Q 85.536 252.144 85.536 268.344 
+L 85.536 300.096 
+Q 85.536 316.296 114.336 316.296 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #fff7f7; stroke: #d9b0b0; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 477.216 316.296 
+L 689.184 316.296 
+Q 717.984 316.296 717.984 300.096 
+L 717.984 268.344 
+Q 717.984 252.144 689.184 252.144 
+L 477.216 252.144 
+Q 448.416 252.144 448.416 268.344 
+L 448.416 300.096 
+Q 448.416 316.296 477.216 316.296 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #f2fff9; stroke: #9ac9b0; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 840.096 316.296 
+L 1052.064 316.296 
+Q 1080.864 316.296 1080.864 300.096 
+L 1080.864 268.344 
+Q 1080.864 252.144 1052.064 252.144 
+L 840.096 252.144 
+Q 811.296 252.144 811.296 268.344 
+L 811.296 300.096 
+Q 811.296 316.296 840.096 316.296 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #f2f7ff; stroke: #9bbce0; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 383.603203 199.8 
+Q 397.265161 199.8 410.927119 199.8 
+L 410.927119 197.1 
+Q 415.424947 199.35 419.922774 201.6 
+Q 415.424947 203.85 410.927119 206.1 
+L 410.927119 203.4 
+Q 397.265161 203.4 383.603203 203.4 
+L 383.603203 199.8 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #777777; opacity: 0.55; stroke: #777777; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 746.483203 199.8 
+Q 760.145161 199.8 773.807119 199.8 
+L 773.807119 197.1 
+Q 778.304947 199.35 782.802774 201.6 
+Q 778.304947 203.85 773.807119 206.1 
+L 773.807119 203.4 
+Q 760.145161 203.4 746.483203 203.4 
+L 746.483203 199.8 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #777777; opacity: 0.55; stroke: #777777; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 74.016 588.456 
+L 562.464 588.456 
+Q 591.264 588.456 591.264 572.256 
+L 591.264 365.544 
+Q 591.264 349.344 562.464 349.344 
+L 74.016 349.344 
+Q 45.216 349.344 45.216 365.544 
+L 45.216 572.256 
+Q 45.216 588.456 74.016 588.456 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #fbfbfb; stroke: #cccccc; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 162.72 425.783077 
+L 208.8 425.783077 
+L 208.8 414.767077 
+L 162.72 414.767077 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 162.72 425.783077 
+L 162.72 425.783077 
+L 162.72 414.767077 
+L 162.72 414.767077 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #1b7837; opacity: 0.85"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 162.72 442.606154 
+L 208.8 442.606154 
+L 208.8 431.590154 
+L 162.72 431.590154 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 162.72 442.606154 
+L 162.72 442.606154 
+L 162.72 431.590154 
+L 162.72 431.590154 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #762a83; opacity: 0.85"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 162.72 459.429231 
+L 208.8 459.429231 
+L 208.8 448.413231 
+L 162.72 448.413231 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 162.72 459.429231 
+L 162.72 459.429231 
+L 162.72 448.413231 
+L 162.72 448.413231 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #2166ac; opacity: 0.85"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 162.72 476.252308 
+L 208.8 476.252308 
+L 208.8 465.236308 
+L 162.72 465.236308 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 162.72 476.252308 
+L 162.72 476.252308 
+L 162.72 465.236308 
+L 162.72 465.236308 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #666666; opacity: 0.85"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 416.16 425.783077 
+L 462.24 425.783077 
+L 462.24 414.767077 
+L 416.16 414.767077 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 416.16 425.783077 
+L 445.734982 425.783077 
+L 445.734982 414.767077 
+L 416.16 414.767077 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #1b7837; opacity: 0.85"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 416.16 442.606154 
+L 462.24 442.606154 
+L 462.24 431.590154 
+L 416.16 431.590154 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 416.16 442.606154 
+L 452.676305 442.606154 
+L 452.676305 431.590154 
+L 416.16 431.590154 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #762a83; opacity: 0.85"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 416.16 459.429231 
+L 462.24 459.429231 
+L 462.24 448.413231 
+L 416.16 448.413231 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 416.16 459.429231 
+L 450.024611 459.429231 
+L 450.024611 448.413231 
+L 416.16 448.413231 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #2166ac; opacity: 0.85"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 416.16 476.252308 
+L 462.24 476.252308 
+L 462.24 465.236308 
+L 416.16 465.236308 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 416.16 476.252308 
+L 416.16 476.252308 
+L 416.16 465.236308 
+L 416.16 465.236308 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #666666; opacity: 0.85"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 162.72 526.472308 
+L 208.8 526.472308 
+L 208.8 515.456308 
+L 162.72 515.456308 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 162.72 526.472308 
+L 197.108247 526.472308 
+L 197.108247 515.456308 
+L 162.72 515.456308 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #1b7837; opacity: 0.85"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 162.72 537.064615 
+L 208.8 537.064615 
+L 208.8 526.048615 
+L 162.72 526.048615 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 162.72 537.064615 
+L 206.010065 537.064615 
+L 206.010065 526.048615 
+L 162.72 526.048615 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #762a83; opacity: 0.85"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 162.72 547.656923 
+L 208.8 547.656923 
+L 208.8 536.640923 
+L 162.72 536.640923 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 162.72 547.656923 
+L 200.865862 547.656923 
+L 200.865862 536.640923 
+L 162.72 536.640923 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #2166ac; opacity: 0.85"/>
+   </g>
+   <g id="patch_39">
+    <path d="M 162.72 558.249231 
+L 208.8 558.249231 
+L 208.8 547.233231 
+L 162.72 547.233231 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #eeeeee"/>
+   </g>
+   <g id="patch_40">
+    <path d="M 162.72 558.249231 
+L 166.594909 558.249231 
+L 166.594909 547.233231 
+L 162.72 547.233231 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #666666; opacity: 0.85"/>
+   </g>
+   <g id="patch_41">
+    <path d="M 350.496 578.736 
+L 539.424 578.736 
+Q 568.224 578.736 568.224 562.536 
+L 568.224 524.304 
+Q 568.224 508.104 539.424 508.104 
+L 350.496 508.104 
+Q 321.696 508.104 321.696 524.304 
+L 321.696 562.536 
+Q 321.696 578.736 350.496 578.736 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #fff7e6; stroke: #d79f2a; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_42">
+    <path d="M 626.976 588.456 
+L 1092.384 588.456 
+Q 1121.184 588.456 1121.184 572.256 
+L 1121.184 365.544 
+Q 1121.184 349.344 1092.384 349.344 
+L 626.976 349.344 
+Q 598.176 349.344 598.176 365.544 
+L 598.176 572.256 
+Q 598.176 588.456 626.976 588.456 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #fbfbfb; stroke: #cccccc; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_43">
+    <path d="M 650.016 462.096 
+L 709.92 462.096 
+Q 738.72 462.096 738.72 445.896 
+L 738.72 404.424 
+Q 738.72 388.224 709.92 388.224 
+L 650.016 388.224 
+Q 621.216 388.224 621.216 404.424 
+L 621.216 445.896 
+Q 621.216 462.096 650.016 462.096 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #f6d6d6; stroke: #777777; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_44">
+    <path d="M 729.203906 425.16 
+Q 735.840578 425.16 740.800199 425.16 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #555555; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 736.000199 422.76 
+L 740.800199 425.16 
+L 736.000199 427.56 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #555555; stroke: #555555; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_45">
+    <path d="M 760.608 462.096 
+L 820.512 462.096 
+Q 849.312 462.096 849.312 445.896 
+L 849.312 404.424 
+Q 849.312 388.224 820.512 388.224 
+L 760.608 388.224 
+Q 731.808 388.224 731.808 404.424 
+L 731.808 445.896 
+Q 731.808 462.096 760.608 462.096 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #d6e6f5; stroke: #777777; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_46">
+    <path d="M 839.795906 425.16 
+Q 846.432578 425.16 851.392199 425.16 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #555555; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 846.592199 422.76 
+L 851.392199 425.16 
+L 846.592199 427.56 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #555555; stroke: #555555; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_47">
+    <path d="M 871.2 462.096 
+L 931.104 462.096 
+Q 959.904 462.096 959.904 445.896 
+L 959.904 404.424 
+Q 959.904 388.224 931.104 388.224 
+L 871.2 388.224 
+Q 842.4 388.224 842.4 404.424 
+L 842.4 445.896 
+Q 842.4 462.096 871.2 462.096 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #f6d6d6; stroke: #777777; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_48">
+    <path d="M 950.387906 425.16 
+Q 957.024578 425.16 961.984199 425.16 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #555555; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 957.184199 422.76 
+L 961.984199 425.16 
+L 957.184199 427.56 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #555555; stroke: #555555; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_49">
+    <path d="M 981.792 462.096 
+L 1041.696 462.096 
+Q 1070.496 462.096 1070.496 445.896 
+L 1070.496 404.424 
+Q 1070.496 388.224 1041.696 388.224 
+L 981.792 388.224 
+Q 952.992 388.224 952.992 404.424 
+L 952.992 445.896 
+Q 952.992 462.096 981.792 462.096 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #fdf2c8; stroke: #777777; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 24px; font-family: 'Noto Sans JP'; text-anchor: middle" x="583.2" y="36.493125" transform="rotate(-0 583.2 36.493125)">骨盤前傾がハムストリングを伸ばす「幾何学的な理由」</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 13px; font-family: 'Noto Sans JP'; text-anchor: middle; fill: #444444" x="583.2" y="59.583203" transform="rotate(-0 583.2 59.583203)">tree-rigid と femur-fixed は走動作ではなく、adaptive 解を解釈するための幾何学的反実仮想</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #333333" x="93.6" y="119.079844" transform="rotate(-0 93.6 119.079844)">1</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Noto Sans JP'; text-anchor: start" x="155.808" y="111.130703" transform="rotate(-0 155.808 111.130703)">tree-rigid</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #333333" x="155.808" y="129.049695" transform="rotate(-0 155.808 129.049695)">骨盤と大腿が一体で回る</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #333333" x="456.48" y="119.079844" transform="rotate(-0 456.48 119.079844)">2</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Noto Sans JP'; text-anchor: start" x="518.688" y="111.222109" transform="rotate(-0 518.688 111.222109)">femur-fixed</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #333333" x="518.688" y="129.049695" transform="rotate(-0 518.688 129.049695)">大腿を固定し股関節で補償</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #333333" x="819.36" y="119.079844" transform="rotate(-0 819.36 119.079844)">3</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Noto Sans JP'; text-anchor: start" x="881.568" y="111.222109" transform="rotate(-0 881.568 111.222109)">adaptive</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #333333" x="881.568" y="129.049695" transform="rotate(-0 881.568 129.049695)">実際に再最適化された走動作</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: middle" x="226.08" y="191.395469" transform="rotate(-0 226.08 191.395469)">骨盤</text>
+   </g>
+   <g id="line2d_1">
+    <path d="M 314.825659 247.557814 
+L 258.837191 315.09587 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #d95f02; stroke-width: 7; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #d95f02" x="321.391425" y="283.806764" transform="rotate(-0 321.391425 283.806764)">大腿</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end; fill: #b2182b" x="176.410822" y="271.790349" transform="rotate(-0 176.410822 271.790349)">ハム</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #c44e52" x="76.32" y="146.52" transform="rotate(-0 76.32 146.52)">前傾</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: middle" x="226.08" y="376.075469" transform="rotate(-0 226.08 376.075469)">大腿も一緒に回る</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: middle" x="588.96" y="191.395469" transform="rotate(-0 588.96 191.395469)">骨盤</text>
+   </g>
+   <g id="line2d_2">
+    <path d="M 677.705659 247.557814 
+L 677.705659 322.077814 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #1b9e77; stroke-width: 7; stroke-linecap: round"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #1b9e77" x="712.265659" y="287.297736" transform="rotate(-0 712.265659 287.297736)">大腿</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end; fill: #b2182b" x="567.285056" y="275.281321" transform="rotate(-0 567.285056 275.281321)">ハム</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #c44e52" x="439.2" y="146.52" transform="rotate(-0 439.2 146.52)">前傾</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: middle" x="588.96" y="376.075469" transform="rotate(-0 588.96 376.075469)">大腿は世界座標で固定</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: middle" x="951.84" y="191.395469" transform="rotate(-0 951.84 191.395469)">骨盤</text>
+   </g>
+   <g id="line2d_3">
+    <path d="M 1040.585659 247.557814 
+L 1026.737728 321.669585 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #2166ac; stroke-width: 7; stroke-linecap: round"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #2166ac" x="1068.221693" y="287.093622" transform="rotate(-0 1068.221693 287.093622)">大腿</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end; fill: #b2182b" x="923.241091" y="275.077207" transform="rotate(-0 923.241091 275.077207)">ハム</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #c44e52" x="802.08" y="146.52" transform="rotate(-0 802.08 146.52)">前傾</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: middle" x="951.84" y="376.075469" transform="rotate(-0 951.84 376.075469)">再最適化でほぼ固定寄り</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans JP'; fill: #8c2d04" transform="translate(182.59 280.673875)">終末遊脚 ΔMTU</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans JP'; fill: #8c2d04" transform="translate(171.045156 293.828156)">二関節ハム ≈ 0 mm</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans JP'; fill: #006d2c" transform="translate(545.47 280.673875)">終末遊脚 ΔMTU</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans JP'; fill: #006d2c" transform="translate(558.114844 293.828156)">+7〜9 mm</text>
+   </g>
+   <g id="text_29">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans JP'; fill: #084594" transform="translate(908.35 280.673875)">終末遊脚 ΔMTU</text>
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans JP'; fill: #084594" transform="translate(918.129688 293.828156)">+8〜10 mm</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Noto Sans JP'; text-anchor: start" x="82.08" y="379.397203" transform="rotate(-0 82.08 379.397203)">終末遊脚期の筋腱長変化（代表 −8° 条件）</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: start" x="82.08" y="390.189687" transform="rotate(-0 82.08 390.189687)">A tree-rigid</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #1b7837" x="82.08" y="423.078999" transform="rotate(-0 82.08 423.078999)">SM</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="423.078999" transform="rotate(-0 300.96 423.078999)">-0.0 mm</text>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #762a83" x="82.08" y="439.902076" transform="rotate(-0 82.08 439.902076)">ST</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="439.902076" transform="rotate(-0 300.96 439.902076)">+0.0 mm</text>
+   </g>
+   <g id="text_36">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #2166ac" x="82.08" y="456.725153" transform="rotate(-0 82.08 456.725153)">BFlh</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="456.725153" transform="rotate(-0 300.96 456.725153)">-0.0 mm</text>
+   </g>
+   <g id="text_38">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #666666" x="82.08" y="473.54823" transform="rotate(-0 82.08 473.54823)">BFsh</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="473.54823" transform="rotate(-0 300.96 473.54823)">-0.0 mm</text>
+   </g>
+   <g id="text_40">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: start" x="335.52" y="390.330312" transform="rotate(-0 335.52 390.330312)">B femur-fixed</text>
+   </g>
+   <g id="text_41">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #1b7837" x="335.52" y="423.078999" transform="rotate(-0 335.52 423.078999)">SM</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="554.4" y="423.078999" transform="rotate(-0 554.4 423.078999)">+7.1 mm</text>
+   </g>
+   <g id="text_43">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #762a83" x="335.52" y="439.902076" transform="rotate(-0 335.52 439.902076)">ST</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="554.4" y="439.902076" transform="rotate(-0 554.4 439.902076)">+8.7 mm</text>
+   </g>
+   <g id="text_45">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #2166ac" x="335.52" y="456.725153" transform="rotate(-0 335.52 456.725153)">BFlh</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="554.4" y="456.725153" transform="rotate(-0 554.4 456.725153)">+8.1 mm</text>
+   </g>
+   <g id="text_47">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #666666" x="335.52" y="473.54823" transform="rotate(-0 335.52 473.54823)">BFsh</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="554.4" y="473.54823" transform="rotate(-0 554.4 473.54823)">+0.0 mm</text>
+   </g>
+   <g id="text_49">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans JP'; text-anchor: start" x="82.08" y="497.250312" transform="rotate(-0 82.08 497.250312)">C adaptive</text>
+   </g>
+   <g id="text_50">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #1b7837" x="82.08" y="523.76823" transform="rotate(-0 82.08 523.76823)">SM</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="523.76823" transform="rotate(-0 300.96 523.76823)">+8.2 mm</text>
+   </g>
+   <g id="text_52">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #762a83" x="82.08" y="534.360537" transform="rotate(-0 82.08 534.360537)">ST</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="534.360537" transform="rotate(-0 300.96 534.360537)">+10.3 mm</text>
+   </g>
+   <g id="text_54">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #2166ac" x="82.08" y="544.952845" transform="rotate(-0 82.08 544.952845)">BFlh</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="544.952845" transform="rotate(-0 300.96 544.952845)">+9.1 mm</text>
+   </g>
+   <g id="text_56">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #666666" x="82.08" y="555.545153" transform="rotate(-0 82.08 555.545153)">BFsh</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 9px; font-family: 'Noto Sans JP'; text-anchor: end" x="300.96" y="555.545153" transform="rotate(-0 300.96 555.545153)">+0.9 mm</text>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans JP'; fill: #8a5a00" transform="translate(407.547187 539.286)">femur-fixed は</text>
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans JP'; fill: #8a5a00" transform="translate(376.465312 554.167125)">adaptive の約 86% を再現</text>
+   </g>
+   <g id="text_59">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Noto Sans JP'; text-anchor: start" x="635.04" y="379.397203" transform="rotate(-0 635.04 379.397203)">この図から言えること／言えないこと</text>
+   </g>
+   <g id="text_60">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(656.218 422.097438)">骨盤前傾を</text>
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(670.468 433.457953)">課す</text>
+   </g>
+   <g id="text_61">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(762.06 422.097438)">股関節屈曲で</text>
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(766.81 433.457953)">実現される</text>
+   </g>
+   <g id="text_62">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(867.902 422.097438)">二関節ハムだけ</text>
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(886.902 433.457953)">伸びる</text>
+   </g>
+   <g id="text_63">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(978.494 422.097438)">負荷代理指標が</text>
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans JP'" transform="translate(997.494 433.457953)">増える</text>
+   </g>
+   <g id="text_64">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #006d2c" x="640.8" y="477" transform="rotate(-0 640.8 477)">✓ 安全な主張</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 10.5px; font-family: 'Noto Sans JP'; text-anchor: start" x="658.08" y="499.68" transform="rotate(-0 658.08 499.68)">・骨盤前傾は、股関節をまたぐ幾何学的経路を通じて二関節ハムを伸ばす</text>
+   </g>
+   <g id="text_66">
+    <text style="font-size: 10.5px; font-family: 'Noto Sans JP'; text-anchor: start" x="658.08" y="517.824" transform="rotate(-0 658.08 517.824)">・BFsh（単関節）はほぼ変わらず、股関節横断性に特異的</text>
+   </g>
+   <g id="text_67">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans JP'; text-anchor: start; fill: #b2182b" x="640.8" y="543.744" transform="rotate(-0 640.8 543.744)">避ける主張</text>
+   </g>
+   <g id="text_68">
+    <text style="font-size: 10.5px; font-family: 'Noto Sans JP'; text-anchor: start" x="658.08" y="563.184" transform="rotate(-0 658.08 563.184)">・tree-rigid / femur-fixed が「走れる動作」だとは言わない</text>
+   </g>
+   <g id="text_69">
+    <text style="font-size: 10.5px; font-family: 'Noto Sans JP'; text-anchor: start" x="658.08" y="581.328" transform="rotate(-0 658.08 581.328)">・受傷確率を直接証明したとは言わない（負荷代理指標）</text>
+   </g>
+   <g id="text_70">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans JP'; text-anchor: middle; fill: #555555" x="583.2" y="628.6525" transform="rotate(-0 583.2 628.6525)">Data: boundary_condition_static.csv / boundary_condition_motion.csv, OpenSim MTU length; dynamic feasibility is asserted only for adaptive re-optimized solutions.</text>
+   </g>
+   <g id="line2d_4">
+    <path d="M 137.334341 201.002186 
+L 314.825659 247.557814 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #333333; stroke-width: 8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 500.214341 201.002186 
+L 677.705659 247.557814 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #333333; stroke-width: 8; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 863.094341 201.002186 
+L 1040.585659 247.557814 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #333333; stroke-width: 8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_50">
+    <path d="M 314.825659 255.333814 
+C 318.491826 255.333814 322.008331 254.514485 324.600703 253.056276 
+C 327.193075 251.598067 328.649659 249.620033 328.649659 247.557814 
+C 328.649659 245.495595 327.193075 243.517561 324.600703 242.059352 
+C 322.008331 240.601142 318.491826 239.781814 314.825659 239.781814 
+C 311.159491 239.781814 307.642986 240.601142 305.050614 242.059352 
+C 302.458242 243.517561 301.001659 245.495595 301.001659 247.557814 
+C 301.001659 249.620033 302.458242 251.598067 305.050614 253.056276 
+C 307.642986 254.514485 311.159491 255.333814 314.825659 255.333814 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #ffffff; stroke: #222222; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_51">
+    <path d="M 677.705659 255.333814 
+C 681.371826 255.333814 684.888331 254.514485 687.480703 253.056276 
+C 690.073075 251.598067 691.529659 249.620033 691.529659 247.557814 
+C 691.529659 245.495595 690.073075 243.517561 687.480703 242.059352 
+C 684.888331 240.601142 681.371826 239.781814 677.705659 239.781814 
+C 674.039491 239.781814 670.522986 240.601142 667.930614 242.059352 
+C 665.338242 243.517561 663.881659 245.495595 663.881659 247.557814 
+C 663.881659 249.620033 665.338242 251.598067 667.930614 253.056276 
+C 670.522986 254.514485 674.039491 255.333814 677.705659 255.333814 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #ffffff; stroke: #222222; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_52">
+    <path d="M 1040.585659 255.333814 
+C 1044.251826 255.333814 1047.768331 254.514485 1050.360703 253.056276 
+C 1052.953075 251.598067 1054.409659 249.620033 1054.409659 247.557814 
+C 1054.409659 245.495595 1052.953075 243.517561 1050.360703 242.059352 
+C 1047.768331 240.601142 1044.251826 239.781814 1040.585659 239.781814 
+C 1036.919491 239.781814 1033.402986 240.601142 1030.810614 242.059352 
+C 1028.218242 243.517561 1026.761659 245.495595 1026.761659 247.557814 
+C 1026.761659 249.620033 1028.218242 251.598067 1030.810614 253.056276 
+C 1033.402986 254.514485 1036.919491 255.333814 1040.585659 255.333814 
+z
+" clip-path="url(#pecbd9c5e47)" style="fill: #ffffff; stroke: #222222; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 186.144454 223.524984 
+L 258.837191 315.09587 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #b2182b; stroke-opacity: 0.85; stroke-width: 3.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 549.024454 223.524984 
+L 677.705659 322.077814 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #b2182b; stroke-opacity: 0.85; stroke-width: 3.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 911.904454 223.524984 
+L 1026.737728 321.669585 
+" clip-path="url(#pecbd9c5e47)" style="fill: none; stroke: #b2182b; stroke-opacity: 0.85; stroke-width: 3.5; stroke-linecap: square"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pecbd9c5e47">
+   <rect x="7.2" y="7.2" width="1152" height="648"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,17 @@
+mesh_N,requested_offset_deg,condition,solver_status,achieved_td_tilt_deg,achieved_mean_tilt_deg,achieved_speed_mps,speed_error_pct,constraint_residual
+50,-8.0,PelvisTDwide_m8,Solve_Succeeded,-15.4626,-14.7758,11.71561,-0.524,1.316420503264152e-08
+50,-6.0,PelvisTDwide_m6,Solve_Succeeded,-13.4626,-13.2171,11.74201,-0.3,2.3618438277135817e-08
+50,-4.0,PelvisTDwide_m4,Solve_Succeeded,-11.4626,-11.3587,11.76099,-0.139,1.875625821932262e-08
+50,-2.0,PelvisTD_m2,Solve_Succeeded,-9.4626,-8.3207,11.71864,-0.499,5.964968639482069e-09
+50,0.0,PelvisTD_p0,Solve_Succeeded,-7.4626,-7.2975,11.77604,-0.011,9.212190662832998e-09
+50,2.0,PelvisTD_p2,Solve_Succeeded,-5.4626,-5.3578,11.77344,-0.033,1.0219614255737937e-08
+50,4.0,PelvisTD_p4,Solve_Succeeded,-3.4626,-3.388,11.76008,-0.147,1.3338862153822203e-08
+50,6.0,PelvisTD_p6,Solve_Succeeded,-1.4626,-1.3371,11.74477,-0.277,2.403821993953018e-08
+100,-8.0,PelvisTDwide_m8,Solve_Succeeded,-15.987,-15.0125,11.74666,-0.743,7.870691654794036e-09
+100,-6.0,PelvisTDwide_m6,Solve_Succeeded,-13.987,-12.8611,11.76596,-0.58,1.3617862765459523e-08
+100,-4.0,PelvisTDwide_m4,Solve_Succeeded,-11.987,-11.1268,11.79676,-0.319,5.498850288481314e-08
+100,-2.0,PelvisTDwide_m2,Solve_Succeeded,-9.987,-9.2684,11.79784,-0.31,9.18383741823224e-08
+100,0.0,PelvisTDwide_p0,Solve_Succeeded,-7.987,-7.334,11.79239,-0.356,1.2990848159641083e-07
+100,2.0,PelvisTDwide_p2,Solve_Succeeded,-5.987,-5.5198,11.78729,-0.399,5.73819294244936e-08
+100,4.0,PelvisTDwide_p4,Solve_Succeeded,-3.987,-3.3965,11.76106,-0.621,2.2804000974506552e-08
+100,6.0,PelvisTDwide_p6,Solve_Succeeded,-1.987,-1.6827,11.7885,-0.389,6.543489298707718e-09

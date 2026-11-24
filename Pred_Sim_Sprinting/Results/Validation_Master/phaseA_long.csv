@@ -1,0 +1,1217 @@
+mesh_N,requested_offset_deg,achieved_td_tilt_deg,achieved_mean_tilt_deg,speed_mps,speed_error_pct,solver_status,muscle,biarticular,phase,metric,unit,label,value
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0576619469520643
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1759296540296489
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1030182847167487
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9428238720460685
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3287.210070381567
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,799.5085268001511
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2356.5530934705985
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1703.1116514550888
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,70.35817550196575
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,49.3609131771626
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,66.28272306528753
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.347630775977496
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3231.092381011019
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,838.0949836878843
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2400.673004199498
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1563.4338928089512
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1028.1468270654168
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,484.3664900752564
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1200.4574174196175
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,404.9350749764412
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,32.645242761109124
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,14.69356373260449
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,37.76893288887393
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,31.68577387838537
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,33.56799648469664
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,16.23713638267381
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,38.961941945273225
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,32.19167686526626
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2457940379139727
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2893336403168882
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1438156554197905
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8604569014782764
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,91.64494897427831
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.15505102572168
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,90.15505102572168
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.644948974278318
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,84.64494897427832
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.64494897427831
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.0
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,97.64494897427832
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0576619469520643
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1759296540296489
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1030182847167487
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9386974550618449
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,70.35817550196575
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,49.3609131771626
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,66.28272306528753
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.79157757448676
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3231.092381011019
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,838.0949836878843
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2400.673004199498
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1563.4338928089512
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.33018227370486825
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.6690851401271171
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.5224904875907757
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.8480504357042574
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,29.100028833530068
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,10.408785709112948
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,22.95420811500971
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,21.87424324500051
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0208249731307442
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.1335505179322873
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0510055988679086
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9428238720460685
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1580.485169674109
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,515.051471996186
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,996.1074991224261
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1472.11108353118
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1582.0335517320336
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,550.6105273461612
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1042.9208382016182
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1356.5140284635693
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-8.0,-15.4626,-14.7758,11.71561,-0.524,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.033556646381205
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0421343052895302
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1670276775495485
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.091814658735032
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9432057548412858
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3275.3739699038924
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,786.4079430561948
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2313.148415872992
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1712.310909796853
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,63.41634404343247
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,46.512489707216055
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,61.50076164502889
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.399868732732415
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3210.629556186124
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,824.0287806546312
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2356.239389242951
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1571.5415959808076
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1035.9356425445421
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,423.3852894243017
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1110.6937018372362
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,380.7442191646184
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,32.79366405731732
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.7443597558817
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,33.42725789820953
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,31.94718576225308
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,33.62863834525458
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,14.198010369400489
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.53990141409586
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,32.45311947984466
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2138706507628567
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.252878380716978
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1033750059114618
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8539105647562955
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,91.15505102572169
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.64494897427832
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.64494897427832
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.6449489742783205
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,84.15505102572169
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.64494897427832
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.0
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,97.64494897427832
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0421343052895302
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1670276775495485
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.091814658735032
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9386528575052561
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,63.41634404343247
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,46.512489707216055
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,61.50076164502889
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.785651017783554
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3210.629556186124
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,824.0287806546312
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2356.239389242951
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1571.5415959808076
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.33192898687949246
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.6016300611831055
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.48516425329053375
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.8312260055477368
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,28.299097287099748
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,8.743189003978639
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,19.592676255072995
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,21.51597963313826
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0006534480129363
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.1213900482149408
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0334456242046166
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9432057548412858
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1538.9490007486315
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,523.30238290989
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,976.1988083038432
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1478.5965121762913
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1532.984684944429
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,555.9074975864598
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1017.8226599749312
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1362.3919560784686
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-6.0,-13.4626,-13.2171,11.74201,-0.3,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.14091492455207
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0271074218212684
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1584341204529363
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0793472386910128
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9439182345112053
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3199.313773248523
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,802.030670658465
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2319.2097884678387
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1721.553268127758
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,57.349078892846975
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,43.91855308082351
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,56.58284950559642
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.49768545551133
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3134.026252034998
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,838.0356046848966
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2359.3047628407903
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1579.0445761302808
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,866.7476445422174
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,422.2772741334813
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1105.5214285886373
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,384.5788209330575
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,27.410373622924137
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.848398090498597
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,33.176322632397884
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,33.07677254087498
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,28.170156525320046
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,14.209339368923413
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.20659123451603
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,33.585294606193955
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2079893953509635
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2681180003336763
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.0813632929607415
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.838375459955809
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,90.64494897427832
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.15505102572169
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.15505102572169
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.644948974278316
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,84.15505102572169
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.15505102572169
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.64494897427832
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,97.15505102572169
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0271074218212684
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1584341204529363
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0793472386910128
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9389926192347946
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,57.349078892846975
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,43.91855308082351
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,56.58284950559642
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.830846312482546
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3134.026252034998
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,838.0356046848966
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2359.3047628407903
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1579.0445761302808
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2825729950526089
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.592668579667676
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.46113290792566086
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.8126756585798083
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,23.299373973086496
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,8.113520053693966
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.527079037332452
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,22.138357591401093
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9806679595490673
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.10917745827767
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.015178013298374
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9439182345112053
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1493.9917439814071
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,529.1354554327382
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,957.9139329088872
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1429.7323483449334
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1481.5490813474394
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,559.0063553494639
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,994.7466654124621
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1318.1036365129435
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-4.0,-11.4626,-11.3587,11.76099,-0.139,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.195959409080859
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0439921959742644
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1678930368128468
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0945516080277504
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9445645896565424
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3247.715767638654
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,794.259038255816
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2342.143406732251
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1707.9329438765185
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,64.20959136376214
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,46.78202599098733
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,62.63619729601
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.586826739356756
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3189.133628958356
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,832.0132207759873
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2384.744974900661
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1565.8515587359245
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,909.4673371416015
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,452.60706624835416
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1145.5673308973974
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,321.61325545061095
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,28.981096940927014
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,13.639790859771917
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,35.71357556724388
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,32.15279243552708
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,29.830484810326382
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,15.094296738927719
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,36.84077264802268
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,32.66010653469174
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2451211488587597
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.355899521850049
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1234910117966068
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8339621540588937
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.64494897427832
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.0
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.0
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,3.000000000000001
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,83.0
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.64494897427832
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,78.99999999999999
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.15505102572168
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0439921959742644
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1678930368128468
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0945516080277504
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9396524065810187
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,64.20959136376214
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,46.78202599098733
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,62.63619729601
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.918904552012105
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3189.133628958356
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,832.0132207759873
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2377.08008843457
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1565.8515587359245
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.29802194382746217
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.5345520103436915
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.39590287727721274
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7422233419589915
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,21.298278905170974
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,5.885576411008411
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,12.697629766714694
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,19.32217741318426
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9783542770976226
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.1043654181303655
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0093807327390507
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9445645896565424
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1272.6456130568095
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,480.36424362309634
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,825.770575339616
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1338.337699698515
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1267.2024977323563
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,509.3750860689614
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,861.2008147856941
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1235.2590892413182
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,-2.0,-9.4626,-8.3207,11.71864,-0.499,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.1198513363071658
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9857225616111991
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1344103150862241
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0455975376919673
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9441910109946708
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3114.8007043599523
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,828.2089263868158
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2296.35530877278
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1727.1988313536824
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,43.465668374934275
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,37.408052184480034
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,45.14989031998362
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.535258251461112
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3033.704290664763
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,858.6362371078684
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2329.3340980911053
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1583.4251982063188
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,782.5144043742744
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,421.8379209436317
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1047.2056067491158
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,414.0042120740462
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,25.1781048553476
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.702934548910719
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,30.610365164970002
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,33.5526058235659
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,25.74129729029287
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,13.864347370684941
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,31.428686603806547
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.06236127439683
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1597985570382754
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.3299877954847004
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.0788516649270923
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8266460803962397
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,90.15505102572166
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.00000000000001
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.15505102572168
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.64494897427832
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,84.15505102572168
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.0
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.15505102572168
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.64494897427831
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9857225616111991
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1344103150862241
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0455975376919673
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9393008290362113
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,43.465668374934275
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,37.408052184480034
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,45.14989031998362
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.87193319856343
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3033.704290664763
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,858.6362371078684
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2329.3340980911053
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1583.4251982063188
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.26439707019959935
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.5604180667473292
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.41759924672663795
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.8003576444445946
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,20.502789888777563
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,7.220451088483488
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,14.116717609559581
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,23.24281735903093
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9354320211943686
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0826390335806362
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9752556544061685
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9441910109946708
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1457.2519612820126
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,550.7958570292276
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,951.3895570106498
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1386.473704228535
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1430.1694835514918
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,575.3900947955925
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,979.5776774552544
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1278.8932950393762
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,0.0,-7.4626,-7.2975,11.77604,-0.011,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.152674535210996
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9695167628517553
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1253759314858771
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0325555394620562
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9443663920301446
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3089.275522199343
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,820.059499262005
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2296.9244554174234
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1730.9527121734716
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,38.990712840861235
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,35.217184890348356
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,41.37663633482134
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.559451710008997
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3000.825303093956
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,849.2107400875099
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2327.9070167272444
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1586.7452758930901
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,798.9097047656093
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,375.3890634567979
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1040.409525891936
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,416.8309411622219
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,25.448009456141346
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,11.250147015099365
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,30.700309543653088
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,33.792665191627165
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,25.957037643550763
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,12.346765949328475
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,31.450889991775412
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.3031262434575
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1342527607517117
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2092710706697472
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8948228837573181
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8153438730597585
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.64494897427832
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.64494897427832
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.0
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.9999999999999982
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,83.64494897427831
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.0
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.0
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.64494897427832
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9695167628517553
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1253759314858771
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0325555394620562
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9393891173208396
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,38.990712840861235
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,35.217184890348356
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,41.37663633482134
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.883718312370913
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3000.825303093956
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,849.2107400875099
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2327.9070167272444
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1586.7452758930901
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2726139612568551
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.5052958989191708
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.38874748686615185
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7867003023619378
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,19.757526822035825
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,6.213688667336721
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,12.4631726419424
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,23.318582499354566
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9157442859855996
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0709602330260697
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9571874278417882
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9443663920301446
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1420.539067652026
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,556.4519731015515
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,936.4171225731819
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1374.26580814451
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1388.6875955209716
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,579.0047892891208
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,961.3880557398508
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1267.827407699594
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,2.0,-5.4626,-5.3578,11.77344,-0.033,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.161235256786248
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9582007214682808
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1187812754606208
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0227165783877923
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9444365749523068
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3023.9541417596483
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,838.7632501066323
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2298.0799217950885
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1727.6405286414197
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,36.14059610017758
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,33.699248139224615
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,38.73946329524023
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.56914122955539
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,2934.7697951042196
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,866.1493355333852
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2326.9582737105798
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1583.7798688476548
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,701.2574346401444
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,393.60209235608374
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1029.1338168403393
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,418.86427696587504
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,22.09077991526578
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,11.838895182280334
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,30.859531676987686
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,33.744113534655995
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,22.565961718424717
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,12.878718137122458
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,31.559785223992005
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.2546829357952
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.125173968112272
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2264057767948733
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.0852322305627644
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8035407453570416
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.15505102572168
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.0
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.64494897427832
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.9999999999999996
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,83.64494897427832
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.64494897427832
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,79.64494897427832
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.64494897427832
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9582007214682808
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1187812754606208
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0227165783877923
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.939454918301228
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,36.14059610017758
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,33.699248139224615
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,38.73946329524023
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.89250623309569
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2934.7697951042196
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,866.1493355333852
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2326.9582737105798
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1583.7798688476548
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.24365337165082804
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.4977385926276082
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.36785148301772447
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7749280155220227
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.016517652024174
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,5.974919418305136
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,11.393095925556633
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,23.222874229928024
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.8986213061529201
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.060381800794833
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9405883817409129
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9444365749523068
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1366.7573675982615
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,556.9655420863968
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,911.4497652531468
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1365.2198781992677
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1332.0325477817469
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,577.811632578191
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,933.7879038388294
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1259.6275656269431
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,4.0,-3.4626,-3.388,11.76008,-0.147,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.1538088822929384
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9492291064078625
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1142618220512688
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0157985117432506
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9447205900969753
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,2998.9214449099572
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,819.0183916496221
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2289.400014571831
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1726.9722393450702
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,34.028901482224185
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,32.696851569969496
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,36.98608154587812
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.608398952915692
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,2906.915636909257
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,846.3103597923372
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2316.9866554798373
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1582.479399254733
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,685.9976725510153
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,335.7710154576542
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1017.3383066518485
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,404.49704958316636
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,21.485679900470362
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,9.880768131036453
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,30.553088856694007
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,34.17549005524522
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,21.927126601773388
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,10.890265050672918
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,31.22574348842434
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.68670891529521
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.0337499709680527
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1585218223139222
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.0606778584362142
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.7951035085027637
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.64494897427831
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,86.64494897427832
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.0
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.6449489742783174
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,83.15505102572168
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.6449489742783
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,79.15505102572168
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.15505102572166
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9492291064078625
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1142618220512688
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0157985117432506
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9397952559325071
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,34.028901482224185
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,32.696851569969496
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,36.98608154587812
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.938020942430672
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2906.915636909257
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,846.3103597923372
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2315.497428202426
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1582.479399254733
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.23966670772196252
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.43617549364189573
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.3338999257798415
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7571702799954042
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,15.456373225272014
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,4.825283728716222
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,9.695590696678323
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,22.67449485529966
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.8821835510432768
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.050196407079419
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9252700158813617
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9447205900969753
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1293.0914606897504
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,550.1812212157479
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,873.042058265127
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1319.1404434860985
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1256.9142766540958
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,569.5154480673959
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,893.1959172615168
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1217.856329320158
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+50,6.0,-1.4626,-1.3371,11.74477,-0.277,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.1054298039796602
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0675462548832308
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1811603769667165
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.112432556336523
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9417604923024254
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3311.7540769917964
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,789.8145023587933
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2320.2519561122995
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1682.971074665587
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,75.16642589080273
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,51.11518658879801
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,70.58652211784222
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.202869290078635
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3253.1464344274195
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,830.5214009590846
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2366.0052895072026
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1544.6036971899377
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1136.500560272316
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,480.3357814887257
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1265.1667560576057
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,319.44132016514
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,37.97083983884427
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,14.99255737608916
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,38.03385171442642
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,28.292485544900618
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,38.94608424415783
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,16.58129900764453
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,39.29592932605216
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,28.791397449182842
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.200585818191236
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4809322508154465
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1792121299063354
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8695690325621873
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,90.82247448713916
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.32247448713915
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.07752551286083
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.3224744871391585
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.5
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.32247448713915
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,79.32247448713916
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.32247448713915
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0675462548832308
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1811603769667165
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.112432556336523
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9388210037776941
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,75.16642589080273
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,51.11518658879801
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,70.58652211784222
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.808005133719238
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3253.1464344274195
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,830.5214009590846
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2365.471629328021
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1544.6036971899377
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.3635359386940904
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.6214297791509155
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.4561674020959893
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7826908265822141
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,28.49966362802226
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,7.657341688414837
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,15.820890553282831
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.713095193286573
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0253238302958554
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.1333748290393408
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0516942457498812
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9417604923024254
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1519.224723598426
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,498.12890628925487
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,960.2082265781614
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1454.2577240115818
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1524.8595137847763
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,533.6940686520907
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1007.2377215930003
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1340.3327420128828
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-8.0,-15.987,-15.0125,11.74666,-0.743,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.7357063935090089
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0498302553109706
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1712977707573076
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0986095377531597
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9413846828912773
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3271.3601088860723
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,793.1142423330054
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2305.737377029476
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1672.7427996629021
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,66.76713248205148
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,47.85773370653963
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,64.35824076635139
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.151954018429322
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3207.4025931198603
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,831.790619442945
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2349.121865858538
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1535.6229144073454
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1049.7823048151142
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,456.5991653436868
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1203.7463714997934
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,310.262072647033
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,35.024364586469815
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,14.162150901033785
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,35.79522496382505
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,27.68493741490157
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,35.888577088871074
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,15.647391507533596
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,36.94601150522253
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,28.182406758137123
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1829202554387543
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4639931684853256
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1885422297108446
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8640044197395016
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,90.32247448713915
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.57752551286084
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.5
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.0775255128608423
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.99999999999999
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.99999999999999
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,78.82247448713916
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.07752551286084
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0498302553109706
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1712977707573076
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0986095377531597
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9388948839459192
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,66.76713248205148
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,47.85773370653963
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,64.35824076635139
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.817835019722995
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3207.4025931198603
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,831.790619442945
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2343.946857711371
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1535.6229144073454
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.33980023890972233
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.550451421253529
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.39615851859391077
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7550629345494246
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,24.02114932321929
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,6.208319670139851
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,12.655223321029727
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,16.814440662094373
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.001805353149444
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.1193023722585564
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0311456111714097
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9413846828912773
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1476.050323747582
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,502.55807596307676
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,942.2890832136621
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1443.6607647527458
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1472.7071602960593
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,534.7463267316723
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,983.2771109277701
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1330.728054971571
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-6.0,-13.987,-12.8611,11.76596,-0.58,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.6226125161647614
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0280799443104947
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1590801727943312
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.080415468415218
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9422725789512183
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3221.189900424295
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,800.5241090211971
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2320.5146282652486
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1682.2635732804035
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,57.72361794623649
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,44.10843772801484
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,56.98839794013749
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.272453279621494
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3152.255994592239
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,836.6436038113327
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2359.295294353703
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1543.9264773678
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,935.3429714410174
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,441.5359836759928
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1193.5200212100563
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,322.0178904652441
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,32.13986822089202
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,13.534440816452252
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,35.09471891356162
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,28.800912704440975
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,32.882232359668194
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,14.906591114020117
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,36.115719020078984
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,29.301524837086333
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.161981569812054
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4298951664056956
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1564188014468368
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8564232878435899
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,90.32247448713916
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.82247448713915
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.5
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.322474487139157
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,83.00000000000001
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.49999999999999
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,79.0
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.32247448713916
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0280799443104947
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1590801727943312
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.080415468415218
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9391910418134183
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,57.72361794623649
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,44.10843772801484
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,56.98839794013749
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.85728798325633
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3152.255994592239
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,836.6436038113327
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2353.8288741023603
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1543.9264773678
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.31170210145265703
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.541061829395271
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.39872737974148753
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7696365731072424
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,23.116301443062646
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,6.3965506603778195
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,12.8294851720431
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.927967003433032
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9816935889817553
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.108778150347252
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0136410922677574
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9422725789512183
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1487.7761558529921
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,515.7890383900019
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,950.15339180878
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1401.767961514818
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1475.9488427332578
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,545.6160263116134
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,986.6090123342965
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1292.7565435229121
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-4.0,-11.987,-11.1268,11.79676,-0.319,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.7414109325946712
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0170414686971176
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1530896449433434
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0721460232950104
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9426987327869497
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3208.29086860372
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,807.4729790907547
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2304.235457712624
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1688.4904750814671
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,53.61181939311028
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,42.378705633509554
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,53.923022371331996
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.33054181831178
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3134.3573703186107
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,842.0590848678105
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2342.007581015912
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1549.4264236368076
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,955.191973273412
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,453.35307272257074
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1160.809776727733
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,305.89466726578894
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,32.76239161210339
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,13.73204951342751
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,33.61785485781093
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,28.742808319491658
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,33.45166609602005
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,15.051546252373072
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.58270242804482
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,29.244291510651365
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1425113831017661
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2557678821911964
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1741164842536023
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8477885950400571
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.57752551286083
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.32247448713916
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.82247448713915
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.3224744871391585
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.32247448713916
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.82247448713916
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,78.49999999999999
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.32247448713917
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0170414686971176
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1530896449433434
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0721460232950104
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9393256929405283
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,53.61181939311028
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,42.378705633509554
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,53.923022371331996
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.875251441707718
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3134.3573703186107
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,842.0590848678105
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2318.290887410898
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1549.4264236368076
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.3154626825552961
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.4800853727731886
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.3390620857348618
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.730576336426983
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,20.420642358142977
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,5.2809310988793925
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,10.00147121937608
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.610598500569296
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9637221502618067
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0975945436075611
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9965174698844695
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9426987327869497
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1426.9168951411089
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,516.4571549661852
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,920.3020735686156
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1383.0275153365426
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1410.6220167502463
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,543.9845409357989
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,952.8073547133517
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1275.7695061708391
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,-2.0,-9.987,-9.2684,11.79784,-0.31,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.8010127318078012
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9968054417710136
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1417005539937601
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0544545200881164
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9428785460458832
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3139.035303329923
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,809.260610782589
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2322.5649458973976
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1691.1734677351621
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,46.81657952528893
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,39.274727222166064
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,47.90593341877483
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.35510150764213
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3061.058190614357
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,841.6283260241293
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2356.306740898893
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1551.7301099886483
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,837.031997830215
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,428.1924882074851
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1166.9256106386447
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,329.4033159217479
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,28.797937173251654
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.735867518241832
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,33.999893371023596
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,29.494400797943925
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,29.397150361473415
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,13.955525493690164
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.854389672728075
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,29.99726241539094
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1336313903880704
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4096579300767775
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1584721348598774
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8368804897661413
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.57752551286083
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.07752551286084
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.57752551286083
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.32247448713916
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.82247448713915
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.0
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,78.5
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.32247448713915
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9968054417710136
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1417005539937601
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0544545200881164
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9395167103374442
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,46.81657952528893
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,39.274727222166064
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,47.90593341877483
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.90076225776967
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3061.058190614357
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,841.6283260241293
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2333.906678197451
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1551.7301099886483
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2878076735134817
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.46874001577383845
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.33979341863906204
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7433844135823456
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,18.86837379098515
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,5.141662455506708
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,9.88589577823465
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,18.58159247479137
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9424765648206929
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0856227409634582
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9775144864308128
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9428785460458832
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1411.713339400799
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,525.6578954539918
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,919.6120614507643
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1356.7657420232058
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1388.7091040721955
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,550.8750900655546
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,948.2303247986019
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1251.964065531181
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,0.0,-7.987,-7.334,11.79239,-0.356,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.7828778251222005
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9855209655632
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1355043732799297
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0460900218758529
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9436814007153893
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3139.6104196333854
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,815.6454876783419
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2313.735128609591
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1705.9093439085111
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,43.40697925621366
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,37.68243424388999
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,45.298902156147484
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.465118848603645
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3055.210542416854
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,846.594882347904
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2345.7707983402474
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1564.7853299797882
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,895.9629608202856
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,429.34103035723604
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1156.1202490287674
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,317.94794953667935
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,30.958720841870353
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.666003578781522
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,33.85225024007704
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,30.463502010698218
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,31.51248652546248
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,13.835587938509763
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.65803797650408
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,30.96917867997363
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1099822046393741
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4235030583523098
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1755870540806983
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8218375178473668
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,89.32247448713915
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,86.57752551286083
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,87.32247448713915
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.5775255128608405
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,82.32247448713915
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.57752551286083
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,77.99999999999999
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.57752551286082
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9855209655632
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1355043732799297
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0460900218758529
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9395965658565844
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,43.40697925621366
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,37.68243424388999
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,45.298902156147484
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.911436780610664
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3055.210542416854
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,846.594882347904
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2302.8984771030955
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1564.7853299797882
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2917683512357448
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.4190061194584254
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2957520530212737
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.7093832229649625
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.66446227187004
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,4.399663368631732
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,8.312802287519839
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,18.936029330014115
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9259981513372053
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0753132984511613
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9618636098488007
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9436814007153893
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1351.189688615601
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,523.9688626290732
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,884.0315446578288
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1345.898307845908
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1325.2908328895826
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,547.3647632734699
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,909.7983078369789
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1242.1128183486364
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,2.0,-5.987,-5.5198,11.78729,-0.399,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.9363043567589946
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9837859590476649
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1355746640720148
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.046515124984474
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9448142321230184
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3146.0907640841156
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,815.1365425391589
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2319.4900972837863
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1704.9030692395538
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,42.90512737896549
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,37.70013119026042
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,45.42792037835459
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.621358835594766
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3058.6129278534745
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,846.0143431019518
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2351.7063157286398
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1562.9271838338277
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,992.5869423982176
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,434.6648983539049
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1182.7314844478074
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,283.06406730303996
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,33.50170274652137
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.606176664630931
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,34.70421431465276
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,30.303445366920876
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,34.04442342949957
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,13.776434269043483
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,35.5085463431204
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,30.81231323369478
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.157521533514967
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4491137185736425
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.2201721107084897
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8167540342839845
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.32247448713915
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,85.82247448713915
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,86.32247448713915
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.822474487139159
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,80.82247448713915
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,79.5
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,77.0
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,95.99999999999999
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9837859590476649
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1355746640720148
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.046515124984474
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9400449939629207
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,42.90512737896549
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,37.70013119026042
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,45.42792037835459
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.97148515906348
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3058.6129278534745
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,846.0143431019518
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2242.9987229192943
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1562.9271838338277
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2619643603683214
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.33247773559309796
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.22640794868936084
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.6433569720506612
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,14.226559164295281
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,3.095470016362274
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,5.642955630797692
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,17.78342314837756
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9145181227400286
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.0683249154219492
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9505744959453056
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9448142321230184
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1268.737283033273
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,512.4901452481134
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,835.9048249408723
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1286.0702482354225
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1242.7162339220035
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,534.7537830063425
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,859.7918364977547
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1187.8762351528042
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,4.0,-3.987,-3.3965,11.76106,-0.621,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.042995515663217
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9730171745697556
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.1286301430125552
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,peak_lMtilde,-,peak normalized fiber length,1.0377800606244691
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,peak_lMtilde,-,peak normalized fiber length,0.9447763007265002
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,peak_active_force_N,N,peak active fiber force,3099.5185441154204
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,peak_active_force_N,N,peak active fiber force,816.1902682385662
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,peak_active_force_N,N,peak active fiber force,2302.060705549833
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,peak_active_force_N,N,peak active fiber force,1719.0737668150564
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,peak_passive_force_N,N,peak passive fiber force,39.916781393393826
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,peak_passive_force_N,N,peak passive fiber force,35.99118058383984
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,peak_passive_force_N,N,peak passive fiber force,42.84890341411044
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,peak_passive_force_N,N,peak passive fiber force,20.616108225799753
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,peak_tendon_force_N,N,peak tendon force,3012.7609666137996
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,peak_tendon_force_N,N,peak tendon force,845.7037319218651
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,peak_tendon_force_N,N,peak tendon force,2332.9791786288215
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,peak_tendon_force_N,N,peak tendon force,1575.5830474549446
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,853.8431916333316
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,414.14698820518834
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,1116.4350275432914
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,peak_act_ecc_power_W,W,peak active eccentric power,319.55657417191276
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_J,J,negative active fiber work,28.512715276806954
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_J,J,negative active fiber work,12.037056776190246
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_J,J,negative active fiber work,32.707699395110254
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_J,J,negative active fiber work,32.48932186961426
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,29.021082253064577
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,13.147501463042033
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,33.4728261503147
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,neg_fiber_work_tot_J,J,negative total fiber work,32.99821022017019
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1284886932557874
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.4244518022646522
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,1.1568615096944885
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,peak_leng_vel_mps,m/s,peak fiber lengthening velocity,0.8007343738837107
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,88.0
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,85.49999999999999
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,85.99999999999999
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,tPeak_lMtilde_pct,%stride,timing of peak fiber length,2.8224744871391594
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,81.57752551286083
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,79.57752551286084
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,77.32247448713916
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,full-stride,tPeak_Fce_pct,%stride,timing of peak active force,96.07752551286083
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9730171745697556
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.1286301430125552
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,1.0377800606244691
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_lMtilde,-,TS peak normalized fiber length,0.9398414723581492
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,39.916781393393826
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,35.99118058383984
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,42.84890341411044
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_passive_force_N,N,TS peak passive fiber force,19.944209617184047
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,3012.7609666137996
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,845.7037319218651
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,2255.5459058622346
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_tendon_force_N,N,TS peak tendon force,1575.5830474549446
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.2595055756115907
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.3434561274482484
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.24098685710890014
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,terminal-swing,TS_peak_leng_vel_mps,m/s,TS peak fiber lengthening velocity,0.6652465424467665
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,13.701912121814349
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,3.169075604524868
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,5.952770714275664
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,terminal-swing,TS_neg_fiber_work_J,J,TS negative active fiber work,19.76228778466838
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.896437161678528
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,1.056766219413288
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.934798034497539
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_lMtilde,-,ES peak normalized fiber length,0.9447763007265002
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1232.1739047379197
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,521.6915149229309
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,828.0075153956277
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_active_force_N,N,ES peak active fiber force,1312.9735431641561
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1202.5481497522749
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,542.1012212483968
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,849.4936691152404
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,early-stance,ES_peak_tendon_force_N,N,ES peak tendon force,1212.2657830818282
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semimem,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,semiten,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemlh,True,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,0.0
+100,6.0,-1.987,-1.6827,11.7885,-0.389,Solve_Succeeded,bifemsh,False,early-stance,ES_neg_fiber_work_J,J,ES negative active fiber work,1.0961680564657148
