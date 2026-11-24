@@ -1,0 +1,29 @@
+# GitHub Pages configuration
+# This file disables Jekyll processing and tells Pages to use the GitHub Actions artifact
+#
+# CRITICAL: When using GitHub Actions with upload-pages-artifact, set:
+# - In GitHub Settings → Pages:
+#   - Source: GitHub Actions
+# This _config.yml file helps ensure correct behavior if Source is not properly set.
+
+# Disable Jekyll processing entirely
+# GitHub Actions deploys pre-built content to Pages via upload-pages-artifact
+# The site/ folder contains the final HTML, so Jekyll should not process it
+skip_some_files:
+  - site/
+  - build_site.py
+  - content_ja.py
+
+# Explicitly set the source to avoid confusion
+source: .
+
+# Output directory (not used when using GitHub Actions)
+# destination: _site
+
+# GitHub Pages configuration
+# When GitHub Actions is used as source, this repository's Jekyll will not run
+url: "https://taiseiishii.github.io/Pred_Sim_Sprinting"
+baseurl: "/Pred_Sim_Sprinting"
+
+# Theme (for fallback, though GitHub Actions bypasses this)
+theme: jekyll-default-theme
