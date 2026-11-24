@@ -1,0 +1,37 @@
+IMAGEIO FFMPEG_WRITER WARNING: input image is not divisible by macro_block_size=16, resizing from (1680, 950) to (1680, 960) to ensure video compatibility with most codecs and players. To prevent resizing, make your input image divisible by the macro_block_size or set the macro_block_size to 1 (risking incompatibility).
+[vost#0:0/libx264 @ 00000204e3531780] Multiple -pix_fmt options specified for stream 0, only the last option '-pix_fmt yuv420p' will be used.
+IMAGEIO FFMPEG_WRITER WARNING: input image is not divisible by macro_block_size=16, resizing from (1092, 950) to (1104, 960) to ensure video compatibility with most codecs and players. To prevent resizing, make your input image divisible by the macro_block_size or set the macro_block_size to 1 (risking incompatibility).
+[vost#0:0/libx264 @ 00000193cdf81780] Multiple -pix_fmt options specified for stream 0, only the last option '-pix_fmt yuv420p' will be used.
+======================================================================
+  骨盤前後傾オフセット × 3D人体(SMPL風) 可視化
+======================================================================
+  [OK] PelvisShift_m06    mean tilt -13.11 deg
+  [OK] PelvisShift_p00    mean tilt  -7.27 deg
+  [OK] PelvisShift_p06    mean tilt  -1.55 deg
+
+--- 出力生成 ---
+  [OK] pelvic_shift_smpl_hero.png
+  pelvic_shift_smpl_sidebyside.mp4: 120 フレーム生成中 ...
+    15/120
+    30/120
+    45/120
+    60/120
+    75/120
+    90/120
+    105/120
+    120/120
+  [OK] pelvic_shift_smpl_sidebyside.mp4  (2.1 MB)
+  pelvic_shift_smpl_overlay.mp4: 120 フレーム生成中 ...
+    15/120
+    30/120
+    45/120
+    60/120
+    75/120
+    90/120
+    105/120
+    120/120
+  [OK] pelvic_shift_smpl_overlay.mp4  (2.8 MB)
+
+======================================================================
+  完了! 出力先: C:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicShift_Study
+======================================================================

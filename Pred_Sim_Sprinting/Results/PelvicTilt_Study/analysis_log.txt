@@ -1,0 +1,4 @@
+=== analyze_pelvic_tilt 05-Jun-2026 15:04:15 ===
+Wrote C:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicTilt_Study\pelvic_tilt_summary.csv
+Figures written to C:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicTilt_Study
+=== analysis done ===

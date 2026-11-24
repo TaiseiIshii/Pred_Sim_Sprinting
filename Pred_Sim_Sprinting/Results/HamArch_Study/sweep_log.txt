@@ -1,0 +1,20 @@
+
+===== Hamstring-architecture sweep started 23-Jul-2026 11:36:58 (N=50) =====
+Conditions: _HamFascicle_p00
+23-Jul-2026 11:39:50 | _HamFascicle_p00       | COMPLETED |    2.9 min | 
+
+===== Hamstring-architecture sweep started 23-Jul-2026 11:41:48 (N=50) =====
+Conditions: _HamFascicle_m30, _HamFascicle_m20, _HamFascicle_m10, _HamFascicle_p10, _HamFascicle_p20
+23-Jul-2026 12:01:12 | _HamFascicle_m30       | COMPLETED |   19.4 min | 
+23-Jul-2026 12:25:06 | _HamFascicle_m20       | COMPLETED |   23.9 min | 
+23-Jul-2026 12:44:28 | _HamFascicle_m10       | COMPLETED |   19.4 min | 
+23-Jul-2026 12:58:20 | _HamFascicle_p10       | COMPLETED |   13.9 min | 
+23-Jul-2026 13:19:37 | _HamFascicle_p20       | COMPLETED |   21.3 min | 
+
+===== Hamstring-architecture sweep started 23-Jul-2026 13:24:38 (N=50) =====
+Conditions: _HamStrength_m30, _HamStrength_m20, _HamStrength_m10, _HamStrength_p10, _HamStrength_p20
+23-Jul-2026 13:39:21 | _HamStrength_m30       | COMPLETED |   14.7 min | 
+23-Jul-2026 13:57:31 | _HamStrength_m20       | COMPLETED |   18.2 min | 
+23-Jul-2026 14:27:41 | _HamStrength_m10       | COMPLETED |   30.2 min | 
+23-Jul-2026 14:46:46 | _HamStrength_p10       | COMPLETED |   19.1 min | 
+23-Jul-2026 15:02:24 | _HamStrength_p20       | COMPLETED |   15.6 min | 

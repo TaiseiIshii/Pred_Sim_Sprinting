@@ -87,8 +87,8 @@ Pred_Sim_Sprinting/
 ├── CollocationScheme/       # Direct collocation implementation
 ├── UtilityFunctions/        # Signal processing, I/O, stride generation
 ├── OpenSimModel/            # Scaled OpenSim musculoskeletal model (.osim)
-├── Results/                 # Simulation outputs (not tracked in git)
-├── Videos/                  # Visualization outputs (not tracked in git)
+├── Results/                 # Simulation outputs (tracked for reproducibility)
+├── Videos/                  # Visualization outputs (tracked for reproducibility)
 ├── analysis/                # Python post-processing & visualization scripts
 │   └── validation/          # Reproducible metrics engine + unit/integration tests
 ├── docs/                    # Setup/troubleshooting + validation & thesis governance docs

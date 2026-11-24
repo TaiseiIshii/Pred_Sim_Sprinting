@@ -1,0 +1,66 @@
+
+===== Pelvic TD (TDPT) sweep started 23-Jun-2026 18:06:00 =====
+Conditions: _PelvisTD_m6, _PelvisTD_p6
+24-Jun-2026 11:31:05 | _PelvisTD_m6         | COMPLETED | 1045.2 min | 
+24-Jun-2026 11:58:52 | _PelvisTD_p6         | COMPLETED |   27.8 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 12:11:10 =====
+Conditions: _PelvisTD_p0, _PelvisTD_m2, _PelvisTD_m4, _PelvisTD_p2, _PelvisTD_p4
+24-Jun-2026 12:41:29 | _PelvisTD_p0         | COMPLETED |   30.3 min | 
+24-Jun-2026 13:05:46 | _PelvisTD_m2         | COMPLETED |   24.3 min | 
+24-Jun-2026 13:12:58 | _PelvisTD_m4         | COMPLETED |    7.2 min | 
+24-Jun-2026 13:38:16 | _PelvisTD_p2         | COMPLETED |   25.3 min | 
+24-Jun-2026 14:06:27 | _PelvisTD_p4         | COMPLETED |   28.2 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 14:32:53 =====
+Conditions: _PelvisTD_m6
+24-Jun-2026 14:51:20 | _PelvisTD_m6         | COMPLETED |   18.5 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 15:25:10 =====
+Conditions: _PelvisTDwide_m4, _PelvisTDwide_m6, _PelvisTDwide_m8
+24-Jun-2026 15:41:25 | _PelvisTDwide_m4     | COMPLETED |   16.2 min | 
+24-Jun-2026 15:45:49 | _PelvisTDwide_m6     | COMPLETED |    4.4 min | 
+24-Jun-2026 15:49:31 | _PelvisTDwide_m8     | COMPLETED |    3.7 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 15:55:47 =====
+Conditions: _PelvisTDwide_m4, _PelvisTDwide_m6, _PelvisTDwide_m8
+24-Jun-2026 16:35:11 | _PelvisTDwide_m4     | COMPLETED |   39.4 min | 
+24-Jun-2026 16:57:07 | _PelvisTDwide_m6     | COMPLETED |   21.9 min | 
+24-Jun-2026 17:39:58 | _PelvisTDwide_m8     | COMPLETED |   42.8 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 17:44:38 =====
+Conditions: _PelvisTDwide_m2, _PelvisTDwide_p0
+24-Jun-2026 18:09:32 | _PelvisTDwide_m2     | COMPLETED |   24.9 min | 
+24-Jun-2026 18:32:29 | _PelvisTDwide_p0     | COMPLETED |   22.9 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 18:56:59 (N=100) =====
+Conditions: _PelvisTDwide_m8, _PelvisTDwide_m6, _PelvisTDwide_m4, _PelvisTDwide_m2, _PelvisTDwide_p0, _PelvisTDwide_p2, _PelvisTDwide_p4, _PelvisTDwide_p6
+24-Jun-2026 21:57:52 | _PelvisTDwide_m8     | COMPLETED |  180.9 min | 
+
+===== Pelvic TD (TDPT) sweep started 24-Jun-2026 22:06:53 (N=100) =====
+Conditions: _PelvisTDwide_m8, _PelvisTDwide_m6, _PelvisTDwide_m4, _PelvisTDwide_m2, _PelvisTDwide_p0, _PelvisTDwide_p2, _PelvisTDwide_p4, _PelvisTDwide_p6
+24-Jun-2026 23:17:51 | _PelvisTDwide_m8     | COMPLETED |   71.0 min | 
+25-Jun-2026 00:01:43 | _PelvisTDwide_m6     | COMPLETED |   43.9 min | 
+25-Jun-2026 01:05:18 | _PelvisTDwide_m4     | COMPLETED |   63.6 min | 
+25-Jun-2026 02:31:12 | _PelvisTDwide_m2     | COMPLETED |   85.9 min | 
+25-Jun-2026 03:16:00 | _PelvisTDwide_p0     | COMPLETED |   44.8 min | 
+25-Jun-2026 04:33:21 | _PelvisTDwide_p2     | COMPLETED |   77.3 min | 
+25-Jun-2026 05:43:13 | _PelvisTDwide_p4     | COMPLETED |   69.9 min | 
+25-Jun-2026 07:24:07 | _PelvisTDwide_p6     | COMPLETED |  100.9 min | 
+
+===== Pelvic TD (TDPT) sweep started 19-Aug-2026 17:53:20 (N=50) =====
+Conditions: _PelvisTDwide_p2, _PelvisTDwide_p4, _PelvisTDwide_p6
+19-Aug-2026 17:53:21 | _PelvisTDwide_p2     | ERRORED   |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+19-Aug-2026 17:53:21 | _PelvisTDwide_p4     | ERRORED   |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+19-Aug-2026 17:53:21 | _PelvisTDwide_p6     | ERRORED   |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+
+===== Pelvic TD (TDPT) sweep started 19-Aug-2026 17:57:44 (N=50) =====
+Conditions: _PelvisTDwide_p2, _PelvisTDwide_p4, _PelvisTDwide_p6
+19-Aug-2026 18:20:13 | _PelvisTDwide_p2     | COMPLETED |   22.5 min | 
+19-Aug-2026 18:47:04 | _PelvisTDwide_p4     | COMPLETED |   26.9 min | 
+19-Aug-2026 19:20:06 | _PelvisTDwide_p6     | COMPLETED |   33.0 min | 
+
+===== Pelvic TD (TDPT) sweep started 19-Aug-2026 19:30:56 (N=50) =====
+Conditions: _HamTendon_m10, _HamTendon_p10
+19-Aug-2026 19:57:25 | _HamTendon_m10       | COMPLETED |   26.5 min | 
+19-Aug-2026 21:27:53 | _HamTendon_p10       | COMPLETED |   90.5 min | 

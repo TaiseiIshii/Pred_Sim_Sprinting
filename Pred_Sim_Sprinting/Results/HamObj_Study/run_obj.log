@@ -1,0 +1,16 @@
+
+===== Ham-objective sweep started 15-Aug-2026 19:58:09 (N=50) =====
+Conditions: _HamEcc_w0000, _HamEcc_w0100, _HamEcc_w0500, _HamEcc_w2000, _HamEcc_w8000
+15-Aug-2026 20:35:48 | _HamEcc_w0000          | Solve_Succeeded        |   37.6 min | 
+15-Aug-2026 21:05:51 | _HamEcc_w0100          | Solve_Succeeded        |   30.1 min | 
+15-Aug-2026 21:52:27 | _HamEcc_w0500          | Solve_Succeeded        |   46.6 min | 
+15-Aug-2026 23:50:56 | _HamEcc_w2000          | Solve_Succeeded        |  118.5 min | 
+16-Aug-2026 02:16:27 | _HamEcc_w8000          | Solve_Succeeded        |  145.5 min | 
+
+===== Ham-objective sweep started 16-Aug-2026 07:48:28 (N=50) =====
+Conditions: _HamCompEQ_w0100, _HamCompEQ_w0500, _HamCompEQ_w2000, _HamPasv_w0200, _HamPasv_w0800
+16-Aug-2026 08:45:24 | _HamCompEQ_w0100       | Solve_Succeeded        |   56.9 min | 
+16-Aug-2026 10:00:49 | _HamCompEQ_w0500       | Solve_Succeeded        |   75.4 min | 
+16-Aug-2026 10:50:12 | _HamCompEQ_w2000       | Solve_Succeeded        |   49.4 min | 
+16-Aug-2026 14:01:11 | _HamPasv_w0200         | Solve_Succeeded        |  191.0 min | 
+16-Aug-2026 14:27:21 | _HamPasv_w0800         | Solve_Succeeded        |   26.2 min | 

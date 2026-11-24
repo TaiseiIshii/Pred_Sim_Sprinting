@@ -1,0 +1,28 @@
+
+===== Ham-Pareto sweep started 23-Jul-2026 16:57:01 (N=50) =====
+Conditions: _HamPareto_Nom_w0000
+23-Jul-2026 16:59:52 | _HamPareto_Nom_w0000     | COMPLETED |    2.9 min | 
+
+===== Ham-Pareto sweep started 23-Jul-2026 17:02:55 (N=50) =====
+Conditions: _HamPareto_Nom_w0200, _HamPareto_Nom_w0800
+23-Jul-2026 17:04:04 | _HamPareto_Nom_w0200     | COMPLETED |    1.1 min | 
+23-Jul-2026 17:04:40 | _HamPareto_Nom_w0800     | COMPLETED |    0.6 min | 
+
+===== Ham-Pareto sweep started 23-Jul-2026 17:09:16 (N=50) =====
+Conditions: _HamPareto_Nom_w0050, _HamPareto_Nom_w0100, _HamPareto_Nom_w0200, _HamPareto_Nom_w0400, _HamPareto_Nom_w0800, _HamPareto_Nom_w1600, _HamPareto_Nom_w3200
+23-Jul-2026 17:25:33 | _HamPareto_Nom_w0050     | COMPLETED |   16.3 min | 
+23-Jul-2026 17:43:09 | _HamPareto_Nom_w0100     | COMPLETED |   17.6 min | 
+23-Jul-2026 18:04:00 | _HamPareto_Nom_w0200     | COMPLETED |   20.8 min | 
+23-Jul-2026 18:25:36 | _HamPareto_Nom_w0400     | COMPLETED |   21.6 min | 
+23-Jul-2026 18:40:27 | _HamPareto_Nom_w0800     | COMPLETED |   14.8 min | 
+23-Jul-2026 18:54:06 | _HamPareto_Nom_w1600     | COMPLETED |   13.6 min | 
+23-Jul-2026 19:06:03 | _HamPareto_Nom_w3200     | COMPLETED |   12.0 min | 
+
+===== Ham-Pareto sweep started 23-Jul-2026 19:09:00 (N=50) =====
+Conditions: _HamPareto_Sh_w0200, _HamPareto_Sh_w0800, _HamPareto_Sh_w3200, _HamPareto_Wk_w0200, _HamPareto_Wk_w0800, _HamPareto_Wk_w3200
+23-Jul-2026 19:31:17 | _HamPareto_Sh_w0200      | COMPLETED |   22.3 min | 
+23-Jul-2026 19:57:47 | _HamPareto_Sh_w0800      | COMPLETED |   26.5 min | 
+23-Jul-2026 20:27:28 | _HamPareto_Sh_w3200      | COMPLETED |   29.7 min | 
+23-Jul-2026 20:44:52 | _HamPareto_Wk_w0200      | COMPLETED |   17.4 min | 
+23-Jul-2026 21:03:15 | _HamPareto_Wk_w0800      | COMPLETED |   18.4 min | 
+23-Jul-2026 21:19:40 | _HamPareto_Wk_w3200      | COMPLETED |   16.4 min | 

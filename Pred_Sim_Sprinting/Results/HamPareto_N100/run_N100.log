@@ -1,0 +1,17 @@
+
+===== N=100 Pareto multi-start started 15-Aug-2026 19:21:46 =====
+15-Aug-2026 19:21:47 | w0000_F   | _HamPareto_Nom_w0000       | ERRORED                |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+15-Aug-2026 19:21:47 | w0050_F   | _HamPareto_Nom_w0050       | ERRORED                |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+15-Aug-2026 19:21:48 | w0100_F   | _HamPareto_Nom_w0100       | ERRORED                |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+15-Aug-2026 19:21:48 | w0200_F   | _HamPareto_Nom_w0200       | ERRORED                |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+15-Aug-2026 19:21:48 | w0100_B   | _HamPareto_Nom_w0100       | ERRORED                |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+15-Aug-2026 19:21:48 | w0200_B   | _HamPareto_Nom_w0200       | ERRORED                |    0.0 min | 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+
+===== N=100 Pareto multi-start started 15-Aug-2026 19:24:17 =====
+15-Aug-2026 19:53:27 | w0000_F   | _HamPareto_Nom_w0000       | Solve_Succeeded        |   29.2 min | 
+15-Aug-2026 21:57:40 | w0050_F   | _HamPareto_Nom_w0050       | Solve_Succeeded        |  124.2 min | 
+15-Aug-2026 23:30:43 | w0100_F   | _HamPareto_Nom_w0100       | Solve_Succeeded        |   93.1 min | 
+16-Aug-2026 02:26:51 | w0200_F   | _HamPareto_Nom_w0200       | Solve_Succeeded        |  176.1 min | 
+16-Aug-2026 03:57:47 | w0100_B   | _HamPareto_Nom_w0100       | Solve_Succeeded        |   90.9 min | 
+16-Aug-2026 05:49:47 | w0200_B   | _HamPareto_Nom_w0200       | Solve_Succeeded        |  112.0 min | 
+16-Aug-2026 07:40:00 | w0100_C   | _HamPareto_Nom_w0100       | Solve_Succeeded        |  110.2 min | 

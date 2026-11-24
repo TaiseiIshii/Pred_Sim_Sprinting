@@ -1,0 +1,12 @@
+=== analyze_pelvic_shift 06-Jun-2026 07:42:43 ===
+Wrote c:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicShift_Study\pelvic_shift_summary.csv
+Wrote c:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicShift_Study\pelvic_shift_slopes.csv
+行列の次元は一致しなければなりません。
+
+エラー: analyze_pelvic_shift (line 210)
+plot(offs,realMean(offs==0)+offs,'k--');
+=== analyze_pelvic_shift 06-Jun-2026 07:44:43 ===
+Wrote c:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicShift_Study\pelvic_shift_summary.csv
+Wrote c:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicShift_Study\pelvic_shift_slopes.csv
+Figures written to c:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicShift_Study
+=== analysis done ===

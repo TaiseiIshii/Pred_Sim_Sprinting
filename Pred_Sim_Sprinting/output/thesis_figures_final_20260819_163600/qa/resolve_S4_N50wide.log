@@ -1,0 +1,53 @@
+
+############################################################
+### [1/3] Running condition _PelvisTDwide_p2
+############################################################
+[mesh] Options.N overridden by caller -> N = 50
+[PelvisTD] simulation_type=_PelvisTDwide_p2 -> touchdown offset=+2.0 deg, init-pose window=WIDE(+/-25deg)
+[PelvisTD] Warm-start (primal) from N=50 Nominal: pred_sprinting_data_04-February-2026__12-27-31___Nominal.mat
+[PelvisTD] nominalTD pelvis_tilt = -0.130246 rad (-7.463 deg); target touchdown tilt = -0.095340 rad (-5.463 deg)
+Loading external DLL functions...
+[WARNING] Failed to load F_cont_v21: 関数 'external' (タイプ'char' の入力引数) が未定義です。
+This may affect simulation functionality.
+[WARNING] Failed to load F_cont_ana21: 関数 'external' (タイプ'char' の入力引数) が未定義です。
+### ERROR in _PelvisTDwide_p2: 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+###   CollocationScheme : line 16
+###   main_pred_sim_sprinting : line 798
+###   run_pelvic_td_sweep : line 70
+### _PelvisTDwide_p2 ERRORED in 0.0 min
+
+############################################################
+### [2/3] Running condition _PelvisTDwide_p4
+############################################################
+[mesh] Options.N overridden by caller -> N = 50
+[PelvisTD] simulation_type=_PelvisTDwide_p4 -> touchdown offset=+4.0 deg, init-pose window=WIDE(+/-25deg)
+[PelvisTD] Warm-start (primal) from N=50 Nominal: pred_sprinting_data_04-February-2026__12-27-31___Nominal.mat
+[PelvisTD] nominalTD pelvis_tilt = -0.130246 rad (-7.463 deg); target touchdown tilt = -0.060433 rad (-3.463 deg)
+Loading external DLL functions...
+[WARNING] Failed to load F_cont_v21: 関数 'external' (タイプ'char' の入力引数) が未定義です。
+This may affect simulation functionality.
+[WARNING] Failed to load F_cont_ana21: 関数 'external' (タイプ'char' の入力引数) が未定義です。
+### ERROR in _PelvisTDwide_p4: 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+###   CollocationScheme : line 16
+###   main_pred_sim_sprinting : line 798
+###   run_pelvic_td_sweep : line 70
+### _PelvisTDwide_p4 ERRORED in 0.0 min
+
+############################################################
+### [3/3] Running condition _PelvisTDwide_p6
+############################################################
+[mesh] Options.N overridden by caller -> N = 50
+[PelvisTD] simulation_type=_PelvisTDwide_p6 -> touchdown offset=+6.0 deg, init-pose window=WIDE(+/-25deg)
+[PelvisTD] Warm-start (primal) from N=50 Nominal: pred_sprinting_data_04-February-2026__12-27-31___Nominal.mat
+[PelvisTD] nominalTD pelvis_tilt = -0.130246 rad (-7.463 deg); target touchdown tilt = -0.025526 rad (-1.463 deg)
+Loading external DLL functions...
+[WARNING] Failed to load F_cont_v21: 関数 'external' (タイプ'char' の入力引数) が未定義です。
+This may affect simulation functionality.
+[WARNING] Failed to load F_cont_ana21: 関数 'external' (タイプ'char' の入力引数) が未定義です。
+### ERROR in _PelvisTDwide_p6: 関数 'collocation_points' (タイプ'double' の入力引数) が未定義です。
+###   CollocationScheme : line 16
+###   main_pred_sim_sprinting : line 798
+###   run_pelvic_td_sweep : line 70
+### _PelvisTDwide_p6 ERRORED in 0.0 min
+
+=== Pelvic TD sweep finished. Log: C:\Users\T11648sTb\Documents\VSCODE\Pred_Sim_Sprinting\Pred_Sim_Sprinting\Results\PelvicTD_Study\sweep_log.txt ===

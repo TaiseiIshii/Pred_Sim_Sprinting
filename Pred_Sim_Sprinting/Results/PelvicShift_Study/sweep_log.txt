@@ -1,0 +1,43 @@
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 15:59:43 =====
+Conditions: _PelvisShift_p00
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 16:07:01 =====
+Conditions: _PelvisShift_p00
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 16:19:29 =====
+Conditions: _PelvisShift_p00
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 16:25:44 =====
+Conditions: _PelvisShift_p00, _PelvisShift_m02, _PelvisShift_m04, _PelvisShift_m06, _PelvisShift_p02, _PelvisShift_p04, _PelvisShift_p06
+05-Jun-2026 16:27:11 | _PelvisShift_p00       | COMPLETED |    1.4 min | 
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 16:34:27 =====
+Conditions: _PelvisShift_m02
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 16:35:10 =====
+Conditions: _PelvisShift_m02
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 16:38:03 =====
+Conditions: _PelvisShift_m02, _PelvisShift_m04, _PelvisShift_m06, _PelvisShift_p02, _PelvisShift_p04, _PelvisShift_p06
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 22:48:33 =====
+Conditions: _PelvisShift_m02
+05-Jun-2026 22:51:58 | _PelvisShift_m02       | COMPLETED |    3.4 min | 
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 23:39:41 =====
+Conditions: _PelvisShift_m02, _PelvisShift_m04, _PelvisShift_m06, _PelvisShift_p02, _PelvisShift_p04, _PelvisShift_p06
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 23:42:23 =====
+Conditions: _PelvisShift_m02, _PelvisShift_m04, _PelvisShift_m06, _PelvisShift_p02, _PelvisShift_p04, _PelvisShift_p06
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 23:46:34 =====
+Conditions: _PelvisShift_m04, _PelvisShift_m06, _PelvisShift_p02, _PelvisShift_p04, _PelvisShift_p06
+
+===== Pelvic SHIFT sweep started 05-Jun-2026 23:56:06 =====
+Conditions: _PelvisShift_m04, _PelvisShift_m06, _PelvisShift_p02, _PelvisShift_p04, _PelvisShift_p06
+06-Jun-2026 00:28:37 | _PelvisShift_m04       | COMPLETED |   32.5 min | 
+06-Jun-2026 01:01:49 | _PelvisShift_m06       | COMPLETED |   33.2 min | 
+06-Jun-2026 01:45:19 | _PelvisShift_p02       | COMPLETED |   43.5 min | 
+06-Jun-2026 02:36:46 | _PelvisShift_p04       | COMPLETED |   51.4 min | 
+06-Jun-2026 03:43:22 | _PelvisShift_p06       | COMPLETED |   66.6 min | 

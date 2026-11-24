@@ -1,0 +1,6 @@
+=== probe_nominal_td: 4 Nominal file(s) ===
+pred_sprinting_data_03-February-2026__18-04-46___Nominal.mat | N=50   | Solve_Succeeded        | td= -7.4626 deg | mean= -7.2642 deg | speed=11.7774
+pred_sprinting_data_04-February-2026__12-27-31___Nominal.mat | N=50   | Solve_Succeeded        | td= -7.4626 deg | mean= -7.2642 deg | speed=11.7774
+pred_sprinting_data_10-April-2026__16-29-40___Nominal.mat  | N=100  | Solve_Succeeded        | td= -7.9870 deg | mean= -7.4649 deg | speed=11.8346
+pred_sprinting_data_26-October-2023__10-52-28___Nominal.mat | N=50   | Solve_Succeeded        | td= -7.9043 deg | mean= -7.5029 deg | speed=11.8506
+=== probe done ===
