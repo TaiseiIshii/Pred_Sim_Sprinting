@@ -1,0 +1,64 @@
+name: Deploy to gh-pages branch
+
+# This workflow deploys the site/ folder to the gh-pages branch
+# as a fallback if GitHub Pages is configured to use "Branch: gh-pages" or "Branch: main / /docs"
+#
+# GitHub Pages configuration steps:
+# 1. Go to Settings → Pages
+# 2. Under "Build and deployment" → Source:
+#    Option A (Recommended): "GitHub Actions" - uses the upload-pages-artifact workflow
+#    Option B (Fallback): "Branch: gh-pages / / (root)" - uses this workflow
+#
+# This workflow ensures the site/ folder is available on gh-pages branch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/deploy-to-gh-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Deploy site/ to gh-pages branch
+        run: |
+          # Configure git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Fetch gh-pages branch if it exists
+          git fetch origin gh-pages 2>/dev/null || echo "gh-pages branch does not exist yet"
+          
+          # Create or switch to gh-pages branch
+          git checkout --orphan gh-pages-temp 2>/dev/null || git checkout gh-pages
+          
+          # Clear the branch (remove all old files)
+          git rm -rf . 2>/dev/null || true
+          
+          # Copy site/ contents to root of gh-pages
+          cp -r site/* .
+          
+          # Create .nojekyll to disable Jekyll processing
+          touch .nojekyll
+          
+          # Add all files
+          git add -A
+          
+          # Commit if there are changes
+          if ! git diff-index --quiet --cached HEAD 2>/dev/null; then
+            git commit -m "Deploy site/ to gh-pages (from ${{ github.sha }})"
+            git push origin gh-pages-temp:gh-pages 2>/dev/null || git push --set-upstream origin gh-pages
+          else
+            echo "No changes to commit"
+          fi
