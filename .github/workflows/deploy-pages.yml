@@ -45,3 +45,24 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Fallback: Also copy site/ to docs/ and push to main branch
+      # This ensures compatibility if GitHub Pages is configured to use "Branch: main / /docs"
+      - name: Copy site to docs for fallback deployment
+        run: |
+          rm -rf docs
+          cp -r site docs
+          # Ensure .nojekyll is present in docs
+          touch docs/.nojekyll
+
+      - name: Push docs to main (fallback for Branch: main /docs)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [ "$(git diff --name-only)" != "" ] || [ "$(git diff --cached --name-only)" != "" ]; then
+            git add docs
+            git commit -m "Update docs/ from site/ (GitHub Pages fallback deployment)" || echo "Nothing to commit"
+            git push origin main || echo "Push failed or nothing to push"
+          else
+            echo "No changes to commit"
+          fi
